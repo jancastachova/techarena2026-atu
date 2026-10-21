@@ -10,13 +10,14 @@ user at/after the cutoff, nothing tuned on the test events.
 | 01 | History features + two-stage model (event click x softmax over candidates) | 0.639 * | — | `01_history_recency.csv` |
 | 02 | MF + LightGBM | 0.741 * | ~0.724 | `02_mf_lgbm.csv` |
 | 03 | 02 with the rules-compliant time split | 0.680 | 0.72793 | `03_timesplit.csv` |
-| 04 | 03 with a history-only MF (no per-user embedding, l2 0.05) | 0.733 | **0.76687** | `04_history_mf.csv` |
-| 05 | 04 + past clicks (incl. warm-up period) as extra MF examples, weight 0.1 | 0.760 | pending | `05_click_aug.csv` |
+| 04 | 03 with a history-only MF (no per-user embedding, l2 0.05) | 0.733 | 0.76687 | `04_history_mf.csv` |
+| 05 | 04 + past clicks (incl. warm-up period) as extra MF examples, weight 0.1 | 0.760 | **0.77709** | `05_click_aug.csv` |
 
 \* Older validation (fit on days 1-5, test on all day-6 events, label stats updated during the
 test day, some settings chosen on day 6). Optimistic and **not comparable** with 03 onwards.
 
-Gains so far: 03 → 04 was +0.053 validation and +0.039 public (+3.9 AUC points, not 0.39%).
+Gains so far: 03 → 04 was +0.053 validation and +0.039 public (+3.9 AUC points, not 0.39%);
+04 → 05 was +0.027 validation and +0.010 public.
 
 ## What we learned
 - **Which items a user clicked matters far more than when.** Weighting history clicks by
