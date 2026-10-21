@@ -13,7 +13,10 @@ loss on the click log (every click known before the cutoff, incl. the warm-up pe
 Time split: an MF used for day d only sees impressions of days < d and clicks before day d.
 
 AUX_WEIGHT is chosen with --tune, inside the fit period only (MF trained on days 0-3,
-scored on fit day 4).
+scored on fit day 4; cutoff-5 base features):
+    weight     0      0.02   0.05   0.1    0.2    0.3    0.5    1      3
+    day-4 AUC  0.681  0.722  0.735  0.736  0.725  0.715  0.701  0.686  0.673
+(weight 0 reproduces experiment 04 exactly).
 
 Usage (normally called by click_aug.py):
     .venv/bin/python experiments/05_click_aug/mf_stage.py --base <base.npz> --out <mf.npz> --cutoff 5
@@ -44,7 +47,7 @@ HIST_MAX = 20
 TRAIN_START = 1737331200
 DAY = 86400
 N_NEG = 9
-AUX_WEIGHT = 1.0                      # see --tune
+AUX_WEIGHT = 0.1                      # see --tune and the table above
 SEED = 0
 log = m4.log
 

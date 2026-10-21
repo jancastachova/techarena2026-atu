@@ -227,10 +227,11 @@ def main():
                     help="cutoff day: 3-6 = validation inside train.csv, 7 = submission")
     ap.add_argument("--out", help="submission path (cutoff 7 only)")
     ap.add_argument("--cache-dir", default=str(ROOT / "data" / "cache"))
+    ap.add_argument("--base-only", action="store_true", help="build/cache the base features, print the path, stop")
     a = ap.parse_args()
     if not 4 <= a.cutoff <= OFFICIAL_CUTOFF:
         ap.error("cutoff must be between 4 and 7 (LightGBM needs fit days 2..C-1, at least 2 days)")
-    if (a.cutoff == OFFICIAL_CUTOFF) != bool(a.out):
+    if not a.base_only and (a.cutoff == OFFICIAL_CUTOFF) != bool(a.out):
         ap.error("--out is required with --cutoff 7 and only allowed there")
 
     cache = Path(a.cache_dir)
@@ -248,6 +249,9 @@ def main():
         np.savez(tmp, eval_order=eval_order, n_users=n_users, n_items=n_items,
                  **{f"tr_{k}": v for k, v in fit.items()}, **{f"ev_{k}": v for k, v in test.items()})
         os.replace(tmp, base_file)
+    if a.base_only:
+        print(base_file)
+        return
     log(f"loading base features {base_file.name}")
     z = np.load(base_file)
     fit = {k[3:]: z[k] for k in z.files if k.startswith("tr_")}
