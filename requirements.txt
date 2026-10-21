@@ -1,0 +1,7 @@
+# Python 3.12. Set up with:
+#   uv venv --python 3.12 .venv && uv pip install --python .venv/bin/python -r requirements.txt
+numpy==2.5.4
+pandas==3.0.6
+scipy==1.18.1
+lightgbm==4.7.0
+torch==2.14.1
