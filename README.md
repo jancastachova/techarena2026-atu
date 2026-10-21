@@ -8,7 +8,7 @@ https://portal-techarena-ireland.hackathon.com/submit.html
 # Submissions
 Submissions can be made 10 times per day from October 21st to November 4th.
 
-Current best: **`submissions/05_click_aug.csv`, public AUC 0.77709**. All scores and what changed
+Current best: **`submissions/07_mf_seeds10.csv`, public AUC 0.79803**. All scores and what changed
 between experiments: [experiments/RESULTS.md](experiments/RESULTS.md).
 
 # Team Members
@@ -80,7 +80,10 @@ techarena2026-atu/
 │   ├── 02_mf_lgbm/               # Matrix factorisation + LightGBM (old validation, superseded)
 │   ├── 03_timesplit/             # The validation/submission pipeline used from here on
 │   ├── 04_history_mf/            # 03 with a history-only MF (no per-user embedding)
-│   └── 05_click_aug/             # 04 + past clicks as extra MF training examples
+│   ├── 05_click_aug/             # 04 + past clicks as extra MF training examples
+│   ├── 06_mf_seeds/              # 05 with the MF averaged over 5 seeds
+│   ├── 07_mf_seeds10/            # 06 with 10 seeds
+│   └── 08_choice_mf/             # 07 with a choice-model loss in the MF (one pick or none per event)
 ├── src/
 │   ├── metrics.py                # Global ROC AUC (same definition as the leaderboard)
 │   └── check_submission.py       # Checks a submission against the Phase 1 rules
