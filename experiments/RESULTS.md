@@ -13,12 +13,17 @@ user at/after the cutoff, nothing tuned on the test events.
 | 04 | 03 with a history-only MF (no per-user embedding, l2 0.05) | 0.733 | 0.76687 | `04_history_mf.csv` |
 | 05 | 04 + past clicks (incl. warm-up period) as extra MF examples, weight 0.1 | 0.760 | 0.77709 | `05_click_aug.csv` |
 | 06 | 05 with the MF averaged over 5 seeds | 0.786 | 0.79599 | `06_mf_seeds.csv` |
-| 07 | 06 with 10 seeds instead of 5 | not run ‡ | **0.79803** | `07_mf_seeds10.csv` |
+| 07 | 06 with 10 seeds instead of 5 | not run ‡ | 0.79803 | `07_mf_seeds10.csv` |
+| 08 | 07 with a choice-model loss in the MF (one pick or no click per event, scale 0.1) | 0.790 | 0.79750 | `08_choice_mf.csv` |
+| 09 | 07 with the user vector over ALL known clicks before the event (up to 100), not the last 20 | not run ‡ | 0.80493 | `09_full_history.csv` |
+| 10 | 09 with the user's OTHER clicks (not only earlier ones) as click-log context | not run ‡ | 0.81297 | `10_other_clicks.csv` |
+| 11 | 10 with one shared vector per item (history and candidate roles) | not run ‡ | **0.81584** | `11_tied_items.csv` |
 
 † The 01 upload (0.60732) was an earlier version of 01 (plain logistic regression, validation
 0.618 *); the file was replaced by the two-stage version afterwards, which was never uploaded.
 
-‡ Validation run skipped to save time; fit-period check: MF AUC 0.764 (5 seeds) → 0.768 (10).
+‡ Validation run skipped to save time. Fit-period checks instead: 07 MF AUC 0.764 (5 seeds)
+→ 0.768 (10 seeds); 09 day-6 LightGBM AUC 0.8099 (07) → 0.8236; 10: → 0.8307; 11: → 0.8336.
 
 \* Older validation (fit on days 1-5, test on all day-6 events, label stats updated during the
 test day, some settings chosen on day 6). Optimistic and **not comparable** with 03 onwards.
@@ -27,6 +32,10 @@ Gains so far: 03 → 04 was +0.053 validation and +0.039 public (+3.9 AUC points
 04 → 05 was +0.027 validation and +0.010 public.
 05 → 06 was +0.026 validation and +0.019 public.
 06 → 07 was +0.002 public (more seeds: gains have flattened).
+07 → 08 was −0.0005 public (within noise): the choice loss did not carry over.
+07 → 09 was +0.007 public (day-6 LightGBM, fit period: 0.8099 → 0.8236).
+09 → 10 was +0.008 public (day-6 LightGBM, fit period: 0.8236 → 0.8307).
+10 → 11 was +0.003 public (day-6 LightGBM, fit period: 0.8307 → 0.8336).
 
 ## Upload log
 Limit: 10 uploads per day per team. Add a line for every upload.
@@ -41,6 +50,10 @@ Limit: 10 uploads per day per team. Add a line for every upload.
 | 2026-10-21 20:04 | 05_click_aug.csv | 0.777089 |
 | 2026-10-21 21:05 | 06_mf_seeds.csv | 0.795989 |
 | 2026-10-21 ~22:30 | 07_mf_seeds10.csv | 0.798027 |
+| 2026-10-22 ~00:00 | 08_choice_mf.csv | 0.797495 |
+| 2026-10-22 ~08:40 | 09_full_history.csv | 0.804933 |
+| 2026-10-22 ~10:25 | 10_other_clicks.csv | 0.812971 |
+| 2026-10-22 ~12:40 | 11_tied_items.csv | 0.815842 |
 
 ## What we learned
 - **Which items a user clicked matters far more than when.** Weighting history clicks by
@@ -71,6 +84,53 @@ Limit: 10 uploads per day per team. Add a line for every upload.
   - Recency inside the MF: a learned per-position weighting overfits (0.617), a "best single
     history match" term overfits (0.565), and a single learned decay converges to no decay at
     all (0.7356 = unchanged). The simulator treats a history as an unordered set of items.
+- **A choice-model loss improves the MF but not the final model.** Treating each event as
+  "pick one of 10 or nothing" made the MF alone clearly better (fit-period MF AUC, 3 seeds:
+  0.758 → 0.765; cutoff-5 MF alone 0.765 → 0.776), but after LightGBM it was a tie (day-6
+  0.8093 vs 0.8099 for 07) and public dropped slightly (0.79803 → 0.79750). LightGBM had
+  already rebuilt the one-pick-per-event structure from the event-relative MF features.
+- **Also ruled out on top of 06/07:** strongly regularised per-user embeddings on top of the
+  history (fit-period MF AUC 0.731-0.735 vs 0.7356), and a "shown before, not clicked" signal
+  (those candidates are clicked at 6.9%, same as any other; only "shown before and clicked",
+  i.e. repeat clicks, matters, which the history already covers).
+- **Use every known click, not just the 20 in the history.** ~60% of rows have a full
+  20-click history, so older clicks were cut off; since order and timing do not matter, they
+  are as informative as recent ones. Representing the user by all logged clicks before the
+  event (up to 100; mean 26 instead of 17) gave fit-period MF AUC 0.736 → 0.752 (1 seed;
+  50 clicks 0.752, so it levels off), day-6 LightGBM 0.8099 → 0.8236, public +0.007.
+  Check: the 20 most recent logged clicks equal the event's own history for 99.94% of events.
+- **Learn item vectors from each click's OTHER clicks, not only the earlier ones.** Since a
+  history is a set, every other click of the user (before the time limit) is valid context for
+  a click-log example: mean context 12.6 → 23.5 clicks, fit-period MF AUC 0.752 → 0.779
+  (1 seed), 0.772 → 0.791 (3 seeds), day-6 LightGBM 0.8236 → 0.8307, public +0.008.
+  Re-tuning on top of 09 found nothing else: dim 64, 8000 steps, l2 0.03/0.08, click-log
+  weight 0.05/0.2/0.3/0.5 all equal or worse (l2 0.08 looked +0.003 with 1 seed, −0.001 with 3).
+  Repeat candidates that are only in clicks older than the 20-click window are real (clicked
+  28%) but rare (0.05% of rows).
+- **Rare items are the weak spot.** Fit day 4 (10's MF, 1 seed) by the candidate's clicks so
+  far: 1-4 clicks AUC 0.68 (4% of rows), 5-9 0.73 (16%), 10-19 0.77 (33%), 20-39 0.80 (28%),
+  40+ 0.81 (20%); the same pattern for users with few clicks. "Does this event get any click"
+  is hard (AUC 0.63 from the best candidate's score).
+- **One vector per item** (instead of separate history and candidate vectors) gives each item
+  twice the training signal: fit-period MF AUC 0.779 → 0.784 (1 seed), 0.791 → 0.795 (3 seeds),
+  largest gain on the earliest days (least data); day-6 LightGBM 0.8307 → 0.8336, public +0.003.
+- **Tried on top of 10, not kept:** 49 instead of 9 click-log negatives (0.774 vs 0.779), and
+  the user's other clicks (own click removed) as the training user vector for impressions
+  (0.7793 vs 0.7790).
+- **Tried on top of 11, not kept** (fit period; MF tests on day 4 with 1 seed unless stated,
+  baseline 0.7838; LightGBM tests on day 6, baseline 0.8336):
+  - Re-tuning: dim 64 0.772, l2 0.03 0.779, l2 0.08 0.788 with 1 seed but 0.7936 vs 0.7946 with
+    3 seeds (third time a single-seed l2 gain vanished), l2 0.12 0.784, click-log weight 0.05/0.2
+    0.785/0.780, 8000 steps 0.773.
+  - Candidate set as a hint about the user: candidates ARE mildly personalised (cosine to the
+    user's history 0.034 vs −0.001 for random popular items), but adding the other 9 candidates
+    to the user vector gives 0.756 (own vectors, overfits) or 0.7843 (shared vectors, noise).
+  - Candidate-aware attention over the history (starts as plain averaging): 0.7837, although it
+    learned some focus. A user's taste behaves like a single direction, not several interests.
+  - Item drift: item click rates agree slightly less across time halves (0.158) than across
+    random halves (0.184): slow drift, too small to matter.
+  - LightGBM with 10's and 11's MF features together: 0.8339; with full-history click count and
+    repeat flags: 0.8337. Both noise.
 - Validation must mirror the official setup: 02 looked like 0.741 locally but its procedure
   leaked; the compliant version (03) scored 0.680 and tracked the leaderboard.
 

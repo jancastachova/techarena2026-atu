@@ -8,7 +8,7 @@ https://portal-techarena-ireland.hackathon.com/submit.html
 # Submissions
 Submissions can be made 10 times per day from October 21st to November 4th.
 
-Current best: **`submissions/07_mf_seeds10.csv`, public AUC 0.79803**. All scores and what changed
+Current best: **`submissions/11_tied_items.csv`, public AUC 0.81584**. All scores and what changed
 between experiments: [experiments/RESULTS.md](experiments/RESULTS.md).
 
 # Team Members
@@ -83,7 +83,10 @@ techarena2026-atu/
 │   ├── 05_click_aug/             # 04 + past clicks as extra MF training examples
 │   ├── 06_mf_seeds/              # 05 with the MF averaged over 5 seeds
 │   ├── 07_mf_seeds10/            # 06 with 10 seeds
-│   └── 08_choice_mf/             # 07 with a choice-model loss in the MF (one pick or none per event)
+│   ├── 08_choice_mf/             # 07 with a choice-model loss in the MF (one pick or none per event)
+│   ├── 09_full_history/          # 07 with the user vector over all known clicks, not just the last 20
+│   ├── 10_other_clicks/          # 09 with each click's other clicks as context for learning item vectors
+│   └── 11_tied_items/            # 10 with one shared vector per item
 ├── src/
 │   ├── metrics.py                # Global ROC AUC (same definition as the leaderboard)
 │   └── check_submission.py       # Checks a submission against the Phase 1 rules
