@@ -14,6 +14,7 @@ user at/after the cutoff, nothing tuned on the test events.
 | 05 | 04 + past clicks (incl. warm-up period) as extra MF examples, weight 0.1 | 0.760 | 0.77709 | `05_click_aug.csv` |
 | 06 | 05 with the MF averaged over 5 seeds | 0.786 | 0.79599 | `06_mf_seeds.csv` |
 | 07 | 06 with 10 seeds instead of 5 | not run ‡ | **0.79803** | `07_mf_seeds10.csv` |
+| 08 | 07 with a choice-model loss in the MF (one pick or no click per event, scale 0.1) | 0.790 | 0.79750 | `08_choice_mf.csv` |
 
 † The 01 upload (0.60732) was an earlier version of 01 (plain logistic regression, validation
 0.618 *); the file was replaced by the two-stage version afterwards, which was never uploaded.
@@ -27,6 +28,7 @@ Gains so far: 03 → 04 was +0.053 validation and +0.039 public (+3.9 AUC points
 04 → 05 was +0.027 validation and +0.010 public.
 05 → 06 was +0.026 validation and +0.019 public.
 06 → 07 was +0.002 public (more seeds: gains have flattened).
+07 → 08 was −0.0005 public (within noise): the choice loss did not carry over.
 
 ## Upload log
 Limit: 10 uploads per day per team. Add a line for every upload.
@@ -41,6 +43,7 @@ Limit: 10 uploads per day per team. Add a line for every upload.
 | 2026-10-21 20:04 | 05_click_aug.csv | 0.777089 |
 | 2026-10-21 21:05 | 06_mf_seeds.csv | 0.795989 |
 | 2026-10-21 ~22:30 | 07_mf_seeds10.csv | 0.798027 |
+| 2026-10-22 ~00:00 | 08_choice_mf.csv | 0.797495 |
 
 ## What we learned
 - **Which items a user clicked matters far more than when.** Weighting history clicks by
@@ -71,6 +74,15 @@ Limit: 10 uploads per day per team. Add a line for every upload.
   - Recency inside the MF: a learned per-position weighting overfits (0.617), a "best single
     history match" term overfits (0.565), and a single learned decay converges to no decay at
     all (0.7356 = unchanged). The simulator treats a history as an unordered set of items.
+- **A choice-model loss improves the MF but not the final model.** Treating each event as
+  "pick one of 10 or nothing" made the MF alone clearly better (fit-period MF AUC, 3 seeds:
+  0.758 → 0.765; cutoff-5 MF alone 0.765 → 0.776), but after LightGBM it was a tie (day-6
+  0.8093 vs 0.8099 for 07) and public dropped slightly (0.79803 → 0.79750). LightGBM had
+  already rebuilt the one-pick-per-event structure from the event-relative MF features.
+- **Also ruled out on top of 06/07:** strongly regularised per-user embeddings on top of the
+  history (fit-period MF AUC 0.731-0.735 vs 0.7356), and a "shown before, not clicked" signal
+  (those candidates are clicked at 6.9%, same as any other; only "shown before and clicked",
+  i.e. repeat clicks, matters, which the history already covers).
 - Validation must mirror the official setup: 02 looked like 0.741 locally but its procedure
   leaked; the compliant version (03) scored 0.680 and tracked the leaderboard.
 
