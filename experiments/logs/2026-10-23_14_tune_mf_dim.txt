@@ -1,0 +1,4 @@
+base features: 14_base_c7_9c47a117c762.npz
+=== base                         3 seed(s): days 0-5 -> day 6 MF AUC 0.81750
+=== dim:16                       3 seed(s): days 0-5 -> day 6 MF AUC 0.81473
+=== dim:24                       3 seed(s): days 0-5 -> day 6 MF AUC 0.81705

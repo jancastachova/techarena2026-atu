@@ -1,0 +1,11 @@
+LightGBM, fit days 2-5 -> day 6 (half A: early stopping, half B: report)
+  13 as is                           A 0.83492  B 0.83571  (190 trees)
+  + popularity taste                 A 0.83505  B 0.83595  (311 trees)
+EASE top 15000, lambda 100 (260s): covers 52.0% of day-6 rows, AUC there 0.61424 (MF on same rows 0.83741)
+  + EASE (lambda 100)                A 0.83504  B 0.83585  (307 trees)
+  + EASE + popularity taste          A 0.83509  B 0.83591  (204 trees)
+EASE top 15000, lambda 500 (261s): covers 52.0% of day-6 rows, AUC there 0.63235 (MF on same rows 0.83741)
+  + EASE (lambda 500)                A 0.83503  B 0.83577  (200 trees)
+  + EASE + popularity taste          A 0.83520  B 0.83592  (236 trees)
+
+[exited with code 0]

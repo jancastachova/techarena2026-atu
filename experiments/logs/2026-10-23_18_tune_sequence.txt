@@ -1,0 +1,15 @@
+base features: 13_base_c7_9c47a117c762.npz
+    seed 0: mf, 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 1: mf, 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 2: mf, 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+=== base                         3 seed(s): days 0-5 -> day 6 AUC 0.81750
+    seed 100: mf, 3000 steps on 588,873 events + 950,177 logged clicks (24s)
+    seed 101: mf, 3000 steps on 588,873 events + 950,177 logged clicks (23s)
+    seed 102: mf, 3000 steps on 588,873 events + 950,177 logged clicks (24s)
+=== base+seedoff:100             3 seed(s): days 0-5 -> day 6 AUC 0.81694   rank average with base: 0.81829
+    seed 0: seq, 3000 steps on 588,873 events + 950,177 logged clicks (776s)
+    seed 1: seq, 3000 steps on 588,873 events + 950,177 logged clicks (882s)
+    seed 2: seq, 3000 steps on 588,873 events + 950,177 logged clicks (701s)
+=== seq                          3 seed(s): days 0-5 -> day 6 AUC 0.81100   rank average with base: 0.81753
+
+[exited with code 0]

@@ -1,0 +1,6 @@
+base features: 14_base_c7_9c47a117c762.npz
+  sim-check: MF on days 0-5, 3 seeds, day 6: MF AUC 0.81750
+=== LightGBM without similarity features : day-6 half-B AUC 0.83263 (96 trees)
+=== LightGBM WITH similarity features    : day-6 half-B AUC 0.83283 (89 trees)
+
+[exited with code 0]

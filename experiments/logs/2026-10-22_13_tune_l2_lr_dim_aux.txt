@@ -1,0 +1,11 @@
+ok
+=== base                         1 seed(s): days 0-5 -> day 6 MF AUC 0.81370
+=== l2:0.03                      1 seed(s): days 0-5 -> day 6 MF AUC 0.81410
+=== l2:0.08                      1 seed(s): days 0-5 -> day 6 MF AUC 0.81075
+=== lr:0.002                     1 seed(s): days 0-5 -> day 6 MF AUC 0.81412
+=== lr:0.005                     1 seed(s): days 0-5 -> day 6 MF AUC 0.80563
+=== dim:64                       1 seed(s): days 0-5 -> day 6 MF AUC 0.81199
+=== aux:0.05                     1 seed(s): days 0-5 -> day 6 MF AUC 0.81245
+=== aux:0.2                      1 seed(s): days 0-5 -> day 6 MF AUC 0.80966
+
+[exited with code 0]

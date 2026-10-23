@@ -1,0 +1,14 @@
+base features: 13_base_c7_9c47a117c762.npz
+  segments: all 100.0%, 0 clicks 0.2%, 1-5 4.0%, 6-20 24.2%, 21+ 71.6%, first of day 35.9%
+    seed 0: impressions of 0 events, 3000 steps on 588,873 events + 950,177 logged clicks (23s)
+    seed 1: impressions of 0 events, 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 2: impressions of 0 events, 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+=== base                 3 seed(s): days 0-5 -> day 6 MF AUC all 0.81750  0 clicks 0.53691  1-5 0.75251  6-20 0.79978  21+ 0.82826  first of day 0.80495
+    seed 0: impressions of 5 events, alpha -0.001, 3000 steps on 588,873 events + 950,177 logged clicks (26s)
+    seed 1: impressions of 5 events, alpha +0.010, 3000 steps on 588,873 events + 950,177 logged clicks (25s)
+    seed 2: impressions of 5 events, alpha +0.006, 3000 steps on 588,873 events + 950,177 logged clicks (25s)
+=== imp:5                3 seed(s): days 0-5 -> day 6 MF AUC all 0.81725  0 clicks 0.53800  1-5 0.75237  6-20 0.79954  21+ 0.82799  first of day 0.80469
+    seed 0: impressions of 20 events, alpha +0.001, 3000 steps on 588,873 events + 950,177 logged clicks (36s)
+    seed 1: impressions of 20 events, alpha +0.011, 3000 steps on 588,873 events + 950,177 logged clicks (33s)
+    seed 2: impressions of 20 events, alpha +0.011, 3000 steps on 588,873 events + 950,177 logged clicks (32s)
+=== imp:20               3 seed(s): days 0-5 -> day 6 MF AUC all 0.81721  0 clicks 0.53856  1-5 0.75228  6-20 0.79954  21+ 0.82794  first of day 0.80469

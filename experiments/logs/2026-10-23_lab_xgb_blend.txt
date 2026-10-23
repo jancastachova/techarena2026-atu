@@ -1,0 +1,20 @@
+rows train 3,918,560  A 489,750  B 489,760
+LightGBM  A 0.83492  B 0.83571  (190 trees, 26s)
+xgb depth6 A 0.83510  B 0.83584  (397 trees, 47s)
+xgb depth8 A 0.83498  B 0.83577  (186 trees, 31s)
+
+blend with xgb depth6 (rank average)
+  w_xgb 0.0  A 0.83492  B 0.83571
+  w_xgb 0.1  A 0.83498  B 0.83576
+  w_xgb 0.2  A 0.83503  B 0.83581
+  w_xgb 0.3  A 0.83507  B 0.83584
+  w_xgb 0.4  A 0.83510  B 0.83587
+  w_xgb 0.5  A 0.83512  B 0.83588
+  w_xgb 0.6  A 0.83513  B 0.83589
+  w_xgb 0.7  A 0.83513  B 0.83589
+  w_xgb 0.8  A 0.83513  B 0.83588
+  w_xgb 0.9  A 0.83512  B 0.83587
+  w_xgb 1.0  A 0.83510  B 0.83584
+chosen on A: w_xgb 0.7 -> B 0.83589  vs LightGBM alone B 0.83571
+
+[exited with code 0]

@@ -1,0 +1,4 @@
+13 as is                               B 0.83571
++ popularity taste, lr 0.02            B 0.83595
+XGBoost with popularity taste          B 0.83599
+all three (XGBoost weight 0.6 from A)   B 0.83605   gain +0.00034
