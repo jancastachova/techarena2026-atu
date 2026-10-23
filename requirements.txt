@@ -5,3 +5,4 @@ pandas==3.0.6
 scipy==1.18.1
 lightgbm==4.7.0
 torch==2.14.1
+xgboost==3.4.1                # only for experiments/lab blend checks
