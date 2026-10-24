@@ -1,0 +1,8 @@
+A = 13_mf_c7_bb1fcb0a9c89.npz
+B = 20_mf_c7_c6b710c438b5.npz
+MF alone on day 6: A 0.81891  B 0.82087
+  LightGBM with MF A         half-A 0.83492  half-B 0.83571  (190 trees)
+  LightGBM with MF B         half-A 0.83473  half-B 0.83550  (295 trees)
+  LightGBM with both MFs     half-A 0.83498  half-B 0.83568  (351 trees)
+  rank correlation of A and B predictions on half B: 0.9966
+  rank blend (w_B 0.4 from half A)  half-B 0.83584  vs A alone 0.83571  gain +0.00012

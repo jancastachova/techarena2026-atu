@@ -1,0 +1,13 @@
+sequence caches: 8; extra groups: ['idf', 'idf15', 'idf2', 'clicks']
+true baseline (LGB MF13 + LGB MF15): half-B 0.83612; uploaded best combination: 0.83701
+
+members:
+  LGB seq only (lr .02)              half-B 0.83691  vs baseline +0.00079
+  LGB full (lr .02)                  half-B 0.83813  vs baseline +0.00201
+  XGB full                           half-B 0.83797  vs baseline +0.00185
+  MLP seed 0: half-A 0.83713
+  MLP seed 1: half-A 0.83767
+  MLP seed 2: half-A 0.83747
+  MLP full                           half-B 0.83835  vs baseline +0.00224
+
+LGB + XGB + MLP, all full, equal weights: half-A 0.83802  half-B 0.83850  vs baseline +0.00239  vs uploaded best combination +0.00149

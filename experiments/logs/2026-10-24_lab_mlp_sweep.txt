@@ -1,0 +1,15 @@
+4,898,070 rows, 91 inputs
+  current: 256-128-64, drop .1, lr 1e-3    3 seeds: half-A 0.83821  half-B 0.83860  (single seeds half-B 0.83800, 0.83849, 0.83800; 64s)
+  wide: 512-256-128, drop .2               3 seeds: half-A 0.83817  half-B 0.83863  (single seeds half-B 0.83806, 0.83849, 0.83833; 136s)
+  deep: 512-256-128-64, drop .1            3 seeds: half-A 0.83842  half-B 0.83872  (single seeds half-B 0.83842, 0.83837, 0.83831; 185s)
+  current, lr 3e-4                         3 seeds: half-A 0.83842  half-B 0.83887  (single seeds half-B 0.83854, 0.83869, 0.83835; 96s)
+  narrow: 128-64, drop .1                  3 seeds: half-A 0.83817  half-B 0.83864  (single seeds half-B 0.83839, 0.83821, 0.83839; 58s)
+
+best on half A: deep: 512-256-128-64, drop .1; 10 seeds of it:
+  4 seeds: half-A 0.83843  half-B 0.83878
+  5 seeds: half-A 0.83845  half-B 0.83877
+  6 seeds: half-A 0.83847  half-B 0.83882
+  7 seeds: half-A 0.83846  half-B 0.83883
+  8 seeds: half-A 0.83848  half-B 0.83885
+  9 seeds: half-A 0.83845  half-B 0.83885
+  10 seeds: half-A 0.83846  half-B 0.83886

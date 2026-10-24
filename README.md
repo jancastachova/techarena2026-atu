@@ -8,7 +8,7 @@ https://portal-techarena-ireland.hackathon.com/submit.html
 # Submissions
 Submissions can be made 10 times per day from October 21st to November 4th.
 
-Current best: **`submissions/15_avg_13_15.csv`, public AUC 0.81807**. All scores and what changed
+Current best: **`submissions/25_ensemble_impronly.csv`, public AUC 0.82033**. All scores and what changed
 between experiments: [experiments/RESULTS.md](experiments/RESULTS.md).
 
 # Team Members

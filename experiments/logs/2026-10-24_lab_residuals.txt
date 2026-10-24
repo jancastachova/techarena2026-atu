@@ -1,0 +1,13 @@
+day-6 AUC of the model: 0.83805  (fixed 1200 trees, lr 0.02)
+
+Persistence of the residuals across the two halves of day 6 (>0 = learnable signal left):
+per user (rows >= 5 in each half)  keys 15,243  half-to-half corr +0.0519 (+-0.0162)  residual variance / binomial noise 0.420
+per user (rows >= 10 in each half) keys 15,243  half-to-half corr +0.0519 (+-0.0162)  residual variance / binomial noise 0.420
+per item (rows >= 5 in each half)  keys 34,079  half-to-half corr +0.0209 (+-0.0108)  residual variance / binomial noise 1.010
+per item (rows >= 15 in each half) keys  5,936  half-to-half corr +0.0328 (+-0.0260)  residual variance / binomial noise 1.017
+per user x item (rows >= 1)        keys  2,965  half-to-half corr -0.2344 (+-0.0367)  residual variance / binomial noise 1.757
+
+Calibration (mean label / mean prediction) by row property on day 6:
+  known clicks       [0,1) 1.118  [1,6) 1.012  [6,21) 1.011  [21,101) 0.996
+  time bucket        [0,1) 0.997  [1,2) 0.994  [2,3) 1.002  [3,4) 1.002
+  MF rank in event   [1,2) 0.997  [2,3) 0.978  [3,6) 1.010  [6,11) 1.033

@@ -1,0 +1,14 @@
+mlp_pop: training in a separate process ...
+  sequence features from 1 cache(s): 18_mf_c7_3a4b8237d50b.npz
+  mlp seed 0: 7 epochs by early stopping on day 6 (day-6 AUC 0.83577), refit on days 2-6
+  mlp seed 1: 7 epochs by early stopping on day 6 (day-6 AUC 0.83573), refit on days 2-6
+  mlp seed 2: 4 epochs by early stopping on day 6 (day-6 AUC 0.83547), refit on days 2-6
+  sequence features from 1 cache(s): 18_mf_c7_3a4b8237d50b.npz
+  lgb_popseq: 871 trees (day-6 AUC 0.83624, 273s)
+  xgb_popseq: 645 trees (day-6 AUC 0.83626, 243s)
+  rank correlations between members on the evaluation rows:
+    lgb_popseq: xgb_popseq 0.9977, mlp_pop 0.9922
+    xgb_popseq: mlp_pop 0.9908
+    mlp_pop: 
+done. wrote submissions/24_ensemble_seq1.csv (3 members: lgb_popseq, xgb_popseq, mlp_pop)
+OK: 529,390 rows, all 529,390 evaluation rowids present once, values in [1.6371e-05, 0.999996], 456,210 distinct

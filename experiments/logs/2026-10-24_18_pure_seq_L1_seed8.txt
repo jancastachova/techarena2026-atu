@@ -1,0 +1,4 @@
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+  MF: history up to 100 clicks, 1 seeds, pretraining none

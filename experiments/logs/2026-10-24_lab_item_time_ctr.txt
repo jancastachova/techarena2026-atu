@@ -1,0 +1,5 @@
+rows per bucket: [0.09968493 0.1995635  0.30028654 0.40046504]
+items with >=30 impressions in every bucket: 2,374; median max/min bucket rate 1.99
+stability of item x bucket rates (before day 6 vs day 6, 347 items): correlation 0.053
+  13 as is                           half-A 0.83492  half-B 0.83571  (190 trees)
+  + item x time-bucket click rate    half-A 0.83505  half-B 0.83572  (177 trees)

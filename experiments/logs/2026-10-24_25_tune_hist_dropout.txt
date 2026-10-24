@@ -1,0 +1,6 @@
+base features: 13_base_c7_9c47a117c762.npz
+=== base             3 seed(s): days 0-5 -> day 6 MF AUC 0.81750
+=== hdrop:0.2        3 seed(s): days 0-5 -> day 6 MF AUC 0.81668   rank corr with the first 0.9970
+=== hdrop:0.4        3 seed(s): days 0-5 -> day 6 MF AUC 0.81550   rank corr with the first 0.9932
+=== hdrop:0.6        3 seed(s): days 0-5 -> day 6 MF AUC 0.81270   rank corr with the first 0.9858
+=== hdrop:0.4+steps:5000 3 seed(s): days 0-5 -> day 6 MF AUC 0.81308   rank corr with the first 0.9801

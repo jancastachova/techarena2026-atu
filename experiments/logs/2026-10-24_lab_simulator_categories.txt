@@ -1,0 +1,13 @@
+items with >= 5 clicks: 47,902 of 50,000
+users with >= 15 clicks on clustered items: 26,675
+
+    k  top-cluster share  shuffled  ratio     1/k
+    5              0.466     0.323   1.44   0.200
+   10              0.353     0.225   1.57   0.100
+   20              0.270     0.169   1.59   0.050
+   50              0.195     0.130   1.50   0.020
+  100              0.161     0.115   1.40   0.010
+  200              0.138     0.107   1.29   0.005
+
+k=20: candidates from the user's favourite cluster: 0.061 (cluster's share of items 0.050)
+click rate on candidates in the favourite cluster 0.2825 vs others 0.0509

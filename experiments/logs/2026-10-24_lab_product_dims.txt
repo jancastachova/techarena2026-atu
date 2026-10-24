@@ -1,0 +1,25 @@
+day 2: 98,097 events; mean |hv*q| 0.1175
+day 3: 97,717 events; mean |hv*q| 0.1061
+day 4: 97,589 events; mean |hv*q| 0.0977
+day 5: 98,453 events; mean |hv*q| 0.0923
+day 6: 97,951 events; mean |hv*q| 0.0885
+
+day-6 AUC: 1-seed dot product from these vectors 0.81278, 15-seed mf_logit 0.81891
+
+  13 as is                               half-A 0.83492  half-B 0.83571  (190 trees)
+  + 32 hv*q product dims                 half-A 0.83493  half-B 0.83562  (188 trees)
+  + product dims + candidate dims        half-A 0.83491  half-B 0.83566  (232 trees)
+
+top features by gain (with product dims):
+  mf_logit_share           1,235,097
+  mf_hist_dot              871,469
+  mf_logit                 460,016
+  hist_len                 37,374
+  mf_logit_minus_max       36,306
+  item_ctr_logit           31,405
+  mf_logit_rank            23,317
+  item_log_clicks          20,674
+  item_log_impr            17,815
+  user_rate_logit          17,493
+  mf_user_bias             17,125
+  user_log_events          15,869

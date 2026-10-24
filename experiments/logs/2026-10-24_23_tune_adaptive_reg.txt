@@ -1,0 +1,7 @@
+base features: 13_base_c7_9c47a117c762.npz
+  segments: all 100.0%, cand 1-9 clicks 15.0%, 10-39 60.7%, 40+ 24.3%
+=== base             3 seed(s): days 0-5 -> day 6 MF AUC all 0.81750  cand 1-9 clicks 0.76531  10-39 0.81878  40+ 0.84179
+=== beta:0.5         3 seed(s): days 0-5 -> day 6 MF AUC all 0.81648  cand 1-9 clicks 0.76183  10-39 0.81806  40+ 0.84174
+=== beta:1.0         3 seed(s): days 0-5 -> day 6 MF AUC all 0.81464  cand 1-9 clicks 0.75529  10-39 0.81677  40+ 0.84158
+=== beta:2.0         3 seed(s): days 0-5 -> day 6 MF AUC all 0.80677  cand 1-9 clicks 0.72618  10-39 0.81095  40+ 0.84056
+=== beta:1.0+regk:50 3 seed(s): days 0-5 -> day 6 MF AUC all 0.79502  cand 1-9 clicks 0.70075  10-39 0.79883  40+ 0.83795

@@ -1,0 +1,10 @@
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+  day 2: 1-seed MF AUC 0.76398, vectors for 98,097 events
+  day 3: 1-seed MF AUC 0.78250, vectors for 97,717 events
+  day 4: 1-seed MF AUC 0.79649, vectors for 97,589 events
+  day 5: 1-seed MF AUC 0.80779, vectors for 98,453 events
+  day 6: 1-seed MF AUC 0.81370, vectors for 97,951 events
+  test events: vectors for 52,939 events
+wrote data/cache/22_vectors_c7.npz

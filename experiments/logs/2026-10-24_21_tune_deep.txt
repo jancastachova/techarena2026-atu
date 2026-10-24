@@ -1,0 +1,18 @@
+base features: 13_base_c7_9c47a117c762.npz
+  segments: all 100.0%, 1-5 4.0%, 6-20 24.2%, 21+ 71.6%, first of day 35.9%
+    seed 0: deep False, 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 1: deep False, 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 2: deep False, 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+=== base                 3 seed(s): days 0-5 -> day 6 MF AUC all 0.81750  1-5 0.75251  6-20 0.79978  21+ 0.82826  first of day 0.80495
+    seed 0: deep True, 3000 steps on 588,873 events + 950,177 logged clicks (30s)
+    seed 1: deep True, 3000 steps on 588,873 events + 950,177 logged clicks (32s)
+    seed 2: deep True, 3000 steps on 588,873 events + 950,177 logged clicks (31s)
+=== deep                 3 seed(s): days 0-5 -> day 6 MF AUC all 0.78908  1-5 0.71411  6-20 0.76593  21+ 0.80233  first of day 0.77396
+    seed 0: deep True, 3000 steps on 588,873 events + 950,177 logged clicks (36s)
+    seed 1: deep True, 3000 steps on 588,873 events + 950,177 logged clicks (36s)
+    seed 2: deep True, 3000 steps on 588,873 events + 950,177 logged clicks (36s)
+=== deep+dhid:128        3 seed(s): days 0-5 -> day 6 MF AUC all 0.78767  1-5 0.71765  6-20 0.76474  21+ 0.80088  first of day 0.77260
+    seed 0: deep True, 3000 steps on 588,873 events + 950,177 logged clicks (37s)
+    seed 1: deep True, 3000 steps on 588,873 events + 950,177 logged clicks (39s)
+    seed 2: deep True, 3000 steps on 588,873 events + 950,177 logged clicks (39s)
+=== deep+ddrop:0.1       3 seed(s): days 0-5 -> day 6 MF AUC all 0.78695  1-5 0.71647  6-20 0.76474  21+ 0.79956  first of day 0.77309

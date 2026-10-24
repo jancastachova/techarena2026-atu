@@ -1,0 +1,12 @@
+row model (13)           half-B 0.83571  (190 trees)
+
+'event gets a click' AUC on half B: event model 0.69123  vs sum of row scores 0.68989  (93 trees)
+
+row + beta*event (log-odds)
+  b=0.1: A 0.83462 B 0.83530  b=0.25: A 0.83313 B 0.83365  b=0.5: A 0.82831 B 0.82859  b=0.75: A 0.82126 B 0.82132  b=1: A 0.81270 B 0.81258
+  chosen on A: beta 0.1 -> half B 0.83530  gain -0.00041
+
+within-event share x event^beta
+  b=0.5: A 0.83366 B 0.83469  b=0.75: A 0.83478 B 0.83571  b=1: A 0.83517 B 0.83600  b=1.25: A 0.83491 B 0.83562
+  chosen on A: beta 1 -> half B 0.83600  gain +0.00028
+

@@ -1,0 +1,8 @@
+items with >=20 impressions before day 6: 50,000
+  correlation of impression shares, before day 6 vs day 6: 0.9484
+  share ratio day6/before: median 0.99, 10th pct 0.67, 90th pct 1.38
+  correlation of log(share change) with the day-6 click residual: +0.0044
+
+  13 as is                             half-A 0.83492  half-B 0.83571  (190 trees)
+  + in-window impressions              half-A 0.83503  half-B 0.83581  (286 trees)
+  rank of the new features by gain: log_share_in_window #19, log_share_change #21, log_impr_in_window #29

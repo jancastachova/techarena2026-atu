@@ -1,0 +1,7 @@
+sequence (1 cache(s)): day-6 AUC 0.79092, rank corr with MF30 0.8597
+deep (1 cache(s)): day-6 AUC 0.79674, rank corr with MF30 0.8950, with sequence 0.7805
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  MF30 + pop + seq (= the best member)         half-B 0.83664  (798 trees)
+  + deep                                       half-B 0.83670  (649 trees)
+    best-ranked deep features by gain: deep_logit #15, deep_user_bias #20, deep_lse #21

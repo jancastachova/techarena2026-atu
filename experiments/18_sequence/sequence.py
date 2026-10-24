@@ -166,6 +166,10 @@ SEQ_LAYERS = 2
 SEQ_HEADS = 2
 SEQ_DROPOUT = 0.1
 SEED_OFFSET = 0               # tuning only ("seedoff:N"): a same-model control on other seeds
+DEVICE = "cpu"                # torch device for the MF / sequence training: cpu, mps (Apple GPU) or cuda
+SEQ_PURE = False              # "pure:" -> user vector is the transformer output ALONE (standalone
+                              # SASRec-style: no mean-of-clicks anchor, and the output layer is
+                              # randomly initialised, not zeroed)
 PRETRAIN = "none"             # "none" (= experiment 11) or "ppmi" (see --tune results)
 INIT_STD_DEFAULT = 0.005      # std of the random initial item vectors (experiments 04-11: 0.05); see --init-std
 INIT_STD = INIT_STD_DEFAULT
@@ -720,24 +724,28 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
             self.enc = nn.TransformerEncoder(layer, SEQ_LAYERS, enable_nested_tensor=False)
             self.ln_out = nn.LayerNorm(dim)
             self.out = nn.Linear(dim, dim)
-            nn.init.zeros_(self.out.weight)
-            nn.init.zeros_(self.out.bias)
+            if not SEQ_PURE:                               # residual branch: start at the MF
+                nn.init.zeros_(self.out.weight)
+                nn.init.zeros_(self.out.bias)
 
         def user_vec(self, hist, hlen):
             h = hist[:, :SEQ_LEN]
             n = h.shape[1]
             x = self.inp(self.ln_in(self.yh(h))) + self.pos.weight[:n].unsqueeze(0)
             c = (self.cls + self.pos.weight[SEQ_LEN]).expand(len(h), 1, -1)
-            pad = torch.arange(n).unsqueeze(0) >= hlen.clamp(max=SEQ_LEN).unsqueeze(1)
-            mask = torch.cat([torch.zeros(len(h), 1, dtype=torch.bool), pad], 1)
+            pad = torch.arange(n, device=h.device).unsqueeze(0) >= hlen.clamp(max=SEQ_LEN).unsqueeze(1)
+            mask = torch.cat([torch.zeros(len(h), 1, dtype=torch.bool, device=h.device), pad], 1)
             z = self.enc(torch.cat([c, x], 1), src_key_padding_mask=mask)[:, 0]
-            return super().user_vec(hist, hlen) + self.out(self.ln_out(z))
+            seq = self.out(self.ln_out(z))
+            return seq if SEQ_PURE else super().user_vec(hist, hlen) + seq
+
+    dev = torch.device(DEVICE)
 
     def event_tensors(d, ev):
-        return (torch.from_numpy(d["user"][ev].astype(np.int64)),
-                torch.from_numpy(d["item"].reshape(-1, EV_SIZE)[ev].astype(np.int64)),
-                torch.from_numpy(d["hist"][ev].astype(np.int64)),
-                torch.from_numpy(d["hlen"][ev].astype(np.float32)))
+        return (torch.from_numpy(d["user"][ev].astype(np.int64)).to(dev),
+                torch.from_numpy(d["item"].reshape(-1, EV_SIZE)[ev].astype(np.int64)).to(dev),
+                torch.from_numpy(d["hist"][ev].astype(np.int64)).to(dev),
+                torch.from_numpy(d["hlen"][ev].astype(np.float32)).to(dev))
 
     def train(d, events, clicks, n_users, n_items, seed, init_vectors=None):
         torch.manual_seed(seed)
@@ -749,24 +757,26 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
                 ok[0] = False                               # padding row stays zero
                 w = model.yh.weight.detach().numpy()        # shares memory with the parameter
                 w[ok] = init_vectors[ok]
+        model = model.to(dev)                               # after any CPU-side initialisation
         opt = torch.optim.Adam(model.parameters(), lr=MF_LR)
-        Y = torch.from_numpy(d["label"].reshape(-1, EV_SIZE).astype(np.float32))
+        Y = torch.from_numpy(d["label"].reshape(-1, EV_SIZE).astype(np.float32)).to(dev)
         rows = (events[:, None] * EV_SIZE + np.arange(EV_SIZE)).ravel()
         p = np.bincount(d["item"][rows], minlength=n_items).astype(np.float64)
         p /= p.sum()
         ctx, ctx_len, target, _ = clicks
-        ctx, ctx_len, target = torch.from_numpy(ctx), torch.from_numpy(ctx_len), torch.from_numpy(target)
+        ctx, ctx_len, target = (torch.from_numpy(ctx).to(dev), torch.from_numpy(ctx_len).to(dev),
+                                torch.from_numpy(target).to(dev))
         steps, t0 = 0, time.time()
         while steps < MF_STEPS:
             perm = rng.permutation(events)
             for s in range(0, len(perm), MF_BATCH_EVENTS):
                 ev = perm[s:s + MF_BATCH_EVENTS]
                 logit_, _, _, _, reg = model(*event_tensors(d, ev))
-                loss = F.binary_cross_entropy_with_logits(logit_, Y[torch.from_numpy(ev)])
+                loss = F.binary_cross_entropy_with_logits(logit_, Y[torch.from_numpy(ev).to(dev)])
                 total = loss + MF_L2 * reg / logit_.numel()
                 if AUX_WEIGHT and len(target):
-                    k = torch.from_numpy(rng.integers(0, len(target), size=len(ev)))
-                    neg = torch.from_numpy(rng.choice(n_items, size=(len(ev), N_NEG), p=p))
+                    k = torch.from_numpy(rng.integers(0, len(target), size=len(ev))).to(dev)
+                    neg = torch.from_numpy(rng.choice(n_items, size=(len(ev), N_NEG), p=p)).to(dev)
                     pos_item = target[k].unsqueeze(1)
                     cand = torch.cat([pos_item, neg], 1)
                     hv = model.user_vec(ctx[k], ctx_len[k])
@@ -774,7 +784,7 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
                     a_logit = model.bi(cand).squeeze(2) + (hv.unsqueeze(1) * q).sum(2)
                     same = torch.cat([torch.zeros_like(pos_item, dtype=torch.bool), neg == pos_item], 1)
                     a_logit = a_logit.masked_fill(same, -1e9)
-                    a_loss = F.cross_entropy(a_logit, torch.zeros(len(ev), dtype=torch.long))
+                    a_loss = F.cross_entropy(a_logit, torch.zeros(len(ev), dtype=torch.long, device=dev))
                     a_reg = (q ** 2).sum() / cand.shape[1] + (hv ** 2).sum()
                     total = total + AUX_WEIGHT * (a_loss + MF_L2 * a_reg / a_logit.numel())
                 opt.zero_grad()
@@ -783,7 +793,7 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
                 steps += 1
                 if steps >= MF_STEPS:
                     break
-        log(f"    seed {seed}: {MODEL}, {MF_STEPS} steps on {len(events):,} events + {len(target):,} "
+        log(f"    seed {seed}: {MODEL} on {DEVICE}, {MF_STEPS} steps on {len(events):,} events + {len(target):,} "
             f"logged clicks ({time.time()-t0:.0f}s)")
         return model
 
@@ -794,7 +804,7 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
         for s in range(0, len(events), 4096):
             ev = events[s:s + 4096]
             logit_, bi, bu, dot, _ = model(*event_tensors(d, ev))
-            out.append(torch.stack([logit_, bi, bu, dot], 2).reshape(-1, len(MF_FEATURES)).numpy())
+            out.append(torch.stack([logit_, bi, bu, dot], 2).reshape(-1, len(MF_FEATURES)).cpu().numpy())
         return np.concatenate(out).astype(np.float32)
 
     def averaged(d, events, clicks, n_users, n_items, n_seeds, init_vectors, score_fn):
@@ -828,15 +838,17 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
 
     if tune:
         global MF_STEPS, MF_L2, AUX_WEIGHT, INIT_STD, MODEL, SEQ_LEN, SEQ_LAYERS, SEQ_DROPOUT, SEED_OFFSET
+        global SEQ_PURE
         defaults = (MF_STEPS, MF_L2, AUX_WEIGHT, INIT_STD_DEFAULT, MODEL, SEQ_LEN, SEQ_LAYERS, SEQ_DROPOUT,
-                    SEED_OFFSET)
+                    SEED_OFFSET, SEQ_PURE)
         first = None
         day = cutoff - 1
         train_ev, target = np.flatnonzero(ev_day < day), np.flatnonzero(ev_day == day)
         rows = (target[:, None] * EV_SIZE + np.arange(EV_SIZE)).ravel()
         clk = other_clicks_examples(fit, day, HIST_LONG)
         for kind in tune:
-            MF_STEPS, MF_L2, AUX_WEIGHT, INIT_STD, MODEL, SEQ_LEN, SEQ_LAYERS, SEQ_DROPOUT, SEED_OFFSET = defaults
+            (MF_STEPS, MF_L2, AUX_WEIGHT, INIT_STD, MODEL, SEQ_LEN, SEQ_LAYERS, SEQ_DROPOUT,
+             SEED_OFFSET, SEQ_PURE) = defaults
             init = None
             for part in kind.split("+"):                  # e.g. steps:7000+l2:0.08
                 name, _, val = part.partition(":")
@@ -854,6 +866,9 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
                     SEQ_LEN = int(val)
                 elif name == "layers":
                     SEQ_LAYERS = int(val)
+                elif name == "pure":
+                    MODEL = "seq"
+                    SEQ_PURE = True
                 elif name == "seedoff":
                     SEED_OFFSET = int(val)
                 elif name == "drop":
@@ -869,10 +884,13 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
             if first is None:
                 first = (kind, rankdata(s[:, 0]))
             else:
-                avg = first[1] + rankdata(s[:, 0])
-                msg += f"   rank average with {first[0]}: {roc_auc(avg, y_t):.5f}"
+                r_here = rankdata(s[:, 0])
+                avg = first[1] + r_here
+                msg += (f"   corr with {first[0]} {np.corrcoef(first[1], r_here)[0, 1]:.4f}"
+                        f"   rank average: {roc_auc(avg, y_t):.5f}")
             log(msg)
-        MF_STEPS, MF_L2, AUX_WEIGHT, INIT_STD, MODEL, SEQ_LEN, SEQ_LAYERS, SEQ_DROPOUT, SEED_OFFSET = defaults
+        (MF_STEPS, MF_L2, AUX_WEIGHT, INIT_STD, MODEL, SEQ_LEN, SEQ_LAYERS, SEQ_DROPOUT,
+         SEED_OFFSET, SEQ_PURE) = defaults
         return
 
     log(f"  MF: history up to {HIST_LONG} clicks, {N_SEEDS} seeds, pretraining {pretrain}")
@@ -987,7 +1005,7 @@ def segments(fit, test):
 # =================================================================== main
 
 def main():
-    global INIT_STD_DEFAULT, INIT_STD
+    global INIT_STD_DEFAULT, INIT_STD, MODEL, SEQ_PURE, N_SEEDS, SEED_OFFSET, SEQ_LAYERS, DEVICE
     ap = argparse.ArgumentParser()
     ap.add_argument("--train", default=str(ROOT / "data" / "train.csv"))
     ap.add_argument("--evaluation", default=str(ROOT / "data" / "evaluation.csv"))
@@ -998,6 +1016,14 @@ def main():
     ap.add_argument("--init-std", type=float, default=INIT_STD_DEFAULT,
                     help="std of the random initial item vectors (0.05 reproduces experiment 11)")
     ap.add_argument("--cache-dir", default=str(ROOT / "data" / "cache"))
+    ap.add_argument("--pure-seq", action="store_true",
+                    help="full run with the standalone sequence model (no mean-of-clicks anchor)")
+    ap.add_argument("--mf-seeds", type=int, help="override N_SEEDS (the pure sequence model is slow)")
+    ap.add_argument("--seq-layers", type=int, help="transformer layers for a full run (default SEQ_LAYERS)")
+    ap.add_argument("--device", choices=["cpu", "mps", "cuda"], default="cpu",
+                    help="torch device for training (mps = Apple GPU, cuda = NVIDIA GPU)")
+    ap.add_argument("--seed-offset", type=int, default=0,
+                    help="first MF seed (run several offsets in parallel, then average the caches)")
     ap.add_argument("--tune", help="comma-separated pretraining kinds to compare on fit day 4 (cutoff 5)")
     ap.add_argument("--tune-seeds", type=int, default=1)
     ap.add_argument("--verify-base", help="compare the cached base features with this base cache (.npz)")
@@ -1007,6 +1033,14 @@ def main():
     ap.add_argument("--mf-out", help=argparse.SUPPRESS)
     a = ap.parse_args()
     INIT_STD_DEFAULT = INIT_STD = a.init_std
+    if a.pure_seq:
+        MODEL, SEQ_PURE = "seq", True
+    if a.mf_seeds:
+        N_SEEDS = a.mf_seeds
+    SEED_OFFSET = a.seed_offset
+    DEVICE = a.device
+    if a.seq_layers:
+        SEQ_LAYERS = a.seq_layers
 
     if a.stage == "mf":
         mf_stage(a.base, a.mf_out, a.cutoff, a.pretrain)
@@ -1045,7 +1079,7 @@ def main():
     if a.tune:
         subprocess.run([sys.executable, __file__, "--stage", "tune", "--base", str(base_file),
                         "--cutoff", str(a.cutoff), "--tune", a.tune, "--tune-seeds", str(a.tune_seeds),
-                        "--init-std", str(a.init_std)], check=True)
+                        "--init-std", str(a.init_std), "--device", a.device], check=True)
         return
 
     if a.use_mf:
@@ -1055,13 +1089,23 @@ def main():
             inspect.getsource(long_history) + inspect.getsource(ppmi_svd_vectors)
         settings = repr((MF_DIM, MF_L2, MF_STEPS, MF_BATCH_EVENTS, MF_LR, HIST_LONG, AUX_WEIGHT, N_NEG,
                          N_SEEDS, a.pretrain, FIRST_MODEL_DAY, a.init_std,
-                         MODEL, SEQ_LEN, SEQ_LAYERS, SEQ_HEADS, SEQ_DROPOUT))
+                         MODEL, SEQ_LEN, SEQ_LAYERS, SEQ_HEADS, SEQ_DROPOUT, SEQ_PURE)
+                       + (() if not SEED_OFFSET else (("seed_offset", SEED_OFFSET),)))
         mf_file = cache / f"18_mf_c{a.cutoff}_{code_hash(base_key, mf_src, settings)}.npz"
         if not mf_file.exists():
             tmp = mf_file.with_name(mf_file.stem + ".partial.npz")
-            subprocess.run([sys.executable, __file__, "--stage", "mf", "--base", str(base_file),
-                            "--mf-out", str(tmp), "--cutoff", str(a.cutoff), "--pretrain", a.pretrain,
-                            "--init-std", str(a.init_std)], check=True)
+            cmd = [sys.executable, __file__, "--stage", "mf", "--base", str(base_file),
+                   "--mf-out", str(tmp), "--cutoff", str(a.cutoff), "--pretrain", a.pretrain,
+                   "--init-std", str(a.init_std)]
+            if a.pure_seq:
+                cmd.append("--pure-seq")
+            if a.mf_seeds:
+                cmd += ["--mf-seeds", str(a.mf_seeds)]
+            cmd += ["--seed-offset", str(a.seed_offset)]
+            if a.seq_layers:
+                cmd += ["--seq-layers", str(a.seq_layers)]
+            cmd += ["--device", a.device]
+            subprocess.run(cmd, check=True)
             os.replace(tmp, mf_file)
     log(f"MF scores: {mf_file.name}")
     z = np.load(mf_file)

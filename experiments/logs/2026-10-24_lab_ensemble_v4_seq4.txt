@@ -1,0 +1,20 @@
+sequence scores averaged over 4 cache(s): 18_mf_c7_3a4b8237d50b.npz, 18_mf_c7_19cd2f7e5252.npz, 18_mf_c7_cd85c39e1c55.npz, 18_mf_c7_352a14674518.npz
+day-6 sequence AUC 0.80704; rank corr with MF30 0.9313
+current best (LGB MF13 + LGB MF15): half-B 0.83612
+
+new members with the sequence features:
+  LGB MF30 + seq                       half-B 0.83646  vs current +0.00034
+  LGB MF30 + pop + seq lr.02           half-B 0.83672  vs current +0.00060
+  XGB MF30 + pop + seq                 half-B 0.83665  vs current +0.00053
+  MLP+seq seed 0: half-A 0.83541
+  MLP+seq seed 1: half-A 0.83583
+  MLP+seq seed 2: half-A 0.83567
+  MLP MF30 + pop + seq                 half-B 0.83683  vs current +0.00071
+
+equal-weight rank averages:
+  LGB+pop+seq, XGB+pop+seq                             half-A 0.83597  half-B 0.83676  vs current +0.00065
+  LGB+seq, LGB+pop+seq, XGB+pop+seq                    half-A 0.83599  half-B 0.83675  vs current +0.00063
+  LGB+pop+seq, XGB+pop+seq, MLP+seq                    half-A 0.83621  half-B 0.83701  vs current +0.00089
+  LGB+pop+seq, XGB+pop+seq, MLP+seq, MLP               half-A 0.83622  half-B 0.83699  vs current +0.00087
+  LGB+pop+seq, XGB+pop+seq, MLP                        half-A 0.83612  half-B 0.83687  vs current +0.00075
+  all seq members + MLP + LGB MF13 + LGB MF15          half-A 0.83598  half-B 0.83671  vs current +0.00059

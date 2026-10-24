@@ -1,0 +1,15 @@
+sequence scores: 18_mf_c7_3a4b8237d50b.npz
+day-6 AUC alone: MF 0.81891  sequence 0.79092  rank corr 0.8600
+
+  13 as is                           half-A 0.83492  half-B 0.83571  (190 trees)
+  + sequence features                half-A 0.83533  half-B 0.83617  (301 trees)
+  sequence features in the top 15 by gain: seq_item_bias (18,619)
+
+fitted rank blend of the LightGBM model with the sequence score:
+  w_seq 0.00  half-A 0.83492  half-B 0.83571
+  w_seq 0.10  half-A 0.83488  half-B 0.83574
+  w_seq 0.20  half-A 0.83381  half-B 0.83474
+  w_seq 0.30  half-A 0.83171  half-B 0.83273
+  w_seq 0.40  half-A 0.82861  half-B 0.82972
+  w_seq 0.50  half-A 0.82450  half-B 0.82570
+  chosen on half A: w_seq 0.05 -> half B 0.83586  gain +0.00014
