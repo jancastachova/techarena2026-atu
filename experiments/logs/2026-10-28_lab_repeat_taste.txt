@@ -1,0 +1,12 @@
+real     repeat rows 26792  ctr 0.290  within-repeat AUC of cosine 0.6794
+   by cosine quintile: 0.121  0.201  0.274  0.385  0.469
+   known 1-5: ctr 0.312 | by quintile 0.130 0.200 0.240 0.268 0.372 | AUC 0.6052
+   known 6-20: ctr 0.286 | by quintile 0.121 0.187 0.237 0.357 0.430 | AUC 0.6657
+   known 21-50: ctr 0.291 | by quintile 0.123 0.195 0.281 0.386 0.500 | AUC 0.6878
+   known 51-+: ctr 0.289 | by quintile 0.117 0.227 0.296 0.443 0.521 | AUC 0.7028
+replica  repeat rows 16032  ctr 0.376  within-repeat AUC of cosine 0.6595
+   by cosine quintile: 0.165  0.317  0.393  0.473  0.535
+   known 1-5: ctr 0.292 | by quintile 0.041 0.208 0.235 0.310 0.347 | AUC 0.5948
+   known 6-20: ctr 0.324 | by quintile 0.129 0.273 0.329 0.406 0.469 | AUC 0.6583
+   known 21-50: ctr 0.388 | by quintile 0.162 0.322 0.407 0.483 0.587 | AUC 0.6746
+   known 51-+: ctr 0.445 | by quintile 0.235 0.372 0.462 0.587 0.675 | AUC 0.6857

@@ -1,0 +1,4 @@
+dim 64 === aux:0.3+steps:13000+lrdecay:cos 3 seed(s): days 0-5 -> day 6 MF AUC 0.79943  proj8 cosine 0.82559  non-repeat rows 0.78733  repeat rows 0.62774
+dim 64 === aux:0.3+steps:13000+lrdecay:cos+l2:0.08 3 seed(s): days 0-5 -> day 6 MF AUC 0.80163  proj8 cosine 0.82584  non-repeat rows 0.78963  repeat rows 0.63703   rank corr with the first 0.9965
+dim 48 === aux:0.3+steps:13000+lrdecay:cos 3 seed(s): days 0-5 -> day 6 MF AUC 0.80376  proj8 cosine 0.82574  non-repeat rows 0.79201  repeat rows 0.63975
+dim 48 === aux:0.3+steps:13000+lrdecay:cos+l2:0.08 3 seed(s): days 0-5 -> day 6 MF AUC 0.80505  proj8 cosine 0.82586  non-repeat rows 0.79333  repeat rows 0.64707   rank corr with the first 0.9972

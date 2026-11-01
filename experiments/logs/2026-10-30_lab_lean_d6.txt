@@ -1,0 +1,19 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly', 'aud', 'audc', 'hop2c', 'hop3', 'hop2', 'idf_hop2', 'uoff10', 'dim64', 'choice', 'clicks_idf', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cos', 'cosproj8', 'cos_aud', 'cos_audc', 'cos_audc05', 'cos_wb', 'cos_hop2', 'cos_hop2c', 'cos_hop3', 'cos_hop4', 'temp06', 'cosresid8', 'cossoft20', 'soft_aud', 'act_a', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84466  eval-weighted 0.82794  first 0.82686  1-20 known clicks 0.81960  (981 trees)
+group gain share: core+pop+seq 0.038 | soft_aud 0.528, cosproj8 0.220, cos_hop4 0.044, clicks 0.023, cos_audc05 0.021, uvec09 0.017, clicks_unif 0.009, act_b 0.009, act_c 0.008, cosresid8 0.006, choice 0.006, cos_hop2c 0.005, uoff10 0.005, deep 0.005, sqrtview 0.004, clicks_idf 0.004, dim64 0.004, impronly 0.004, temp06 0.003, aud 0.003, idf 0.003, idf2 0.003, cos_aud 0.003, act_a 0.003, cos 0.003, cossoft20 0.003, idf15 0.003, cos_wb 0.003, audc 0.002, hop2c 0.002, cos_hop3 0.002, idf_hop2 0.002, hop3 0.001, hop2 0.001, cos_hop2 0.001, cos_audc 0.001
+  top 0 groups (49 cols)                       half-B 0.83694  eval-weighted 0.82015  first 0.81874  1-20 known clicks 0.81170  (1024 trees)
+    kept: []
+  top 3 groups (73 cols)                       half-B 0.84297  eval-weighted 0.82626  first 0.82500  1-20 known clicks 0.81754  (696 trees)
+    kept: ['soft_aud', 'cosproj8', 'cos_hop4']
+  top 6 groups (97 cols)                       half-B 0.84389  eval-weighted 0.82711  first 0.82608  1-20 known clicks 0.81856  (895 trees)
+    kept: ['soft_aud', 'cosproj8', 'cos_hop4', 'clicks', 'cos_audc05', 'uvec09']
+  top 10 groups (129 cols)                     half-B 0.84418  eval-weighted 0.82761  first 0.82653  1-20 known clicks 0.81919  (931 trees)
+    kept: ['soft_aud', 'cosproj8', 'cos_hop4', 'clicks', 'cos_audc05', 'uvec09', 'clicks_unif', 'act_b', 'act_c', 'cosresid8']
+  top 15 groups (169 cols)                     half-B 0.84447  eval-weighted 0.82779  first 0.82662  1-20 known clicks 0.81936  (1007 trees)
+    kept: ['soft_aud', 'cosproj8', 'cos_hop4', 'clicks', 'cos_audc05', 'uvec09', 'clicks_unif', 'act_b', 'act_c', 'cosresid8', 'choice', 'cos_hop2c', 'uoff10', 'deep', 'sqrtview']
+  top 20 groups (209 cols)                     half-B 0.84462  eval-weighted 0.82798  first 0.82684  1-20 known clicks 0.81953  (1251 trees)
+    kept: ['soft_aud', 'cosproj8', 'cos_hop4', 'clicks', 'cos_audc05', 'uvec09', 'clicks_unif', 'act_b', 'act_c', 'cosresid8', 'choice', 'cos_hop2c', 'uoff10', 'deep', 'sqrtview', 'clicks_idf', 'dim64', 'impronly', 'temp06', 'aud']

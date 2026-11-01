@@ -1,0 +1,17 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly', 'aud', 'audc', 'hop2c', 'hop3']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+clk_audc (1 cache(s)): day-6 AUC 0.80665, rank corr with MF30 0.8932, with sequence 0.8411
+clk_hop2c (1 cache(s)): day-6 AUC 0.81229, rank corr with MF30 0.8954, with sequence 0.8592
+clk_hop3 (1 cache(s)): day-6 AUC 0.81216, rank corr with MF30 0.8938, with sequence 0.8564
+clk_hop4 (1 cache(s)): day-6 AUC 0.81176, rank corr with MF30 0.8847, with sequence 0.8573
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84082  (1506 trees)
+  + clk_audc                                   half-B 0.84092  (1438 trees)
+    best-ranked clk_audc features by gain: clk_audc_logit #33, clk_audc_share #55, clk_audc_lse #71
+  + clk_hop2c                                  half-B 0.84080  (1438 trees)
+    best-ranked clk_hop2c features by gain: clk_hop2c_logit #52, clk_hop2c_share #66, clk_hop2c_lse #73
+  + clk_hop3                                   half-B 0.84085  (1725 trees)
+    best-ranked clk_hop3 features by gain: clk_hop3_logit #52, clk_hop3_share #55, clk_hop3_lse #77
+  + clk_hop4                                   half-B 0.84067  (1505 trees)
+    best-ranked clk_hop4 features by gain: clk_hop4_share #24, clk_hop4_logit #26, clk_hop4_rank #29

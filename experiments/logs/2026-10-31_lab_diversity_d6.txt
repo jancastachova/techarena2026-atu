@@ -1,0 +1,30 @@
+### W1
+  base (= the best member)                     half-B 0.84498  eval-weighted 0.82816  first 0.82695  gap-weighted 0.82593  1-20 known clicks 0.81986  (1003 trees)
+member alone vs SET40:
+  plain          A 0.84505  B 0.84498  B-A -0.00006  95% interval [-0.00022, +0.00007]  P(B > A) 0.23
+  eval-weighted  A 0.82839  B 0.82816  B-A -0.00023  95% interval [-0.00048, +0.00013]  P(B > A) 0.08
+  gap-weighted   A 0.82626  B 0.82598  B-A -0.00028  95% interval [-0.00060, +0.00013]  P(B > A) 0.09
+50/50 average vs SET40:
+  plain          A 0.84505  B 0.84514  B-A +0.00010  95% interval [+0.00002, +0.00017]  P(B > A) 1.00
+  eval-weighted  A 0.82839  B 0.82844  B-A +0.00005  95% interval [-0.00008, +0.00023]  P(B > A) 0.78
+  gap-weighted   A 0.82626  B 0.82630  B-A +0.00004  95% interval [-0.00013, +0.00024]  P(B > A) 0.67
+### W2
+  base (= the best member)                     half-B 0.84516  eval-weighted 0.82841  first 0.82729  gap-weighted 0.82616  1-20 known clicks 0.82007  (3015 trees)
+member alone vs SET40:
+  plain          A 0.84505  B 0.84516  B-A +0.00012  95% interval [-0.00001, +0.00025]  P(B > A) 0.96
+  eval-weighted  A 0.82839  B 0.82841  B-A +0.00003  95% interval [-0.00021, +0.00030]  P(B > A) 0.58
+  gap-weighted   A 0.82626  B 0.82621  B-A -0.00005  95% interval [-0.00037, +0.00024]  P(B > A) 0.38
+50/50 average vs SET40:
+  plain          A 0.84505  B 0.84519  B-A +0.00015  95% interval [+0.00009, +0.00021]  P(B > A) 1.00
+  eval-weighted  A 0.82839  B 0.82852  B-A +0.00013  95% interval [+0.00001, +0.00027]  P(B > A) 0.98
+  gap-weighted   A 0.82626  B 0.82636  B-A +0.00010  95% interval [-0.00006, +0.00024]  P(B > A) 0.86
+### D38
+  base (= the best member)                     half-B 0.84517  eval-weighted 0.82842  first 0.82748  gap-weighted 0.82628  1-20 known clicks 0.82027  (1154 trees)
+member alone vs SET40:
+  plain          A 0.84505  B 0.84517  B-A +0.00012  95% interval [-0.00001, +0.00026]  P(B > A) 0.96
+  eval-weighted  A 0.82839  B 0.82842  B-A +0.00004  95% interval [-0.00021, +0.00030]  P(B > A) 0.67
+  gap-weighted   A 0.82626  B 0.82634  B-A +0.00007  95% interval [-0.00025, +0.00042]  P(B > A) 0.71
+50/50 average vs SET40:
+  plain          A 0.84505  B 0.84522  B-A +0.00017  95% interval [+0.00010, +0.00024]  P(B > A) 1.00
+  eval-weighted  A 0.82839  B 0.82855  B-A +0.00016  95% interval [+0.00004, +0.00029]  P(B > A) 1.00
+  gap-weighted   A 0.82626  B 0.82645  B-A +0.00019  95% interval [+0.00002, +0.00036]  P(B > A) 0.99

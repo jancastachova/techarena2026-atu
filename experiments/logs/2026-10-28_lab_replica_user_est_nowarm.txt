@@ -1,0 +1,16 @@
+NO_WARM: warm-up clicks excluded from every estimator; groups by simulated clicks of days 0-5
+day-6 events 95790; true taste norm 1.72
+oracle theta                       AUC 0.86544 | 1-5 0.8699  6-20 0.8660  21+ 0.8609
+mean (unit)                        AUC 0.82361 | 1-5 0.7781  6-20 0.8315  21+ 0.8497
+contrast beta 0.3                  AUC 0.82367 | 1-5 0.7781  6-20 0.8316  21+ 0.8498
+contrast beta 1.0                  AUC 0.82111 | 1-5 0.7731  6-20 0.8292  21+ 0.8492
+MAP prior var 0.37, mean 0         AUC 0.81537 | 1-5 0.7688  6-20 0.8237  21+ 0.8450
+MAP prior var 0.37, mean 0, unit   AUC 0.81878 | 1-5 0.7713  6-20 0.8265  21+ 0.8469
+MAP prior var 0.1, mean 0          AUC 0.81046 | 1-5 0.7698  6-20 0.8250  21+ 0.8453
+MAP prior var 0.1, mean 0, unit    AUC 0.82127 | 1-5 0.7744  6-20 0.8294  21+ 0.8482
+MAP prior var 0.37, mean c x mean  AUC 0.81830 | 1-5 0.7738  6-20 0.8249  21+ 0.8451
+MAP prior var 0.37, mean c x mean, unit AUC 0.81960 | 1-5 0.7742  6-20 0.8268  21+ 0.8468
+MAP prior var 0.1, mean c x mean   AUC 0.82216 | 1-5 0.7773  6-20 0.8296  21+ 0.8473
+MAP prior var 0.1, mean c x mean, unit AUC 0.82240 | 1-5 0.7773  6-20 0.8303  21+ 0.8482
+MAP prior var 0.03, mean c x mean  AUC 0.82349 | 1-5 0.7780  6-20 0.8313  21+ 0.8489
+MAP prior var 0.03, mean c x mean, unit AUC 0.82341 | 1-5 0.7780  6-20 0.8314  21+ 0.8493

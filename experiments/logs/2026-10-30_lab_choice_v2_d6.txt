@@ -1,0 +1,22 @@
+### attn, 1 seed
+4,898,070 rows, 169 features; train rows 3,918,560
+event-constant columns: 57
+  seed 0: best half-A 0.84410; half-B of this seed 0.84478
+  choice model                 half-B 0.84478  eval-weighted 0.82805  first 0.82719
+  LightGBM                     half-B 0.84447  eval-weighted 0.82779  first 0.82662
+  rank corr choice vs LightGBM 0.9928
+  rank blend, choice weight 0.3 half-B 0.84490  eval-weighted 0.82826  first 0.82717
+  rank blend, choice weight 0.5 half-B 0.84502  eval-weighted 0.82839  first 0.82736
+wrote data/cache/lab_preds_choice_attn_d6.npz
+### plain, 3 seeds
+4,898,070 rows, 169 features; train rows 3,918,560
+event-constant columns: 57
+  seed 0: best half-A 0.84405; half-B of this seed 0.84478
+  seed 1: best half-A 0.84403; half-B of this seed 0.84475
+  seed 2: best half-A 0.84414; half-B of this seed 0.84490
+  choice model                 half-B 0.84508  eval-weighted 0.82833  first 0.82738
+  LightGBM                     half-B 0.84447  eval-weighted 0.82779  first 0.82662
+  rank corr choice vs LightGBM 0.9951
+  rank blend, choice weight 0.3 half-B 0.84491  eval-weighted 0.82824  first 0.82713
+  rank blend, choice weight 0.5 half-B 0.84508  eval-weighted 0.82841  first 0.82734
+wrote data/cache/lab_preds_choice_s3_d6.npz

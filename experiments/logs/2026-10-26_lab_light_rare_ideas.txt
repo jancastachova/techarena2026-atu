@@ -1,0 +1,29 @@
+day 6 baselines:
+  MF30 logit (30 seeds)                    all 0.81921 | 1-5 0.7532  6-20 0.8016  21+ 0.8300  cand<=10 0.7726  cand 11-30 0.8186  cand 31+ 0.8416
+  MF dot (1 seed)                          all 0.81278 | 1-5 0.7463  6-20 0.7956  21+ 0.8236  cand<=10 0.7688  cand 11-30 0.8116  cand 31+ 0.8315
+
+L1 / R3: raw item-item co-clicks (ii3)
+  ii3 alone                                all 0.55936 | 1-5 0.5578  6-20 0.5630  21+ 0.5590  cand<=10 0.5375  cand 11-30 0.5734  cand 31+ 0.6429
+  MF30 + 0.1 x ii3                         all 0.82026 | 1-5 0.7547  6-20 0.8024  21+ 0.8310  cand<=10 0.7737  cand 11-30 0.8186  cand 31+ 0.8407
+  MF30 + 0.2 x ii3                         all 0.82001 | 1-5 0.7550  6-20 0.8019  21+ 0.8307  cand<=10 0.7744  cand 11-30 0.8181  cand 31+ 0.8389
+  MF30 + 0.4 x ii3                         all 0.81758 | 1-5 0.7530  6-20 0.7989  21+ 0.8284  cand<=10 0.7754  cand 11-30 0.8169  cand 31+ 0.8349
+
+L2: history expansion scaled by sparsity, hv + lam/(n+k) * u2 (1-seed vectors)
+  MF dot with expansion lam 1 k 1          all 0.81255 | 1-5 0.7462  6-20 0.7957  21+ 0.8236  cand<=10 0.7686  cand 11-30 0.8113  cand 31+ 0.8313
+  MF dot with expansion lam 3 k 1          all 0.81206 | 1-5 0.7457  6-20 0.7958  21+ 0.8237  cand<=10 0.7681  cand 11-30 0.8107  cand 31+ 0.8308
+  MF dot with expansion lam 3 k 5          all 0.81249 | 1-5 0.7466  6-20 0.7959  21+ 0.8237  cand<=10 0.7685  cand 11-30 0.8112  cand 31+ 0.8313
+  MF dot with expansion lam 10 k 5         all 0.81170 | 1-5 0.7467  6-20 0.7963  21+ 0.8238  cand<=10 0.7676  cand 11-30 0.8102  cand 31+ 0.8306
+
+L3: item click rate among light users (<= 20 known clicks) vs all users, impressions before day 6
+  item rate, all users                     all 0.52791 | 1-5 0.5291  6-20 0.5242  21+ 0.5291  cand<=10 0.5077  cand 11-30 0.5162  cand 31+ 0.5239
+  item rate, light users only              all 0.51748 | 1-5 0.5194  6-20 0.5211  21+ 0.5162  cand<=10 0.5030  cand 11-30 0.5081  cand 31+ 0.5147
+  MF30 + 0.1 x light-user item rate        all 0.81509 | 1-5 0.7513  6-20 0.7981  21+ 0.8255  cand<=10 0.7670  cand 11-30 0.8149  cand 31+ 0.8395
+  MF30 + 0.2 x light-user item rate        all 0.80868 | 1-5 0.7482  6-20 0.7925  21+ 0.8185  cand<=10 0.7588  cand 11-30 0.8084  cand 31+ 0.8359
+  MF30 + 0.4 x light-user item rate        all 0.79094 | 1-5 0.7396  6-20 0.7768  21+ 0.7993  cand<=10 0.7369  cand 11-30 0.7893  cand 31+ 0.8246
+  MF30 + 0.1 x light minus overall item rate all 0.81922 | 1-5 0.7527  6-20 0.8017  21+ 0.8300  cand<=10 0.7739  cand 11-30 0.8179  cand 31+ 0.8409
+  MF30 + 0.2 x light minus overall item rate all 0.81642 | 1-5 0.7510  6-20 0.7993  21+ 0.8269  cand<=10 0.7708  cand 11-30 0.8140  cand 31+ 0.8386
+
+R1: rare items' vectors shrunk toward their k-means cluster centre (k = 200)
+  MF dot, cluster-shrunk vectors k_s 2     all 0.81291 | 1-5 0.7459  6-20 0.7958  21+ 0.8237  cand<=10 0.7684  cand 11-30 0.8119  cand 31+ 0.8317
+  MF dot, cluster-shrunk vectors k_s 5     all 0.81218 | 1-5 0.7449  6-20 0.7951  21+ 0.8229  cand<=10 0.7646  cand 11-30 0.8115  cand 31+ 0.8319
+  MF dot, cluster-shrunk vectors k_s 20    all 0.80664 | 1-5 0.7400  6-20 0.7899  21+ 0.8172  cand<=10 0.7506  cand 11-30 0.8046  cand 31+ 0.8311

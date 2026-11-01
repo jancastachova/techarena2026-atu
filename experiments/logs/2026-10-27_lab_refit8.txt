@@ -1,0 +1,8 @@
+global fit: intercept -4.346, scale s 5.701
+projected cosine (1 seed)      AUC 0.81950 | cand clicks 0-3 0.6865  4-10 0.7810  11-30 0.8178  31+ 0.8401
+refit lam 1: x . beta          AUC 0.81641 | cand clicks 0-3 0.6887  4-10 0.7803  11-30 0.8146  31+ 0.8363
+refit lam 1: x . beta + b      AUC 0.81403 | cand clicks 0-3 0.6867  4-10 0.7751  11-30 0.8116  31+ 0.8359
+refit lam 10: x . beta         AUC 0.81950 | cand clicks 0-3 0.6868  4-10 0.7811  11-30 0.8178  31+ 0.8401
+refit lam 10: x . beta + b     AUC 0.81660 | cand clicks 0-3 0.6848  4-10 0.7755  11-30 0.8142  31+ 0.8392
+refit lam 100: x . beta        AUC 0.81951 | cand clicks 0-3 0.6866  4-10 0.7810  11-30 0.8178  31+ 0.8401
+refit lam 100: x . beta + b    AUC 0.81660 | cand clicks 0-3 0.6845  4-10 0.7753  11-30 0.8142  31+ 0.8392

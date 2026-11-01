@@ -1,0 +1,35 @@
+4,898,070 rows, 337 features; train rows 3,918,560
+event-constant columns: 94
+  seed 0 epoch 1: half-A AUC 0.84333
+  seed 0 epoch 2: half-A AUC 0.84351
+  seed 0 epoch 3: half-A AUC 0.84397
+  seed 0 epoch 4: half-A AUC 0.84356
+  seed 0 epoch 5: half-A AUC 0.84397
+  seed 0 epoch 6: half-A AUC 0.84418
+  seed 0 epoch 7: half-A AUC 0.84415
+  seed 0 epoch 8: half-A AUC 0.84405
+  seed 0: best half-A 0.84418; half-B of this seed 0.84488
+  seed 1 epoch 1: half-A AUC 0.84214
+  seed 1 epoch 2: half-A AUC 0.84376
+  seed 1 epoch 3: half-A AUC 0.84394
+  seed 1 epoch 4: half-A AUC 0.84378
+  seed 1 epoch 5: half-A AUC 0.84408
+  seed 1 epoch 6: half-A AUC 0.84420
+  seed 1 epoch 7: half-A AUC 0.84432
+  seed 1 epoch 8: half-A AUC 0.84415
+  seed 1 epoch 9: half-A AUC 0.84409
+  seed 1: best half-A 0.84432; half-B of this seed 0.84483
+  seed 2 epoch 1: half-A AUC 0.84349
+  seed 2 epoch 2: half-A AUC 0.84376
+  seed 2 epoch 3: half-A AUC 0.84380
+  seed 2 epoch 4: half-A AUC 0.84404
+  seed 2 epoch 5: half-A AUC 0.84372
+  seed 2 epoch 6: half-A AUC 0.84395
+  seed 2: best half-A 0.84404; half-B of this seed 0.84467
+  choice model                 half-B 0.84503  eval-weighted 0.82837  first 0.82730
+  LightGBM                     half-B 0.84466  eval-weighted 0.82794  first 0.82686
+  rank corr choice vs LightGBM 0.9943
+  rank blend, choice weight 0.3 half-B 0.84505  eval-weighted 0.82840  first 0.82731
+  rank blend, choice weight 0.5 half-B 0.84518  eval-weighted 0.82855  first 0.82747
+wrote data/cache/lab_preds_choice_full_s3_d6.npz
+exit 0

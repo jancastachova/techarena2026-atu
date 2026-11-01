@@ -1,0 +1,7 @@
+day 2: aud AUC 0.77810, audc AUC 0.77358
+day 3: aud AUC 0.79057, audc AUC 0.78891
+day 4: aud AUC 0.79968, audc AUC 0.79920
+day 5: aud AUC 0.80863, audc AUC 0.80908
+day 6: aud AUC 0.81363, audc AUC 0.81451
+aud: wrote data/cache/26_aud_c7.npz (test score mean 0.397 sd 3.088, fit days 2-6 mean 0.404 sd 3.000)
+audc: wrote data/cache/26_audc_c7.npz (test score mean 0.241 sd 3.060, fit days 2-6 mean 0.245 sd 3.000)

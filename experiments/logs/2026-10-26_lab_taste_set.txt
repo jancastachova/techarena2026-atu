@@ -1,0 +1,5 @@
+events with a repeated item in the 100: 0.890; with more than 100 known clicks: 0.032
+multiset mean (current)       all 0.81278  1-5 0.7463  6-20 0.7956  21-50 0.8210  51+ 0.8310
+unique items                  all 0.81304  1-5 0.7452  6-20 0.7959  21-50 0.8216  51+ 0.8315
+unique, weight sqrt(count)    all 0.81330  1-5 0.7460  6-20 0.7964  21-50 0.8217  51+ 0.8315
+all known clicks (no 100 cap) all 0.81282  1-5 0.7463  6-20 0.7956  21-50 0.8210  51+ 0.8312

@@ -1,0 +1,10 @@
+day 2: audience AUC 0.77810, contrast 0.77358
+day 3: audience AUC 0.79057, contrast 0.78891
+day 4: audience AUC 0.79968, contrast 0.79920
+day 5: audience AUC 0.80863, contrast 0.80908
+day 6: audience AUC 0.81363, contrast 0.81451
+
+LightGBM (lr 0.02):
+  current best feature set                 half-B 0.83854  half-A 0.83799  (1206 trees)
+  + audience (1 seed of vectors)           half-B 0.83973  half-A 0.83910  (2046 trees)
+    by gain: audc_dot #4, audc_share #8, aud_share #9, aud_dot #12, audc_rank #13, aud_rank #22, aud_log_n #40, audc_lse #51, aud_lse #60, audc_minus_max #61, aud_minus_max #64

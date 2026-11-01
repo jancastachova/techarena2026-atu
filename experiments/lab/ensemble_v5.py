@@ -21,6 +21,8 @@ ap.add_argument("--ref", type=float, default=0.83850,
                 help="half-B AUC of the combination behind the current best upload (for the last line)")
 ap.add_argument("--mlp-lr", type=float, default=1e-3)
 ap.add_argument("--mlp-seeds", type=int, default=3)
+ap.add_argument("--save-members", help="write the members' half-A/half-B predictions to this .npz")
+ap.add_argument("--lgb-extra", default="", help="LightGBM settings for the full member, e.g. feature_fraction=0.5")
 ap.add_argument("--stage", help=argparse.SUPPRESS)
 a = ap.parse_args()
 spec = importlib.util.spec_from_file_location("e13", ROOT / "experiments/13_retune_7days/retune.py")
@@ -124,8 +126,8 @@ print(f"true baseline (LGB MF13 + LGB MF15): half-B {cur_B:.5f}; reference combi
       flush=True)
 
 import lightgbm as lgb, xgboost as xgb
-def lgbm(Xm, nm, lr=0.02):
-    p = {**e13.LGB_PARAMS, "learning_rate": lr}
+def lgbm(Xm, nm, lr=0.02, extra=None):
+    p = {**e13.LGB_PARAMS, "learning_rate": lr, **(extra or {})}
     m = lgb.train(p, lgb.Dataset(Xm[tr], y[tr], feature_name=nm), 8000,
                   valid_sets=[lgb.Dataset(Xm[A], y[A])], callbacks=[lgb.early_stopping(150, verbose=False)])
     return m.predict(Xm[A], num_iteration=m.best_iteration), m.predict(Xm[B], num_iteration=m.best_iteration)
@@ -144,13 +146,17 @@ def add(name, pred):
           flush=True)
 print("\nmembers:")
 add("LGB seq only (lr .02)", lgbm(SEQ_ONLY, seq_names))
-add("LGB full (lr .02)", lgbm(XF, fn))
+lgb_extra = {k: float(v) if "." in v else int(v) for k, v in (kv.split("=") for kv in a.lgb_extra.split(",") if kv)}
+add("LGB full (lr .02)", lgbm(XF, fn, extra=lgb_extra))
 add("XGB full", xgbm(XF))
 subprocess.run([sys.executable, __file__, "--stage", "nn", "--seq", a.seq,
                 "--mlp-lr", str(a.mlp_lr), "--mlp-seeds", str(a.mlp_seeds)] +
                sum([["--extra", s_] for s_ in a.extra], []), check=True)
 z = np.load(NN_OUT)
 add("MLP full", (z["A"], z["B"]))
+if a.save_members:
+    np.savez(a.save_members, rows_A=np.flatnonzero(A), rows_B=np.flatnonzero(B),
+             **{f"{k}|A": v[0] for k, v in members.items()}, **{f"{k}|B": v[1] for k, v in members.items()})
 pa = sum(r(members[k][0]) for k in ("LGB full (lr .02)", "XGB full", "MLP full"))
 pb = sum(r(members[k][1]) for k in ("LGB full (lr .02)", "XGB full", "MLP full"))
 print(f"\nLGB + XGB + MLP, all full, equal weights: half-A {auc(pa, y[A]):.5f}  half-B {auc(pb, y[B]):.5f}  "

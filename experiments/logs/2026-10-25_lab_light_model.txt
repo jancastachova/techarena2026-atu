@@ -1,0 +1,6 @@
+full model 1494 trees, light-only model 863 trees (trained on 33.1% of the training rows)
+  light rows: 1.0 full + 0.0 light-only: half-B 0.84080  eval-weighted 0.82374  1-20 known clicks 0.81485
+  light rows: 0.7 full + 0.3 light-only: half-B 0.84082  eval-weighted 0.82380  1-20 known clicks 0.81491
+  light rows: 0.5 full + 0.5 light-only: half-B 0.84080  eval-weighted 0.82376  1-20 known clicks 0.81483
+  light rows: 0.3 full + 0.7 light-only: half-B 0.84076  eval-weighted 0.82367  1-20 known clicks 0.81465
+  light rows: 0.0 full + 1.0 light-only: half-B 0.84065  eval-weighted 0.82342  1-20 known clicks 0.81419

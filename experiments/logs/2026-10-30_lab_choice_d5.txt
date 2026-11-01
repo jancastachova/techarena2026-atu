@@ -1,0 +1,17 @@
+4,898,070 rows, 169 features; train rows 2,934,030
+event-constant columns: 57
+  epoch 1: loss 1.5463  half-A AUC 0.84037
+  epoch 2: loss 1.7704  half-A AUC 0.84073
+  epoch 3: loss 1.4137  half-A AUC 0.84089
+  epoch 4: loss 1.6060  half-A AUC 0.84079
+  epoch 5: loss 1.8923  half-A AUC 0.84091
+  epoch 6: loss 1.5809  half-A AUC 0.84094
+  epoch 7: loss 1.8088  half-A AUC 0.84103
+  epoch 8: loss 1.4406  half-A AUC 0.84065
+  epoch 9: loss 1.9878  half-A AUC 0.84091
+  choice model                 half-B 0.84013  eval-weighted 0.82139  first 0.82012
+  LightGBM                     half-B 0.83976  eval-weighted 0.82100  first 0.81969
+  rank corr choice vs LightGBM 0.9937
+  rank blend, choice weight 0.3 half-B 0.84020  eval-weighted 0.82149  first 0.82019
+  rank blend, choice weight 0.5 half-B 0.84033  eval-weighted 0.82164  first 0.82034
+wrote data/cache/lab_preds_choice_d5.npz

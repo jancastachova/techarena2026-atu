@@ -1,0 +1,23 @@
+gap          eval share  d6 share  d6 first  evt CTR AUC in-bkt
+0-6h             0.0474    0.4230    0.0715   0.6461     0.8559
+6-12h            0.0924    0.1603    0.1381   0.6343     0.8445
+12-24h           0.1832    0.1766    0.2759   0.6321     0.8418
+24-48h           0.2140    0.1257    0.2534   0.6102     0.8386
+48-96h           0.2119    0.0712    0.1565   0.6060     0.8245
+96-192h          0.1596    0.0307    0.0733   0.5761     0.8012
+192h+/none       0.0916    0.0124    0.0314   0.5378     0.7557
+half-B AUC plain 0.84505  gap-weighted to eval 0.82626
+half-B AUC plain 0.84505  gap-weighted to eval 0.82626
+
+within-event AUC / event click rate / mean known clicks, by gap bucket
+  0-6h         within 0.8460  evt CTR 0.6461  known clicks   47.7
+  6-12h        within 0.8356  evt CTR 0.6343  known clicks   34.5
+  12-24h       within 0.8313  evt CTR 0.6321  known clicks   27.6
+  24-48h       within 0.8281  evt CTR 0.6102  known clicks   20.5
+  48-96h       within 0.8139  evt CTR 0.6060  known clicks   13.7
+  96-192h      within 0.7924  evt CTR 0.5761  known clicks    8.2
+  192h+/none   within 0.7326  evt CTR 0.5378  known clicks    2.8
+
+row AUC by gap bucket inside known-clicks groups (21-50, 51-100)
+  21-50: 0-6h 0.8556 (n=11526) | 6-12h 0.8464 (n=5440) | 12-24h 0.8466 (n=5833) | 24-48h 0.8528 (n=3002) | 48-96h 0.8513 (n=690)
+  51-100: 0-6h 0.8636 (n=7320) | 6-12h 0.8511 (n=1014) | 12-24h 0.8456 (n=309)

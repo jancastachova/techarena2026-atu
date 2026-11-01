@@ -1,0 +1,27 @@
+### set40
+  base (= the best member)                     half-B 0.83366  eval-weighted 0.81692  first 0.81333  1-20 known clicks 0.80607  (571 trees)
+### set35
+  base (= the best member)                     half-B 0.83262  eval-weighted 0.81575  first 0.81231  1-20 known clicks 0.80479  (1085 trees)
+### set38
+  base (= the best member)                     half-B 0.83332  eval-weighted 0.81651  first 0.81279  1-20 known clicks 0.80570  (686 trees)
+### setlean
+  base (= the best member)                     half-B 0.83317  eval-weighted 0.81648  first 0.81281  1-20 known clicks 0.80565  (540 trees)
+### no_act
+  base (= the best member)                     half-B 0.83360  eval-weighted 0.81690  first 0.81333  1-20 known clicks 0.80606  (653 trees)
+### lean10
+  base (= the best member)                     half-B 0.83369  eval-weighted 0.81700  first 0.81347  1-20 known clicks 0.80614  (612 trees)
+### paired: set35 (A) vs SET40 (B)
+  plain          A 0.83262  B 0.83366  B-A +0.00104  95% interval [+0.00076, +0.00131]  P(B > A) 1.00
+  eval-weighted  A 0.81575  B 0.81692  B-A +0.00117  95% interval [+0.00065, +0.00159]  P(B > A) 1.00
+### paired: set38 (A) vs SET40 (B)
+  plain          A 0.83332  B 0.83366  B-A +0.00034  95% interval [+0.00013, +0.00051]  P(B > A) 1.00
+  eval-weighted  A 0.81651  B 0.81692  B-A +0.00041  95% interval [+0.00006, +0.00074]  P(B > A) 1.00
+### paired: setlean (A) vs SET40 (B)
+  plain          A 0.83317  B 0.83366  B-A +0.00049  95% interval [+0.00030, +0.00064]  P(B > A) 1.00
+  eval-weighted  A 0.81648  B 0.81692  B-A +0.00044  95% interval [+0.00016, +0.00069]  P(B > A) 1.00
+### paired: no_act (A) vs SET40 (B)
+  plain          A 0.83360  B 0.83366  B-A +0.00007  95% interval [-0.00005, +0.00021]  P(B > A) 0.84
+  eval-weighted  A 0.81690  B 0.81692  B-A +0.00002  95% interval [-0.00017, +0.00024]  P(B > A) 0.57
+### paired: lean10 (A) vs SET40 (B)
+  plain          A 0.83369  B 0.83366  B-A -0.00003  95% interval [-0.00022, +0.00013]  P(B > A) 0.38
+  eval-weighted  A 0.81700  B 0.81692  B-A -0.00008  95% interval [-0.00040, +0.00018]  P(B > A) 0.23

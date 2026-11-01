@@ -1,0 +1,12 @@
+  seed 0 epoch 0: half-A 0.83806
+  seed 0 epoch 1: half-A 0.83524
+  seed 0 epoch 2: half-A 0.82797
+  seed 1 epoch 0: half-A 0.83597
+  seed 1 epoch 1: half-A 0.83427
+  seed 1 epoch 2: half-A 0.82689
+NN with IDs: half-B 0.83877  eval-weighted 0.82136
+NN with IDs alone: half-B 0.83877, eval-weighted 0.82136; bundle rank average 0.84162 / 0.82498; rank corr 0.9879
+  bundle x 1.00 + NN-IDs x 0.00 (chosen on half A): half-B 0.84162  eval-weighted 0.82498  +0.00000 [+0.00000, +0.00000]
+  bundle x 0.90 + NN-IDs x 0.10: half-B 0.84160  eval-weighted 0.82496  -0.00002 [-0.00008, +0.00004]
+  bundle x 0.80 + NN-IDs x 0.20: half-B 0.84151  eval-weighted 0.82486  -0.00012 [-0.00024, +0.00001]
+  bundle x 0.70 + NN-IDs x 0.30: half-B 0.84137  eval-weighted 0.82468  -0.00030 [-0.00047, -0.00010]

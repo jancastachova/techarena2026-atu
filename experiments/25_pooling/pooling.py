@@ -158,10 +158,17 @@ HIST_LONG = 100               # user vector over the most recent HIST_LONG known
 AUX_WEIGHT = 0.1              # weight of the click-log loss
 N_NEG = 9                     # sampled negatives per logged click
 N_SEEDS = 15                # experiment 12: 10
-POOL = "mean"                 # "mean" (= experiment 13), "idf" or "learned"
+POOL = "mean"                 # "mean" (= experiment 13), "idf", "learned", or for the EVENT histories
+                              # only (newest first): "recent" (mean of the POOL_GAMMA most recent known
+                              # clicks) / "decay" (weight exp(-position / POOL_GAMMA)); the click-log
+                              # contexts keep the plain mean (their order is not "time before the click")
 POOL_GAMMA = 0.5              # idf: w_h = (1 + clicks_h) ** -POOL_GAMMA
 AUX_FULL = False              # click-log loss as a FULL softmax over all items (the multinomial
                               # likelihood of Mult-VAE / Mult-DAE) instead of 1 click vs 9 sampled items
+SEED_OFFSET = 0               # first MF seed (run offsets in parallel, then average the caches)
+USER_OFFSET = 0.0             # > 0: add a learned per-user correction w_u (zero at the start) to the
+                              # user vector, learned from the impression loss only, with an extra l2
+                              # of USER_OFFSET x the usual one on w_u; 0 = experiment 13
 HIST_DROP = 0.0               # training only: each known click is hidden from the user vector with this
                               # probability (denoising, as in denoising autoencoders); 0 = experiment 13
 NEG_DIST = "impr"             # click-log negatives drawn by: "impr" (impression share, = experiment 13),
@@ -691,6 +698,9 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
                 self.pool_a = torch.nn.Embedding(n_items, 1)
                 torch.nn.init.zeros_(self.pool_a.weight)
             self.g = torch.nn.Parameter(torch.tensor(math.log(CTR_PRIOR / (1 - CTR_PRIOR))))
+            if USER_OFFSET:
+                self.wu = torch.nn.Embedding(n_users, dim)
+                torch.nn.init.zeros_(self.wu.weight)
             self.bu = torch.nn.Embedding(n_users, 1)
             self.bi = torch.nn.Embedding(n_items, 1)
             qi = torch.nn.Embedding(n_items, dim)       # created as in experiment 04 (same random
@@ -706,20 +716,34 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
                 self.s0 = torch.nn.Parameter(torch.zeros(1))   # logit of "no click"
 
         def user_vec(self, hist, hlen):
-            if POOL == "mean":
+            if POOL in ("mean", "recent", "decay"):
                 return self.yh(hist).sum(1) / hlen.clamp(min=1).unsqueeze(1)
             w = self.pool_w[hist]                               # 0 on padding
             if POOL == "learned":
                 w = w * torch.exp(self.pool_a(hist).squeeze(2))
             return (w.unsqueeze(2) * self.yh(hist)).sum(1) / w.sum(1, keepdim=True).clamp(min=1e-6)
 
+        def event_user_vec(self, hist, hlen):
+            """User vector for an event's history (newest first): recency pooling if chosen."""
+            if POOL not in ("recent", "decay"):
+                return self.user_vec(hist, hlen)
+            pos_ = torch.arange(hist.shape[1], dtype=torch.float32).unsqueeze(0)
+            w = (pos_ < POOL_GAMMA).float() if POOL == "recent" else torch.exp(-pos_ / POOL_GAMMA)
+            w = w * (hist > 0).float()
+            return (w.unsqueeze(2) * self.yh(hist)).sum(1) / w.sum(1, keepdim=True).clamp(min=1e-6)
+
         def forward(self, u, items, hist, hlen):
-            hv = self.user_vec(hist, hlen)
+            hv = self.event_user_vec(hist, hlen)
+            extra = 0.0
+            if USER_OFFSET:
+                w = self.wu(u)
+                hv = hv + w
+                extra = USER_OFFSET * (w ** 2).sum()
             q = self.qi(items)
             bu = self.bu(u).expand(-1, items.shape[1])
             bi = self.bi(items).squeeze(2)
             dot = (hv.unsqueeze(1) * q).sum(2)
-            reg = (q ** 2).sum() / items.shape[1] + (hv ** 2).sum()
+            reg = (q ** 2).sum() / items.shape[1] + (hv ** 2).sum() + extra
             return self.g + bu + bi + dot, bi, bu, dot, reg
 
     def event_tensors(d, ev):
@@ -824,7 +848,7 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
 
     def averaged(d, events, clicks, n_users, n_items, n_seeds, init_vectors, score_fn, pool_w=None):
         out = None
-        for seed in range(n_seeds):
+        for seed in range(SEED_OFFSET, SEED_OFFSET + n_seeds):
             s = score_fn(train(d, events, clicks, n_users, n_items, seed, init_vectors, pool_w))
             out = s if out is None else out + s
         return out / n_seeds
@@ -853,9 +877,9 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
 
     if tune:
         global MF_STEPS, MF_L2, AUX_WEIGHT, INIT_STD
-        global HIST_DROP, IMPR_WEIGHT, AUX_FULL
+        global HIST_DROP, IMPR_WEIGHT, AUX_FULL, USER_OFFSET
         defaults = (MF_STEPS, MF_L2, AUX_WEIGHT, INIT_STD_DEFAULT, POOL, POOL_GAMMA, HIST_DROP,
-                    IMPR_WEIGHT, AUX_FULL)
+                    IMPR_WEIGHT, AUX_FULL, USER_OFFSET)
         first = None
         day = cutoff - 1
         train_ev, target = np.flatnonzero(ev_day < day), np.flatnonzero(ev_day == day)
@@ -864,7 +888,7 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
         y_t = fit["label"][rows]
         for kind in tune:
             (MF_STEPS, MF_L2, AUX_WEIGHT, INIT_STD, POOL, POOL_GAMMA, HIST_DROP,
-             IMPR_WEIGHT, AUX_FULL) = defaults
+             IMPR_WEIGHT, AUX_FULL, USER_OFFSET) = defaults
             init = None
             for part in kind.split("+"):                  # e.g. steps:7000+l2:0.08
                 name, _, val = part.partition(":")
@@ -878,12 +902,16 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
                     INIT_STD = float(val)
                 elif name == "idf":
                     POOL, POOL_GAMMA = "idf", float(val)
+                elif name == "uoff":
+                    USER_OFFSET = float(val)
                 elif name == "impr":
                     IMPR_WEIGHT = float(val)
                 elif name == "full":
                     AUX_FULL = True
                 elif name == "hdrop":
                     HIST_DROP = float(val)
+                elif name in ("recent", "decay"):
+                    POOL, POOL_GAMMA = name, float(val)
                 elif name == "learned":
                     POOL = "learned"
                 elif name == "ppmi":
@@ -900,7 +928,7 @@ def mf_stage(base_file, out_file, cutoff, pretrain, tune=None, tune_seeds=1):
                 msg += f"   rank corr with the first {np.corrcoef(first, rankdata(s[:, 0]))[0, 1]:.4f}"
             log(msg)
         (MF_STEPS, MF_L2, AUX_WEIGHT, INIT_STD, POOL, POOL_GAMMA, HIST_DROP,
-         IMPR_WEIGHT, AUX_FULL) = defaults
+         IMPR_WEIGHT, AUX_FULL, USER_OFFSET) = defaults
         return
 
     log(f"  MF: history up to {HIST_LONG} clicks, {N_SEEDS} seeds, pretraining {pretrain}")
@@ -1017,7 +1045,7 @@ def segments(fit, test):
 
 def main():
     global INIT_STD_DEFAULT, INIT_STD, POOL, POOL_GAMMA, N_SEEDS, IMPR_WEIGHT, AUX_WEIGHT, LOSS, NEG_DIST
-    global AUX_FULL
+    global AUX_FULL, SEED_OFFSET, USER_OFFSET
     ap = argparse.ArgumentParser()
     ap.add_argument("--train", default=str(ROOT / "data" / "train.csv"))
     ap.add_argument("--evaluation", default=str(ROOT / "data" / "evaluation.csv"))
@@ -1028,12 +1056,14 @@ def main():
     ap.add_argument("--init-std", type=float, default=INIT_STD_DEFAULT,
                     help="std of the random initial item vectors (0.05 reproduces experiment 11)")
     ap.add_argument("--cache-dir", default=str(ROOT / "data" / "cache"))
-    ap.add_argument("--pool", choices=["mean", "idf", "learned"], help="pooling for a full run")
+    ap.add_argument("--pool", choices=["mean", "idf", "learned", "recent", "decay"], help="pooling for a full run")
     ap.add_argument("--pool-gamma", type=float, help="idf exponent for a full run")
     ap.add_argument("--mf-seeds", type=int, help="override N_SEEDS")
     ap.add_argument("--impr-weight", type=float, help="impression-loss weight (0 = clicks only)")
     ap.add_argument("--loss", choices=["bce", "choice"], default="bce", help="impression loss")
     ap.add_argument("--aux-full", action="store_true", help="click-log loss as a full softmax over all items")
+    ap.add_argument("--seed-offset", type=int, default=0, help="first MF seed")
+    ap.add_argument("--user-offset", type=float, default=0.0, help="per-user correction, extra l2 factor")
     ap.add_argument("--neg", choices=["impr", "uniform", "clicks"], default="impr",
                     help="distribution of the click-log negatives")
     ap.add_argument("--aux-weight", type=float, help="click-log loss weight (default AUX_WEIGHT)")
@@ -1055,6 +1085,8 @@ def main():
     LOSS = a.loss
     NEG_DIST = a.neg
     AUX_FULL = a.aux_full
+    SEED_OFFSET = a.seed_offset
+    USER_OFFSET = a.user_offset
     if a.impr_weight is not None:
         IMPR_WEIGHT = a.impr_weight
     if a.aux_weight is not None:
@@ -1110,7 +1142,9 @@ def main():
                        + (() if IMPR_WEIGHT == 1.0 else (("impr_weight", IMPR_WEIGHT),))
                        + (() if LOSS == "bce" else (("loss", LOSS),))
                        + (() if NEG_DIST == "impr" else (("neg", NEG_DIST),))
-                       + (() if not AUX_FULL else (("aux_full", True),)))
+                       + (() if not AUX_FULL else (("aux_full", True),))
+                       + (() if not SEED_OFFSET else (("seed_offset", SEED_OFFSET),))
+                       + (() if not USER_OFFSET else (("user_offset", USER_OFFSET),)))
         mf_file = cache / f"25_mf_c{a.cutoff}_{code_hash(base_key, mf_src, settings)}.npz"
         if not mf_file.exists():
             tmp = mf_file.with_name(mf_file.stem + ".partial.npz")
@@ -1118,7 +1152,7 @@ def main():
                    "--mf-out", str(tmp), "--cutoff", str(a.cutoff), "--pretrain", a.pretrain,
                    "--init-std", str(a.init_std), "--pool", POOL, "--pool-gamma", str(POOL_GAMMA),
                    "--impr-weight", str(IMPR_WEIGHT), "--aux-weight", str(AUX_WEIGHT), "--loss", LOSS,
-                   "--neg", NEG_DIST] + (["--aux-full"] if AUX_FULL else [])
+                   "--neg", NEG_DIST, "--seed-offset", str(SEED_OFFSET), "--user-offset", str(USER_OFFSET)] + (["--aux-full"] if AUX_FULL else [])
             if a.mf_seeds:
                 cmd += ["--mf-seeds", str(a.mf_seeds)]
             subprocess.run(cmd, check=True)

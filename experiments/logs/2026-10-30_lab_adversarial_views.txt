@@ -1,0 +1,156 @@
+day-6 first events 35138, evaluation events 52939
+idf          col 0: AUC eval-vs-day6 0.508  median day6 -3.4831 eval -3.4762
+idf          col 1: AUC eval-vs-day6 0.500  median day6 -0.0588 eval -0.0597
+idf          col 2: AUC eval-vs-day6 0.510  median day6 +0.0412 eval +0.0171
+idf          col 3: AUC eval-vs-day6 0.500  median day6 +0.0797 eval +0.0679
+idf15        col 0: AUC eval-vs-day6 0.509  median day6 -3.4536 eval -3.4427
+idf15        col 1: AUC eval-vs-day6 0.499  median day6 -0.0498 eval -0.0513
+idf15        col 2: AUC eval-vs-day6 0.510  median day6 +0.0416 eval +0.0213
+idf15        col 3: AUC eval-vs-day6 0.500  median day6 +0.0495 eval +0.0405
+idf2         col 0: AUC eval-vs-day6 0.510  median day6 -3.4112 eval -3.3977
+idf2         col 1: AUC eval-vs-day6 0.498  median day6 -0.0451 eval -0.0472
+idf2         col 2: AUC eval-vs-day6 0.511  median day6 +0.0427 eval +0.0254
+idf2         col 3: AUC eval-vs-day6 0.500  median day6 +0.0332 eval +0.0250
+clicks       col 0: AUC eval-vs-day6 0.500  median day6 -2.5777 eval -2.5785
+clicks       col 1: AUC eval-vs-day6 0.500  median day6 -0.1128 eval -0.1124
+clicks       col 3: AUC eval-vs-day6 0.500  median day6 +0.2446 eval +0.2389
+impronly     col 0: AUC eval-vs-day6 0.512  median day6 -3.0607 eval -3.0459
+impronly     col 1: AUC eval-vs-day6 0.500  median day6 -0.1126 eval -0.1136
+impronly     col 2: AUC eval-vs-day6 0.513  median day6 +0.0567 eval +0.0465
+impronly     col 3: AUC eval-vs-day6 0.500  median day6 +0.0142 eval +0.0085
+aud          col 0: AUC eval-vs-day6 0.500  median day6 +0.3172 eval +0.2931
+aud          col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+aud          col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+aud          col 3: AUC eval-vs-day6 0.500  median day6 +0.3172 eval +0.2931
+audc         col 0: AUC eval-vs-day6 0.500  median day6 +0.1833 eval +0.1494
+audc         col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+audc         col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+audc         col 3: AUC eval-vs-day6 0.500  median day6 +0.1833 eval +0.1494
+hop2c        col 0: AUC eval-vs-day6 0.499  median day6 +0.1238 eval +0.0970
+hop2c        col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+hop2c        col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+hop2c        col 3: AUC eval-vs-day6 0.499  median day6 +0.1238 eval +0.0970
+hop3         col 0: AUC eval-vs-day6 0.499  median day6 +0.1260 eval +0.0933
+hop3         col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+hop3         col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+hop3         col 3: AUC eval-vs-day6 0.499  median day6 +0.1260 eval +0.0933
+hop2         col 0: AUC eval-vs-day6 0.500  median day6 +0.1985 eval +0.1702
+hop2         col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+hop2         col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+hop2         col 3: AUC eval-vs-day6 0.500  median day6 +0.1985 eval +0.1702
+idf_hop2     col 0: AUC eval-vs-day6 0.500  median day6 +0.1604 eval +0.1343
+idf_hop2     col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+idf_hop2     col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+idf_hop2     col 3: AUC eval-vs-day6 0.500  median day6 +0.1604 eval +0.1343
+uoff10       col 0: AUC eval-vs-day6 0.508  median day6 -3.5823 eval -3.5716
+uoff10       col 1: AUC eval-vs-day6 0.501  median day6 -0.0912 eval -0.0896
+uoff10       col 2: AUC eval-vs-day6 0.510  median day6 +0.0273 eval +0.0080
+uoff10       col 3: AUC eval-vs-day6 0.500  median day6 +0.1211 eval +0.1120
+dim64        col 0: AUC eval-vs-day6 0.507  median day6 -3.5663 eval -3.5641
+dim64        col 1: AUC eval-vs-day6 0.500  median day6 -0.0823 eval -0.0825
+dim64        col 2: AUC eval-vs-day6 0.508  median day6 +0.0353 eval +0.0063
+dim64        col 3: AUC eval-vs-day6 0.500  median day6 +0.1461 eval +0.1363
+choice       col 0: AUC eval-vs-day6 0.506  median day6 -2.7029 eval -2.6998
+choice       col 1: AUC eval-vs-day6 0.500  median day6 -0.1251 eval -0.1244
+choice       col 2: AUC eval-vs-day6 0.514  median day6 +0.0542 eval +0.0448
+choice       col 3: AUC eval-vs-day6 0.500  median day6 +0.0489 eval +0.0344
+clicks_idf   col 0: AUC eval-vs-day6 0.500  median day6 -2.6071 eval -2.6080
+clicks_idf   col 1: AUC eval-vs-day6 0.499  median day6 -0.0869 eval -0.0875
+clicks_idf   col 3: AUC eval-vs-day6 0.500  median day6 +0.2001 eval +0.1953
+clicks_unif  col 0: AUC eval-vs-day6 0.500  median day6 -2.5140 eval -2.5159
+clicks_unif  col 1: AUC eval-vs-day6 0.500  median day6 -0.0232 eval -0.0228
+clicks_unif  col 3: AUC eval-vs-day6 0.500  median day6 +0.2560 eval +0.2488
+uvec09       col 0: AUC eval-vs-day6 0.508  median day6 -3.5543 eval -3.5408
+uvec09       col 1: AUC eval-vs-day6 0.501  median day6 -0.0899 eval -0.0892
+uvec09       col 2: AUC eval-vs-day6 0.512  median day6 +0.0405 eval +0.0278
+uvec09       col 3: AUC eval-vs-day6 0.500  median day6 +0.1379 eval +0.1240
+deep         col 0: AUC eval-vs-day6 0.553  median day6 -5.9318 eval -5.4966
+deep         col 1: AUC eval-vs-day6 0.499  median day6 -0.0592 eval -0.0621
+deep         col 2: AUC eval-vs-day6 0.506  median day6 +0.0164 eval +0.0000
+deep         col 3: AUC eval-vs-day6 0.550  median day6 -3.4622 eval -3.0360
+sqrtview     col 0: AUC eval-vs-day6 0.500  median day6 +0.3039 eval +0.2759
+sqrtview     col 1: AUC eval-vs-day6 0.501  median day6 +0.0000 eval +0.0000
+sqrtview     col 2: AUC eval-vs-day6 0.501  median day6 +0.0000 eval +0.0000
+sqrtview     col 3: AUC eval-vs-day6 0.500  median day6 +0.3039 eval +0.2759
+cos          col 0: AUC eval-vs-day6 0.501  median day6 +0.3475 eval +0.3172
+cos          col 1: AUC eval-vs-day6 0.469  median day6 +2.7248 eval +2.6843
+cos          col 2: AUC eval-vs-day6 0.484  median day6 +1.5396 eval +1.5596
+cos          col 3: AUC eval-vs-day6 0.500  median day6 +0.0469 eval +0.0436
+cosproj8     col 0: AUC eval-vs-day6 0.500  median day6 +0.0744 eval +0.0442
+cosproj8     col 1: AUC eval-vs-day6 0.523  median day6 +2.4947 eval +2.5212
+cosproj8     col 2: AUC eval-vs-day6 0.515  median day6 +1.4559 eval +1.4912
+cosproj8     col 3: AUC eval-vs-day6 0.500  median day6 +0.0126 eval +0.0077
+cos_aud      col 0: AUC eval-vs-day6 0.500  median day6 +0.3575 eval +0.3249
+cos_aud      col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_aud      col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_aud      col 3: AUC eval-vs-day6 0.500  median day6 +0.3575 eval +0.3249
+cos_audc     col 0: AUC eval-vs-day6 0.500  median day6 +0.2043 eval +0.1652
+cos_audc     col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_audc     col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_audc     col 3: AUC eval-vs-day6 0.500  median day6 +0.2043 eval +0.1652
+cos_audc05   col 0: AUC eval-vs-day6 0.500  median day6 +0.2917 eval +0.2530
+cos_audc05   col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_audc05   col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_audc05   col 3: AUC eval-vs-day6 0.500  median day6 +0.2917 eval +0.2530
+cos_wb       col 0: AUC eval-vs-day6 0.501  median day6 +0.2673 eval +0.2395
+cos_wb       col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_wb       col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_wb       col 3: AUC eval-vs-day6 0.501  median day6 +0.2673 eval +0.2395
+cos_hop2     col 0: AUC eval-vs-day6 0.500  median day6 +0.2245 eval +0.1915
+cos_hop2     col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_hop2     col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_hop2     col 3: AUC eval-vs-day6 0.500  median day6 +0.2245 eval +0.1915
+cos_hop2c    col 0: AUC eval-vs-day6 0.500  median day6 +0.1422 eval +0.1081
+cos_hop2c    col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_hop2c    col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_hop2c    col 3: AUC eval-vs-day6 0.500  median day6 +0.1422 eval +0.1081
+cos_hop3     col 0: AUC eval-vs-day6 0.500  median day6 +0.1460 eval +0.1112
+cos_hop3     col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_hop3     col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_hop3     col 3: AUC eval-vs-day6 0.500  median day6 +0.1460 eval +0.1112
+cos_hop4     col 0: AUC eval-vs-day6 0.500  median day6 +0.1077 eval +0.0775
+cos_hop4     col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_hop4     col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+cos_hop4     col 3: AUC eval-vs-day6 0.500  median day6 +0.1077 eval +0.0775
+temp06       col 0: AUC eval-vs-day6 0.500  median day6 +0.0421 eval +0.0248
+temp06       col 1: AUC eval-vs-day6 0.510  median day6 +2.3461 eval +2.3578
+temp06       col 2: AUC eval-vs-day6 0.507  median day6 +1.3667 eval +1.3933
+temp06       col 3: AUC eval-vs-day6 0.500  median day6 +0.0114 eval +0.0069
+cosresid8    col 0: AUC eval-vs-day6 0.506  median day6 +0.7833 eval +0.8393
+cosresid8    col 1: AUC eval-vs-day6 0.397  median day6 +1.2947 eval +1.1784
+cosresid8    col 2: AUC eval-vs-day6 0.445  median day6 +0.6763 eval +0.6665
+cosresid8    col 3: AUC eval-vs-day6 0.502  median day6 +0.0397 eval +0.0410
+cossoft20    col 0: AUC eval-vs-day6 0.500  median day6 +0.2006 eval +0.1724
+cossoft20    col 1: AUC eval-vs-day6 0.500  median day6 +2.4867 eval +2.4879
+cossoft20    col 2: AUC eval-vs-day6 0.502  median day6 +1.4329 eval +1.4602
+cossoft20    col 3: AUC eval-vs-day6 0.500  median day6 +0.0305 eval +0.0266
+soft_aud     col 0: AUC eval-vs-day6 0.500  median day6 +0.2069 eval +0.1776
+soft_aud     col 1: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+soft_aud     col 2: AUC eval-vs-day6 0.522  median day6 +3.0910 eval +3.1781
+soft_aud     col 3: AUC eval-vs-day6 0.500  median day6 +0.2069 eval +0.1776
+act_a        col 0: AUC eval-vs-day6 0.491  median day6 +3.0445 eval +2.7726
+act_a        col 1: AUC eval-vs-day6 0.440  median day6 +1.3863 eval +0.6931
+act_a        col 2: AUC eval-vs-day6 0.454  median day6 +2.0794 eval +1.6094
+act_a        col 3: AUC eval-vs-day6 0.670  median day6 +6.0808 eval +6.1617
+act_b        col 0: AUC eval-vs-day6 0.463  median day6 +0.0307 eval -0.3143
+act_b        col 1: AUC eval-vs-day6 0.531  median day6 +3.2155 eval +3.5132
+act_b        col 2: AUC eval-vs-day6 0.476  median day6 +2.7081 eval +2.3979
+act_b        col 3: AUC eval-vs-day6 0.509  median day6 +2.3979 eval +2.1972
+act_c        col 0: AUC eval-vs-day6 0.516  median day6 +0.6438 eval +0.6445
+
+most separating columns:
+  act_a        col 3: 0.670  (+6.0808 -> +6.1617)
+  cosresid8    col 1: 0.397  (+1.2947 -> +1.1784)
+  act_a        col 1: 0.440  (+1.3863 -> +0.6931)
+  cosresid8    col 2: 0.445  (+0.6763 -> +0.6665)
+  deep         col 0: 0.553  (-5.9318 -> -5.4966)
+  deep         col 3: 0.550  (-3.4622 -> -3.0360)
+  act_a        col 2: 0.454  (+2.0794 -> +1.6094)
+  act_b        col 0: 0.463  (+0.0307 -> -0.3143)
+  cos          col 1: 0.469  (+2.7248 -> +2.6843)
+  act_b        col 1: 0.531  (+3.2155 -> +3.5132)
+  act_b        col 2: 0.476  (+2.7081 -> +2.3979)
+  cosproj8     col 1: 0.523  (+2.4947 -> +2.5212)
+  soft_aud     col 2: 0.522  (+3.0910 -> +3.1781)
+  soft_aud     col 1: 0.522  (+3.0910 -> +3.1781)
+  idf_hop2     col 2: 0.522  (+3.0910 -> +3.1781)

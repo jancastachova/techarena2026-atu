@@ -1,0 +1,5 @@
+A = data/cache/lab_members_hops_day6.npz
+B = data/cache/lab_members_combo4_day6.npz
+48,976 half-B events, 200 bootstrap resamples of events
+  plain          A 0.84122  B 0.84134  B-A +0.00012  95% interval [-0.00001, +0.00024]  P(B > A) 0.97
+  eval-weighted  A 0.82431  B 0.82466  B-A +0.00034  95% interval [+0.00013, +0.00054]  P(B > A) 1.00

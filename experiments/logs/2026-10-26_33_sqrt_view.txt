@@ -1,0 +1,6 @@
+day 2: sqrt-pooled dot AUC 0.78587
+day 3: sqrt-pooled dot AUC 0.79790
+day 4: sqrt-pooled dot AUC 0.80515
+day 5: sqrt-pooled dot AUC 0.81350
+day 6: sqrt-pooled dot AUC 0.81812
+wrote data/cache/33_sqrtpool_c7.npz

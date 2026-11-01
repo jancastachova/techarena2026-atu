@@ -1,0 +1,5 @@
+A = data/cache/lab_preds_34_proj.npz:base (= the best member)
+B = data/cache/lab_preds_34_proj.npz:+ cosproj8
+48,976 half-B events, 300 bootstrap resamples of events
+  plain          A 0.84278  B 0.84388  B-A +0.00110  95% interval [+0.00085, +0.00132]  P(B > A) 1.00
+  eval-weighted  A 0.82569  B 0.82687  B-A +0.00118  95% interval [+0.00081, +0.00152]  P(B > A) 1.00

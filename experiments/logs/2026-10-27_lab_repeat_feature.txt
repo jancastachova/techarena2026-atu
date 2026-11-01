@@ -1,0 +1,9 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly', 'aud', 'audc', 'hop2c', 'hop3', 'hop2', 'idf_hop2', 'uoff10', 'dim64', 'choice', 'clicks_idf', 'clicks_unif', 'uvec09', 'deep', 'sqrtview']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/repeat_feature.py:21: RuntimeWarning: divide by zero encountered in log
+  F = np.stack([np.where(pos > 0, np.log(pos), -1.0), (pos == 1).astype(float), np.log1p(cnt)], 1).astype(np.float32)
+  bundle + sqrtview                half-B 0.84157  eval-weighted 0.82477  1-20 known clicks 0.81609  (1455 trees)
+  + repeat position                half-B 0.84152  eval-weighted 0.82472  1-20 known clicks 0.81607  (1470 trees)
+  plain          diff -0.00005  95% [-0.00016, +0.00005]
+  eval-weighted  diff -0.00004  95% [-0.00028, +0.00019]

@@ -1,0 +1,6 @@
+re-shown, not in history     1.02% of rows  CTR 0.0588  item-rate expectation 0.0654  ratio 0.900
+fresh, not in history       96.39% of rows  CTR 0.0568  item-rate expectation 0.0630  ratio 0.901
+re-shown, in history         1.54% of rows  CTR 0.2987  item-rate expectation 0.0721  ratio 4.141
+fresh, in history            1.04% of rows  CTR 0.2848  item-rate expectation 0.0663  ratio 4.296
+re-shown: events since the earlier showing, quantiles 25/50/75/90: [6.0, 14.0, 33.0, 68.0]
+share of re-shown candidates that were shown in the immediately preceding event: 0.057

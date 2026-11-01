@@ -1,0 +1,13 @@
+193 features: 40 core, P1 MF family 97, P2 audience family 48, P3 sequence 8
+  full                   half-B 0.84118  eval-weighted 0.82445  (1387 trees)
+  P1 MF family           half-B 0.83881  eval-weighted 0.82168  (1513 trees)
+  P2 audience family     half-B 0.84013  eval-weighted 0.82333  (920 trees)
+  P3 sequence            half-B 0.83697  eval-weighted 0.82018  (849 trees)
+
+rank correlations on half B: full-P1 0.9885, full-P2 0.9965, full-P3 0.9837
+blends (half B; vs full alone, eval-weighted, paired interval):
+  full + P1              equal: half-B 0.84076 eval-w 0.82390 -0.00055 [-0.00084, -0.00025] | fitted (1.25, 0.24): eval-w 0.82446 +0.00001 [-0.00008, +0.00011]
+  full + P2              equal: half-B 0.84090 eval-w 0.82419 -0.00025 [-0.00045, -0.00006] | fitted (1.42, 0.07): eval-w 0.82445 +0.00000 [-0.00002, +0.00002]
+  full + P3              equal: half-B 0.84018 eval-w 0.82353 -0.00092 [-0.00125, -0.00055] | fitted (1.43, 0.06): eval-w 0.82446 +0.00002 [-0.00001, +0.00005]
+  full + P1 + P2 + P3    equal: half-B 0.84048 eval-w 0.82373 -0.00071 [-0.00104, -0.00034] | fitted (1.11, 0.40, 0.18, -0.20): eval-w 0.82442 -0.00003 [-0.00014, +0.00009]
+  P1 + P2 + P3           equal: half-B 0.83984 eval-w 0.82304 -0.00141 [-0.00185, -0.00092] | fitted (0.84, 1.03, -0.37): eval-w 0.82381 -0.00063 [-0.00098, -0.00033]

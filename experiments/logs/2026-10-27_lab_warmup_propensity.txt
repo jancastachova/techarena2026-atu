@@ -1,0 +1,24 @@
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/warmup_propensity.py:37: RuntimeWarning: divide by zero encountered in divide
+  p_warm = intensity / lam
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/warmup_propensity.py:37: RuntimeWarning: invalid value encountered in divide
+  p_warm = intensity / lam
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/warmup_propensity.py:49: RuntimeWarning: invalid value encountered in log
+  print(f"  corr(warm-up intensity / train event rate, train rate)   {corr(np.log(p_warm + 1e-3), p_train, ok):.3f}")
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/warmup_propensity.py:50: RuntimeWarning: invalid value encountered in log
+  print(f"  corr(warm-up intensity, train rate)                      {corr(np.log(intensity + 1e-3), p_train, ok):.3f}")
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/warmup_propensity.py:51: RuntimeWarning: divide by zero encountered in log
+  print(f"  corr(train event rate, train rate)                       {corr(np.log(lam), p_train, ok):.3f}")
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/warmup_propensity.py:52: RuntimeWarning: invalid value encountered in log
+  print(f"  corr(train click intensity, warm-up intensity) (log)     {corr(np.log(n_clk / 7 + 1e-3), np.log(intensity + 1e-3), ok):.3f}")
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/warmup_propensity.py:53: RuntimeWarning: divide by zero encountered in log
+  print(f"  corr(train event rate, warm-up intensity) (log)          {corr(np.log(lam), np.log(intensity + 1e-3), ok):.3f}")
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/warmup_propensity.py:53: RuntimeWarning: invalid value encountered in log
+  print(f"  corr(train event rate, warm-up intensity) (log)          {corr(np.log(lam), np.log(intensity + 1e-3), ok):.3f}")
+users with >= 20 train events and >= 5 visible warm-up clicks: 9873
+  corr(train click rate odd events, even events)           0.586   (reliability of a half)
+  corr(warm-up intensity / train event rate, train rate)   0.545
+  corr(warm-up intensity, train rate)                      0.342
+  corr(train event rate, train rate)                       -0.007
+  corr(train click intensity, warm-up intensity) (log)     0.836
+  corr(train event rate, warm-up intensity) (log)          0.771
+  median warm-up span 7.31 days, median warm-up clicks/day 2.60, train clicks/day 2.71

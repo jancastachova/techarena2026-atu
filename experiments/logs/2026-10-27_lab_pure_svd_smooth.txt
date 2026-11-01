@@ -1,0 +1,25 @@
+MF30 alone on day 6: 0.81921
+c  5 alpha 1.0 rank  32 back 1: alone 0.75293  1-5 0.7039  6-20 0.7393  21+ 0.7628  rank corr MF30 0.741  best blend w=0.1 0.81959
+c  5 alpha 1.0 rank  32 back 0: alone 0.73892  1-5 0.6994  6-20 0.7289  21+ 0.7461  rank corr MF30 0.722  best blend w=0.1 0.81898
+c  5 alpha 1.0 rank  64 back 1: alone 0.73455  1-5 0.6892  6-20 0.7188  21+ 0.7454  rank corr MF30 0.663  best blend w=0.1 0.81959
+c  5 alpha 1.0 rank  64 back 0: alone 0.72429  1-5 0.6872  6-20 0.7119  21+ 0.7326  rank corr MF30 0.652  best blend w=0.1 0.81904
+c  5 alpha 1.0 rank 128 back 1: alone 0.71079  1-5 0.6710  6-20 0.6883  21+ 0.7242  rank corr MF30 0.576  best blend w=0.1 0.81923
+c  5 alpha 1.0 rank 128 back 0: alone 0.70507  1-5 0.6714  6-20 0.6862  21+ 0.7160  rank corr MF30 0.573  best blend w=0.1 0.81879
+c 20 alpha 1.0 rank  32 back 1: alone 0.72133  1-5 0.6862  6-20 0.7073  21+ 0.7296  rank corr MF30 0.642  best blend w=0.1 0.81901
+c 20 alpha 1.0 rank  32 back 0: alone 0.71372  1-5 0.6834  6-20 0.7017  21+ 0.7206  rank corr MF30 0.630  best blend w=0.1 0.81873
+c 20 alpha 1.0 rank  64 back 1: alone 0.70503  1-5 0.6637  6-20 0.6867  21+ 0.7158  rank corr MF30 0.564  best blend w=0.1 0.81881
+c 20 alpha 1.0 rank  64 back 0: alone 0.69944  1-5 0.6610  6-20 0.6829  21+ 0.7089  rank corr MF30 0.555  best blend w=0.1 0.81859
+c 20 alpha 1.0 rank 128 back 1: alone 0.68368  1-5 0.6430  6-20 0.6613  21+ 0.6966  rank corr MF30 0.473  best blend w=0.1 0.81862
+c 20 alpha 1.0 rank 128 back 0: alone 0.67968  1-5 0.6414  6-20 0.6586  21+ 0.6914  rank corr MF30 0.467  best blend w=0.1 0.81843
+c 20 alpha 0.75 rank  32 back 1: alone 0.71394  1-5 0.6822  6-20 0.7007  21+ 0.7211  rank corr MF30 0.632  best blend w=0.1 0.81861
+c 20 alpha 0.75 rank  32 back 0: alone 0.70845  1-5 0.6799  6-20 0.6965  21+ 0.7148  rank corr MF30 0.623  best blend w=0.1 0.81843
+c 20 alpha 0.75 rank  64 back 1: alone 0.70106  1-5 0.6627  6-20 0.6826  21+ 0.7108  rank corr MF30 0.562  best blend w=0.1 0.81859
+c 20 alpha 0.75 rank  64 back 0: alone 0.69674  1-5 0.6609  6-20 0.6794  21+ 0.7056  rank corr MF30 0.555  best blend w=0.1 0.81844
+c 20 alpha 0.75 rank 128 back 1: alone 0.68080  1-5 0.6431  6-20 0.6616  21+ 0.6913  rank corr MF30 0.473  best blend w=0.1 0.81847
+c 20 alpha 0.75 rank 128 back 0: alone 0.67771  1-5 0.6418  6-20 0.6594  21+ 0.6875  rank corr MF30 0.468  best blend w=0.1 0.81835
+c 50 alpha 1.0 rank  32 back 1: alone 0.70992  1-5 0.6782  6-20 0.6966  21+ 0.7170  rank corr MF30 0.624  best blend w=0.1 0.81846
+c 50 alpha 1.0 rank  32 back 0: alone 0.70558  1-5 0.6763  6-20 0.6934  21+ 0.7120  rank corr MF30 0.617  best blend w=0.1 0.81833
+c 50 alpha 1.0 rank  64 back 1: alone 0.69753  1-5 0.6610  6-20 0.6791  21+ 0.7068  rank corr MF30 0.557  best blend w=0.1 0.81844
+c 50 alpha 1.0 rank  64 back 0: alone 0.69407  1-5 0.6596  6-20 0.6766  21+ 0.7027  rank corr MF30 0.551  best blend w=0.1 0.81833
+c 50 alpha 1.0 rank 128 back 1: alone 0.67900  1-5 0.6420  6-20 0.6593  21+ 0.6893  rank corr MF30 0.472  best blend w=0.1 0.81836
+c 50 alpha 1.0 rank 128 back 0: alone 0.67639  1-5 0.6410  6-20 0.6574  21+ 0.6861  rank corr MF30 0.468  best blend w=0.1 0.81827

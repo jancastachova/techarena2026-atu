@@ -1,0 +1,15 @@
+3 MF seed(s); share of rows by candidate clicks: 0-3 0.020, 4-10 0.181, 11-30 0.461, 31+ 0.339
+true taste logit                   AUC 0.87275  corr w/ true logit 1.0000  | by cand pop AUC/corr: 0-3 0.8367/1.000  4-10 0.8603/1.000  11-30 0.8730/1.000  31+ 0.8716/1.000
+MF (seed-averaged scores)          AUC 0.81302  corr w/ true logit 0.8243  | by cand pop AUC/corr: 0-3 0.6893/0.489  4-10 0.7625/0.711  11-30 0.8121/0.817  31+ 0.8260/0.876
+W + 0.25 (A - 0.0 B)               AUC 0.81392  corr w/ true logit 0.8276  | by cand pop AUC/corr: 0-3 0.6940/0.509  4-10 0.7648/0.718  11-30 0.8131/0.820  31+ 0.8257/0.876
+W + 0.5 (A - 0.0 B)                AUC 0.81439  corr w/ true logit 0.8295  | by cand pop AUC/corr: 0-3 0.6961/0.520  4-10 0.7663/0.722  11-30 0.8137/0.822  31+ 0.8254/0.877
+W + 1.0 (A - 0.0 B)                AUC 0.81461  corr w/ true logit 0.8309  | by cand pop AUC/corr: 0-3 0.6969/0.527  4-10 0.7678/0.727  11-30 0.8142/0.825  31+ 0.8245/0.876
+W + 2.0 (A - 0.0 B)                AUC 0.81398  corr w/ true logit 0.8299  | by cand pop AUC/corr: 0-3 0.6948/0.527  4-10 0.7686/0.730  11-30 0.8143/0.826  31+ 0.8228/0.874
+W + 0.25 (A - 0.5 B)               AUC 0.81437  corr w/ true logit 0.8284  | by cand pop AUC/corr: 0-3 0.6938/0.509  4-10 0.7649/0.718  11-30 0.8133/0.821  31+ 0.8266/0.878
+W + 0.5 (A - 0.5 B)                AUC 0.81524  corr w/ true logit 0.8311  | by cand pop AUC/corr: 0-3 0.6958/0.520  4-10 0.7664/0.723  11-30 0.8141/0.823  31+ 0.8270/0.879
+W + 1.0 (A - 0.5 B)                AUC 0.81612  corr w/ true logit 0.8337  | by cand pop AUC/corr: 0-3 0.6965/0.528  4-10 0.7681/0.728  11-30 0.8150/0.826  31+ 0.8275/0.881
+W + 2.0 (A - 0.5 B)                AUC 0.81638  corr w/ true logit 0.8342  | by cand pop AUC/corr: 0-3 0.6945/0.528  4-10 0.7690/0.731  11-30 0.8155/0.829  31+ 0.8277/0.883
+W + 0.25 (A - 1.0 B)               AUC 0.81477  corr w/ true logit 0.8291  | by cand pop AUC/corr: 0-3 0.6936/0.509  4-10 0.7649/0.718  11-30 0.8135/0.821  31+ 0.8274/0.879
+W + 0.5 (A - 1.0 B)                AUC 0.81593  corr w/ true logit 0.8321  | by cand pop AUC/corr: 0-3 0.6954/0.520  4-10 0.7665/0.723  11-30 0.8144/0.824  31+ 0.8284/0.882
+W + 1.0 (A - 1.0 B)                AUC 0.81714  corr w/ true logit 0.8348  | by cand pop AUC/corr: 0-3 0.6958/0.527  4-10 0.7681/0.728  11-30 0.8154/0.827  31+ 0.8297/0.885
+W + 2.0 (A - 1.0 B)                AUC 0.81746  corr w/ true logit 0.8341  | by cand pop AUC/corr: 0-3 0.6934/0.527  4-10 0.7688/0.730  11-30 0.8159/0.828  31+ 0.8306/0.886

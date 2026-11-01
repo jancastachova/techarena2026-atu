@@ -1,0 +1,2 @@
+=== base         3 seed(s): days 0-5 -> day 6 MF AUC 0.81750   by known clicks: 1-5 0.7525  6-20 0.7998  21-100 0.8283  (163s)
+=== allctx       3 seed(s): days 0-5 -> day 6 MF AUC 0.81768   by known clicks: 1-5 0.7525  6-20 0.7999  21-100 0.8285  (185s)

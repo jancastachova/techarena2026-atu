@@ -1,0 +1,8 @@
+level 1 for day 3 (trained on days 2-2, 266 trees): AUC 0.82171
+level 1 for day 4 (trained on days 2-3, 476 trees): AUC 0.82777
+level 1 for day 5 (trained on days 2-4, 761 trees): AUC 0.83662
+level 1 for day 6 (trained on days 2-5, 1005 trees): AUC 0.84064
+
+day 6 half B: level 1 alone half-B 0.84093  eval-weighted 0.82423
+              level 2 stack    half-B 0.84095  eval-weighted 0.82423  (88 trees)
+level 2 features by gain: l1_logit, l1_rank, l1_minus_max, mf_logit, seq_logit, user_log_events, user_rate_logit, hop2c_logit, hop3_logit, audc_logit, hist_len, item_log_clicks, rep_any

@@ -1,0 +1,12 @@
+clicker mean (current)   A       AUC 0.82379  1-5 0.7543  6-20 0.8055  21+ 0.8334
+clicker mean (current)   A-B     AUC 0.82469  1-5 0.7544  6-20 0.8060  21+ 0.8344
+clicker mean (current)   A-0.5B  AUC 0.82600  1-5 0.7557  6-20 0.8074  21+ 0.8357
+click-weighted           A       AUC 0.81822  1-5 0.7522  6-20 0.7995  21+ 0.8276
+click-weighted           A-B     AUC 0.81836  1-5 0.7516  6-20 0.7989  21+ 0.8280
+click-weighted           A-0.5B  AUC 0.82055  1-5 0.7538  6-20 0.8014  21+ 0.8301
+unit clicker tastes      A       AUC 0.82478  1-5 0.7555  6-20 0.8065  21+ 0.8343
+unit clicker tastes      A-B     AUC 0.82557  1-5 0.7556  6-20 0.8068  21+ 0.8352
+unit clicker tastes      A-0.5B  AUC 0.82695  1-5 0.7570  6-20 0.8083  21+ 0.8366
+sqrt(n)-weighted         A       AUC 0.82357  1-5 0.7553  6-20 0.8050  21+ 0.8331
+sqrt(n)-weighted         A-B     AUC 0.82449  1-5 0.7553  6-20 0.8053  21+ 0.8342
+sqrt(n)-weighted         A-0.5B  AUC 0.82592  1-5 0.7568  6-20 0.8070  21+ 0.8356

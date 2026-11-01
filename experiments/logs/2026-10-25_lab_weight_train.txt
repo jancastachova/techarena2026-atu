@@ -1,0 +1,4 @@
+training-days bucket ratios: 0-0 4.44, 1-5 3.15, 6-20 1.63, 21-50 0.58, 51-100 0.43
+  weights^0.0: half-B 0.84080  eval-weighted 0.82374  1-20 known clicks 0.81485  (1494 trees)
+  weights^0.5: half-B 0.84064  eval-weighted 0.82353  1-20 known clicks 0.81472  (1799 trees)
+  weights^1.0: half-B 0.84030  eval-weighted 0.82321  1-20 known clicks 0.81432  (1503 trees)

@@ -1,0 +1,2 @@
+clicked-item percentile    mean 0.804  split-half reliability over 9018 users +0.072  (shuffled across users +0.008)
+clicked-item MF share      mean 0.254  split-half reliability over 9018 users +0.230  (shuffled across users -0.002)

@@ -1,0 +1,12 @@
+day 6: SET40+W2+W1 (equal thirds) vs SET40+W2
+  eval-weighted  A 0.82852  B 0.82851  B-A -0.00000  95% interval [-0.00008, +0.00009]  P(B > A) 0.51
+  gap-weighted   A 0.82636  B 0.82635  B-A -0.00001  95% interval [-0.00011, +0.00011]  P(B > A) 0.52
+day 6: SET40+W2+D38 (equal thirds) vs SET40+W2
+  eval-weighted  A 0.82852  B 0.82860  B-A +0.00008  95% interval [+0.00000, +0.00016]  P(B > A) 0.98
+  gap-weighted   A 0.82636  B 0.82647  B-A +0.00011  95% interval [+0.00002, +0.00021]  P(B > A) 0.99
+day 5: SET40+W2+W1 (equal thirds) vs SET40+W2
+  eval-weighted  A 0.82167  B 0.82170  B-A +0.00002  95% interval [-0.00007, +0.00010]  P(B > A) 0.68
+  gap-weighted   A 0.81818  B 0.81824  B-A +0.00006  95% interval [-0.00006, +0.00018]  P(B > A) 0.84
+day 5: SET40+W2+D38 (equal thirds) vs SET40+W2
+  eval-weighted  A 0.82167  B 0.82164  B-A -0.00003  95% interval [-0.00010, +0.00004]  P(B > A) 0.19
+  gap-weighted   A 0.81818  B 0.81817  B-A -0.00001  95% interval [-0.00010, +0.00008]  P(B > A) 0.42

@@ -1,0 +1,21 @@
+half B: rank average (submitted) 0.84162 / eval-weighted 0.82498; mean logit 0.84162 / 0.82498
+
+step 1: (1 - w) * base logit + w * standalone logit; w chosen on half A
+  MF30                   alone half-B 0.81946 | w 0.00: half-B 0.84162  eval-weighted 0.82498  vs base +0.00000 [+0.00000, +0.00000]
+  sequence               alone half-B 0.81237 | w 0.00: half-B 0.84162  eval-weighted 0.82498  vs base +0.00000 [+0.00000, +0.00000]
+  choice                 alone half-B 0.81043 | w 0.00: half-B 0.84162  eval-weighted 0.82498  vs base +0.00000 [+0.00000, +0.00000]
+  clicks-only            alone half-B 0.79357 | w 0.02: half-B 0.84161  eval-weighted 0.82498  vs base -0.00000 [-0.00003, +0.00003]
+  IDF                    alone half-B 0.81587 | w 0.00: half-B 0.84162  eval-weighted 0.82498  vs base +0.00000 [+0.00000, +0.00000]
+  impressions-only       alone half-B 0.78618 | w 0.00: half-B 0.84162  eval-weighted 0.82498  vs base +0.00000 [+0.00000, +0.00000]
+  audience (audc)        alone half-B 0.81642 | w 0.00: half-B 0.84162  eval-weighted 0.82498  vs base +0.00000 [+0.00000, +0.00000]
+  hop2c                  alone half-B 0.81398 | w 0.00: half-B 0.84162  eval-weighted 0.82498  vs base +0.00000 [+0.00000, +0.00000]
+  user offsets (uoff10)  alone half-B 0.81854 | w 0.00: half-B 0.84162  eval-weighted 0.82498  vs base +0.00000 [+0.00000, +0.00000]
+  deep interaction       alone half-B 0.79662 | w 0.00: half-B 0.84162  eval-weighted 0.82498  vs base +0.00000 [+0.00000, +0.00000]
+  all views, logistic weights fitted on half A (plain): half-B 0.84180  eval-weighted 0.82510  vs base +0.00012 [-0.00005, +0.00028]
+    weights: base +1.01, MF30 -0.20, sequence -0.01, choice +0.16, clicks-only +0.06, IDF +0.03, impressions-only -0.08, audience (audc) -0.08, hop2c +0.03, user offsets (uoff10) +0.07, deep interaction +0.00
+  all views, logistic weights fitted on half A (eval-weighted): half-B 0.84175  eval-weighted 0.82508  vs base +0.00009 [-0.00005, +0.00026]
+    weights: base +1.00, MF30 -0.17, sequence +0.02, choice +0.11, clicks-only +0.07, IDF +0.02, impressions-only -0.06, audience (audc) -0.03, hop2c -0.03, user offsets (uoff10) +0.05, deep interaction +0.00
+
+step 2: LightGBM stacker (members + standalone logits + event-relative + known clicks, user rate, events)
+  trained on A (plain loss, 106 trees): half-B 0.84156  eval-weighted 0.82475  vs base -0.00024 [-0.00045, -0.00007]  vs rank average -0.00023 [-0.00044, -0.00007]
+  trained on A (eval-weighted loss, 52 trees): half-B 0.84127  eval-weighted 0.82443  vs base -0.00056 [-0.00083, -0.00034]  vs rank average -0.00055 [-0.00083, -0.00033]

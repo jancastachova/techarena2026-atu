@@ -1,0 +1,20 @@
+seed 0 done
+seed 1 done
+seed 2 done
+seed 3 done
+seed 4 done
+day 6, 5 seeds; single-score AUC plain / eval-weighted
+  own                    0.82563  0.80768
+  aud                    0.82616  0.80812
+  mix K5 g0.5            0.82607  0.80808
+  mix K5 g1.0            0.82631  0.80830
+  mix K5 g2.0            0.82655  0.80852
+  mix K20 g0.5           0.82655  0.80852
+  mix K20 g1.0           0.82670  0.80865
+  mix K20 g2.0           0.82671  0.80866
+  mix K80 g0.5           0.82671  0.80866
+  mix K80 g1.0           0.82661  0.80856
+  mix K80 g2.0           0.82647  0.80843
+  add g0.5               0.82665  0.80865
+  add g1.0               0.82683  0.80882
+  mix K20 g1.0 u=own     0.82664  0.80854

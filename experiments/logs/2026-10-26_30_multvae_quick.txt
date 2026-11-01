@@ -1,0 +1,7 @@
+    day 6 seed 0: 53,566 users, 60 epochs, nll 102.48, kl 72.01 (936s)
+day 6 (trained on click sets before day 6): Mult-VAE AUC 0.70532 (MF30 alone 0.81921)
+rank corr MF30 vs VAE 0.542
+blend z(MF30) + w z(VAE): [(0, 0.81921), (0.1, 0.8188), (0.2, 0.81712), (0.3, 0.81465), (0.5, 0.8085), (1.0, 0.79228)]
+  known clicks 1-5: MF30 0.7532  VAE 0.6646  0.7 MF + 0.3 VAE 0.7528
+  known clicks 6-20: MF30 0.8016  VAE 0.6879  0.7 MF + 0.3 VAE 0.7980
+  known clicks 21-100: MF30 0.8300  VAE 0.7154  0.7 MF + 0.3 VAE 0.8241

@@ -1,0 +1,8 @@
+7824 users with >= 20 events before day 6; click rate mean 0.627 sd 0.164
+split-half reliability of the click rate: 0.581 (Spearman-Brown full: 0.735)
+  mean vector        CV R^2 -0.0053  corr +0.004
+  norm               CV R^2 +0.0171  corr +0.131
+  coherence          CV R^2 +0.0335  corr +0.183
+  log popularity     CV R^2 -0.0002  corr +0.012
+  log known clicks   CV R^2 +0.2471  corr +0.497
+  all                CV R^2 +0.2627  corr +0.513

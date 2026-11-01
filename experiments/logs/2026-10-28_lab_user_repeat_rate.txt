@@ -1,0 +1,6 @@
+events before day 6 with a repeat candidate: 136790, repeat clicked in 0.326
+users with >= 10 such events: 2229, split-half corr of their repeat-click rate 0.125
+half-B repeat rows 12774 (click rate 0.290); model AUC on repeat rows 0.7191, all 0.84429
+hist_rep        AUC alone on repeat rows 0.5296, within model deciles 0.5110 | coef +0.041 | held-out all rows 0.84585 -> 0.84586, repeat rows 0.7212 -> 0.7215
+rep_rate        AUC alone on repeat rows 0.5396, within model deciles 0.5168 | coef +0.045 | held-out all rows 0.84585 -> 0.84587, repeat rows 0.7212 -> 0.7219
+log rep events  AUC alone on repeat rows 0.4971, within model deciles 0.4915 | coef -0.027 | held-out all rows 0.84585 -> 0.84585, repeat rows 0.7212 -> 0.7210

@@ -1,0 +1,8 @@
+members half B: LGB full (lr .02) 0.84080, XGB full 0.84076, MLP full 0.84094
+equal-weight rank average  half-A 0.84077  half-B 0.84123
+fitted global weights [0.229 0.477 0.79 ]  half-B 0.84126
+weights per known-clicks bucket          half-B 0.84121
+  known clicks   0-  5: members half B 0.76631, 0.76643, 0.76805, average 0.76815
+  known clicks   6- 20: members half B 0.82082, 0.82038, 0.82117, average 0.82122
+  known clicks  21- 50: members half B 0.84704, 0.84708, 0.84726, average 0.84745
+  known clicks  51-100: members half B 0.85820, 0.85832, 0.85797, average 0.85852

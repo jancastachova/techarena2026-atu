@@ -1,0 +1,15 @@
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+    seed 0: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (20s)
+    seed 1: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (23s)
+    seed 2: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (20s)
+=== base             3 seed(s): days 0-5 -> day 6 MF AUC 0.81750
+    seed 0: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (20s)
+    seed 1: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (20s)
+    seed 2: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+=== uw:0.5           3 seed(s): days 0-5 -> day 6 MF AUC 0.81299   rank corr with the first 0.9889
+    seed 0: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 1: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (20s)
+    seed 2: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (20s)
+=== uw:1.0           3 seed(s): days 0-5 -> day 6 MF AUC 0.80383   rank corr with the first 0.9593

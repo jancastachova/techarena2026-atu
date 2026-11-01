@@ -1,0 +1,9 @@
+121 features
+  current (63 leaves, ff 0.8, min leaf 200)    half-B 0.84080  half-A 0.84031  (1494 trees)
+  feature_fraction 0.5                         half-B 0.84083  half-A 0.84033  (1455 trees)
+  feature_fraction 0.3                         half-B 0.84085  half-A 0.84039  (1664 trees)
+  127 leaves                                   half-B 0.84074  half-A 0.84029  (895 trees)
+  31 leaves                                    half-B 0.84083  half-A 0.84030  (2685 trees)
+  min leaf 1000                                half-B 0.84084  half-A 0.84040  (1330 trees)
+  lambda_l2 10                                 half-B 0.84080  half-A 0.84042  (1576 trees)
+  ff 0.5 + 127 leaves + min leaf 500           half-B 0.84087  half-A 0.84039  (1181 trees)

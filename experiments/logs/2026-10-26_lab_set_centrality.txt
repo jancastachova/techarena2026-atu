@@ -1,0 +1,12 @@
+centrality (dot): global AUC 0.50080, within-event 0.5037
+  z(MF dot) + 0.05 z(centrality (dot)): 0.81124  (MF dot alone 0.81278)
+  z(MF dot) + 0.1 z(centrality (dot)): 0.80905  (MF dot alone 0.81278)
+  z(MF dot) + 0.2 z(centrality (dot)): 0.80288  (MF dot alone 0.81278)
+centrality (cosine): global AUC 0.50013, within-event 0.5022
+  z(MF dot) + 0.05 z(centrality (cosine)): 0.81128  (MF dot alone 0.81278)
+  z(MF dot) + 0.1 z(centrality (cosine)): 0.80911  (MF dot alone 0.81278)
+  z(MF dot) + 0.2 z(centrality (cosine)): 0.80289  (MF dot alone 0.81278)
+  known clicks 0-0: centrality (cosine) alone 0.4402
+  known clicks 1-5: centrality (cosine) alone 0.5108
+  known clicks 6-20: centrality (cosine) alone 0.5008
+  known clicks 21-100: centrality (cosine) alone 0.4995

@@ -1,0 +1,45 @@
+Matplotlib is building the font cache; this may take a moment.
+train rows / events / users / items(all ids): (6868240, 686824, 53003, 50000)
+events with a click: 0.629
+clicks per event max: 1
+events per day: [98514, 98503, 98097, 97717, 97589, 98453, 97951]
+click share by day: [0.6303, 0.629, 0.6319, 0.6261, 0.6279, 0.6279, 0.63]
+CTR by position in file order: [0.063, 0.063, 0.0628, 0.0627, 0.0632, 0.0631, 0.0627, 0.063, 0.0625, 0.0629]
+events with a repeated candidate (first 200k): 0.0
+events per user: quantiles 10/50/90/99, max: ([2.0, 8.0, 29.0, 79.0], 521)
+per-user click share (users with >=20 events): sd observed vs pure-chance sd: (0.1626, 0.0873)
+share of per-user variance that is real (not chance): 0.712
+items shown / clicked in train: (50000, 49261)
+impressions per shown item: quantiles 1/10/50/90/99: [43.0, 61.0, 107.0, 244.0, 554.0]
+impression Gini: 0.33
+item CTR (items >=200 impressions): sd observed vs pure-chance sd: (0.019, 0.0144)
+corr(log impressions, CTR) items >=200 imp: 0.066
+consecutive event pairs (same user): 633821
+next history = previous history + its click (exact): {'exact': 0.9973, 'click_missing': 0.0001, 'extra_unobserved': 0.0004, 'other': 0.0021}
+pairs with clicks between observed events: clicks per gap quantiles 50/90: [1.0, 1.0]
+gap between a user's consecutive events (minutes): quantiles 10/50/90: [26.0, 256.0, 1482.0]
+consecutive events in the same minute: 0.0022
+click share by hour (UTC): [0.624, 0.625, 0.628, 0.632, 0.62, 0.632, 0.631, 0.635, 0.635, 0.629, 0.631, 0.633, 0.627, 0.63, 0.63, 0.629, 0.632, 0.624, 0.628, 0.629, 0.626, 0.627, 0.627, 0.632]
+time_bucket matches timestamp: 1.0
+click share by hours since last history click (0-.5,.5-2,2-6,6-24,24-72,72-168,168+): [0.6536, 0.6489, 0.6408, 0.629, 0.6079, 0.592, 0.5711]
+history length quantiles 10/50/90 and share = 20: ([8.0, 20.0, 20.0], 0.675)
+history clicks from the warm-up period (share of all history entries, train events): 0.474
+events whose history repeats an item: 0.762
+candidates already in the visible history: 0.0259
+CTR candidate in history vs not: (0.2931, 0.0568)
+candidates the user was shown in an earlier event (first 400k events by user): 0.0337
+expected re-show share if candidates were drawn by exposure share (rough, avg 13 earlier events x 10): 0.004
+evaluation rows / events / users: (529390, 52939, 52939)
+evaluation events per day (7..13): [35269, 8764, 3914, 2236, 1273, 898, 585]
+evaluation users without train events: 0.0274
+evaluation history length quantiles 10/50/90, empty share: ([4.0, 15.0, 20.0], 0.0126)
+evaluation history clicks at/after the cutoff: 0
+evaluation: hours since the user's last train event, quantiles 10/50/90: [8.05, 31.516666666666666, 120.93333333333334]
+corr of item exposure shares train vs evaluation: 0.9173
+figures in /Users/ivanbibat/Documents/GitHub/techarena2026-atu/docs/dataset
+  ret = ret.dtype.type(ret / rcount)
+raw click share by hours since the previous EVENT: [0.625, 0.6265, 0.6275, 0.6304, 0.6317, 0.6382, nan]
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/dataset_analysis.py:214: RuntimeWarning: Mean of empty slice
+  [round(float(dev[keep & (be == k)].mean()), 4) for k in range(7)])
+within-user deviation by hours since the previous EVENT: [-0.0014, -0.0002, 0.0011, -0.0007, 0.0048, nan, nan]
+share of events per bucket (since last click): [0.066, 0.145, 0.21, 0.338, 0.175, 0.051, 0.013]

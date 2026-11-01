@@ -48,6 +48,7 @@ Usage
 """
 import argparse
 import csv
+import os
 import importlib.util
 import subprocess
 import sys
@@ -65,9 +66,12 @@ BASE = CACHE / "13_base_c7_9c47a117c762.npz"
 MF = {"mf13": CACHE / "13_mf_c7_bb1fcb0a9c89.npz", "mf15": CACHE / "15_mf_c7_46f30c940a6a.npz",
       "mf20": CACHE / "20_mf_c7_c6b710c438b5.npz"}
 ALL_MEMBERS = ["lgb_mf13", "lgb_mf15", "lgb_mf30", "lgb_pop", "xgb_pop", "lgb_mf20", "mlp_pop",
-               "lgb_seq", "lgb_popseq", "xgb_popseq", "mlp_popseq", "lgb_full", "xgb_full", "mlp_full"]
+               "lgb_seq", "lgb_popseq", "xgb_popseq", "mlp_popseq", "lgb_full", "xgb_full", "mlp_full", "lgbrank_full",
+               "choice_full", "lgbshallow_full"]
 SEQ_NAMES = ["seq_logit", "seq_item_bias", "seq_user_bias", "seq_dot",
              "seq_minus_max", "seq_rank", "seq_share", "seq_lse"]
+RANK_GROUP = int(os.environ.get("RANK_GROUP", 1000))
+RANK_TREES = int(os.environ.get("RANK_TREES", 0))     # > 0: fixed lambdarank tree count, no early-stopping pass  # events per lambdarank group (LightGBM caps a query at 10,000 rows)
 FIRST_DAY, ES_DAY = 2, 6                  # LightGBM rows: fit days 2-6; early stopping on day 6
 XGB_PARAMS = dict(objective="binary:logistic", eval_metric="auc", tree_method="hist", eta=0.05,
                   max_depth=6, min_child_weight=50, subsample=0.8, colsample_bytree=0.8,
@@ -114,6 +118,10 @@ def load_all(seq_caches=(), extras=()):
     test_mf = {k: z["mf_test"] for k, z in mf.items()}
     fit_mf["mf30"] = (fit_mf["mf13"] + fit_mf["mf15"]) / 2
     test_mf["mf30"] = (test_mf["mf13"] + test_mf["mf15"]) / 2
+    if MF_CORE_EXTRA:                       # each cache counts like one of 13's / 15's 15-seed sets
+        ex = [np.load(str(p_)) for p_ in MF_CORE_EXTRA]
+        fit_mf["mf30"] = (fit_mf["mf13"] + fit_mf["mf15"] + sum(z["mf_fit"] for z in ex)) / (2 + len(ex))
+        test_mf["mf30"] = (test_mf["mf13"] + test_mf["mf15"] + sum(z["mf_test"] for z in ex)) / (2 + len(ex))
     row_day = np.repeat(fit["day"], e13.EV_SIZE)
     keep = np.flatnonzero(row_day >= FIRST_DAY)
     test_rows = np.arange(len(test["item"]))
@@ -185,6 +193,8 @@ def gauss_rank(train_X, apply_X):
 
 
 MLP_LR, MLP_SEEDS = 1e-3, 3                # defaults reproduce the earlier submissions
+MF_CORE_EXTRA = []                          # --mf-core-extra: more MF caches averaged into the core "mf30"
+MODEL_SEED = 0                              # --model-seed: LightGBM / XGBoost seed, MLP seeds start at 1000x it
 
 
 def mlp_stage(out_path, feat, seq_caches, extras):
@@ -229,7 +239,7 @@ def mlp_stage(out_path, feat, seq_caches, extras):
         return best, best_ep
 
     preds = []
-    for seed in range(MLP_SEEDS):
+    for seed in range(1000 * MODEL_SEED, 1000 * MODEL_SEED + MLP_SEEDS):
         torch.manual_seed(seed); r = np.random.default_rng(seed)
         m = net(); opt = torch.optim.Adam(m.parameters(), lr=MLP_LR, weight_decay=1e-6)
         best, n_ep = fit_epochs(m, es_tr, 30, r, opt, val=es_va)
@@ -242,25 +252,133 @@ def mlp_stage(out_path, feat, seq_caches, extras):
     np.save(out_path, np.mean(preds, 0))
 
 
+CHOICE_SEEDS = 3
+
+
+def choice_stage(out_path, seq_caches, extras):
+    """torch only (own process): neural choice model (lab/choice_model.py) on the full set; writes test predictions.
+    One softmax per event over its 10 candidates + "no click": candidate scores from an MLP (256-128) on the Gaussian-rank
+    features, the no-click score from an MLP (64) on the event-constant columns. Epochs by early stopping on day 6 (fit
+    days 2-5), then refit on days 2-6 with that many epochs; CHOICE_SEEDS seeds averaged."""
+    import torch
+    import torch.nn.functional as F
+    torch.set_num_threads(8)
+    _, _, _, Xf, Xt, _, y, d = load_all(seq_caches, extras)
+    Ztr, Zte = gauss_rank(Xf["full"], Xt["full"])
+    del Xf, Xt
+    E = e13.EV_SIZE
+    Ef = torch.from_numpy(Ztr.reshape(-1, E, Ztr.shape[1])); Ee = torch.from_numpy(Zte.reshape(-1, E, Zte.shape[1]))
+    smp = np.random.default_rng(0).choice(len(Ef), 20000, replace=False)
+    const = torch.from_numpy(np.all(np.ptp(Ztr.reshape(-1, E, Ztr.shape[1])[smp], axis=1) < 1e-6, axis=0))
+    lab = y.reshape(-1, E)
+    target = torch.from_numpy(np.where(lab.sum(1) > 0, lab.argmax(1), E).astype(np.int64))
+    d_ev = d.reshape(-1, E)[:, 0]
+    es_tr, es_va, full_tr = np.flatnonzero(d_ev < ES_DAY), np.flatnonzero(d_ev == ES_DAY), np.arange(len(d_ev))
+    log(f"  choice: {Ztr.shape[1]} inputs, {int(const.sum())} event-constant; {len(full_tr):,} events")
+
+    def mlp(i, hs):
+        layers = []
+        for k in hs:
+            layers += [torch.nn.Linear(i, k), torch.nn.ReLU(), torch.nn.Dropout(0.1)]; i = k
+        return torch.nn.Sequential(*layers, torch.nn.Linear(i, 1))
+
+    class Choice(torch.nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.cand = mlp(Ztr.shape[1], [256, 128]); self.none = mlp(int(const.sum()), [64])
+        def forward(self, X3):
+            return torch.cat([self.cand(X3).squeeze(2), self.none(X3[:, 0][:, const])], 1)
+
+    def predict(m, X3, evs):
+        m.eval()
+        with torch.no_grad():
+            out = [torch.softmax(m(X3[torch.from_numpy(evs[s:s + 8192])]), 1)[:, :E].numpy()
+                   for s in range(0, len(evs), 8192)]
+        m.train()
+        return np.concatenate(out).ravel()
+
+    def fit_epochs(m, opt, idx, epochs, r, val=None):
+        best, best_ep, bad = -1.0, 0, 0
+        for epoch in range(epochs):
+            perm = r.permutation(idx)
+            for s in range(0, len(perm), 512):
+                b = torch.from_numpy(perm[s:s + 512])
+                loss = F.cross_entropy(m(Ef[b]), target[b])
+                opt.zero_grad(); loss.backward(); opt.step()
+            if val is not None:
+                a_ = e13.roc_auc(predict(m, Ef, val), lab[val].ravel())
+                if a_ > best:
+                    best, best_ep, bad = a_, epoch + 1, 0
+                else:
+                    bad += 1
+                    if bad >= 2:
+                        break
+        return best, best_ep
+
+    preds = []
+    for seed in range(1000 * MODEL_SEED, 1000 * MODEL_SEED + CHOICE_SEEDS):
+        torch.manual_seed(seed); r = np.random.default_rng(seed)
+        m = Choice(); opt = torch.optim.Adam(m.parameters(), lr=1e-3)
+        best, n_ep = fit_epochs(m, opt, es_tr, 12, r, val=es_va)
+        torch.manual_seed(seed); r = np.random.default_rng(seed)
+        m = Choice(); opt = torch.optim.Adam(m.parameters(), lr=1e-3)
+        fit_epochs(m, opt, full_tr, n_ep, r)
+        preds.append(predict(m, Ee, np.arange(len(Ee))))
+        log(f"  choice seed {seed}: {n_ep} epochs by early stopping on day {ES_DAY} (day-{ES_DAY} AUC {best:.5f}), "
+            f"refit on days {FIRST_DAY}-{ES_DAY}")
+    np.save(out_path, np.mean(preds, 0))
+
+
 def tree_member(kind, X, Xt, names, y, d, lr=0.05):
     """Trees by early stopping on day 6 (fit 2-5), refit on 2-6 with the count scaled by 5/4."""
     es_tr, es_va = d < ES_DAY, d == ES_DAY
     scale = (ES_DAY - FIRST_DAY + 1) / (ES_DAY - FIRST_DAY)
-    if kind == "lgb":
+    if kind in ("lgb", "lgbshallow"):
         import lightgbm as lgb
-        p = {**e13.LGB_PARAMS, "learning_rate": lr}
+        p = {**e13.LGB_PARAMS, "learning_rate": lr, "seed": MODEL_SEED}
+        if kind == "lgbshallow":    # 2026-10-31 diversity member (lab/diversity_screen.sh W2): shallow, regularised trees
+            p.update(num_leaves=15, min_data_in_leaf=2000, feature_fraction=0.3)
         m = lgb.train(p, lgb.Dataset(X[es_tr], y[es_tr], feature_name=names), 8000,
                       valid_sets=[lgb.Dataset(X[es_va], y[es_va])],
                       callbacks=[lgb.early_stopping(150, verbose=False)])
         best, n = m.best_score["valid_0"]["auc"], max(1, round(m.best_iteration * scale))
         m = lgb.train(p, lgb.Dataset(X, y, feature_name=names), n)
         return m.predict(Xt), best, n
+    if kind == "lgbrank":
+        # lambdarank over random groups of RANK_GROUP events (lab/global_rank2.py): the groups hold cross-event pairs, so
+        # the objective is a surrogate of the global AUC. Rows come 10 per event, in event order.
+        import lightgbm as lgb
+        assert len(y) % e13.EV_SIZE == 0 and y.reshape(-1, e13.EV_SIZE).sum(1).max() <= 1
+        p = {**e13.LGB_PARAMS, "learning_rate": lr, "seed": MODEL_SEED, "objective": "lambdarank", "metric": "auc",
+             "lambdarank_truncation_level": 10000, "label_gain": [0, 1]}
+        def grouped(mask):
+            idx = np.flatnonzero(mask); ev = idx // e13.EV_SIZE
+            uev = np.unique(ev); np.random.default_rng(MODEL_SEED).shuffle(uev)
+            rank_of = np.empty(uev.max() + 1, np.int64); rank_of[uev] = np.arange(len(uev))
+            key = rank_of[ev]; o = np.argsort(key, kind="stable")
+            return idx[o], np.bincount(key[o] // RANK_GROUP)
+        i_all, g_all = grouped(np.ones(len(y), bool))
+        if RANK_TREES:
+            # tree count fixed from earlier runs (36's G1000 build: 1790 trees by early stopping, 2238 after the refit
+            # scaling): skips the early-stopping pass, which costs as much as the refit
+            log(f"  lgbrank: {RANK_TREES} trees fixed (RANK_TREES), no early stopping; fitting on days {FIRST_DAY}-{ES_DAY}")
+            m = lgb.train(p, lgb.Dataset(X[i_all], y[i_all], group=g_all, feature_name=names), RANK_TREES,
+                          callbacks=[lgb.log_evaluation(250)])
+            return m.predict(Xt), float("nan"), RANK_TREES
+        i_tr, g_tr = grouped(es_tr)
+        m = lgb.train(p, lgb.Dataset(X[i_tr], y[i_tr], group=g_tr, feature_name=names), 8000,
+                      valid_sets=[lgb.Dataset(X[es_va], y[es_va], group=[int(es_va.sum())])],
+                      callbacks=[lgb.early_stopping(150, verbose=False), lgb.log_evaluation(250)])
+        log(f"  lgbrank: early stopping at {m.best_iteration} trees; refitting on days {FIRST_DAY}-{ES_DAY}")
+        best, n = m.best_score["valid_0"]["auc"], max(1, round(m.best_iteration * scale))
+        m = lgb.train(p, lgb.Dataset(X[i_all], y[i_all], group=g_all, feature_name=names), n)
+        return m.predict(Xt), best, n
     import xgboost as xgb
     dva = xgb.DMatrix(X[es_va], y[es_va])
-    m = xgb.train(XGB_PARAMS, xgb.DMatrix(X[es_tr], y[es_tr]), 4000, evals=[(dva, "v")],
+    m = xgb.train({**XGB_PARAMS, "seed": MODEL_SEED}, xgb.DMatrix(X[es_tr], y[es_tr]), 4000, evals=[(dva, "v")],
                   early_stopping_rounds=100, verbose_eval=False)
     best, n = m.best_score, max(1, round((m.best_iteration + 1) * scale))
-    m = xgb.train(XGB_PARAMS, xgb.DMatrix(X, y), n)
+    m = xgb.train({**XGB_PARAMS, "seed": MODEL_SEED}, xgb.DMatrix(X, y), n)
     return m.predict(xgb.DMatrix(Xt)), best, n
 
 
@@ -278,9 +396,14 @@ def main():
     ap.add_argument("--mlp-feat", help=argparse.SUPPRESS)
     ap.add_argument("--mlp-lr", type=float, default=1e-3, help="MLP learning rate (sweep: 3e-4 best)")
     ap.add_argument("--mlp-seeds", type=int, default=3, help="MLP seeds averaged")
+    ap.add_argument("--mf-core-extra", default="",
+                    help="comma-separated MF caches averaged into the core MF with 13's and 15's (empty = MF30)")
+    ap.add_argument("--model-seed", type=int, default=0,
+                    help="seed of LightGBM / XGBoost and offset of the MLP seeds (0 = earlier submissions)")
     a = ap.parse_args()
-    global MLP_LR, MLP_SEEDS
-    MLP_LR, MLP_SEEDS = a.mlp_lr, a.mlp_seeds
+    global MLP_LR, MLP_SEEDS, MODEL_SEED, MF_CORE_EXTRA
+    MLP_LR, MLP_SEEDS, MODEL_SEED = a.mlp_lr, a.mlp_seeds, a.model_seed
+    MF_CORE_EXTRA = [p_ for p_ in a.mf_core_extra.split(",") if p_]
     seq_caches = [Path(c) for c in a.seq_caches.split(",") if c]
     extras = []
     for spec_ in a.extra:
@@ -290,6 +413,9 @@ def main():
         extras.append((name, [Path(c) for c in caches.split(",") if c]))
     if a.stage == "mlp":
         mlp_stage(a.mlp_out, a.mlp_feat, seq_caches, extras)
+        return
+    if a.stage == "choice":
+        choice_stage(a.mlp_out, seq_caches, extras)
         return
     members = a.members.split(",")
     unknown = [m for m in members if m not in ALL_MEMBERS]
@@ -310,18 +436,28 @@ def main():
                    "--mlp-feat", feat, "--seq-caches", a.seq_caches, "--out", a.out]
             for spec_ in a.extra:
                 cmd += ["--extra", spec_]
-            cmd += ["--mlp-lr", str(a.mlp_lr), "--mlp-seeds", str(a.mlp_seeds)]
+            cmd += ["--mlp-lr", str(a.mlp_lr), "--mlp-seeds", str(a.mlp_seeds), "--model-seed", str(a.model_seed), "--mf-core-extra", a.mf_core_extra]
             subprocess.run(cmd, check=True)
             preds[mname] = np.load(mlp_file)
+    if "choice_full" in members:          # torch, own process (lab/choice_model.py)
+        ch_file = CACHE / f"24_choice_full_s{a.model_seed}_test.npy"
+        log("choice_full: training in a separate process ...")
+        cmd = [sys.executable, __file__, "--stage", "choice", "--mlp-out", str(ch_file), "--seq-caches", a.seq_caches,
+               "--out", a.out, "--model-seed", str(a.model_seed), "--mf-core-extra", a.mf_core_extra]
+        for spec_ in a.extra:
+            cmd += ["--extra", spec_]
+        subprocess.run(cmd, check=True)
+        preds["choice_full"] = np.load(ch_file)
     fit, test, eval_order, Xf, Xt, nm, y, d = load_all(seq_caches, extras)
     spec_of = {"lgb_mf13": ("lgb", "mf13", "base", 0.05), "lgb_mf15": ("lgb", "mf15", "base", 0.05),
                "lgb_mf30": ("lgb", "mf30", "base", 0.05), "lgb_pop": ("lgb", "pop", "pop", 0.02),
                "xgb_pop": ("xgb", "pop", "pop", 0.05), "lgb_mf20": ("lgb", "mf20", "base", 0.05),
                "lgb_seq": ("lgb", "seq", "seq", 0.05), "lgb_popseq": ("lgb", "popseq", "popseq", 0.02),
                "xgb_popseq": ("xgb", "popseq", "popseq", 0.05),
-               "lgb_full": ("lgb", "full", "full", 0.02), "xgb_full": ("xgb", "full", "full", 0.05)}
+               "lgb_full": ("lgb", "full", "full", 0.02), "xgb_full": ("xgb", "full", "full", 0.05),
+               "lgbrank_full": ("lgbrank", "full", "full", 0.02), "lgbshallow_full": ("lgbshallow", "full", "full", 0.02)}
     for mname in members:
-        if mname.startswith("mlp_"):
+        if mname.startswith("mlp_") or mname == "choice_full":
             continue
         kind, fx, nk, lr = spec_of[mname]
         names_m = nm[nk]

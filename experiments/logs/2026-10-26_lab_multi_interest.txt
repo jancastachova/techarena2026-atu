@@ -1,0 +1,3 @@
+single mean u . v          users with >= 6 clicks: AUC 0.81640   all users: 0.81278
+k=2 max(u1 . v, u2 . v)    users with >= 6 clicks: AUC 0.78994   all users: 0.78735
+k=2 halfway mean-max       users with >= 6 clicks: AUC 0.80826   all users: 0.80502

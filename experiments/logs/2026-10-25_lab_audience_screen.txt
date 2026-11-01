@@ -1,0 +1,6 @@
+day 6: 97,951 events; MF dot AUC 0.81278; candidates with >=1 audience click 1.000
+  aud          AUC 0.81363  rare(1-9 clicks) 0.76866 vs MF 0.76354  rank corr with MF 0.9655
+  aud_c        AUC 0.81451  rare(1-9 clicks) 0.76842 vs MF 0.76354  rank corr with MF 0.9449
+  aud_s k=3    AUC 0.81247  rare(1-9 clicks) 0.76877 vs MF 0.76354  rank corr with MF 0.9780
+  aud_s k=10   AUC 0.81090  rare(1-9 clicks) 0.76662 vs MF 0.76354  rank corr with MF 0.9841
+  aud_s k=30   AUC 0.81136  rare(1-9 clicks) 0.76492 vs MF 0.76354  rank corr with MF 0.9907

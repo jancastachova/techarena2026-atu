@@ -1,0 +1,9 @@
+eval rows 529390 events 52939 rows per event [10]
+mean predicted score by within-event file position: [0.5001 0.5016 0.501  0.5008 0.4999 0.4984 0.4981 0.5003 0.4997 0.5002]
+mean within-event rank of our score by position (5.5 = none): [5.503 5.516 5.515 5.506 5.504 5.484 5.482 5.498 5.493 5.498]
+Traceback (most recent call last):
+  File "<stdin>", line 15, in <module>
+  File "/Users/ivanbibat/Documents/GitHub/techarena2026-atu/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 1541, in diff
+    a = op(a[slice1], a[slice2])
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for -: 'str' and 'str'

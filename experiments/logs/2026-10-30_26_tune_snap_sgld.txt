@@ -1,0 +1,7 @@
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+=== aux:0.3+steps:4500 4 seed(s): days 0-5 -> day 6 MF AUC 0.81302  proj8 cosine 0.82538  non-repeat rows 0.80230  repeat rows 0.66216
+=== aux:0.3+steps:4500+snap:6/250 4 seed(s): days 0-5 -> day 6 MF AUC 0.81302  proj8 cosine 0.82537  non-repeat rows 0.80230  repeat rows 0.66216   rank corr with the first 1.0000
+=== aux:0.3+steps:4500+snap:6/250+sgld:0.002 4 seed(s): days 0-5 -> day 6 MF AUC 0.81284  proj8 cosine 0.82533  non-repeat rows 0.80208  repeat rows 0.66202   rank corr with the first 0.9991
+=== aux:0.3+steps:4500+snap:6/250+sgld:0.006 4 seed(s): days 0-5 -> day 6 MF AUC 0.81109  proj8 cosine 0.82485  non-repeat rows 0.80010  repeat rows 0.65965   rank corr with the first 0.9919

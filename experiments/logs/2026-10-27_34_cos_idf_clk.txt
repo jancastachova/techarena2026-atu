@@ -1,0 +1,12 @@
+day 2: cosine AUC 0.77245  item-normalised dot 0.77021
+day 3: cosine AUC 0.79266  item-normalised dot 0.79011
+day 4: cosine AUC 0.80292  item-normalised dot 0.80005
+day 5: cosine AUC 0.81363  item-normalised dot 0.81054
+day 6: cosine AUC 0.81898  item-normalised dot 0.81573
+wrote data/cache/34_cos_idf_c7.npz
+day 2: cosine AUC 0.75686  item-normalised dot 0.75129
+day 3: cosine AUC 0.77496  item-normalised dot 0.76872
+day 4: cosine AUC 0.78291  item-normalised dot 0.77621
+day 5: cosine AUC 0.79479  item-normalised dot 0.78784
+day 6: cosine AUC 0.80095  item-normalised dot 0.79376
+wrote data/cache/34_cos_clk_c7.npz

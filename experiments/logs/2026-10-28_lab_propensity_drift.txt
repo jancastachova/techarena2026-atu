@@ -1,0 +1,7 @@
+users >= 20 events (7824): interleaved-half corr 0.581  time-half corr 0.581
+users >= 40 events (2057): interleaved-half corr 0.715  time-half corr 0.709
+half-life None events: day-6 event-level AUC (users >= 5 past events) 0.6333
+half-life   50 events: day-6 event-level AUC (users >= 5 past events) 0.6331
+half-life   20 events: day-6 event-level AUC (users >= 5 past events) 0.6318
+half-life   10 events: day-6 event-level AUC (users >= 5 past events) 0.6283
+half-life    5 events: day-6 event-level AUC (users >= 5 past events) 0.6199

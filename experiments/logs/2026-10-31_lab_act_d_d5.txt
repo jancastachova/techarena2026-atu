@@ -1,0 +1,4 @@
+  base (= the best member)                     half-B 0.84025  eval-weighted 0.82163  first 0.82024  gap-weighted 0.81857  1-20 known clicks 0.81048  (836 trees)
+  plain          A 0.84020  B 0.84025  B-A +0.00005  95% interval [-0.00006, +0.00017]  P(B > A) 0.78
+  eval-weighted  A 0.82149  B 0.82163  B-A +0.00015  95% interval [-0.00007, +0.00035]  P(B > A) 0.90
+  gap-weighted   A 0.81802  B 0.81821  B-A +0.00019  95% interval [-0.00013, +0.00046]  P(B > A) 0.85

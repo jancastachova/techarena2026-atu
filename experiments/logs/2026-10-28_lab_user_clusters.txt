@@ -1,0 +1,7 @@
+1483 users with >= 50 clicks; taste norm (coherence) mean 0.549
+signal var share of the taste estimate: 0.962
+k  4: k-means mean cos real 0.4618 gaussian 0.4643 | split-half same centre real 0.852 gaussian 0.812
+k  8: k-means mean cos real 0.5801 gaussian 0.5847 | split-half same centre real 0.782 gaussian 0.767
+k 16: k-means mean cos real 0.6753 gaussian 0.6743 | split-half same centre real 0.767 gaussian 0.697
+k 32: k-means mean cos real 0.7490 gaussian 0.7503 | split-half same centre real 0.751 gaussian 0.651
+mean |excess kurtosis| of whitened axes: real 0.539 gaussian 0.097

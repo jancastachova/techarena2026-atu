@@ -1,0 +1,16 @@
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+    seed 5: 3000 steps on 197,017 events + 703,211 logged clicks (22s)
+  day 2: 1-seed MF AUC 0.76014, vectors for 98,097 events
+    seed 5: 3000 steps on 295,114 events + 765,401 logged clicks (23s)
+  day 3: 1-seed MF AUC 0.78389, vectors for 97,717 events
+    seed 5: 3000 steps on 392,831 events + 826,783 logged clicks (25s)
+  day 4: 1-seed MF AUC 0.79551, vectors for 97,589 events
+    seed 5: 3000 steps on 490,420 events + 888,225 logged clicks (34s)
+  day 5: 1-seed MF AUC 0.80715, vectors for 98,453 events
+    seed 5: 3000 steps on 588,873 events + 950,177 logged clicks (33s)
+  day 6: 1-seed MF AUC 0.81326, vectors for 97,951 events
+    seed 5: 3000 steps on 686,824 events + 1,011,994 logged clicks (31s)
+  test events: vectors for 52,939 events
+wrote data/cache/26_vectors_c7_s5.npz

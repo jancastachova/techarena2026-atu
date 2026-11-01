@@ -1,0 +1,24 @@
+4,898,070 rows, 169 features; train rows 3,918,560
+event-constant columns: 57
+  epoch 1: loss 1.7247  half-A AUC 0.84353
+  epoch 2: loss 1.6823  half-A AUC 0.84340
+  epoch 3: loss 1.6262  half-A AUC 0.84379
+  epoch 4: loss 1.6350  half-A AUC 0.84397
+  epoch 5: loss 1.6048  half-A AUC 0.84379
+  epoch 6: loss 1.5447  half-A AUC 0.84409
+  epoch 7: loss 1.6704  half-A AUC 0.84409
+  epoch 8: loss 1.7113  half-A AUC 0.84412
+  epoch 9: loss 1.5258  half-A AUC 0.84380
+  epoch 10: loss 1.6871  half-A AUC 0.84379
+  choice model                 half-B 0.84490  eval-weighted 0.82809  first 0.82711
+  LightGBM                     half-B 0.84447  eval-weighted 0.82779  first 0.82662
+  rank corr choice vs LightGBM 0.9943
+  rank blend, choice weight 0.3 half-B 0.84490  eval-weighted 0.82824  first 0.82713
+  rank blend, choice weight 0.5 half-B 0.84504  eval-weighted 0.82837  first 0.82729
+wrote data/cache/lab_preds_choice_d6.npz
+## base (= the best member)
+  plain          A 0.84447  B 0.84490  B-A +0.00043  95% interval [+0.00019, +0.00066]  P(B > A) 1.00
+  eval-weighted  A 0.82779  B 0.82809  B-A +0.00030  95% interval [-0.00009, +0.00070]  P(B > A) 0.92
+## blend0.5
+  plain          A 0.84447  B 0.84504  B-A +0.00057  95% interval [+0.00045, +0.00069]  P(B > A) 1.00
+  eval-weighted  A 0.82779  B 0.82837  B-A +0.00058  95% interval [+0.00039, +0.00078]  P(B > A) 1.00

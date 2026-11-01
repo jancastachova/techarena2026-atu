@@ -1,0 +1,4 @@
+  logq = torch.from_numpy(np.log(np.r_[1e-12, q, 1e-12])).float().to(dev)
+  self.enc = torch.nn.TransformerEncoder(layer, LAYERS)
+    day 6 seed 0: 53,651 windows, 15 epochs, 3150 steps, last loss 4.166 (688s)
+day 6 (trained on clicks before day 6): SASRec AUC 0.67227 (MF alone 0.8175 with 3 seeds)

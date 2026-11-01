@@ -1,0 +1,6 @@
+day-6 AUC of the item click rate, by the test user's known clicks (columns: rate computed over all / over that group / over <=5)
+  0     n_ev=    209  all 0.4938  group 0.4884  light 0.5282
+  1-5   n_ev=  3,925  all 0.5291  group 0.5142  light 0.5157
+  6-20  n_ev= 23,662  all 0.5242  group 0.5194  light 0.5053
+  21+   n_ev= 70,155  all 0.5291  group 0.5274  light 0.5042
+corr(log rate all, log rate light) over items with 50+ light impressions: 0.218

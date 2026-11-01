@@ -1,0 +1,8 @@
+count                AUC 0.82277  1-5 0.7540  6-20 0.8044  21+ 0.8323  rank corr with count cosine 1.0000
+count unit-hist      AUC 0.82326  1-5 0.7540  6-20 0.8050  21+ 0.8328  rank corr with count cosine 0.9992
+sqrtset              AUC 0.82320  1-5 0.7538  6-20 0.8051  21+ 0.8327  rank corr with count cosine 0.9983
+sqrtset unit-hist    AUC 0.82362  1-5 0.7538  6-20 0.8056  21+ 0.8331  rank corr with count cosine 0.9973
+idf1                 AUC 0.82086  1-5 0.7502  6-20 0.7987  21+ 0.8316  rank corr with count cosine 0.9796
+idf1 unit-hist       AUC 0.81977  1-5 0.7484  6-20 0.7969  21+ 0.8308  rank corr with count cosine 0.9729
+idf.5                AUC 0.82314  1-5 0.7538  6-20 0.8035  21+ 0.8331  rank corr with count cosine 0.9944
+idf.5 unit-hist      AUC 0.82295  1-5 0.7528  6-20 0.8030  21+ 0.8330  rank corr with count cosine 0.9908

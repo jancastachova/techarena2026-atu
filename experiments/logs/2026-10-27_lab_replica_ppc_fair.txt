@@ -1,0 +1,2 @@
+real     day-6 clicks 61710  lag1 0.1949  lag2 0.2010  lag3 0.2039  lag5 0.2053  lag10 0.1979  lag20 0.1920  same item as previous 0.0214  same as lag2 0.0184  same as lag5 0.0131
+replica  day-6 clicks 60456  lag1 0.1836  lag2 0.1909  lag3 0.1946  lag5 0.1953  lag10 0.1930  lag20 0.1860  same item as previous 0.0136  same as lag2 0.0126  same as lag5 0.0101

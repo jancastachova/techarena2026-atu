@@ -1,0 +1,15 @@
+day 6, user vectors of the MF trained on days 0-5:
+  MF dot (prior, 1 seed)             AUC 0.81278   by candidate clicks 0-10: 0.7688, 11-30: 0.8116, 31-1000000000: 0.8315
+  MF30 full logit (30 seeds)         AUC 0.81921   by candidate clicks 0-10: 0.7726, 11-30: 0.8186, 31-1000000000: 0.8416
+  refit lam 3: dot only              AUC 0.81090   by candidate clicks 0-10: 0.7666, 11-30: 0.8074, 31-1000000000: 0.8319
+  refit lam 3: dot + bias            AUC 0.80688   by candidate clicks 0-10: 0.7563, 11-30: 0.8025, 31-1000000000: 0.8312
+    MF30 logit + refit (z-sum)       AUC 0.81735   by candidate clicks 0-10: 0.7698, 11-30: 0.8149, 31-1000000000: 0.8402
+    mean |w - W_mf| / mean |W_mf|: 0.229
+  refit lam 30: dot only             AUC 0.81321   by candidate clicks 0-10: 0.7688, 11-30: 0.8115, 31-1000000000: 0.8327
+  refit lam 30: dot + bias           AUC 0.80746   by candidate clicks 0-10: 0.7556, 11-30: 0.8042, 31-1000000000: 0.8312
+    MF30 logit + refit (z-sum)       AUC 0.81723   by candidate clicks 0-10: 0.7694, 11-30: 0.8156, 31-1000000000: 0.8394
+    mean |w - W_mf| / mean |W_mf|: 0.030
+  refit lam 300: dot only            AUC 0.81285   by candidate clicks 0-10: 0.7688, 11-30: 0.8116, 31-1000000000: 0.8317
+  refit lam 300: dot + bias          AUC 0.80686   by candidate clicks 0-10: 0.7553, 11-30: 0.8041, 31-1000000000: 0.8299
+    MF30 logit + refit (z-sum)       AUC 0.81701   by candidate clicks 0-10: 0.7693, 11-30: 0.8156, 31-1000000000: 0.8389
+    mean |w - W_mf| / mean |W_mf|: 0.004

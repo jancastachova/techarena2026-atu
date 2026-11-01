@@ -1,0 +1,13 @@
+clicked events days 0-5: 368548, mean rank percentile 0.901, mean margin 0.5505
+  users with 10-20 scored events: 8346, split-half corr of margin 0.153, corr(margin, coherence) 0.684
+  users with 21-50 scored events: 2853, split-half corr of margin 0.240, corr(margin, coherence) 0.780
+  users with 51-1000000 scored events: 373, split-half corr of margin 0.279, corr(margin, coherence) 0.876
+day 6, known clicks 6-20 (17059 events), by predictability (margin) : T1 0.7996 (ctr 0.0607)  T2 0.8052 (ctr 0.0599)  T3 0.8188 (ctr 0.0594)
+day 6, known clicks 6-20 (17059 events), by rank percentile         : T1 0.7967 (ctr 0.0606)  T2 0.8121 (ctr 0.0601)  T3 0.8149 (ctr 0.0593)
+day 6, known clicks 6-20 (17059 events), by coherence               : T1 0.8035 (ctr 0.0621)  T2 0.8096 (ctr 0.0601)  T3 0.8107 (ctr 0.0578)
+day 6, known clicks 21-50 (52730 events), by predictability (margin) : T1 0.8250 (ctr 0.0654)  T2 0.8271 (ctr 0.0644)  T3 0.8300 (ctr 0.0613)
+day 6, known clicks 21-50 (52730 events), by rank percentile         : T1 0.8252 (ctr 0.0644)  T2 0.8273 (ctr 0.0643)  T3 0.8294 (ctr 0.0623)
+day 6, known clicks 21-50 (52730 events), by coherence               : T1 0.8254 (ctr 0.0671)  T2 0.8270 (ctr 0.0640)  T3 0.8301 (ctr 0.0599)
+day 6, known clicks 51-100 (17242 events), by predictability (margin) : T1 0.8349 (ctr 0.0715)  T2 0.8376 (ctr 0.0662)  T3 0.8401 (ctr 0.0638)
+day 6, known clicks 51-100 (17242 events), by rank percentile         : T1 0.8357 (ctr 0.0706)  T2 0.8383 (ctr 0.0665)  T3 0.8384 (ctr 0.0645)
+day 6, known clicks 51-100 (17242 events), by coherence               : T1 0.8313 (ctr 0.0723)  T2 0.8408 (ctr 0.0665)  T3 0.8410 (ctr 0.0628)

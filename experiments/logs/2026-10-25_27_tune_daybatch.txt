@@ -1,0 +1,1 @@
+=== daybatch                     3 seed(s): days 0-5 -> day 6 MF AUC 0.81687

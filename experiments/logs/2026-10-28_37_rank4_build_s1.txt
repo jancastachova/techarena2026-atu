@@ -1,0 +1,83 @@
+mlp_full: training in a separate process ...
+  sequence features from 12 cache(s): 18_mf_c7_3a4b8237d50b.npz, 18_mf_c7_19cd2f7e5252.npz, 18_mf_c7_cd85c39e1c55.npz, 18_mf_c7_352a14674518.npz, 18_mf_c7_d0b5a6545b44.npz, 18_mf_c7_b1d4761aa9f8.npz, 18_mf_c7_9cf491798aa3.npz, 18_mf_c7_b70ecf371aee.npz, 18_mf_c7_6ba8ab937a14.npz, 18_mf_c7_61e6684ca79a.npz, 18_mf_c7_1a50e53a9712.npz, 18_mf_c7_e9863b0f4de3.npz
+  extra group idf from 2 cache(s): 25_mf_c7_8849dbfd9b9f.npz, 25_mf_c7_f7999fa81611.npz
+  extra group idf15 from 1 cache(s): 25_mf_c7_2fcfab9db1d6.npz
+  extra group idf2 from 1 cache(s): 25_mf_c7_1c3fd1d6abe6.npz
+  extra group clicks from 2 cache(s): 25_mf_c7_ee7001a259a8.npz, 25_mf_c7_3e0d10f600d1.npz
+  extra group impronly from 1 cache(s): 25_mf_c7_773e620088b3.npz
+  extra group aud from 1 cache(s): 26s5_aud_c7.npz
+  extra group audc from 1 cache(s): 26s5_audc_c7.npz
+  extra group hop2c from 1 cache(s): 26v5_hop2c_c7.npz
+  extra group hop3 from 1 cache(s): 26h5_hop3_c7.npz
+  extra group hop2 from 1 cache(s): 26h10_hop2_c7.npz
+  extra group idf_hop2 from 1 cache(s): 26idf5_hop2_c7.npz
+  extra group uoff10 from 1 cache(s): 25_mf_c7_9226150de4c2.npz
+  extra group dim64 from 1 cache(s): 26p_mf_c7_80f68f787203.npz
+  extra group choice from 1 cache(s): 25_mf_c7_3b91a877c2b2.npz
+  extra group clicks_idf from 1 cache(s): 25_mf_c7_15af6d8dba56.npz
+  extra group clicks_unif from 1 cache(s): 25_mf_c7_3ddfb006ec71.npz
+  extra group uvec09 from 1 cache(s): 20_mf_c7_c6b710c438b5.npz
+  extra group deep from 1 cache(s): 21_mf_c7_c101aad57f12.npz
+  extra group sqrtview from 1 cache(s): 33_sqrtpool_c7.npz
+  extra group cos from 1 cache(s): 34_cos_c7.npz
+  extra group cosproj8 from 1 cache(s): 34_cosproj8_c7.npz
+  extra group cos_aud from 1 cache(s): 34b_aud_c7.npz
+  extra group cos_audc from 1 cache(s): 34b_audc_c7.npz
+  extra group cos_audc05 from 1 cache(s): 34b_audc05_c7.npz
+  extra group cos_wb from 1 cache(s): 34b_wb_c7.npz
+  extra group cos_hop2 from 1 cache(s): 34b_hop2_c7.npz
+  extra group cos_hop2c from 1 cache(s): 34b_hop2c_c7.npz
+  extra group cos_hop3 from 1 cache(s): 34b_hop3_c7.npz
+  extra group cos_hop4 from 1 cache(s): 34b_hop4_c7.npz
+  extra group temp06 from 1 cache(s): 34_cosproj8_t0.6_c7.npz
+  extra group cosresid8 from 1 cache(s): 36_cosresid8_c7.npz
+  extra group cossoft20 from 1 cache(s): 34_cossoft20_c7.npz
+  extra group soft_aud from 1 cache(s): 34c_aud_c7.npz
+  mlp seed 1000: 8 epochs by early stopping on day 6 (day-6 AUC 0.84370), refit on days 2-6
+  mlp seed 1001: 12 epochs by early stopping on day 6 (day-6 AUC 0.84389), refit on days 2-6
+  mlp seed 1002: 5 epochs by early stopping on day 6 (day-6 AUC 0.84367), refit on days 2-6
+  sequence features from 12 cache(s): 18_mf_c7_3a4b8237d50b.npz, 18_mf_c7_19cd2f7e5252.npz, 18_mf_c7_cd85c39e1c55.npz, 18_mf_c7_352a14674518.npz, 18_mf_c7_d0b5a6545b44.npz, 18_mf_c7_b1d4761aa9f8.npz, 18_mf_c7_9cf491798aa3.npz, 18_mf_c7_b70ecf371aee.npz, 18_mf_c7_6ba8ab937a14.npz, 18_mf_c7_61e6684ca79a.npz, 18_mf_c7_1a50e53a9712.npz, 18_mf_c7_e9863b0f4de3.npz
+  extra group idf from 2 cache(s): 25_mf_c7_8849dbfd9b9f.npz, 25_mf_c7_f7999fa81611.npz
+  extra group idf15 from 1 cache(s): 25_mf_c7_2fcfab9db1d6.npz
+  extra group idf2 from 1 cache(s): 25_mf_c7_1c3fd1d6abe6.npz
+  extra group clicks from 2 cache(s): 25_mf_c7_ee7001a259a8.npz, 25_mf_c7_3e0d10f600d1.npz
+  extra group impronly from 1 cache(s): 25_mf_c7_773e620088b3.npz
+  extra group aud from 1 cache(s): 26s5_aud_c7.npz
+  extra group audc from 1 cache(s): 26s5_audc_c7.npz
+  extra group hop2c from 1 cache(s): 26v5_hop2c_c7.npz
+  extra group hop3 from 1 cache(s): 26h5_hop3_c7.npz
+  extra group hop2 from 1 cache(s): 26h10_hop2_c7.npz
+  extra group idf_hop2 from 1 cache(s): 26idf5_hop2_c7.npz
+  extra group uoff10 from 1 cache(s): 25_mf_c7_9226150de4c2.npz
+  extra group dim64 from 1 cache(s): 26p_mf_c7_80f68f787203.npz
+  extra group choice from 1 cache(s): 25_mf_c7_3b91a877c2b2.npz
+  extra group clicks_idf from 1 cache(s): 25_mf_c7_15af6d8dba56.npz
+  extra group clicks_unif from 1 cache(s): 25_mf_c7_3ddfb006ec71.npz
+  extra group uvec09 from 1 cache(s): 20_mf_c7_c6b710c438b5.npz
+  extra group deep from 1 cache(s): 21_mf_c7_c101aad57f12.npz
+  extra group sqrtview from 1 cache(s): 33_sqrtpool_c7.npz
+  extra group cos from 1 cache(s): 34_cos_c7.npz
+  extra group cosproj8 from 1 cache(s): 34_cosproj8_c7.npz
+  extra group cos_aud from 1 cache(s): 34b_aud_c7.npz
+  extra group cos_audc from 1 cache(s): 34b_audc_c7.npz
+  extra group cos_audc05 from 1 cache(s): 34b_audc05_c7.npz
+  extra group cos_wb from 1 cache(s): 34b_wb_c7.npz
+  extra group cos_hop2 from 1 cache(s): 34b_hop2_c7.npz
+  extra group cos_hop2c from 1 cache(s): 34b_hop2c_c7.npz
+  extra group cos_hop3 from 1 cache(s): 34b_hop3_c7.npz
+  extra group cos_hop4 from 1 cache(s): 34b_hop4_c7.npz
+  extra group temp06 from 1 cache(s): 34_cosproj8_t0.6_c7.npz
+  extra group cosresid8 from 1 cache(s): 36_cosresid8_c7.npz
+  extra group cossoft20 from 1 cache(s): 34_cossoft20_c7.npz
+  extra group soft_aud from 1 cache(s): 34c_aud_c7.npz
+  lgb_full: 1595 trees (day-6 AUC 0.84398, 1041s)
+  lgbrank: 2200 trees fixed (RANK_TREES), no early stopping; fitting on days 2-6
+  lgbrank_full: 2200 trees (day-6 AUC nan, 5652s)
+  xgb_full: 625 trees (day-6 AUC 0.84392, 2226s)
+  rank correlations between members on the evaluation rows:
+    lgb_full: lgbrank_full 0.9973, xgb_full 0.9966, mlp_full 0.9926
+    lgbrank_full: xgb_full 0.9972, mlp_full 0.9934
+    xgb_full: mlp_full 0.9918
+    mlp_full: 
+done. wrote submissions/37_rank4_s1.csv (4 members: lgb_full, lgbrank_full, xgb_full, mlp_full)
+OK: 529,390 rows, all 529,390 evaluation rowids present once, values in [3.44736e-05, 1], 472,869 distinct

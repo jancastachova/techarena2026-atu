@@ -1,0 +1,12 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly', 'aud', 'audc', 'hop2c', 'hop3', 'hop2', 'idf_hop2', 'uoff10', 'dim64', 'choice', 'clicks_idf', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cos', 'cosproj8', 'cos_aud', 'cos_audc', 'cos_audc05', 'cos_wb', 'cos_hop2', 'cos_hop2c', 'cos_hop3', 'cos_hop4']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+temp06 (1 cache(s)): day-6 AUC 0.82383, rank corr with MF30 0.9052, with sequence 0.8967
+temp16 (1 cache(s)): day-6 AUC 0.82383, rank corr with MF30 0.9052, with sequence 0.8967
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84422  eval-weighted 0.82718  1-20 known clicks 0.81853  (1432 trees)
+  + temp06                                     half-B 0.84431  eval-weighted 0.82741  1-20 known clicks 0.81883  (1415 trees)
+    best-ranked temp06 features by gain: temp06_share #1, temp06_logit #26, temp06_lse #138
+  + temp16                                     half-B 0.84416  eval-weighted 0.82722  1-20 known clicks 0.81860  (1402 trees)
+    best-ranked temp16 features by gain: temp16_logit #13, temp16_rank #43, temp16_share #66

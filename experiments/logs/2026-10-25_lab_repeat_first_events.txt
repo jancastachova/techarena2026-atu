@@ -1,0 +1,8 @@
+  trees: 156 by early stopping on day 4 -> 234 for days 2-4 (best day-4 AUC 0.82097)
+fit day 4 (all events, in-sample): AUC 0.82726
+  repeat      2.57% of rows  mean pred 0.2792  actual 0.2871  ratio 0.972
+  not repeat 97.43% of rows  mean pred 0.0574  actual 0.0569  ratio 1.008
+cutoff-5 test (first events): AUC 0.81358
+  repeat      2.52% of rows  mean pred 0.2742  actual 0.3014  ratio 0.910
+  not repeat 97.48% of rows  mean pred 0.0565  actual 0.0572  ratio 0.987
+log-odds shift on repeats (test, diagnostic): -0.4 0.81278, -0.2 0.81332, +0.0 0.81358, +0.2 0.81362, +0.4 0.81354, +0.6 0.81339

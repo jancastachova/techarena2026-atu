@@ -1,0 +1,15 @@
+### dim 8
+=== base             3 seed(s): days 0-5 -> day 6 MF AUC 0.79487  non-repeat rows 0.78397  repeat rows 0.65825
+=== l2:0.02          3 seed(s): days 0-5 -> day 6 MF AUC 0.79769  non-repeat rows 0.78675  repeat rows 0.66090   rank corr with the first 0.9953
+=== l2:0.01          3 seed(s): days 0-5 -> day 6 MF AUC 0.79813  non-repeat rows 0.78714  repeat rows 0.66139   rank corr with the first 0.9920
+=== steps:6000       3 seed(s): days 0-5 -> day 6 MF AUC 0.80658  non-repeat rows 0.79611  repeat rows 0.66833   rank corr with the first 0.9764
+### dim 10
+=== base             3 seed(s): days 0-5 -> day 6 MF AUC 0.80598  non-repeat rows 0.79584  repeat rows 0.66395
+=== l2:0.02          3 seed(s): days 0-5 -> day 6 MF AUC 0.80917  non-repeat rows 0.79907  repeat rows 0.66633   rank corr with the first 0.9947
+=== l2:0.01          3 seed(s): days 0-5 -> day 6 MF AUC 0.80967  non-repeat rows 0.79955  repeat rows 0.66664   rank corr with the first 0.9907
+=== steps:6000       3 seed(s): days 0-5 -> day 6 MF AUC 0.81477  non-repeat rows 0.80488  repeat rows 0.67253   rank corr with the first 0.9781
+### dim 12
+=== base             3 seed(s): days 0-5 -> day 6 MF AUC 0.80893  non-repeat rows 0.79882  repeat rows 0.66678
+=== l2:0.02          3 seed(s): days 0-5 -> day 6 MF AUC 0.81192  non-repeat rows 0.80187  repeat rows 0.66919   rank corr with the first 0.9964
+=== l2:0.01          3 seed(s): days 0-5 -> day 6 MF AUC 0.81242  non-repeat rows 0.80236  repeat rows 0.66948   rank corr with the first 0.9936
+=== steps:6000       3 seed(s): days 0-5 -> day 6 MF AUC 0.81508  non-repeat rows 0.80505  repeat rows 0.67271   rank corr with the first 0.9791

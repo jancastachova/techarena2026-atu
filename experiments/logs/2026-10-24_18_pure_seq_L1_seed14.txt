@@ -1,0 +1,22 @@
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+  MF: history up to 100 clicks, 1 seeds, pretraining none
+  MF trained on days 0-1 -> scoring fit day 2
+    seed 14: seq on mps, 3000 steps on 197,017 events + 703,211 logged clicks (506s)
+    AUC on day 2: 0.65881
+  MF trained on days 0-2 -> scoring fit day 3
+    seed 14: seq on mps, 3000 steps on 295,114 events + 765,401 logged clicks (471s)
+    AUC on day 3: 0.70636
+  MF trained on days 0-3 -> scoring fit day 4
+    seed 14: seq on mps, 3000 steps on 392,831 events + 826,783 logged clicks (491s)
+    AUC on day 4: 0.75080
+  MF trained on days 0-4 -> scoring fit day 5
+    seed 14: seq on mps, 3000 steps on 490,420 events + 888,225 logged clicks (481s)
+    AUC on day 5: 0.76236
+  MF trained on days 0-5 -> scoring fit day 6
+    seed 14: seq on mps, 3000 steps on 588,873 events + 950,177 logged clicks (388s)
+    AUC on day 6: 0.76823
+  MF trained on days 0-6 -> scoring the test events
+    seed 14: seq on mps, 3000 steps on 686,824 events + 1,011,994 logged clicks (378s)
+MF scores: 18_mf_c7_fef5b1e05347.npz

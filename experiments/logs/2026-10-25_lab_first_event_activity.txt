@@ -1,0 +1,14 @@
+  act_log_known          test mean   2.728  fit days 2-4 mean   3.125
+  act_log_3d             test mean   1.123  fit days 2-4 mean   1.854
+  act_log_7d             test mean   1.860  fit days 2-4 mean   2.573
+  act_log_span_h         test mean   5.885  fit days 2-4 mean   5.602
+  act_rate20_per_day     test mean  -0.150  fit days 2-4 mean   0.626
+  act_mean_gap_h         test mean   3.411  fit days 2-4 mean   2.708
+  act_log_warm           test mean   2.381  fit days 2-4 mean   2.740
+  act_log_events         test mean   2.055  fit days 2-4 mean   2.391
+  act_clicks_per_event   test mean   0.631  fit days 2-4 mean   0.629
+
+cutoff-5 validation (first events), LightGBM averaged over 3 seeds:
+  13 features                  all 0.81369  0 known 0.54194  1-5 0.74604  6-20 0.80872  21+ 0.83761
+  + activity                   all 0.81378  0 known 0.53775  1-5 0.74602  6-20 0.80873  21+ 0.83778
+    by gain: act_clicks_per_event #9, act_log_warm #12, act_log_events #18, act_mean_gap_h #19, act_log_span_h #20, act_rate20_per_day #30, act_log_known #31, act_log_7d #35, act_log_3d #39

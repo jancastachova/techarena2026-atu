@@ -1,0 +1,23 @@
+  binary                         half-B 0.84118  eval-weighted 0.82445
+  lambdarank G500                half-B 0.84137  eval-weighted 0.82467
+[LightGBM] [Fatal] Number of rows 20000 exceeds upper limit of 10000 for a query
+Traceback (most recent call last):
+  File "/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/global_rank2.py", line 30, in <module>
+    mm = lgb.train(p, lgb.Dataset(base_X[idx], y[idx], group=sizes, feature_name=base_names), 8000,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ivanbibat/Documents/GitHub/techarena2026-atu/.venv/lib/python3.12/site-packages/lightgbm/engine.py", line 296, in train
+    booster = Booster(params=params, train_set=train_set)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ivanbibat/Documents/GitHub/techarena2026-atu/.venv/lib/python3.12/site-packages/lightgbm/basic.py", line 3762, in __init__
+    _safe_call(
+  File "/Users/ivanbibat/Documents/GitHub/techarena2026-atu/.venv/lib/python3.12/site-packages/lightgbm/basic.py", line 297, in _safe_call
+    raise LightGBMError(_LIB.LGBM_GetLastError().decode("utf-8"))
+lightgbm.basic.LightGBMError: Number of rows 20000 exceeds upper limit of 10000 for a query
+[lambdarank G500]                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[lambdarank G500] FileNotFoundError: [Errno 2] No such file or directory: 'data/cache/lab_preds_global_rank.npz'
+[lambdarank G2000]                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[lambdarank G2000] FileNotFoundError: [Errno 2] No such file or directory: 'data/cache/lab_preds_global_rank.npz'
+[lambdarank G10000]                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[lambdarank G10000] FileNotFoundError: [Errno 2] No such file or directory: 'data/cache/lab_preds_global_rank.npz'
+[binary + lambdarank G2000 (rank avg)]                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[binary + lambdarank G2000 (rank avg)] FileNotFoundError: [Errno 2] No such file or directory: 'data/cache/lab_preds_global_rank.npz'

@@ -1,0 +1,24 @@
+### (a) soft_aud from 40 vectors
+base: MF30 + popularity + sequence + ['clicks', 'uoff10', 'choice', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cosproj8', 'cos_audc05', 'cos_hop2c', 'cos_hop4', 'cosresid8', 'soft_aud', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84519  eval-weighted 0.82843  first 0.82723  1-20 known clicks 0.82011  (1129 trees)
+A = data/cache/lab_preds_40_d6.npz:base (= the best member)
+B = data/cache/lab_preds_40a_d6.npz:base (= the best member)
+48,976 half-B events, 300 bootstrap resamples of events
+  plain          A 0.84505  B 0.84519  B-A +0.00014  95% interval [-0.00001, +0.00032]  P(B > A) 0.96
+  eval-weighted  A 0.82839  B 0.82843  B-A +0.00005  95% interval [-0.00026, +0.00036]  P(B > A) 0.62
+### (b) + hop4, hop2c from 40 vectors
+base: MF30 + popularity + sequence + ['clicks', 'uoff10', 'choice', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cosproj8', 'cos_audc05', 'cos_hop2c', 'cos_hop4', 'cosresid8', 'soft_aud', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84517  eval-weighted 0.82843  first 0.82733  1-20 known clicks 0.82009  (1184 trees)
+A = data/cache/lab_preds_40_d6.npz:base (= the best member)
+B = data/cache/lab_preds_40b_d6.npz:base (= the best member)
+48,976 half-B events, 300 bootstrap resamples of events
+  plain          A 0.84505  B 0.84517  B-A +0.00012  95% interval [-0.00005, +0.00032]  P(B > A) 0.90
+  eval-weighted  A 0.82839  B 0.82843  B-A +0.00005  95% interval [-0.00024, +0.00039]  P(B > A) 0.66

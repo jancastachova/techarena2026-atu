@@ -1,0 +1,4 @@
+real      lag1 0.2946  lag2 0.2905  lag5 0.2836  lag10 0.2786  shuffled lag1 0.2893  same item as previous 0.0205  click log-pop 2.589
+          by gap (h): <0.5: 0.2870 (n=30137)  <3: 0.2882 (n=94113)  <12: 0.2921 (n=127129)  <48: 0.2992 (n=109475)  <1000: 0.3253 (n=20729)
+replica   lag1 0.2207  lag2 0.2182  lag5 0.2137  lag10 0.2103  shuffled lag1 0.2178  same item as previous 0.0131  click log-pop 2.638
+          by gap (h): <0.5: 0.2172 (n=29222)  <3: 0.2148 (n=91490)  <12: 0.2176 (n=124324)  <48: 0.2262 (n=107420)  <1000: 0.2411 (n=20774)

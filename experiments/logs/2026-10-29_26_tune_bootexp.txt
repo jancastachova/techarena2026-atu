@@ -1,0 +1,29 @@
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+    seed 0: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (24s)
+    seed 1: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 2: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 3: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (25s)
+    seed 4: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (24s)
+    seed 5: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 6: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 7: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 8: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 9: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 10: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 11: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+=== base             12 seed(s): days 0-5 -> day 6 MF AUC 0.81887  non-repeat rows 0.80915  repeat rows 0.67065
+    seed 0: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 1: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (20s)
+    seed 2: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (20s)
+    seed 3: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (20s)
+    seed 4: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 5: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (24s)
+    seed 6: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (23s)
+    seed 7: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (23s)
+    seed 8: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (23s)
+    seed 9: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (24s)
+    seed 10: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 11: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+=== boot:exp         12 seed(s): days 0-5 -> day 6 MF AUC 0.81650  non-repeat rows 0.80652  repeat rows 0.66524   rank corr with the first 0.9876

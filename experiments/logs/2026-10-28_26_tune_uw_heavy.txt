@@ -1,0 +1,4 @@
+=== base             3 seed(s): days 0-5 -> day 6 MF AUC 0.81750  non-repeat rows 0.80767  repeat rows 0.66980
+=== uw:-0.3          3 seed(s): days 0-5 -> day 6 MF AUC 0.81764  non-repeat rows 0.80783  repeat rows 0.67112   rank corr with the first 0.9959
+=== uw:-0.6          3 seed(s): days 0-5 -> day 6 MF AUC 0.81584  non-repeat rows 0.80592  repeat rows 0.66891   rank corr with the first 0.9848
+=== uw:-1.0          3 seed(s): days 0-5 -> day 6 MF AUC 0.81058  non-repeat rows 0.80027  repeat rows 0.66205   rank corr with the first 0.9623

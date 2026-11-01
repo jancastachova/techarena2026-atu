@@ -1,0 +1,7 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly', 'aud', 'audc', 'hop2c', 'hop3', 'hop2', 'idf_hop2', 'uoff10', 'dim64', 'choice', 'clicks_idf', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cos', 'cosproj8', 'cos_aud', 'cos_audc', 'cos_audc05', 'cos_wb', 'cos_hop2', 'cos_hop2c', 'cos_hop3', 'cos_hop4', 'temp06', 'cosresid8', 'cossoft20', 'soft_aud']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+TEST_DAY 5: fit days 2-4, halves of day 5
+evaluation-weighted AUC: bucket weights 0-0 5.73, 1-5 3.60, 6-20 1.78, 21-50 0.60, 51-100 0.27
+  binary                         half-B 0.83932  eval-weighted 0.82037  first 0.81912
+  lambdarank G500                half-B 0.83956  eval-weighted 0.82051  first 0.81926
+  binary + lambdarank G500 (rank avg) half-B 0.83954  eval-weighted 0.82057  first 0.81932

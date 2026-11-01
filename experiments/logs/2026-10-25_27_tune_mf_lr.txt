@@ -1,0 +1,5 @@
+=== base                         3 seed(s): days 0-5 -> day 6 MF AUC 0.81750
+=== lr:0.0015+steps:6000         3 seed(s): days 0-5 -> day 6 MF AUC 0.81857
+=== lr:0.001+steps:9000          3 seed(s): days 0-5 -> day 6 MF AUC 0.81869
+=== lr:0.0015+steps:8000         3 seed(s): days 0-5 -> day 6 MF AUC 0.81759
+=== lr:0.002+steps:5000          3 seed(s): days 0-5 -> day 6 MF AUC 0.81819

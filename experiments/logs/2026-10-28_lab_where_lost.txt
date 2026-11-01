@@ -1,0 +1,6 @@
+events 48976, event click share 0.631; event-level AUC of S: 0.69611; within-event AUC (clicked events): 0.8342
+all      n= 48976 model 0.84422 | event part only 0.57727 within part only 0.83836 | perfect event part 0.91111  perfect within part 1.00000 | event AUC 0.6961
+known 0  n=   108 model 0.54364 | event part only 0.57652 within part only 0.46540 | perfect event part 0.75393  perfect within part 1.00000 | event AUC 0.6429
+1-5      n=  1974 model 0.77606 | event part only 0.57626 within part only 0.76731 | perfect event part 0.88332  perfect within part 1.00000 | event AUC 0.6648
+6-20     n= 11711 model 0.82477 | event part only 0.57272 within part only 0.81881 | perfect event part 0.90517  perfect within part 1.00000 | event AUC 0.6700
+21+      n= 35183 model 0.85330 | event part only 0.57704 within part only 0.84763 | perfect event part 0.91429  perfect within part 1.00000 | event AUC 0.7036

@@ -1,0 +1,5 @@
+A = data/cache/lab_preds_uw1.npz:base (= the best member)
+B = data/cache/lab_preds_cosaud.npz:base (= the best member)
+48,976 half-B events, 300 bootstrap resamples of events
+  plain          A 0.84118  B 0.84278  B-A +0.00160  95% interval [+0.00134, +0.00188]  P(B > A) 1.00
+  eval-weighted  A 0.82445  B 0.82569  B-A +0.00125  95% interval [+0.00085, +0.00173]  P(B > A) 1.00

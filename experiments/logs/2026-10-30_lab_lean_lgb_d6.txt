@@ -1,0 +1,67 @@
+### lean default
+base: MF30 + popularity + sequence + ['clicks', 'uoff10', 'choice', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cosproj8', 'cos_audc05', 'cos_hop2c', 'cos_hop4', 'cosresid8', 'soft_aud', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84447  eval-weighted 0.82779  first 0.82662  1-20 known clicks 0.81936  (1007 trees)
+### l127 {"num_leaves":127}
+base: MF30 + popularity + sequence + ['clicks', 'uoff10', 'choice', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cosproj8', 'cos_audc05', 'cos_hop2c', 'cos_hop4', 'cosresid8', 'soft_aud', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84447  eval-weighted 0.82766  first 0.82640  1-20 known clicks 0.81921  (644 trees)
+A = data/cache/lab_preds_lean0_d6.npz:base (= the best member)
+B = data/cache/lab_preds_lean_l127_d6.npz:base (= the best member)
+48,976 half-B events, 300 bootstrap resamples of events
+  plain          A 0.84447  B 0.84447  B-A +0.00000  95% interval [-0.00012, +0.00011]  P(B > A) 0.58
+  eval-weighted  A 0.82779  B 0.82766  B-A -0.00013  95% interval [-0.00038, +0.00011]  P(B > A) 0.11
+### l255 {"num_leaves":255,"min_data_in_leaf":100}
+base: MF30 + popularity + sequence + ['clicks', 'uoff10', 'choice', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cosproj8', 'cos_audc05', 'cos_hop2c', 'cos_hop4', 'cosresid8', 'soft_aud', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84434  eval-weighted 0.82756  first 0.82635  1-20 known clicks 0.81900  (339 trees)
+A = data/cache/lab_preds_lean0_d6.npz:base (= the best member)
+B = data/cache/lab_preds_lean_l255_d6.npz:base (= the best member)
+48,976 half-B events, 300 bootstrap resamples of events
+  plain          A 0.84447  B 0.84434  B-A -0.00013  95% interval [-0.00025, +0.00001]  P(B > A) 0.03
+  eval-weighted  A 0.82779  B 0.82756  B-A -0.00023  95% interval [-0.00048, +0.00001]  P(B > A) 0.03
+### ff05 {"feature_fraction":0.5}
+base: MF30 + popularity + sequence + ['clicks', 'uoff10', 'choice', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cosproj8', 'cos_audc05', 'cos_hop2c', 'cos_hop4', 'cosresid8', 'soft_aud', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84453  eval-weighted 0.82785  first 0.82671  1-20 known clicks 0.81949  (1241 trees)
+A = data/cache/lab_preds_lean0_d6.npz:base (= the best member)
+B = data/cache/lab_preds_lean_ff05_d6.npz:base (= the best member)
+48,976 half-B events, 300 bootstrap resamples of events
+  plain          A 0.84447  B 0.84453  B-A +0.00006  95% interval [-0.00006, +0.00018]  P(B > A) 0.88
+  eval-weighted  A 0.82779  B 0.82785  B-A +0.00006  95% interval [-0.00015, +0.00031]  P(B > A) 0.73
+### l127l2 {"num_leaves":127,"lambda_l2":10,"min_data_in_leaf":400}
+base: MF30 + popularity + sequence + ['clicks', 'uoff10', 'choice', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cosproj8', 'cos_audc05', 'cos_hop2c', 'cos_hop4', 'cosresid8', 'soft_aud', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84461  eval-weighted 0.82792  first 0.82673  1-20 known clicks 0.81941  (610 trees)
+A = data/cache/lab_preds_lean0_d6.npz:base (= the best member)
+B = data/cache/lab_preds_lean_l127l2_d6.npz:base (= the best member)
+48,976 half-B events, 300 bootstrap resamples of events
+  plain          A 0.84447  B 0.84461  B-A +0.00014  95% interval [+0.00003, +0.00026]  P(B > A) 0.99
+  eval-weighted  A 0.82779  B 0.82792  B-A +0.00013  95% interval [-0.00008, +0.00034]  P(B > A) 0.86
+### lr01 {"learning_rate":0.01}
+base: MF30 + popularity + sequence + ['clicks', 'uoff10', 'choice', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cosproj8', 'cos_audc05', 'cos_hop2c', 'cos_hop4', 'cosresid8', 'soft_aud', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84462  eval-weighted 0.82794  first 0.82687  1-20 known clicks 0.81952  (2216 trees)
+A = data/cache/lab_preds_lean0_d6.npz:base (= the best member)
+B = data/cache/lab_preds_lean_lr01_d6.npz:base (= the best member)
+48,976 half-B events, 300 bootstrap resamples of events
+  plain          A 0.84447  B 0.84462  B-A +0.00015  95% interval [+0.00004, +0.00024]  P(B > A) 1.00
+  eval-weighted  A 0.82779  B 0.82794  B-A +0.00015  95% interval [-0.00007, +0.00033]  P(B > A) 0.90

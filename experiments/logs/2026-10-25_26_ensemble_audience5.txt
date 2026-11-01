@@ -1,0 +1,27 @@
+mlp_full: training in a separate process ...
+  sequence features from 12 cache(s): 18_mf_c7_3a4b8237d50b.npz, 18_mf_c7_19cd2f7e5252.npz, 18_mf_c7_cd85c39e1c55.npz, 18_mf_c7_352a14674518.npz, 18_mf_c7_d0b5a6545b44.npz, 18_mf_c7_b1d4761aa9f8.npz, 18_mf_c7_9cf491798aa3.npz, 18_mf_c7_b70ecf371aee.npz, 18_mf_c7_6ba8ab937a14.npz, 18_mf_c7_61e6684ca79a.npz, 18_mf_c7_1a50e53a9712.npz, 18_mf_c7_e9863b0f4de3.npz
+  extra group idf from 2 cache(s): 25_mf_c7_8849dbfd9b9f.npz, 25_mf_c7_f7999fa81611.npz
+  extra group idf15 from 1 cache(s): 25_mf_c7_2fcfab9db1d6.npz
+  extra group idf2 from 1 cache(s): 25_mf_c7_1c3fd1d6abe6.npz
+  extra group clicks from 2 cache(s): 25_mf_c7_ee7001a259a8.npz, 25_mf_c7_3e0d10f600d1.npz
+  extra group impronly from 1 cache(s): 25_mf_c7_773e620088b3.npz
+  extra group aud from 1 cache(s): 26s5_aud_c7.npz
+  extra group audc from 1 cache(s): 26s5_audc_c7.npz
+  mlp seed 0: 4 epochs by early stopping on day 6 (day-6 AUC 0.83902), refit on days 2-6
+  mlp seed 1: 7 epochs by early stopping on day 6 (day-6 AUC 0.83961), refit on days 2-6
+  mlp seed 2: 7 epochs by early stopping on day 6 (day-6 AUC 0.83941), refit on days 2-6
+  sequence features from 12 cache(s): 18_mf_c7_3a4b8237d50b.npz, 18_mf_c7_19cd2f7e5252.npz, 18_mf_c7_cd85c39e1c55.npz, 18_mf_c7_352a14674518.npz, 18_mf_c7_d0b5a6545b44.npz, 18_mf_c7_b1d4761aa9f8.npz, 18_mf_c7_9cf491798aa3.npz, 18_mf_c7_b70ecf371aee.npz, 18_mf_c7_6ba8ab937a14.npz, 18_mf_c7_61e6684ca79a.npz, 18_mf_c7_1a50e53a9712.npz, 18_mf_c7_e9863b0f4de3.npz
+  extra group idf from 2 cache(s): 25_mf_c7_8849dbfd9b9f.npz, 25_mf_c7_f7999fa81611.npz
+  extra group idf15 from 1 cache(s): 25_mf_c7_2fcfab9db1d6.npz
+  extra group idf2 from 1 cache(s): 25_mf_c7_1c3fd1d6abe6.npz
+  extra group clicks from 2 cache(s): 25_mf_c7_ee7001a259a8.npz, 25_mf_c7_3e0d10f600d1.npz
+  extra group impronly from 1 cache(s): 25_mf_c7_773e620088b3.npz
+  extra group aud from 1 cache(s): 26s5_aud_c7.npz
+  extra group audc from 1 cache(s): 26s5_audc_c7.npz
+  lgb_full: 1300 trees (day-6 AUC 0.83958, 318s)
+  xgb_full: 852 trees (day-6 AUC 0.83949, 299s)
+  rank correlations between members on the evaluation rows:
+    lgb_full: xgb_full 0.9969, mlp_full 0.9917
+    xgb_full: mlp_full 0.9900
+    mlp_full: 
+done. wrote submissions/26_ensemble_audience5.csv (3 members: lgb_full, xgb_full, mlp_full)

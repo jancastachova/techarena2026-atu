@@ -1,0 +1,64 @@
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+  MF: history up to 100 clicks, 8 seeds, pretraining none
+  MF trained on days 0-1 -> scoring fit day 2
+    seed 0: pool mean (gamma 0.5), 3000 steps on 197,017 events + 703,211 logged clicks (21s)
+    seed 1: pool mean (gamma 0.5), 3000 steps on 197,017 events + 703,211 logged clicks (21s)
+    seed 2: pool mean (gamma 0.5), 3000 steps on 197,017 events + 703,211 logged clicks (20s)
+    seed 3: pool mean (gamma 0.5), 3000 steps on 197,017 events + 703,211 logged clicks (20s)
+    seed 4: pool mean (gamma 0.5), 3000 steps on 197,017 events + 703,211 logged clicks (20s)
+    seed 5: pool mean (gamma 0.5), 3000 steps on 197,017 events + 703,211 logged clicks (20s)
+    seed 6: pool mean (gamma 0.5), 3000 steps on 197,017 events + 703,211 logged clicks (20s)
+    seed 7: pool mean (gamma 0.5), 3000 steps on 197,017 events + 703,211 logged clicks (20s)
+    AUC on day 2: 0.76437
+  MF trained on days 0-2 -> scoring fit day 3
+    seed 0: pool mean (gamma 0.5), 3000 steps on 295,114 events + 765,401 logged clicks (20s)
+    seed 1: pool mean (gamma 0.5), 3000 steps on 295,114 events + 765,401 logged clicks (20s)
+    seed 2: pool mean (gamma 0.5), 3000 steps on 295,114 events + 765,401 logged clicks (20s)
+    seed 3: pool mean (gamma 0.5), 3000 steps on 295,114 events + 765,401 logged clicks (20s)
+    seed 4: pool mean (gamma 0.5), 3000 steps on 295,114 events + 765,401 logged clicks (20s)
+    seed 5: pool mean (gamma 0.5), 3000 steps on 295,114 events + 765,401 logged clicks (20s)
+    seed 6: pool mean (gamma 0.5), 3000 steps on 295,114 events + 765,401 logged clicks (20s)
+    seed 7: pool mean (gamma 0.5), 3000 steps on 295,114 events + 765,401 logged clicks (20s)
+    AUC on day 3: 0.78030
+  MF trained on days 0-3 -> scoring fit day 4
+    seed 0: pool mean (gamma 0.5), 3000 steps on 392,831 events + 826,783 logged clicks (20s)
+    seed 1: pool mean (gamma 0.5), 3000 steps on 392,831 events + 826,783 logged clicks (20s)
+    seed 2: pool mean (gamma 0.5), 3000 steps on 392,831 events + 826,783 logged clicks (20s)
+    seed 3: pool mean (gamma 0.5), 3000 steps on 392,831 events + 826,783 logged clicks (20s)
+    seed 4: pool mean (gamma 0.5), 3000 steps on 392,831 events + 826,783 logged clicks (20s)
+    seed 5: pool mean (gamma 0.5), 3000 steps on 392,831 events + 826,783 logged clicks (20s)
+    seed 6: pool mean (gamma 0.5), 3000 steps on 392,831 events + 826,783 logged clicks (20s)
+    seed 7: pool mean (gamma 0.5), 3000 steps on 392,831 events + 826,783 logged clicks (20s)
+    AUC on day 4: 0.78959
+  MF trained on days 0-4 -> scoring fit day 5
+    seed 0: pool mean (gamma 0.5), 3000 steps on 490,420 events + 888,225 logged clicks (20s)
+    seed 1: pool mean (gamma 0.5), 3000 steps on 490,420 events + 888,225 logged clicks (21s)
+    seed 2: pool mean (gamma 0.5), 3000 steps on 490,420 events + 888,225 logged clicks (21s)
+    seed 3: pool mean (gamma 0.5), 3000 steps on 490,420 events + 888,225 logged clicks (20s)
+    seed 4: pool mean (gamma 0.5), 3000 steps on 490,420 events + 888,225 logged clicks (20s)
+    seed 5: pool mean (gamma 0.5), 3000 steps on 490,420 events + 888,225 logged clicks (20s)
+    seed 6: pool mean (gamma 0.5), 3000 steps on 490,420 events + 888,225 logged clicks (20s)
+    seed 7: pool mean (gamma 0.5), 3000 steps on 490,420 events + 888,225 logged clicks (20s)
+    AUC on day 5: 0.79993
+  MF trained on days 0-5 -> scoring fit day 6
+    seed 0: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 1: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 2: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 3: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 4: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 5: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 6: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    seed 7: pool mean (gamma 0.5), 3000 steps on 588,873 events + 950,177 logged clicks (21s)
+    AUC on day 6: 0.80577
+  MF trained on days 0-6 -> scoring the test events
+    seed 0: pool mean (gamma 0.5), 3000 steps on 686,824 events + 1,011,994 logged clicks (21s)
+    seed 1: pool mean (gamma 0.5), 3000 steps on 686,824 events + 1,011,994 logged clicks (21s)
+    seed 2: pool mean (gamma 0.5), 3000 steps on 686,824 events + 1,011,994 logged clicks (21s)
+    seed 3: pool mean (gamma 0.5), 3000 steps on 686,824 events + 1,011,994 logged clicks (21s)
+    seed 4: pool mean (gamma 0.5), 3000 steps on 686,824 events + 1,011,994 logged clicks (24s)
+    seed 5: pool mean (gamma 0.5), 3000 steps on 686,824 events + 1,011,994 logged clicks (21s)
+    seed 6: pool mean (gamma 0.5), 3000 steps on 686,824 events + 1,011,994 logged clicks (21s)
+    seed 7: pool mean (gamma 0.5), 3000 steps on 686,824 events + 1,011,994 logged clicks (22s)
+MF scores: 26p_mf_c7_6a2b62de353d.npz

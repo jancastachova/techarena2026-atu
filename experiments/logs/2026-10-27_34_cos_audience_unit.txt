@@ -1,0 +1,13 @@
+day 2 (5 seed(s)): aud AUC 0.79554, audc AUC 0.79291, audc05 AUC 0.79755, wb AUC 0.78436, hop2 AUC 0.79294, hop2c AUC 0.79604, hop3 AUC 0.79503, hop4 AUC 0.79631
+day 3 (5 seed(s)): aud AUC 0.80616, audc AUC 0.80513, audc05 AUC 0.80826, wb AUC 0.79995, hop2 AUC 0.80509, hop2c AUC 0.80668, hop3 AUC 0.80620, hop4 AUC 0.80646
+day 4 (5 seed(s)): aud AUC 0.81211, audc AUC 0.81230, audc05 AUC 0.81443, wb AUC 0.80868, hop2 AUC 0.81241, hop2c AUC 0.81331, hop3 AUC 0.81285, hop4 AUC 0.81278
+day 5 (5 seed(s)): aud AUC 0.82027, audc AUC 0.82065, audc05 AUC 0.82243, wb AUC 0.81797, hop2 AUC 0.82074, hop2c AUC 0.82120, hop3 AUC 0.82058, hop4 AUC 0.82040
+day 6 (5 seed(s)): aud AUC 0.82455, audc AUC 0.82546, audc05 AUC 0.82679, wb AUC 0.82324, hop2 AUC 0.82508, hop2c AUC 0.82561, hop3 AUC 0.82538, hop4 AUC 0.82492
+aud: wrote data/cache/34b_aud_c7.npz (test score mean 0.413 sd 3.269, fit days 2-6 mean 0.408 sd 3.000)
+audc: wrote data/cache/34b_audc_c7.npz (test score mean 0.259 sd 3.284, fit days 2-6 mean 0.256 sd 3.000)
+audc05: wrote data/cache/34b_audc05_c7.npz (test score mean 0.343 sd 3.273, fit days 2-6 mean 0.340 sd 3.000)
+wb: wrote data/cache/34b_wb_c7.npz (test score mean 0.346 sd 3.406, fit days 2-6 mean 0.316 sd 3.000)
+hop2: wrote data/cache/34b_hop2_c7.npz (test score mean 0.284 sd 3.356, fit days 2-6 mean 0.280 sd 3.000)
+hop2c: wrote data/cache/34b_hop2c_c7.npz (test score mean 0.196 sd 3.237, fit days 2-6 mean 0.200 sd 3.000)
+hop3: wrote data/cache/34b_hop3_c7.npz (test score mean 0.196 sd 3.216, fit days 2-6 mean 0.199 sd 3.000)
+hop4: wrote data/cache/34b_hop4_c7.npz (test score mean 0.161 sd 3.162, fit days 2-6 mean 0.166 sd 3.000)
