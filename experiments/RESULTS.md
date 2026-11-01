@@ -67,7 +67,7 @@ user at/after the cutoff, nothing tuned on the test events.
 | 40 | lean set (15 groups) with the projected view from 9000-step vectors (`40_long_mf/build.sh 0`): binary LightGBM (1558 trees, day-6 0.84464), XGBoost (635 trees, 0.84457), choice model (3 seeds); rank-averaged, no lambdarank. Lab vs lean set +0.0006 eval-weighted on days 6 and 5. Public +0.00041 over 38 s0 (0.82525) -- exactly the clean day-4 prediction for SET38 -> SET40 (+0.00041): the best single build so far and the first lab gain since 35 to transfer in full | not run ‡ | 0.82566 | `40_long_mf_s0.csv` |
 | 40b | equal mean of 40 and 39b, weights fixed in advance. +0.00021 over 39b at half weight: the 40 change transfers (day 4 predicted ~+0.0004 for 40 alone over 38) | not run ‡ | **0.82575** | `40b_avg_40_39b.csv` |
 | 42 | 40 + a shallow regularised LightGBM member (15 leaves, min_data_in_leaf 2000, feature_fraction 0.3; `42_shallow/build.sh 0`, 3401 trees, day-6 0.84474, 10 min) as a 4th equal rank member (40 x3 + member x1). Lab 50/50 with the SET40 LightGBM, gap-weighted: day 6 +0.00010, day 5 +0.00016, day 4 (unselected) +0.00031. Spearman member vs 40 0.9981 | not run ‡ | not uploaded | `42_shallow_s0.csv` |
-| 42b | equal mean of 42 and 39b (as 40b). Spearman vs 40b 0.99997 | not run ‡ | not uploaded | `42b_avg_42_39b.csv` |
+| 42b | equal mean of 42 and 39b (as 40b). Spearman vs 40b 0.99997. Public +0.00001 over 40b: as expected for a 12.5%-weight member, within noise; kept as the final pick on its 3-day lab evidence | not run ‡ | **0.82576** | `42b_avg_42_39b.csv` |
 
 † The 01 upload (0.60732) was an earlier version of 01 (plain logistic regression, validation
 0.618 *); the file was replaced by the two-stage version afterwards, which was never uploaded.
