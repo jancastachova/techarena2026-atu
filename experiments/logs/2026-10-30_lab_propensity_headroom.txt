@@ -1,0 +1,5 @@
+apply half of half B (24466 events): model as is 0.84521
+  re-levelled with past               0.84515  (coef on estimate +0.120)
+     by known clicks 1-5 / 6-20 / 21+: 0.7829 vs 0.7832 / 0.8229 vs 0.8229 / 0.8547 vs 0.8547
+  re-levelled with loo (oracle-ish)   0.84515  (coef on estimate +0.143)
+     by known clicks 1-5 / 6-20 / 21+: 0.7831 vs 0.7832 / 0.8229 vs 0.8229 / 0.8547 vs 0.8547

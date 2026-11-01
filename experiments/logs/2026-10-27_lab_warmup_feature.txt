@@ -1,0 +1,13 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly', 'aud', 'audc', 'hop2c', 'hop3', 'hop2', 'idf_hop2', 'uoff10', 'dim64', 'choice', 'clicks_idf', 'clicks_unif', 'uvec09', 'deep']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+event-level AUC on half B: user_rate 0.62722  wu_pool 0.61789
+  train events 0-5: 6818 events  user_rate 0.58267  wu_pool 0.57618
+  train events 6-20: 17776 events  user_rate 0.62287  wu_pool 0.61477
+  train events 21-1000000: 21730 events  user_rate 0.64714  wu_pool 0.64310
+  current best                     half-B 0.84118  eval-weighted 0.82445  1-20 known clicks 0.81573  (1387 trees)
+    ranks by gain: 
+  + warm-up propensity             half-B 0.84124  eval-weighted 0.82446  1-20 known clicks 0.81581  (1076 trees)
+    ranks by gain: wu_log_int 19, wu_log_lam 49, wu_log_ratio 44, wu_pool 28, wu_pool_logit 27, wu_pool_n 22
+  plain          diff +0.00006  95% [-0.00008, +0.00021]  P(better) 0.75
+  eval-weighted  diff +0.00002  95% [-0.00021, +0.00028]  P(better) 0.52

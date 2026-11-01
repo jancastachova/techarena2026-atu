@@ -1,0 +1,12 @@
+=== base                         1 seed(s): days 0-5 -> day 6 MF AUC 0.81370
+=== dim:64+l2:0.1                1 seed(s): days 0-5 -> day 6 MF AUC 0.80712
+=== dim:64+l2:0.1+steps:5000     1 seed(s): days 0-5 -> day 6 MF AUC 0.80361
+=== dim:128+l2:0.2+steps:5000    1 seed(s): days 0-5 -> day 6 MF AUC 0.75419
+=== dim:128+l2:0.3+steps:4000    1 seed(s): days 0-5 -> day 6 MF AUC 0.59962
+=== dim:96+l2:0.15+lr:0.002+steps:5000 1 seed(s): days 0-5 -> day 6 MF AUC 0.79543
+=== dim:64+l2:0.05+lr:0.0015+steps:6000 1 seed(s): days 0-5 -> day 6 MF AUC 0.81579
+=== lr:0.0015+steps:6000         1 seed(s): days 0-5 -> day 6 MF AUC 0.81656
+=== batch:2000                   1 seed(s): days 0-5 -> day 6 MF AUC 0.81320
+=== dim:64+batch:2000+l2:0.1     1 seed(s): days 0-5 -> day 6 MF AUC 0.80680
+=== dim:64+aux:0.2+l2:0.1        1 seed(s): days 0-5 -> day 6 MF AUC 0.80750
+=== dim:16+l2:0.03               1 seed(s): days 0-5 -> day 6 MF AUC 0.80920

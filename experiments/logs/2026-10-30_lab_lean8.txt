@@ -1,0 +1,12 @@
+### day 6
+  base (= the best member)                     half-B 0.84458  eval-weighted 0.82775  first 0.82668  1-20 known clicks 0.81927  (844 trees)
+  plain          A 0.84505  B 0.84458  B-A -0.00046  95% interval [-0.00062, -0.00029]  P(B > A) 0.00
+  eval-weighted  A 0.82839  B 0.82775  B-A -0.00063  95% interval [-0.00091, -0.00033]  P(B > A) 0.00
+### day 5
+  base (= the best member)                     half-B 0.83979  eval-weighted 0.82095  first 0.81956  1-20 known clicks 0.80960  (606 trees)
+  plain          A 0.84020  B 0.83979  B-A -0.00041  95% interval [-0.00055, -0.00024]  P(B > A) 0.00
+  eval-weighted  A 0.82024  B 0.81969  B-A -0.00055  95% interval [-0.00081, -0.00026]  P(B > A) 0.00
+### day 4
+  base (= the best member)                     half-B 0.83358  eval-weighted 0.81685  first 0.81340  1-20 known clicks 0.80613  (736 trees)
+  plain          A 0.83366  B 0.83358  B-A -0.00009  95% interval [-0.00025, +0.00013]  P(B > A) 0.19
+  eval-weighted  A 0.81459  B 0.81452  B-A -0.00008  95% interval [-0.00037, +0.00027]  P(B > A) 0.34

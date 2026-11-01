@@ -1,0 +1,18 @@
+  act_log_known          day-6 mean   3.354  days 2-5 mean   3.164  nan 0.000
+  act_log_3d             day-6 mean   1.851  days 2-5 mean   1.852  nan 0.000
+  act_log_7d             day-6 mean   2.605  days 2-5 mean   2.579  nan 0.000
+  act_log_span_h         day-6 mean   5.854  days 2-5 mean   5.647  nan 0.000
+  act_rate20_per_day     day-6 mean   0.625  days 2-5 mean   0.624  nan 0.000
+  act_mean_gap_h         day-6 mean   2.713  days 2-5 mean   2.710  nan 0.007
+  act_log_warm           day-6 mean   2.742  days 2-5 mean   2.740  nan 0.000
+  act_log_events         day-6 mean   2.996  days 2-5 mean   2.502  nan 0.000
+  act_clicks_per_event   day-6 mean   0.629  days 2-5 mean   0.629  nan 0.018
+
+LightGBM (lr 0.02):
+  current best feature set                 half-B 0.83842  half-A 0.83778  (1769 trees)
+  + activity [all]                         half-B 0.83849  half-A 0.83796  (1305 trees)
+    by gain: act_clicks_per_event #8, act_log_warm #15, act_log_events #26, act_mean_gap_h #33, act_log_span_h #34, act_rate20_per_day #61, act_log_known #64, act_log_7d #79, act_log_3d #80
+  + activity [rate]                        half-B 0.83850  half-A 0.83807  (1833 trees)
+    by gain: act_mean_gap_h #11, act_log_span_h #29, act_rate20_per_day #46
+  + activity [events]                      half-B 0.83833  half-A 0.83782  (1638 trees)
+    by gain: act_clicks_per_event #9, act_log_events #21

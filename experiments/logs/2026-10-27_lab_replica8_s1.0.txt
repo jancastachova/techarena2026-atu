@@ -1,0 +1,10 @@
+scale 1.0: row CTR 0.0620 (real 0.0629)  event click share 0.620 (real 0.629)
+  repeat candidates 0.0177 (real 0.026), clicked 0.267 (real 0.293), others 0.0583 (real 0.057)
+  ORACLE day 6: global AUC 0.84726  event level 0.71498  within event 0.8366
+  true items, taste = pooled true vectors of known clicks: 0.82153   true taste (no propensity/repeat): 0.83449
+    known clicks 1-5: oracle 0.86461  pooled-true-vectors 0.80430
+    known clicks 6-20: oracle 0.84764  pooled-true-vectors 0.81844
+    known clicks 21-100: oracle 0.84598  pooled-true-vectors 0.82523
+  wrote data/cache/replica8_s1.0_truth.npz
+  wrote data/cache/replica8_s1.0.npz
+=== base                         3 seed(s): days 0-5 -> day 6 MF AUC 0.78077

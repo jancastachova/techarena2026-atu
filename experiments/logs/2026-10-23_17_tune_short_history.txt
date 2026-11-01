@@ -1,0 +1,11 @@
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+  segments: all 100.0%, 1-5 clicks 4.0%, 6-20 24.2%, 21+ 71.6%, first of day 35.9%
+=== base                     3 seed(s): days 0-5 -> day 6 MF AUC all 0.81750  1-5 clicks 0.75251  6-20 0.79978  21+ 0.82826  first of day 0.80495
+=== trunc:0.2                3 seed(s): days 0-5 -> day 6 MF AUC all 0.81670  1-5 clicks 0.75127  6-20 0.79888  21+ 0.82751  first of day 0.80390
+=== trunc:0.4                3 seed(s): days 0-5 -> day 6 MF AUC all 0.81596  1-5 clicks 0.75035  6-20 0.79809  21+ 0.82678  first of day 0.80311
+=== trunc:0.6                3 seed(s): days 0-5 -> day 6 MF AUC all 0.81499  1-5 clicks 0.74995  6-20 0.79695  21+ 0.82582  first of day 0.80207
+=== trunc:0.4+tmax:5         3 seed(s): days 0-5 -> day 6 MF AUC all 0.81271  1-5 clicks 0.74709  6-20 0.79538  21+ 0.82338  first of day 0.79977
+
+[exited with code 0]

@@ -1,0 +1,4 @@
+=== aux:0.3+steps:9000 3 seed(s): days 0-5 -> day 6 MF AUC 0.80137  proj8 cosine 0.82523  non-repeat rows 0.78909  repeat rows 0.64542
+=== aux:0.3+steps:9000+lrdecay 3 seed(s): days 0-5 -> day 6 MF AUC 0.81308  proj8 cosine 0.82536  non-repeat rows 0.80233  repeat rows 0.66342   rank corr with the first 0.9750
+=== aux:0.3+steps:9000+lrdecay:cos 3 seed(s): days 0-5 -> day 6 MF AUC 0.81290  proj8 cosine 0.82530  non-repeat rows 0.80214  repeat rows 0.66296   rank corr with the first 0.9743
+=== aux:0.3+steps:13000+lrdecay:cos 3 seed(s): days 0-5 -> day 6 MF AUC 0.80846  proj8 cosine 0.82581  non-repeat rows 0.79708  repeat rows 0.65557   rank corr with the first 0.9927

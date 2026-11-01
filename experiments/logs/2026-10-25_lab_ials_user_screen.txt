@@ -1,0 +1,15 @@
+day 6: 97,951 events; mean-pool dot AUC 0.81278 (cached hv dot 0.81278)
+  iALS a=1      lam=0.01  dot AUC 0.75296  rank corr with mean 0.7778
+  iALS a=10     lam=0.01  dot AUC 0.73420  rank corr with mean 0.6841
+  iALS a=10     lam=0.1   dot AUC 0.74666  rank corr with mean 0.7264
+  iALS a=100    lam=0.1   dot AUC 0.70955  rank corr with mean 0.5972
+  iALS a=100    lam=1     dot AUC 0.73928  rank corr with mean 0.6926
+  iALS a=1000   lam=1     dot AUC 0.70397  rank corr with mean 0.5802
+day 6: 97,951 events; mean-pool dot AUC 0.81278 (cached hv dot 0.81278)
+  iALS a=0.01   lam=0.1   dot AUC 0.75411  rank corr with mean 0.8338
+  iALS a=0.1    lam=0.1   dot AUC 0.76176  rank corr with mean 0.8456
+  iALS a=0.1    lam=1     dot AUC 0.79852  rank corr with mean 0.9696
+  iALS a=0.1    lam=10    dot AUC 0.81141  rank corr with mean 0.9988
+  iALS a=1      lam=1     dot AUC 0.80209  rank corr with mean 0.9474
+  iALS a=1      lam=10    dot AUC 0.81509  rank corr with mean 0.9928
+  iALS a=1      lam=100   dot AUC 0.81378  rank corr with mean 0.9998

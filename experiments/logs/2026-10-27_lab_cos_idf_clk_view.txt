@@ -1,0 +1,12 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly', 'aud', 'audc', 'hop2c', 'hop3', 'hop2', 'idf_hop2', 'uoff10', 'dim64', 'choice', 'clicks_idf', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cos']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+cos_idf (1 cache(s)): day-6 AUC 0.81898, rank corr with MF30 0.9047, with sequence 0.8886
+cos_clk (1 cache(s)): day-6 AUC 0.80095, rank corr with MF30 0.8720, with sequence 0.8071
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84201  eval-weighted 0.82520  1-20 known clicks 0.81651  (1581 trees)
+  + cos_idf                                    half-B 0.84194  eval-weighted 0.82500  1-20 known clicks 0.81628  (1679 trees)
+    best-ranked cos_idf features by gain: cos_idf_share #33, cos_idf_user_bias #41, cos_idf_item_bias #42
+  + cos_clk                                    half-B 0.84198  eval-weighted 0.82518  1-20 known clicks 0.81655  (1436 trees)
+    best-ranked cos_clk features by gain: cos_clk_logit #23, cos_clk_share #40, cos_clk_user_bias #43

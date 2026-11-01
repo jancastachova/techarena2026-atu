@@ -1,0 +1,7 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly']
+sequence (18 cache(s)): day-6 AUC 0.81331, rank corr with MF30 0.9593
+uoff1 (1 cache(s)): day-6 AUC 0.81061, rank corr with MF30 0.9285, with sequence 0.9167
+uoff10 (1 cache(s)): day-6 AUC 0.81806, rank corr with MF30 0.9795, with sequence 0.9528
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.83843  (1116 trees)

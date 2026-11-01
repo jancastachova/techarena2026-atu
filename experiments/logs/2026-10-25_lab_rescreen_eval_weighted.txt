@@ -1,0 +1,24 @@
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84080  eval-weighted 0.82374  1-20 known clicks 0.81485  (1494 trees)
+  + hop2                                       half-B 0.84089  eval-weighted 0.82402  1-20 known clicks 0.81534  (1404 trees)
+    best-ranked hop2 features by gain: hop2_share #1, hop2_logit #2, hop2_rank #5
+  + hop4                                       half-B 0.84065  eval-weighted 0.82366  1-20 known clicks 0.81480  (1018 trees)
+    best-ranked hop4 features by gain: hop4_logit #2, hop4_dot #12, hop4_rank #14
+  + wb                                         half-B 0.84080  eval-weighted 0.82386  1-20 known clicks 0.81486  (1797 trees)
+    best-ranked wb features by gain: wb_share #7, wb_rank #13, wb_logit #58
+  + dim64                                      half-B 0.84093  eval-weighted 0.82402  1-20 known clicks 0.81503  (1783 trees)
+    best-ranked dim64 features by gain: dim64_share #7, dim64_user_bias #25, dim64_logit #32
+  + idf_hop2                                   half-B 0.84091  eval-weighted 0.82412  1-20 known clicks 0.81532  (1802 trees)
+    best-ranked idf_hop2 features by gain: idf_hop2_share #3, idf_hop2_logit #8, idf_hop2_rank #9
+  + clk_audc                                   half-B 0.84091  eval-weighted 0.82394  1-20 known clicks 0.81505  (1899 trees)
+    best-ranked clk_audc features by gain: clk_audc_logit #35, clk_audc_share #56, clk_audc_lse #62
+  + clk_hop4                                   half-B 0.84075  eval-weighted 0.82368  1-20 known clicks 0.81472  (1777 trees)
+    best-ranked clk_hop4 features by gain: clk_hop4_logit #18, clk_hop4_share #23, clk_hop4_rank #28
+  + uoff1                                      half-B 0.84072  eval-weighted 0.82386  1-20 known clicks 0.81489  (953 trees)
+    best-ranked uoff1 features by gain: uoff1_user_bias #54, uoff1_dot #73, uoff1_minus_max #75
+  + uoff10                                     half-B 0.84104  eval-weighted 0.82412  1-20 known clicks 0.81513  (2147 trees)
+    best-ranked uoff10 features by gain: uoff10_share #13, uoff10_logit #19, uoff10_user_bias #32
+  + ii3                                        half-B 0.84087  eval-weighted 0.82394  1-20 known clicks 0.81501  (1501 trees)
+    best-ranked ii3 features by gain: ii3_logit #39, ii3_lse #51, ii3_share #53

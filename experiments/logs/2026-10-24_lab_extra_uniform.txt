@@ -1,0 +1,8 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+uniform (1 cache(s)): day-6 AUC 0.75199, rank corr with MF30 0.7731, with sequence 0.7235
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.83842  (1769 trees)
+  + uniform                                    half-B 0.83838  (1208 trees)
+    best-ranked uniform features by gain: uniform_dot #25, uniform_item_bias #30, uniform_share #32

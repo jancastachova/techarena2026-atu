@@ -1,0 +1,7 @@
+### emb 16
+4,898,070 rows, 169 features; train rows 3,918,560
+event-constant columns: 57
+  seed 0: best half-A 0.84280; half-B of this seed 0.84361
+  seed 1: best half-A 0.84247; half-B of this seed 0.84321
+  choice model                 half-B 0.84396  eval-weighted 0.82713  first 0.82628
+wrote data/cache/lab_preds_choice_emb16_d6.npz

@@ -1,0 +1,5 @@
+slowlr (1 cache(s)): day-6 AUC 0.81896, rank corr with MF30 0.9970, with sequence 0.9516
+  base (= the best member)                     half-B 0.84118  eval-weighted 0.82445  1-20 known clicks 0.81573  (1387 trees)
+  + slowlr                                     half-B 0.84119  eval-weighted 0.82446  1-20 known clicks 0.81578  (1182 trees)
+  plain          A 0.84118  B 0.84119  B-A +0.00001  95% interval [-0.00011, +0.00010]  P(B > A) 0.52
+  eval-weighted  A 0.82445  B 0.82446  B-A +0.00001  95% interval [-0.00020, +0.00021]  P(B > A) 0.52

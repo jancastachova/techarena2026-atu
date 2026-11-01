@@ -1,0 +1,8 @@
+half-B rows 489760, repeat rows 0.0273
+  last clicked   0-  0 clicks back:  476405 rows  click rate 0.0568  mean prediction 0.0567  ratio 1.001
+  last clicked   1-  1 clicks back:    1993 rows  click rate 0.3337  mean prediction 0.3125  ratio 1.068
+  last clicked   2-  2 clicks back:    1739 rows  click rate 0.3053  mean prediction 0.2935  ratio 1.040
+  last clicked   3-  5 clicks back:    3596 rows  click rate 0.2978  mean prediction 0.2882  ratio 1.033
+  last clicked   6- 20 clicks back:    5446 rows  click rate 0.2648  mean prediction 0.2720  ratio 0.973
+  last clicked  21-100 clicks back:     581 rows  click rate 0.2582  mean prediction 0.2702  ratio 0.956
+AUC within repeat rows 0.7134; with -position as tie-breaker 0.7135

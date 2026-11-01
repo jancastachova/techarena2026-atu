@@ -1,0 +1,5 @@
+  binary (current)                   half-B 0.84118  eval-weighted 0.82445  (1387 trees)
+  rank_xendcg, groups of 50 events   half-B 0.84101  eval-weighted 0.82420  (1209 trees)
+  lambdarank, groups of 50 events    half-B 0.84122  eval-weighted 0.82441  (2151 trees)
+  rank_xendcg, groups of 500 events  half-B 0.84087  eval-weighted 0.82416  (717 trees)
+  lambdarank, groups of 500 events   half-B 0.84137  eval-weighted 0.82467  (1594 trees)

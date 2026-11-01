@@ -1,0 +1,18 @@
+### views (set35 -> set36 binary), day 5 
+49,227 half-B events, 200 bootstrap resamples of events
+  plain          A 0.83919  B 0.83932  B-A +0.00013  95% interval [-0.00009, +0.00029]  P(B > A) 0.91
+  eval-weighted  A 0.82007  B 0.82037  B-A +0.00030  95% interval [-0.00003, +0.00057]  P(B > A) 0.96
+### 36-style (set35 binary -> set36 binary+G500 rank avg), day 5 
+49,227 half-B events, 200 bootstrap resamples of events
+  plain          A 0.83919  B 0.83954  B-A +0.00035  95% interval [+0.00016, +0.00051]  P(B > A) 1.00
+  eval-weighted  A 0.82007  B 0.82057  B-A +0.00050  95% interval [+0.00021, +0.00074]  P(B > A) 1.00
+### views (set35 -> set36 binary), day 5 --first
+--first: 17,632 of 49,227 half-B events are users' first day-6 events
+17,632 half-B events, 200 bootstrap resamples of events
+  plain          A 0.82592  B 0.82609  B-A +0.00017  95% interval [-0.00012, +0.00055]  P(B > A) 0.84
+  eval-weighted  A 0.81884  B 0.81912  B-A +0.00027  95% interval [-0.00009, +0.00068]  P(B > A) 0.91
+### 36-style (set35 binary -> set36 binary+G500 rank avg), day 5 --first
+--first: 17,632 of 49,227 half-B events are users' first day-6 events
+17,632 half-B events, 200 bootstrap resamples of events
+  plain          A 0.82592  B 0.82630  B-A +0.00038  95% interval [+0.00001, +0.00073]  P(B > A) 0.98
+  eval-weighted  A 0.81884  B 0.81932  B-A +0.00047  95% interval [+0.00013, +0.00087]  P(B > A) 0.99

@@ -1,0 +1,6 @@
+ 1 seeds: cosine 0.81777   dot 0.81278
+ 2 seeds: cosine 0.82064   dot 0.81558
+ 3 seeds: cosine 0.82151   dot 0.81643
+ 5 seeds: cosine 0.82227   dot 0.81717
+ 7 seeds: cosine 0.82263   dot 0.81751
+10 seeds: cosine 0.82277   dot 0.81763

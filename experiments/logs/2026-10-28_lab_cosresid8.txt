@@ -1,0 +1,14 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly', 'aud', 'audc', 'hop2c', 'hop3', 'hop2', 'idf_hop2', 'uoff10', 'dim64', 'choice', 'clicks_idf', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cos', 'cosproj8', 'cos_aud', 'cos_audc', 'cos_audc05', 'cos_wb', 'cos_hop2', 'cos_hop2c', 'cos_hop3', 'cos_hop4']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+cosresid8 (1 cache(s)): day-6 AUC 0.57716, rank corr with MF30 0.2688, with sequence 0.1669
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84422  eval-weighted 0.82718  1-20 known clicks 0.81853  (1432 trees)
+  + cosresid8                                  half-B 0.84436  eval-weighted 0.82739  1-20 known clicks 0.81892  (1255 trees)
+    best-ranked cosresid8 features by gain: cosresid8_dot #28, cosresid8_share #31, cosresid8_item_bias #37
+A = data/cache/lab_preds_36_resid.npz:base (= the best member)
+B = data/cache/lab_preds_36_resid.npz:+ cosresid8
+48,976 half-B events, 300 bootstrap resamples of events
+  plain          A 0.84422  B 0.84436  B-A +0.00015  95% interval [-0.00000, +0.00028]  P(B > A) 0.97
+  eval-weighted  A 0.82718  B 0.82739  B-A +0.00021  95% interval [-0.00008, +0.00053]  P(B > A) 0.92

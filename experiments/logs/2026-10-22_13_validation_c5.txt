@@ -1,0 +1,89 @@
+base features with cutoff day 5: streaming train.csv ...
+  200,000 events (30s)
+  400,000 events (63s)
+  600,000 events (85s)
+base features done (91s): 490,420 fit events, 43,964 test events, 152,440 later events of test users skipped, 886,177 logged clicks
+base features: 13_base_c5_a2ecdd59dd03.npz
+  fit events: last 20 logged clicks == event history for 99.9388% of events
+  test events: last 20 logged clicks == event history for 99.9591% of events
+  MF: history up to 100 clicks, 15 seeds, pretraining none
+  MF trained on days 0-1 -> scoring fit day 2
+    seed 0: 3000 steps on 197,017 events + 700,044 logged clicks (22s)
+    seed 1: 3000 steps on 197,017 events + 700,044 logged clicks (21s)
+    seed 2: 3000 steps on 197,017 events + 700,044 logged clicks (21s)
+    seed 3: 3000 steps on 197,017 events + 700,044 logged clicks (21s)
+    seed 4: 3000 steps on 197,017 events + 700,044 logged clicks (21s)
+    seed 5: 3000 steps on 197,017 events + 700,044 logged clicks (20s)
+    seed 6: 3000 steps on 197,017 events + 700,044 logged clicks (22s)
+    seed 7: 3000 steps on 197,017 events + 700,044 logged clicks (22s)
+    seed 8: 3000 steps on 197,017 events + 700,044 logged clicks (23s)
+    seed 9: 3000 steps on 197,017 events + 700,044 logged clicks (22s)
+    seed 10: 3000 steps on 197,017 events + 700,044 logged clicks (22s)
+    seed 11: 3000 steps on 197,017 events + 700,044 logged clicks (25s)
+    seed 12: 3000 steps on 197,017 events + 700,044 logged clicks (24s)
+    seed 13: 3000 steps on 197,017 events + 700,044 logged clicks (24s)
+    seed 14: 3000 steps on 197,017 events + 700,044 logged clicks (25s)
+    AUC on day 2: 0.78124
+  MF trained on days 0-2 -> scoring fit day 3
+    seed 0: 3000 steps on 295,114 events + 762,234 logged clicks (24s)
+    seed 1: 3000 steps on 295,114 events + 762,234 logged clicks (24s)
+    seed 2: 3000 steps on 295,114 events + 762,234 logged clicks (23s)
+    seed 3: 3000 steps on 295,114 events + 762,234 logged clicks (23s)
+    seed 4: 3000 steps on 295,114 events + 762,234 logged clicks (24s)
+    seed 5: 3000 steps on 295,114 events + 762,234 logged clicks (26s)
+    seed 6: 3000 steps on 295,114 events + 762,234 logged clicks (24s)
+    seed 7: 3000 steps on 295,114 events + 762,234 logged clicks (25s)
+    seed 8: 3000 steps on 295,114 events + 762,234 logged clicks (25s)
+    seed 9: 3000 steps on 295,114 events + 762,234 logged clicks (23s)
+    seed 10: 3000 steps on 295,114 events + 762,234 logged clicks (21s)
+    seed 11: 3000 steps on 295,114 events + 762,234 logged clicks (21s)
+    seed 12: 3000 steps on 295,114 events + 762,234 logged clicks (23s)
+    seed 13: 3000 steps on 295,114 events + 762,234 logged clicks (21s)
+    seed 14: 3000 steps on 295,114 events + 762,234 logged clicks (22s)
+    AUC on day 3: 0.79577
+  MF trained on days 0-3 -> scoring fit day 4
+    seed 0: 3000 steps on 392,831 events + 823,616 logged clicks (24s)
+    seed 1: 3000 steps on 392,831 events + 823,616 logged clicks (24s)
+    seed 2: 3000 steps on 392,831 events + 823,616 logged clicks (21s)
+    seed 3: 3000 steps on 392,831 events + 823,616 logged clicks (22s)
+    seed 4: 3000 steps on 392,831 events + 823,616 logged clicks (21s)
+    seed 5: 3000 steps on 392,831 events + 823,616 logged clicks (23s)
+    seed 6: 3000 steps on 392,831 events + 823,616 logged clicks (22s)
+    seed 7: 3000 steps on 392,831 events + 823,616 logged clicks (22s)
+    seed 8: 3000 steps on 392,831 events + 823,616 logged clicks (24s)
+    seed 9: 3000 steps on 392,831 events + 823,616 logged clicks (27s)
+    seed 10: 3000 steps on 392,831 events + 823,616 logged clicks (27s)
+    seed 11: 3000 steps on 392,831 events + 823,616 logged clicks (21s)
+    seed 12: 3000 steps on 392,831 events + 823,616 logged clicks (24s)
+    seed 13: 3000 steps on 392,831 events + 823,616 logged clicks (26s)
+    seed 14: 3000 steps on 392,831 events + 823,616 logged clicks (26s)
+    AUC on day 4: 0.80426
+  MF trained on days 0-4 -> scoring the test events
+    seed 0: 3000 steps on 490,420 events + 885,058 logged clicks (25s)
+    seed 1: 3000 steps on 490,420 events + 885,058 logged clicks (26s)
+    seed 2: 3000 steps on 490,420 events + 885,058 logged clicks (22s)
+    seed 3: 3000 steps on 490,420 events + 885,058 logged clicks (21s)
+    seed 4: 3000 steps on 490,420 events + 885,058 logged clicks (21s)
+    seed 5: 3000 steps on 490,420 events + 885,058 logged clicks (21s)
+    seed 6: 3000 steps on 490,420 events + 885,058 logged clicks (20s)
+    seed 7: 3000 steps on 490,420 events + 885,058 logged clicks (20s)
+    seed 8: 3000 steps on 490,420 events + 885,058 logged clicks (20s)
+    seed 9: 3000 steps on 490,420 events + 885,058 logged clicks (21s)
+    seed 10: 3000 steps on 490,420 events + 885,058 logged clicks (21s)
+    seed 11: 3000 steps on 490,420 events + 885,058 logged clicks (21s)
+    seed 12: 3000 steps on 490,420 events + 885,058 logged clicks (21s)
+    seed 13: 3000 steps on 490,420 events + 885,058 logged clicks (21s)
+    seed 14: 3000 steps on 490,420 events + 885,058 logged clicks (20s)
+MF scores: 13_mf_c5_2889ef80775f.npz
+
+VALIDATION, cutoff day 5: 43,964 test events
+  trees: 156 by early stopping on day 4 -> 234 for days 2-4 (best day-4 AUC 0.82097)
+  segment                         rows   MF score alone    LightGBM + MF
+  all                           100.0%          0.79608          0.81358
+  user has fit events            96.7%          0.79881          0.81581
+  new user (no fit events)        3.3%          0.72363          0.73502
+  empty history                   0.8%          0.53958          0.52811
+  candidate in history            2.5%          0.63442          0.67169
+  candidate not in history       97.5%          0.78351          0.80267
+  test day 5                     80.1%          0.80069          0.81745
+  test day 6                     19.9%          0.77833          0.79727

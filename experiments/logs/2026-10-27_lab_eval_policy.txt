@@ -1,0 +1,9 @@
+day 6      known clicks   1-  5:   3925 events  repeats 0.0244  re-shown (not clicked) 0.0020  cos(cand, taste) +0.0381  random items +0.0009
+day 6      known clicks   6- 20:  20000 events  repeats 0.0253  re-shown (not clicked) 0.0048  cos(cand, taste) +0.0344  random items -0.0004
+day 6      known clicks  21-100:  20000 events  repeats 0.0277  re-shown (not clicked) 0.0232  cos(cand, taste) +0.0350  random items -0.0002
+day 6 1st  known clicks   1-  5:   3258 events  repeats 0.0242  re-shown (not clicked) 0.0018  cos(cand, taste) +0.0391  random items -0.0020
+day 6 1st  known clicks   6- 20:  14455 events  repeats 0.0249  re-shown (not clicked) 0.0044  cos(cand, taste) +0.0347  random items +0.0001
+day 6 1st  known clicks  21-100:  17227 events  repeats 0.0280  re-shown (not clicked) 0.0139  cos(cand, taste) +0.0359  random items -0.0003
+eval       known clicks   1-  5:   8668 events  repeats 0.0239  re-shown (not clicked) 0.0019  cos(cand, taste) +0.0395  random items +0.0014
+eval       known clicks   6- 20:  20000 events  repeats 0.0259  re-shown (not clicked) 0.0042  cos(cand, taste) +0.0350  random items +0.0005
+eval       known clicks  21-100:  19777 events  repeats 0.0277  re-shown (not clicked) 0.0152  cos(cand, taste) +0.0345  random items +0.0006

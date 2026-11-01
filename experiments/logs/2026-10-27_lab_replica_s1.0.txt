@@ -1,0 +1,7 @@
+scale 1.0: row CTR 0.0643 (real 0.0629)  event click share 0.643 (real 0.629)
+  repeat candidates 0.0177 (real 0.026), clicked 0.522 (real 0.293), others 0.0561 (real 0.057)
+  ORACLE day 6: global AUC 0.83373  event level 0.71970  within event 0.8208
+    known clicks 1-5: oracle 0.86366
+    known clicks 6-20: oracle 0.84062
+    known clicks 21-100: oracle 0.82955
+  wrote data/cache/replica_s1.0.npz

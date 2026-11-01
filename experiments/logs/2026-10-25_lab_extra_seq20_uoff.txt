@@ -1,0 +1,11 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly']
+sequence (20 cache(s)): day-6 AUC 0.81325, rank corr with MF30 0.9599
+uoff1 (1 cache(s)): day-6 AUC 0.81061, rank corr with MF30 0.9285, with sequence 0.9167
+uoff (2 cache(s)): day-6 AUC 0.81529, rank corr with MF30 0.9575, with sequence 0.9386
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.83848  (1365 trees)
+  + uoff1                                      half-B 0.83860  (1031 trees)
+    best-ranked uoff1 features by gain: uoff1_dot #25, uoff1_user_bias #29, uoff1_rank #31
+  + uoff                                       half-B 0.83864  (1350 trees)
+    best-ranked uoff features by gain: uoff_dot #8, uoff_logit #26, uoff_user_bias #28

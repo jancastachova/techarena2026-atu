@@ -1,0 +1,15 @@
+held-out half of half B: best model 0.84229 / eval-weighted 0.82574; + residual model on raw signals 0.84229 / 0.82575  (1 trees)
+signals by gain: user_h_since_first_click 22, user_h_since_prev_event 13, user_prev_events 11, user_warm_share 7, user_distinct_clicked 6, item_light_user_share 3, user_repeat_share 0, user_prev_event_clicked 0, item_repeat_share 0, item_clicks_24h 0, item_age_days 0, cand_times_shown_before 0, cand_in_prev_event 0
+  user_prev_events           corr with residual -0.0043
+  user_distinct_clicked      corr with residual -0.0016
+  user_repeat_share          corr with residual -0.0038
+  user_warm_share            corr with residual +0.0046
+  user_h_since_first_click   corr with residual -0.0005
+  user_h_since_prev_event    corr with residual +0.0050
+  user_prev_event_clicked    corr with residual +0.0036
+  cand_times_shown_before    corr with residual -0.0012
+  cand_in_prev_event         corr with residual +0.0034
+  item_clicks_24h            corr with residual -0.0022
+  item_age_days              corr with residual -0.0004
+  item_repeat_share          corr with residual -0.0076
+  item_light_user_share      corr with residual +0.0004

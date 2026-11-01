@@ -1,0 +1,6 @@
+ 1 seeds: projected cosine 0.81950
+ 2 seeds: projected cosine 0.82193
+ 3 seeds: projected cosine 0.82274
+ 5 seeds: projected cosine 0.82345
+ 7 seeds: projected cosine 0.82372
+10 seeds: projected cosine 0.82383

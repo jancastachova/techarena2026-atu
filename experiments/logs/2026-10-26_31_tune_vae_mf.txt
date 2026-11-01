@@ -1,0 +1,4 @@
+=== base         3 seed(s): days 0-5 -> day 6 MF AUC 0.81750   by known clicks: 1-5 0.7525  6-20 0.7998  21-100 0.8283  (95s)
+=== vae:0.1      3 seed(s): days 0-5 -> day 6 MF AUC 0.56242   by known clicks: 1-5 0.5666  6-20 0.5597  21-100 0.5618  (144s)
+=== vae:1        3 seed(s): days 0-5 -> day 6 MF AUC 0.56160   by known clicks: 1-5 0.5634  6-20 0.5583  21-100 0.5613  (153s)
+=== full:0.1     3 seed(s): days 0-5 -> day 6 MF AUC 0.55914   by known clicks: 1-5 0.5487  6-20 0.5546  21-100 0.5599  (128s)

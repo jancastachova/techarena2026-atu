@@ -1,0 +1,8 @@
+final LightGBM (bundle set), half B, by candidate clicks before the day:
+   0-3:   1.2% of half-B rows (  1.0% of evaluation rows), AUC 0.7268, CTR 0.0451, mean prediction 0.0458
+   4-10:  17.2% of half-B rows ( 15.2% of evaluation rows), AUC 0.8032, CTR 0.0535, mean prediction 0.0528
+  11-30:  47.6% of half-B rows ( 47.3% of evaluation rows), AUC 0.8386, CTR 0.0622, mean prediction 0.0618
+  31-max:  34.0% of half-B rows ( 36.4% of evaluation rows), AUC 0.8594, CTR 0.0698, mean prediction 0.0702
+  clicked item with 0-10 clicks: 4,774 events, mean rank of the clicked item 2.06 (0 = top)
+  clicked item with 11-30 clicks: 14,491 events, mean rank of the clicked item 1.55 (0 = top)
+  clicked item with 31-max clicks: 11,632 events, mean rank of the clicked item 1.26 (0 = top)

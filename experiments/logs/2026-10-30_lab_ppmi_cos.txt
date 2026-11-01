@@ -1,0 +1,7 @@
+MF projected cosine (1 seed): 0.82025
+PPMI-SVD dim 32, top 8: 0.64360  rank corr with MF 0.324  MF + PPMI (rank mean) 0.77503
+PPMI-SVD dim 32, top 12: 0.70442  rank corr with MF 0.505  MF + PPMI (rank mean) 0.79347
+PPMI-SVD dim 32, top 32: 0.74220  rank corr with MF 0.629  MF + PPMI (rank mean) 0.80482
+PPMI-SVD dim 64, top 8: 0.64360  rank corr with MF 0.324  MF + PPMI (rank mean) 0.77503
+PPMI-SVD dim 64, top 12: 0.70442  rank corr with MF 0.505  MF + PPMI (rank mean) 0.79347
+PPMI-SVD dim 64, top 64: 0.71964  rank corr with MF 0.553  MF + PPMI (rank mean) 0.79898

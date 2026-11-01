@@ -1,0 +1,22 @@
+base features: 13_base_c7_9c47a117c762.npz
+  segments: all 100.0%, 1-5 4.0%, 6-20 24.2%, 21+ 71.6%, first of day 35.9%
+    seed 0: alpha 1.0, bilinear False, 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 1: alpha 1.0, bilinear False, 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 2: alpha 1.0, bilinear False, 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+=== base                 3 seed(s): days 0-5 -> day 6 MF AUC all 0.81750  1-5 0.75251  6-20 0.79978  21+ 0.82826  first of day 0.80495
+    seed 0: alpha 0.5, bilinear False, 3000 steps on 588,873 events + 950,177 logged clicks (24s)
+    seed 1: alpha 0.5, bilinear False, 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 2: alpha 0.5, bilinear False, 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+=== alpha:0.5            3 seed(s): days 0-5 -> day 6 MF AUC all 0.79696  1-5 0.71837  6-20 0.77211  21+ 0.80868  first of day 0.78270
+    seed 0: alpha 0.75, bilinear False, 3000 steps on 588,873 events + 950,177 logged clicks (26s)
+    seed 1: alpha 0.75, bilinear False, 3000 steps on 588,873 events + 950,177 logged clicks (24s)
+    seed 2: alpha 0.75, bilinear False, 3000 steps on 588,873 events + 950,177 logged clicks (23s)
+=== alpha:0.75           3 seed(s): days 0-5 -> day 6 MF AUC all 0.81610  1-5 0.74789  6-20 0.79486  21+ 0.82624  first of day 0.80328
+    seed 0: alpha 0.9, bilinear False, 3000 steps on 588,873 events + 950,177 logged clicks (23s)
+    seed 1: alpha 0.9, bilinear False, 3000 steps on 588,873 events + 950,177 logged clicks (22s)
+    seed 2: alpha 0.9, bilinear False, 3000 steps on 588,873 events + 950,177 logged clicks (24s)
+=== alpha:0.9            3 seed(s): days 0-5 -> day 6 MF AUC all 0.81885  1-5 0.75248  6-20 0.79931  21+ 0.82914  first of day 0.80622
+    seed 0: alpha 1.0, bilinear True, 3000 steps on 588,873 events + 950,177 logged clicks (24s)
+    seed 1: alpha 1.0, bilinear True, 3000 steps on 588,873 events + 950,177 logged clicks (24s)
+    seed 2: alpha 1.0, bilinear True, 3000 steps on 588,873 events + 950,177 logged clicks (25s)
+=== bilinear             3 seed(s): days 0-5 -> day 6 MF AUC all 0.81230  1-5 0.74725  6-20 0.79385  21+ 0.82342  first of day 0.79944

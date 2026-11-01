@@ -1,0 +1,17 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly', 'aud', 'audc', 'hop2c', 'hop3']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+idf_audc (1 cache(s)): day-6 AUC 0.81196, rank corr with MF30 0.8772, with sequence 0.8593
+idf_hop2c (1 cache(s)): day-6 AUC 0.81346, rank corr with MF30 0.8875, with sequence 0.8664
+idf_hop2 (1 cache(s)): day-6 AUC 0.81851, rank corr with MF30 0.9212, with sequence 0.8988
+idf_hop3 (1 cache(s)): day-6 AUC 0.81016, rank corr with MF30 0.8665, with sequence 0.8523
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84082  (1506 trees)
+  + idf_audc                                   half-B 0.84073  (1667 trees)
+    best-ranked idf_audc features by gain: idf_audc_share #58, idf_audc_logit #69, idf_audc_lse #78
+  + idf_hop2c                                  half-B 0.84078  (991 trees)
+    best-ranked idf_hop2c features by gain: idf_hop2c_logit #10, idf_hop2c_share #16, idf_hop2c_rank #23
+  + idf_hop2                                   half-B 0.84088  (940 trees)
+    best-ranked idf_hop2 features by gain: idf_hop2_share #4, idf_hop2_rank #8, idf_hop2_logit #10
+  + idf_hop3                                   half-B 0.84068  (1574 trees)
+    best-ranked idf_hop3 features by gain: idf_hop3_logit #37, idf_hop3_share #47, idf_hop3_lse #75

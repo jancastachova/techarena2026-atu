@@ -1,0 +1,12 @@
+### dim 32
+=== aux:0.3+steps:4500 3 seed(s): days 0-5 -> day 6 MF AUC 0.81206  proj8 cosine 0.82473  non-repeat rows 0.80121  repeat rows 0.66177
+=== aux:0.3+steps:9000 3 seed(s): days 0-5 -> day 6 MF AUC 0.80137  proj8 cosine 0.82523  non-repeat rows 0.78909  repeat rows 0.64542   rank corr with the first 0.9710
+=== aux:0.3+steps:9000+l2:0.02 3 seed(s): days 0-5 -> day 6 MF AUC 0.80023  proj8 cosine 0.82501  non-repeat rows 0.78790  repeat rows 0.63991   rank corr with the first 0.9672
+### dim 12
+=== aux:0.3+steps:4500 3 seed(s): days 0-5 -> day 6 MF AUC 0.80585  proj8 cosine 0.81200  non-repeat rows 0.79484  repeat rows 0.66731
+=== aux:0.3+steps:9000 3 seed(s): days 0-5 -> day 6 MF AUC 0.81103  proj8 cosine 0.82354  non-repeat rows 0.80012  repeat rows 0.67284   rank corr with the first 0.9764
+=== aux:0.3+steps:9000+l2:0.02 3 seed(s): days 0-5 -> day 6 MF AUC 0.81197  proj8 cosine 0.82337  non-repeat rows 0.80112  repeat rows 0.67283   rank corr with the first 0.9760
+### dim 8
+=== aux:0.3+steps:4500 3 seed(s): days 0-5 -> day 6 MF AUC 0.78237  proj8 cosine 0.78829  non-repeat rows 0.76986  repeat rows 0.65194
+=== aux:0.3+steps:9000 3 seed(s): days 0-5 -> day 6 MF AUC 0.79768  proj8 cosine 0.80190  non-repeat rows 0.78592  repeat rows 0.66542   rank corr with the first 0.9715
+=== aux:0.3+steps:9000+l2:0.02 3 seed(s): days 0-5 -> day 6 MF AUC 0.79911  proj8 cosine 0.80158  non-repeat rows 0.78739  repeat rows 0.66673   rank corr with the first 0.9704

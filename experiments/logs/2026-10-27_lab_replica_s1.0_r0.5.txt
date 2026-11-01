@@ -1,0 +1,10 @@
+scale 1.0: row CTR 0.0629 (real 0.0629)  event click share 0.629 (real 0.629)
+  repeat candidates 0.0178 (real 0.026), clicked 0.348 (real 0.293), others 0.0578 (real 0.057)
+  ORACLE day 6: global AUC 0.82229  event level 0.70774  within event 0.8118
+    known clicks 1-5: oracle 0.85216
+    known clicks 6-20: oracle 0.82578
+    known clicks 21-100: oracle 0.81916
+  wrote data/cache/replica_s1.0_r0.5.npz
+  fit events: last 20 logged clicks == event history for 100.0000% of events
+  test events: last 20 logged clicks == event history for 100.0000% of events
+=== base                         3 seed(s): days 0-5 -> day 6 MF AUC 0.74785

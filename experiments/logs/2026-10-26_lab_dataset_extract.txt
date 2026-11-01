@@ -1,0 +1,3 @@
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/data/train.csv: 6,868,240 rows, 686,824 events, checks {'rows_per_event': 0, 'inconsistent': 0, 'dup_candidate': 0} (40s)
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/data/evaluation.csv: 529,390 rows, 52,939 events, checks {'rows_per_event': 0, 'inconsistent': 0, 'dup_candidate': 0} (3s)
+items 50,000, users 54,456; wrote data/cache/dataset_raw.npz

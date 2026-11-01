@@ -1,0 +1,4 @@
+dist_to_impression_centroid alone (day 6): AUC 0.50005
+  binary: current                              half-B 0.84118  eval-weighted 0.82445  (1387 trees)
+  binary: + group z / rank                     half-B 0.84108  eval-weighted 0.82432  (1177 trees)
+  binary: + group z / rank + dispersion        half-B 0.84118  eval-weighted 0.82453  (1288 trees)

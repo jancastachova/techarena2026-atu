@@ -1,0 +1,44 @@
+day-6 first events 35138, evaluation events 52939; 39 features
+per-feature AUC (evaluation vs reweighted day-6 first events), most separating first:
+  day_type               AUC 0.014   day6 p10/50/90    1.000    1.000    1.000   eval    0.000    0.000    0.000
+  item_log_pop_decay     AUC 0.359   day6 p10/50/90    0.097    0.670    1.464   eval    0.020    0.389    1.176
+  log_hours_since_last   AUC 0.603   day6 p10/50/90    2.094    3.236    4.570   eval    2.291    3.756    5.146
+  hist_len               AUC 0.429   day6 p10/50/90    0.300    1.000    1.000   eval    0.200    0.750    1.000
+  item_log_impr          AUC 0.565   day6 p10/50/90    4.159    4.883    5.908   eval    4.317    5.037    6.059
+  clicks_24h             AUC 0.437   day6 p10/50/90    0.000    0.000    0.150   eval    0.000    0.000    0.100
+  user_log_events        AUC 0.460   day6 p10/50/90    1.099    2.398    3.434   eval    1.099    2.197    3.401
+  mean_sim_sum           AUC 0.473   day6 p10/50/90    0.000    0.876    2.541   eval    0.000    0.795    2.367
+  max_sim_sum            AUC 0.473   day6 p10/50/90    0.000    2.162    4.602   eval    0.000    2.067    4.378
+  sim_sum_minus_max      AUC 0.521   day6 p10/50/90   -4.251   -1.793    0.000   eval   -3.937   -1.678    0.000
+  item_log_clicks        AUC 0.520   day6 p10/50/90    2.197    3.091    4.190   eval    2.197    3.135    4.248
+  mf_user_bias           AUC 0.483   day6 p10/50/90   -0.342    0.041    0.418   eval   -0.328    0.015    0.381
+  mf_event_lse           AUC 0.516   day6 p10/50/90   -1.234   -0.485    0.375   eval   -1.221   -0.450    0.470
+  max_ctr                AUC 0.486   day6 p10/50/90   -2.479   -2.305   -2.103   eval   -2.486   -2.309   -2.115
+  tb_3                   AUC 0.488   day6 p10/50/90    0.000    0.000    1.000   eval    0.000    0.000    1.000
+  sim_sum_rank           AUC 0.493   day6 p10/50/90    2.000    6.000    7.500   eval    2.000    6.000    7.500
+  tb_1                   AUC 0.507   day6 p10/50/90    0.000    0.000    1.000   eval    0.000    0.000    1.000
+  sim_decay              AUC 0.493   day6 p10/50/90    0.000    0.000    0.128   eval    0.000    0.000    0.038
+  mf_logit_minus_max     AUC 0.493   day6 p10/50/90   -3.931   -1.895   -0.000   eval   -4.065   -1.933   -0.000
+  ctr_minus_max          AUC 0.506   day6 p10/50/90   -0.864   -0.403    0.000   eval   -0.852   -0.394    0.000
+  tb_2                   AUC 0.506   day6 p10/50/90    0.000    0.000    1.000   eval    0.000    0.000    1.000
+  mf_logit_share         AUC 0.494   day6 p10/50/90    0.009    0.053    0.252   eval    0.008    0.052    0.254
+  sim_max                AUC 0.494   day6 p10/50/90    0.000    0.000    1.638   eval    0.000    0.000    1.570
+  sim_sum                AUC 0.495   day6 p10/50/90    0.000    0.000    1.909   eval    0.000    0.000    1.833
+  no_hist                AUC 0.503   day6 p10/50/90    0.000    0.000    0.000   eval    0.000    0.000    0.000
+  mf_logit               AUC 0.502   day6 p10/50/90   -5.098   -3.483   -1.759   eval   -5.125   -3.482   -1.711
+  trans_decay            AUC 0.499   day6 p10/50/90    0.000    0.000    0.000   eval    0.000    0.000    0.000
+  mf_item_bias           AUC 0.501   day6 p10/50/90   -0.328   -0.090    0.129   eval   -0.320   -0.088    0.122
+  item_ctr_logit         AUC 0.500   day6 p10/50/90   -3.132   -2.712   -2.355   eval   -3.130   -2.706   -2.360
+  sim_last               AUC 0.500   day6 p10/50/90    0.000    0.000    0.000   eval    0.000    0.000    0.000
+  mean_ctr               AUC 0.500   day6 p10/50/90   -2.858   -2.728   -2.603   eval   -2.857   -2.728   -2.607
+  mf_hist_dot            AUC 0.500   day6 p10/50/90   -1.424    0.122    1.794   eval   -1.467    0.111    1.845
+  n_rep                  AUC 0.500   day6 p10/50/90    0.000    0.000    1.000   eval    0.000    0.000    1.000
+  trans_last             AUC 0.500   day6 p10/50/90    0.000    0.000    0.000   eval    0.000    0.000    0.000
+  rep_recency            AUC 0.500   day6 p10/50/90    0.000    0.000    0.000   eval    0.000    0.000    0.000
+  rep_count              AUC 0.500   day6 p10/50/90    0.000    0.000    0.000   eval    0.000    0.000    0.000
+  rep_any                AUC 0.500   day6 p10/50/90    0.000    0.000    0.000   eval    0.000    0.000    0.000
+  user_rate_logit        AUC 0.500   day6 p10/50/90   -0.189    0.589    1.352   eval   -0.156    0.589    1.331
+  mf_logit_rank          AUC 0.500   day6 p10/50/90    1.900    5.500    9.100   eval    1.900    5.500    9.100
+
+classifier AUC (held-out half, weighted): 1.0000
+top features by gain: day_type 0.94, item_log_pop_decay 0.03, log_hours_since_last 0.02, item_log_clicks 0.00, hist_len 0.00, item_log_impr 0.00, item_ctr_logit 0.00, mf_item_bias 0.00, user_rate_logit 0.00, mf_user_bias 0.00, user_log_events 0.00, ctr_minus_max 0.00

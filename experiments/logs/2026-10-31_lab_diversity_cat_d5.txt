@@ -1,0 +1,10 @@
+### CAT
+  base (= the best member)                     half-B 0.83964  eval-weighted 0.82053  first 0.81872  gap-weighted 0.81716  1-20 known clicks 0.80936  (625 trees)
+member alone vs SET40:
+  plain          A 0.84020  B 0.83964  B-A -0.00056  95% interval [-0.00076, -0.00037]  P(B > A) 0.00
+  eval-weighted  A 0.82149  B 0.82053  B-A -0.00096  95% interval [-0.00127, -0.00058]  P(B > A) 0.00
+  gap-weighted   A 0.81802  B 0.81679  B-A -0.00123  95% interval [-0.00174, -0.00079]  P(B > A) 0.00
+50/50 average vs SET40:
+  plain          A 0.84020  B 0.84019  B-A -0.00001  95% interval [-0.00011, +0.00009]  P(B > A) 0.48
+  eval-weighted  A 0.82149  B 0.82133  B-A -0.00016  95% interval [-0.00032, +0.00003]  P(B > A) 0.05
+  gap-weighted   A 0.81802  B 0.81774  B-A -0.00028  95% interval [-0.00054, -0.00005]  P(B > A) 0.02

@@ -1,0 +1,21 @@
+cells: user known clicks x candidate clicks; real | replica | real - replica
+  user 1-5    cand 0-10    n    7358/   7512 | auc 0.7054 0.7154 -0.0100 | lift 10.06  6.90 +3.16 | coh 0.274 0.280 -0.007 | ctr 0.0488 0.0410
+  user 1-5    cand 11-30   n   18849/  18572 | auc 0.7531 0.7870 -0.0339 | lift 13.76 23.81 -10.06 | coh 0.344 0.375 -0.031 | ctr 0.0561 0.0614
+  user 1-5    cand 31-100  n   11718/  11804 | auc 0.7592 0.7926 -0.0334 | lift 19.15 39.18 -20.03 | coh 0.346 0.380 -0.035 | ctr 0.0637 0.0661
+  user 6-20   cand 0-10    n   43969/  45268 | auc 0.7571 0.7500 +0.0071 | lift 18.45 13.29 +5.16 | coh 0.322 0.313 +0.009 | ctr 0.0500 0.0429
+  user 6-20   cand 11-30   n  112681/ 111716 | auc 0.8045 0.8083 -0.0037 | lift 35.26 35.10 +0.16 | coh 0.386 0.394 -0.008 | ctr 0.0583 0.0614
+  user 6-20   cand 31-100  n   71921/  72971 | auc 0.8238 0.8284 -0.0046 | lift 73.77 52.68 +21.10 | coh 0.412 0.418 -0.007 | ctr 0.0663 0.0670
+  user 6-20   cand 101+    n    8049/   6835 | auc 0.8373 0.8357 +0.0015 | lift 59.50 135.50 -76.00 | coh 0.432 0.436 -0.005 | ctr 0.0701 0.0604
+  user 21-50  cand 0-10    n   97414/ 101219 | auc 0.7868 0.7699 +0.0169 | lift 31.82 17.35 +14.48 | coh 0.359 0.336 +0.023 | ctr 0.0525 0.0464
+  user 21-50  cand 11-30   n  252497/ 252214 | auc 0.8287 0.8171 +0.0116 | lift 64.69 40.85 +23.83 | coh 0.414 0.401 +0.013 | ctr 0.0627 0.0639
+  user 21-50  cand 31-100  n  161488/ 164733 | auc 0.8486 0.8401 +0.0085 | lift 116.47 59.37 +57.10 | coh 0.439 0.432 +0.007 | ctr 0.0708 0.0684
+  user 21-50  cand 101+    n   17731/  15284 | auc 0.8671 0.8448 +0.0223 | lift 113.50 51.54 +61.96 | coh 0.466 0.446 +0.020 | ctr 0.0726 0.0641
+  user 51+    cand 0-10    n   31192/  31457 | auc 0.8090 0.7660 +0.0430 | lift 50.09 16.02 +34.07 | coh 0.384 0.334 +0.051 | ctr 0.0586 0.0496
+  user 51+    cand 11-30   n   81811/  79428 | auc 0.8363 0.8233 +0.0130 | lift 72.40 43.33 +29.06 | coh 0.417 0.405 +0.012 | ctr 0.0655 0.0669
+  user 51+    cand 31-100  n   53453/  52685 | auc 0.8604 0.8391 +0.0212 | lift 101.63 56.36 +45.27 | coh 0.450 0.429 +0.021 | ctr 0.0738 0.0721
+  user 51+    cand 101+    n    5964/   5010 | auc 0.8477 0.8472 +0.0005 | lift 75.75 73.67 +2.08 | coh 0.439 0.446 -0.007 | ctr 0.0758 0.0677
+per user group: pairwise cosine of known clicks, event click share, repeat-candidate click rate, repeat share of clicks
+  1-5    real pair 0.3990 evclick 0.576 rep-ctr 0.308 rep-share 0.131 | replica pair 0.4190 evclick 0.595 rep-ctr 0.311 rep-share 0.097
+  6-20   real pair 0.2989 evclick 0.596 rep-ctr 0.286 rep-share 0.121 | replica pair 0.3026 evclick 0.596 rep-ctr 0.302 rep-share 0.091
+  21-50  real pair 0.2785 evclick 0.636 rep-ctr 0.291 rep-share 0.127 | replica pair 0.2715 evclick 0.620 rep-ctr 0.336 rep-share 0.078
+  51+    real pair 0.2891 evclick 0.672 rep-ctr 0.289 rep-share 0.129 | replica pair 0.2742 evclick 0.653 rep-ctr 0.347 rep-share 0.075

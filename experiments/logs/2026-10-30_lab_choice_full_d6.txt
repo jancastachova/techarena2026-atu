@@ -1,0 +1,2 @@
+exported (4898070, 337) to data/cache/lab_export_set38_d6.npz
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21

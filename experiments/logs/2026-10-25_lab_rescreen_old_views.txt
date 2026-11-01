@@ -1,0 +1,16 @@
+uvec09 (1 cache(s)): day-6 AUC 0.82087, rank corr with MF30 0.9957, with sequence 0.9523
+deep (1 cache(s)): day-6 AUC 0.79674, rank corr with MF30 0.8950, with sequence 0.8592
+choice (1 cache(s)): day-6 AUC 0.81034, rank corr with MF30 0.9492, with sequence 0.9427
+clicks_idf (1 cache(s)): day-6 AUC 0.78968, rank corr with MF30 0.8643, with sequence 0.8126
+clicks_unif (1 cache(s)): day-6 AUC 0.75199, rank corr with MF30 0.7731, with sequence 0.7235
+antiidf (1 cache(s)): day-6 AUC 0.81306, rank corr with MF30 0.9868, with sequence 0.9408
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84080  eval-weighted 0.82374  1-20 known clicks 0.81485  (1494 trees)
+  + uvec09                                     half-B 0.84087  eval-weighted 0.82394  1-20 known clicks 0.81503  (1427 trees)
+  + deep                                       half-B 0.84086  eval-weighted 0.82388  1-20 known clicks 0.81501  (1243 trees)
+  + choice                                     half-B 0.84092  eval-weighted 0.82397  1-20 known clicks 0.81505  (1604 trees)
+  + clicks_idf                                 half-B 0.84086  eval-weighted 0.82398  1-20 known clicks 0.81503  (1242 trees)
+  + clicks_unif                                half-B 0.84093  eval-weighted 0.82397  1-20 known clicks 0.81507  (1403 trees)
+  + antiidf                                    half-B 0.84077  eval-weighted 0.82372  1-20 known clicks 0.81471  (1841 trees)

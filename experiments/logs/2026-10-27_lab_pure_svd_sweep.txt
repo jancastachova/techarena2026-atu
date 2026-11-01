@@ -1,0 +1,10 @@
+MF30 alone on day 6: 0.81921
+alpha 1.0 rank  24: alone 0.54410  1-5 0.5346  6-20 0.5457  21+ 0.5441  rank corr MF30 0.120  best rank blend w=0.1 0.81585
+alpha 1.0 rank  40: alone 0.59206  1-5 0.5906  6-20 0.5870  21+ 0.5944  rank corr MF30 0.307  best rank blend w=0.1 0.81551
+alpha 1.0 rank  64: alone 0.79092  1-5 0.7232  6-20 0.7749  21+ 0.8026  rank corr MF30 0.858  best rank blend w=0.25 0.82085
+alpha 1.5 rank  24: alone 0.47292  1-5 0.4747  6-20 0.4743  21+ 0.4718  rank corr MF30 -0.094  best rank blend w=0.1 0.81915
+alpha 1.5 rank  40: alone 0.47345  1-5 0.4754  6-20 0.4751  21+ 0.4722  rank corr MF30 -0.093  best rank blend w=0.1 0.81914
+alpha 1.5 rank  64: alone 0.47470  1-5 0.4773  6-20 0.4765  21+ 0.4734  rank corr MF30 -0.090  best rank blend w=0.1 0.81914
+alpha 2.0 rank  24: alone 0.49127  1-5 0.4949  6-20 0.4913  21+ 0.4887  rank corr MF30 -0.039  best rank blend w=0.1 0.81827
+alpha 2.0 rank  40: alone 0.48970  1-5 0.4941  6-20 0.4879  21+ 0.4879  rank corr MF30 -0.048  best rank blend w=0.1 0.81850
+alpha 2.0 rank  64: alone 0.48926  1-5 0.4915  6-20 0.4880  21+ 0.4878  rank corr MF30 -0.053  best rank blend w=0.1 0.81871

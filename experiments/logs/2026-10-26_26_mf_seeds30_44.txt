@@ -1,0 +1,16 @@
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+  MF: history up to 100 clicks, 15 seeds, pretraining none
+  MF trained on days 0-1 -> scoring fit day 2
+    AUC on day 2: 0.78165
+  MF trained on days 0-2 -> scoring fit day 3
+    AUC on day 3: 0.79556
+  MF trained on days 0-3 -> scoring fit day 4
+    AUC on day 4: 0.80432
+  MF trained on days 0-4 -> scoring fit day 5
+    AUC on day 5: 0.81407
+  MF trained on days 0-5 -> scoring fit day 6
+    AUC on day 6: 0.81898
+  MF trained on days 0-6 -> scoring the test events
+MF scores: 26p_mf_c7_5e7ac6880392.npz

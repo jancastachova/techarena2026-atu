@@ -1,0 +1,14 @@
+### eval-weight 0.5
+4,898,070 rows, 169 features; train rows 3,918,560
+event-constant columns: 57
+  seed 0: best half-A 0.84405; half-B of this seed 0.84471
+  seed 1: best half-A 0.84377; half-B of this seed 0.84445
+  choice model                 half-B 0.84488  eval-weighted 0.82818  first 0.82708
+wrote data/cache/lab_preds_choice_ew0.5_d6.npz
+### eval-weight 1.0
+4,898,070 rows, 169 features; train rows 3,918,560
+event-constant columns: 57
+  seed 0: best half-A 0.84390; half-B of this seed 0.84464
+  seed 1: best half-A 0.84364; half-B of this seed 0.84422
+  choice model                 half-B 0.84461  eval-weighted 0.82777  first 0.82663
+wrote data/cache/lab_preds_choice_ew1.0_d6.npz

@@ -1,0 +1,13 @@
+day 2: 98,097 synthetic + 6,253 real light events
+day 3: 97,717 synthetic + 5,502 real light events
+day 4: 97,589 synthetic + 5,054 real light events
+day 5: 98,453 synthetic + 4,691 real light events
+
+fallback model: 364 trees; top features by gain: mf_cos, hop2c, dot_rank, dot_minus_max, user_rate_logit, hop2
+  0 known clicks   (108 events): best model AUC 0.5360, fallback 0.5297
+  1-5 known clicks (1,974 events): best model AUC 0.7774, fallback 0.7717
+global evaluation-weighted AUC, best model: 0.82498
+  light users: 0.75 best + 0.25 fallback -> evaluation-weighted 0.82502 (+0.00005)
+  light users: 0.50 best + 0.50 fallback -> evaluation-weighted 0.82493 (-0.00005)
+  light users: 0.25 best + 0.75 fallback -> evaluation-weighted 0.82469 (-0.00029)
+  light users: 0.00 best + 1.00 fallback -> evaluation-weighted 0.82432 (-0.00066)

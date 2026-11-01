@@ -1,0 +1,7 @@
+MF30 alone 0.81921  SASRec alone 0.67227  SASRec dot only 0.67308  bias only 0.52651
+rank corr MF30 vs SASRec 0.472
+  z(MF30) + 0.05 z(SASRec): 0.81887
+  z(MF30) + 0.1 z(SASRec): 0.81808
+  z(MF30) + 0.2 z(SASRec): 0.81545
+  z(MF30) + 0.3 z(SASRec): 0.81187
+within-event AUC SASRec 0.6778

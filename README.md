@@ -8,7 +8,7 @@ https://portal-techarena-ireland.hackathon.com/submit.html
 # Submissions
 Submissions can be made 10 times per day from October 21st to November 4th.
 
-Current best: **`submissions/11_tied_items.csv`, public AUC 0.81584**. All scores and what changed
+Current best: **`submissions/25_ensemble_impronly.csv`, public AUC 0.82033**. All scores and what changed
 between experiments: [experiments/RESULTS.md](experiments/RESULTS.md).
 
 # Team Members
@@ -86,13 +86,19 @@ techarena2026-atu/
 │   ├── 08_choice_mf/             # 07 with a choice-model loss in the MF (one pick or none per event)
 │   ├── 09_full_history/          # 07 with the user vector over all known clicks, not just the last 20
 │   ├── 10_other_clicks/          # 09 with each click's other clicks as context for learning item vectors
-│   └── 11_tied_items/            # 10 with one shared vector per item
+│   ├── 11_tied_items/            # 10 with one shared vector per item
+│   ├── 13_retune_7days/          # 11 as ONE standalone file, MF re-tuned on 6 days (start new experiments from a copy)
+│   ├── 15_more_seeds/            # 13 with seeds 15-29; average.py averages it with 13 (current best)
+│   ├── 18_sequence/              # 13 + transformer over the click sequence (no gain; seed-control example)
+│   ├── lab/                      # Quick fit-period checks on cached arrays (see AGENTS.md)
+│   └── logs/                     # Outputs of runs and checks, YYYY-MM-DD_<experiment>_<what>.txt
 ├── src/
 │   ├── metrics.py                # Global ROC AUC (same definition as the leaderboard)
 │   └── check_submission.py       # Checks a submission against the Phase 1 rules
 ├── submissions/                  # One CSV per experiment
 ├── requirements.txt              # Python 3.12 environment
 ├── .gitignore
+├── AGENTS.md                     # Best model, rules, and how to run an improvement batch
 └── README.md
 ```
 

@@ -1,0 +1,20 @@
+day-6 events 97772; true taste norm 1.72
+oracle theta                       AUC 0.86550 | 1-5 0.8827  6-20 0.8682  21+ 0.8638
+mean (unit)                        AUC 0.85602 | 1-5 0.8429  6-20 0.8539  21+ 0.8575
+contrast beta 0.3                  AUC 0.85537 | 1-5 0.8423  6-20 0.8525  21+ 0.8571
+contrast beta 1.0                  AUC 0.85003 | 1-5 0.8325  6-20 0.8415  21+ 0.8538
+    iter 14: mean log-lik -1.2533  |theta| 0.998  cos(theta, true) 0.677
+MAP prior var 0.37, mean 0         AUC 0.81135 | 1-5 0.6922  6-20 0.7744  21+ 0.8304
+MAP prior var 0.37, mean 0, unit   AUC 0.81329 | 1-5 0.6817  6-20 0.7744  21+ 0.8331
+    iter 14: mean log-lik -1.4519  |theta| 0.509  cos(theta, true) 0.686
+MAP prior var 0.1, mean 0          AUC 0.80668 | 1-5 0.6930  6-20 0.7752  21+ 0.8280
+MAP prior var 0.1, mean 0, unit    AUC 0.81573 | 1-5 0.6834  6-20 0.7776  21+ 0.8354
+    iter 14: mean log-lik -1.1514  |theta| 1.846  cos(theta, true) 0.886
+MAP prior var 0.37, mean c x mean  AUC 0.83772 | 1-5 0.8337  6-20 0.8314  21+ 0.8401
+MAP prior var 0.37, mean c x mean, unit AUC 0.83956 | 1-5 0.8338  6-20 0.8326  21+ 0.8422
+    iter 14: mean log-lik -1.2121  |theta| 1.693  cos(theta, true) 0.929
+MAP prior var 0.1, mean c x mean   AUC 0.84902 | 1-5 0.8406  6-20 0.8473  21+ 0.8500
+MAP prior var 0.1, mean c x mean, unit AUC 0.84956 | 1-5 0.8405  6-20 0.8476  21+ 0.8507
+    iter 14: mean log-lik -1.2544  |theta| 1.643  cos(theta, true) 0.945
+MAP prior var 0.03, mean c x mean  AUC 0.85385 | 1-5 0.8423  6-20 0.8521  21+ 0.8551
+MAP prior var 0.03, mean c x mean, unit AUC 0.85393 | 1-5 0.8422  6-20 0.8521  21+ 0.8552

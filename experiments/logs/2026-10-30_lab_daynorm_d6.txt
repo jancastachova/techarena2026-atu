@@ -1,0 +1,13 @@
+DAYNORM=z: MF score columns z-scored within each day
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly', 'aud', 'audc', 'hop2c', 'hop3', 'hop2', 'idf_hop2', 'uoff10', 'dim64', 'choice', 'clicks_idf', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cos', 'cosproj8', 'cos_aud', 'cos_audc', 'cos_audc05', 'cos_wb', 'cos_hop2', 'cos_hop2c', 'cos_hop3', 'cos_hop4', 'temp06', 'cosresid8', 'cossoft20', 'soft_aud', 'act_a', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84469  eval-weighted 0.82793  first 0.82687  1-20 known clicks 0.81951  (1040 trees)
+### paired: DAYNORM=z vs SET38
+A = data/cache/lab_preds_38_act_d6.npz:base (= the best member)
+B = data/cache/lab_preds_daynorm_d6.npz:base (= the best member)
+48,976 half-B events, 300 bootstrap resamples of events
+  plain          A 0.84466  B 0.84469  B-A +0.00003  95% interval [-0.00008, +0.00016]  P(B > A) 0.73
+  eval-weighted  A 0.82794  B 0.82793  B-A -0.00001  95% interval [-0.00023, +0.00020]  P(B > A) 0.44

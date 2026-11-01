@@ -1,0 +1,11 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2']
+sequence (8 cache(s)): day-6 AUC 0.81082, rank corr with MF30 0.9447
+clicks (1 cache(s)): day-6 AUC 0.79218, rank corr with MF30 0.8845, with sequence 0.8095
+antiidf (1 cache(s)): day-6 AUC 0.81306, rank corr with MF30 0.9868, with sequence 0.9320
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.83767  (1425 trees)
+  + clicks                                     half-B 0.83813  (1485 trees)
+    best-ranked clicks features by gain: clicks_share #5, clicks_dot #20, clicks_minus_max #28
+  + antiidf                                    half-B 0.83753  (1145 trees)
+    best-ranked antiidf features by gain: antiidf_share #5, antiidf_logit #25, antiidf_user_bias #27

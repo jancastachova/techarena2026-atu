@@ -1,0 +1,24 @@
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+  MF: history up to 100 clicks, 1 seeds, pretraining none
+  MF trained on days 0-1 -> scoring fit day 2
+    seed 3: seq, 3000 steps on 197,017 events + 703,211 logged clicks (773s)
+    AUC on day 2: 0.67061
+  MF trained on days 0-2 -> scoring fit day 3
+    seed 3: seq, 3000 steps on 295,114 events + 765,401 logged clicks (763s)
+    AUC on day 3: 0.73196
+  MF trained on days 0-3 -> scoring fit day 4
+    seed 3: seq, 3000 steps on 392,831 events + 826,783 logged clicks (768s)
+    AUC on day 4: 0.74717
+  MF trained on days 0-4 -> scoring fit day 5
+    seed 3: seq, 3000 steps on 490,420 events + 888,225 logged clicks (817s)
+    AUC on day 5: 0.76107
+  MF trained on days 0-5 -> scoring fit day 6
+    seed 3: seq, 3000 steps on 588,873 events + 950,177 logged clicks (890s)
+    AUC on day 6: 0.78619
+  MF trained on days 0-6 -> scoring the test events
+    seed 3: seq, 3000 steps on 686,824 events + 1,011,994 logged clicks (1241s)
+MF scores: 18_mf_c7_b70ecf371aee.npz
+  trees: 188 by early stopping on day 6 -> 235 for days 2-6 (best day-6 AUC 0.80122)
+no --out given: submission not written

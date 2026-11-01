@@ -1,0 +1,6 @@
+MF alone on day 6: 0.81750
+  A time-forward, days 2-5 (current)           half-B 0.83441  eval-weighted 0.81785  (391,856 training events, 1145 trees)
+  B out-of-fold, days 2-5                      half-B 0.83392  eval-weighted 0.81723  (391,856 training events, 559 trees)
+  C out-of-fold, days 0-5                      half-B 0.83391  eval-weighted 0.81727  (588,873 training events, 864 trees)
+  plain          A 0.83441  B 0.83391  B-A -0.00050  95% interval [-0.00067, -0.00029]  P(B > A) 0.00
+  eval-weighted  A 0.81785  B 0.81727  B-A -0.00058  95% interval [-0.00086, -0.00020]  P(B > A) 0.00

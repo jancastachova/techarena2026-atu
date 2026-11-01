@@ -1,0 +1,15 @@
+13 as is: half-B 0.83571 (190 trees)
+
+  segment      rows A  click rate  mean score   ratio
+  0 clicks      1,010      0.0416      0.0419   1.009
+  1-5          19,510      0.0587      0.0577   0.982
+  6-20        119,510      0.0594      0.0593   0.998
+  21+         349,720      0.0644      0.0644   1.000
+
+per-segment calibration,  10 bins: half-B 0.82988  gain -0.00583   (in-sample half-A 0.82931)
+per-segment calibration,  25 bins: half-B 0.83449  gain -0.00122   (in-sample half-A 0.83401)
+per-segment calibration,  50 bins: half-B 0.83506  gain -0.00066   (in-sample half-A 0.83487)
+per-segment calibration, 100 bins: half-B 0.83470  gain -0.00101   (in-sample half-A 0.83557)
+
+per-segment log-odds shift only: half-B 0.83571  gain -0.00000
+  shifts: 0 clicks +0.000, 1-5 +0.020, 6-20 +0.002, 21+ -0.000

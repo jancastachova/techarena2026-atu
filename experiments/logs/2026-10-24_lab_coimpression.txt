@@ -1,0 +1,13 @@
+day 2: co-impression SVD on 197,017 earlier events, 17,559,834 positive pairs (14s)
+day 3: co-impression SVD on 295,114 earlier events, 26,181,934 positive pairs (21s)
+day 4: co-impression SVD on 392,831 earlier events, 34,692,540 positive pairs (26s)
+day 5: co-impression SVD on 490,420 earlier events, 43,117,770 positive pairs (34s)
+day 6: co-impression SVD on 588,873 earlier events, 51,545,462 positive pairs (42s)
+
+day-6 AUC of the co-impression cosine alone: all 0.57991, rare candidates (<= 10 clicks) 0.54203
+
+LightGBM (lr 0.02):
+  current best feature set                 half-B 0.83842  (1769 trees)
+  + co-impression similarity               half-B 0.83854  (1545 trees)
+  rare candidates on half B: 0.79546 -> 0.79550
+  co-impression features by gain rank: coimp_cos_mean #24, coimp_cos_max #28, coimp_log_n #71

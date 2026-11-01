@@ -1,0 +1,11 @@
+base: MF30 + popularity + sequence + ['clicks', 'uoff10', 'choice', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cosproj8', 'cos_audc05', 'cos_hop2c', 'cos_hop4', 'cosresid8', 'soft_aud', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84501  eval-weighted 0.82841  first 0.82734  1-20 known clicks 0.82009  (747 trees)
+A = data/cache/lab_preds_40_d6.npz:base (= the best member)
+B = data/cache/lab_preds_41_20s_d6.npz:base (= the best member)
+48,976 half-B events, 300 bootstrap resamples of events
+  plain          A 0.84505  B 0.84501  B-A -0.00004  95% interval [-0.00014, +0.00007]  P(B > A) 0.30
+  eval-weighted  A 0.82839  B 0.82841  B-A +0.00003  95% interval [-0.00015, +0.00022]  P(B > A) 0.63

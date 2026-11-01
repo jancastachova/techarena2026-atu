@@ -1,0 +1,40 @@
+    seed 7: pool mean (gamma 0.5), 13000 steps on 588,873 events + 950,177 logged clicks (117s)
+  day 6: 1-seed MF AUC 0.80080
+    seed 7: pool mean (gamma 0.5), 13000 steps on 686,824 events + 1,011,994 logged clicks (121s)
+wrote data/cache/41_vectors_c7_s7.npz
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+    seed 8: pool mean (gamma 0.5), 13000 steps on 197,017 events + 703,211 logged clicks (116s)
+  day 2: 1-seed MF AUC 0.74862
+    seed 8: pool mean (gamma 0.5), 13000 steps on 295,114 events + 765,401 logged clicks (118s)
+  day 3: 1-seed MF AUC 0.76656
+    seed 8: pool mean (gamma 0.5), 13000 steps on 392,831 events + 826,783 logged clicks (115s)
+  day 4: 1-seed MF AUC 0.77929
+    seed 8: pool mean (gamma 0.5), 13000 steps on 490,420 events + 888,225 logged clicks (25971s)
+  day 5: 1-seed MF AUC 0.79334
+    seed 8: pool mean (gamma 0.5), 13000 steps on 588,873 events + 950,177 logged clicks (118s)
+  day 6: 1-seed MF AUC 0.80136
+    seed 8: pool mean (gamma 0.5), 13000 steps on 686,824 events + 1,011,994 logged clicks (114s)
+wrote data/cache/41_vectors_c7_s8.npz
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+    seed 9: pool mean (gamma 0.5), 13000 steps on 197,017 events + 703,211 logged clicks (84s)
+  day 2: 1-seed MF AUC 0.74963
+    seed 9: pool mean (gamma 0.5), 13000 steps on 295,114 events + 765,401 logged clicks (86s)
+  day 3: 1-seed MF AUC 0.76756
+    seed 9: pool mean (gamma 0.5), 13000 steps on 392,831 events + 826,783 logged clicks (97s)
+  day 4: 1-seed MF AUC 0.77935
+    seed 9: pool mean (gamma 0.5), 13000 steps on 490,420 events + 888,225 logged clicks (91s)
+  day 5: 1-seed MF AUC 0.79268
+    seed 9: pool mean (gamma 0.5), 13000 steps on 588,873 events + 950,177 logged clicks (103s)
+  day 6: 1-seed MF AUC 0.80144
+    seed 9: pool mean (gamma 0.5), 13000 steps on 686,824 events + 1,011,994 logged clicks (92s)
+wrote data/cache/41_vectors_c7_s9.npz
+day 2: cosine AUC 0.80315  item-normalised dot 0.79929
+day 3: cosine AUC 0.80999  item-normalised dot 0.80605
+day 4: cosine AUC 0.81541  item-normalised dot 0.81156
+day 5: cosine AUC 0.82233  item-normalised dot 0.81838
+day 6: cosine AUC 0.82628  item-normalised dot 0.82231
+wrote data/cache/41_cosproj8_c7.npz

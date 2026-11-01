@@ -1,0 +1,10 @@
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/last_event_view.py:26: RuntimeWarning: divide by zero encountered in log1p
+  gap = np.where(n > 0, np.log1p((et - sts[prev]) / 3600.0), -1.0)
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/last_event_view.py:26: RuntimeWarning: invalid value encountered in log1p
+  gap = np.where(n > 0, np.log1p((et - sts[prev]) / 3600.0), -1.0)
+wrote data/cache/43_act_d_c7.npz (6868240, 4) (529390, 4)
+day-6 means [1.857 1.371 2.996 0.659]  evaluation means [3.357 0.48  2.046 0.592]
+  log gap          day-6 event-click AUC 0.5031
+  events 24h       day-6 event-click AUC 0.4970
+  events 7d        day-6 event-click AUC 0.4989
+  no-click streak  day-6 event-click AUC 0.4530

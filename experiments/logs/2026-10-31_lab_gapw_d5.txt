@@ -1,0 +1,12 @@
+### GAPW=1
+GAPW 1: training event weights by gap bucket 0.11, 0.57, 1.04, 1.69, 2.93, 5.27, 7.35
+  base (= the best member)                     half-B 0.83912  eval-weighted 0.82033  first 0.81878  gap-weighted 0.81720  1-20 known clicks 0.80923  (334 trees)
+  plain          A 0.84020  B 0.83912  B-A -0.00108  95% interval [-0.00128, -0.00087]  P(B > A) 0.00
+  eval-weighted  A 0.82149  B 0.82033  B-A -0.00115  95% interval [-0.00147, -0.00077]  P(B > A) 0.00
+  gap-weighted   A 0.81802  B 0.81684  B-A -0.00118  95% interval [-0.00162, -0.00069]  P(B > A) 0.00
+### GAPW=0.5
+GAPW 0.5: training event weights by gap bucket 0.34, 0.76, 1.02, 1.30, 1.71, 2.29, 2.71
+  base (= the best member)                     half-B 0.83987  eval-weighted 0.82111  first 0.81957  gap-weighted 0.81799  1-20 known clicks 0.80991  (485 trees)
+  plain          A 0.84020  B 0.83987  B-A -0.00032  95% interval [-0.00047, -0.00018]  P(B > A) 0.00
+  eval-weighted  A 0.82149  B 0.82111  B-A -0.00038  95% interval [-0.00066, -0.00011]  P(B > A) 0.00
+  gap-weighted   A 0.81802  B 0.81763  B-A -0.00039  95% interval [-0.00078, -0.00001]  P(B > A) 0.02

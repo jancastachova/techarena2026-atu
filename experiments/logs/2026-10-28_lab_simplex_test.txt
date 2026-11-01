@@ -1,0 +1,3 @@
+7398 items with >= 31 clicks
+real (whitened)  k-means(8) mean cos to centre 0.5642   max |excess kurtosis| 0.620   mean |excess kurtosis| of the 8 PCA axes 0.472
+gaussian         k-means(8) mean cos to centre 0.5656   max |excess kurtosis| 0.390   mean |excess kurtosis| of the 8 PCA axes 0.071

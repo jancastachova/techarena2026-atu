@@ -1,0 +1,11 @@
+       size      mean
+day                  
+0    985140  0.063033
+1    985030  0.062899
+2    980970  0.063187
+3    977170  0.062610
+4    975890  0.062794
+5    984530  0.062785
+6    979510  0.063001
+test day 5: k=1: day-only 0.5203 cumul 0.5291 | k=2: day-only 0.5180 cumul 0.5254 | k=3: day-only 0.5162 cumul 0.5217 | k=4: day-only 0.5142 cumul 0.5176 | k=5: day-only 0.5134 cumul 0.5134
+test day 6: k=1: day-only 0.5177 cumul 0.5286 | k=2: day-only 0.5136 cumul 0.5258 | k=3: day-only 0.5155 cumul 0.5241 | k=4: day-only 0.5150 cumul 0.5215 | k=5: day-only 0.5141 cumul 0.5183 | k=6: day-only 0.5137 cumul 0.5137

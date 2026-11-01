@@ -1,0 +1,11 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly', 'aud', 'audc', 'hop2c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+hop2 (1 cache(s)): day-6 AUC 0.81923, rank corr with MF30 0.9370, with sequence 0.9060
+audc05 (1 cache(s)): day-6 AUC 0.81764, rank corr with MF30 0.9259, with sequence 0.8846
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84050  (1390 trees)
+  + hop2                                       half-B 0.84055  (1342 trees)
+    best-ranked hop2 features by gain: hop2_share #1, hop2_logit #3, hop2_rank #8
+  + audc05                                     half-B 0.84036  (917 trees)
+    best-ranked audc05 features by gain: audc05_logit #1, audc05_dot #7, audc05_share #23

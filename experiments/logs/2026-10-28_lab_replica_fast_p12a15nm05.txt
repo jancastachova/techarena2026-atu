@@ -1,0 +1,74 @@
+scale 1.25: row CTR 0.0615 (real 0.0629)  event click share 0.615 (real 0.629)
+  repeat candidates 0.0191 (real 0.026), clicked 0.371 (real 0.293), others 0.0554 (real 0.057)
+  ORACLE day 6: global AUC 0.91261  event level 0.76520  within event 0.9012
+  true items, taste = pooled true vectors of known clicks: 0.88342   true taste (no propensity/repeat): 0.89620
+    known clicks 1-5: oracle 0.88084  pooled-true-vectors 0.81506
+    known clicks 6-20: oracle 0.89821  pooled-true-vectors 0.86429
+    known clicks 21-100: oracle 0.91864  pooled-true-vectors 0.89479
+  wrote data/cache/replica_p12a15nm05_truth.npz
+  wrote data/cache/replica_p12a15nm05.npz
+  fit events: last 20 logged clicks == event history for 100.0000% of events
+  test events: last 20 logged clicks == event history for 100.0000% of events
+    seed 0: pool mean (gamma 0.5), 3000 steps on 197,017 events + 700,338 logged clicks (67s)
+  day 2: 1-seed MF AUC 0.80083
+    seed 0: pool mean (gamma 0.5), 3000 steps on 295,114 events + 760,949 logged clicks (67s)
+  day 3: 1-seed MF AUC 0.82203
+    seed 0: pool mean (gamma 0.5), 3000 steps on 392,831 events + 821,211 logged clicks (74s)
+  day 4: 1-seed MF AUC 0.83440
+    seed 0: pool mean (gamma 0.5), 3000 steps on 490,420 events + 881,121 logged clicks (74s)
+  day 5: 1-seed MF AUC 0.84068
+    seed 0: pool mean (gamma 0.5), 3000 steps on 588,873 events + 941,589 logged clicks (76s)
+  day 6: 1-seed MF AUC 0.84623
+    seed 0: pool mean (gamma 0.5), 3000 steps on 686,824 events + 1,001,954 logged clicks (78s)
+wrote data/cache/replica_p12a15nm05_vec_s0.npz
+  fit events: last 20 logged clicks == event history for 100.0000% of events
+  test events: last 20 logged clicks == event history for 100.0000% of events
+    seed 1: pool mean (gamma 0.5), 3000 steps on 197,017 events + 700,338 logged clicks (74s)
+  day 2: 1-seed MF AUC 0.80222
+    seed 1: pool mean (gamma 0.5), 3000 steps on 295,114 events + 760,949 logged clicks (81s)
+  day 3: 1-seed MF AUC 0.82212
+    seed 1: pool mean (gamma 0.5), 3000 steps on 392,831 events + 821,211 logged clicks (81s)
+  day 4: 1-seed MF AUC 0.83539
+    seed 1: pool mean (gamma 0.5), 3000 steps on 490,420 events + 881,121 logged clicks (81s)
+  day 5: 1-seed MF AUC 0.84048
+    seed 1: pool mean (gamma 0.5), 3000 steps on 588,873 events + 941,589 logged clicks (82s)
+  day 6: 1-seed MF AUC 0.84605
+    seed 1: pool mean (gamma 0.5), 3000 steps on 686,824 events + 1,001,954 logged clicks (76s)
+wrote data/cache/replica_p12a15nm05_vec_s1.npz
+  fit events: last 20 logged clicks == event history for 100.0000% of events
+  test events: last 20 logged clicks == event history for 100.0000% of events
+    seed 2: pool mean (gamma 0.5), 3000 steps on 197,017 events + 700,338 logged clicks (73s)
+  day 2: 1-seed MF AUC 0.80111
+    seed 2: pool mean (gamma 0.5), 3000 steps on 295,114 events + 760,949 logged clicks (63s)
+  day 3: 1-seed MF AUC 0.82230
+    seed 2: pool mean (gamma 0.5), 3000 steps on 392,831 events + 821,211 logged clicks (36s)
+  day 4: 1-seed MF AUC 0.83490
+    seed 2: pool mean (gamma 0.5), 3000 steps on 490,420 events + 881,121 logged clicks (76s)
+  day 5: 1-seed MF AUC 0.83998
+    seed 2: pool mean (gamma 0.5), 3000 steps on 588,873 events + 941,589 logged clicks (78s)
+  day 6: 1-seed MF AUC 0.84629
+    seed 2: pool mean (gamma 0.5), 3000 steps on 686,824 events + 1,001,954 logged clicks (79s)
+wrote data/cache/replica_p12a15nm05_vec_s2.npz
+overall projected-cosine AUC (3 seeds): real 0.82337  replica 0.83429
+cells: user known clicks x candidate clicks; real | replica | real - replica
+  user 1-5    cand 0-10    n    7358/   8537 | auc 0.7054 0.6879 +0.0175 | lift 10.06  5.31 +4.75 | coh 0.274 0.251 +0.023 | ctr 0.0488 0.0362
+  user 1-5    cand 11-30   n   18849/  17352 | auc 0.7531 0.7565 -0.0034 | lift 13.76 13.21 +0.55 | coh 0.344 0.337 +0.007 | ctr 0.0561 0.0569
+  user 1-5    cand 31-100  n   11718/  11455 | auc 0.7592 0.7518 +0.0074 | lift 19.15 20.38 -1.23 | coh 0.346 0.326 +0.020 | ctr 0.0637 0.0744
+  user 6-20   cand 0-10    n   43969/  51331 | auc 0.7571 0.7501 +0.0070 | lift 18.45 13.87 +4.58 | coh 0.322 0.313 +0.009 | ctr 0.0500 0.0359
+  user 6-20   cand 11-30   n  112681/ 104996 | auc 0.8045 0.8106 -0.0061 | lift 35.26 32.07 +3.19 | coh 0.386 0.399 -0.013 | ctr 0.0583 0.0569
+  user 6-20   cand 31-100  n   71921/  70772 | auc 0.8238 0.8279 -0.0041 | lift 73.77 46.89 +26.88 | coh 0.412 0.415 -0.003 | ctr 0.0663 0.0773
+  user 6-20   cand 101+    n    8049/   9751 | auc 0.8373 0.8243 +0.0130 | lift 59.50 47.91 +11.59 | coh 0.432 0.409 +0.022 | ctr 0.0701 0.0869
+  user 21-50  cand 0-10    n   97414/ 115415 | auc 0.7868 0.7789 +0.0079 | lift 31.82 21.07 +10.75 | coh 0.359 0.354 +0.005 | ctr 0.0525 0.0346
+  user 21-50  cand 11-30   n  252497/ 238112 | auc 0.8287 0.8426 -0.0138 | lift 64.69 62.47 +2.22 | coh 0.414 0.438 -0.024 | ctr 0.0627 0.0596
+  user 21-50  cand 31-100  n  161488/ 160388 | auc 0.8486 0.8595 -0.0109 | lift 116.47 91.72 +24.75 | coh 0.439 0.453 -0.014 | ctr 0.0708 0.0805
+  user 21-50  cand 101+    n   17731/  21895 | auc 0.8671 0.8613 +0.0058 | lift 113.50 133.70 -20.20 | coh 0.466 0.453 +0.013 | ctr 0.0726 0.0897
+  user 51+    cand 0-10    n   31192/  35273 | auc 0.8090 0.8121 -0.0031 | lift 50.09 33.52 +16.57 | coh 0.384 0.400 -0.015 | ctr 0.0586 0.0376
+  user 51+    cand 11-30   n   81811/  73613 | auc 0.8363 0.8648 -0.0285 | lift 72.40 87.41 -15.01 | coh 0.417 0.463 -0.046 | ctr 0.0655 0.0611
+  user 51+    cand 31-100  n   53453/  50342 | auc 0.8604 0.8783 -0.0180 | lift 101.63 251.92 -150.29 | coh 0.450 0.474 -0.024 | ctr 0.0738 0.0836
+  user 51+    cand 101+    n    5964/   7072 | auc 0.8477 0.8780 -0.0303 | lift 75.75 229.00 -153.25 | coh 0.439 0.477 -0.037 | ctr 0.0758 0.0911
+per user group: pairwise cosine of known clicks, event click share, repeat-candidate click rate, repeat share of clicks
+  1-5    real pair 0.3990 evclick 0.576 rep-ctr 0.308 rep-share 0.131 | replica pair 0.4028 evclick 0.594 rep-ctr 0.305 rep-share 0.095
+  6-20   real pair 0.2989 evclick 0.596 rep-ctr 0.286 rep-share 0.121 | replica pair 0.3002 evclick 0.597 rep-ctr 0.344 rep-share 0.106
+  21-50  real pair 0.2785 evclick 0.636 rep-ctr 0.291 rep-share 0.127 | replica pair 0.2834 evclick 0.617 rep-ctr 0.422 rep-share 0.108
+  51+    real pair 0.2891 evclick 0.672 rep-ctr 0.289 rep-share 0.129 | replica pair 0.3132 evclick 0.642 rep-ctr 0.479 rep-share 0.126
+MISMATCH: cell AUC rms 0.0134 (mean -0.0086)  repeat-ctr rms 0.1194  event-click rms 0.0199

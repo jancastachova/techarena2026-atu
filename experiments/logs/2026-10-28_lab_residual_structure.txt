@@ -1,0 +1,14 @@
+item                         keys     68: split-half corr of residual z-scores +0.1100  (var of z 0.944, 1 = pure noise)
+user                         keys   1639: split-half corr of residual z-scores -0.0137  (var of z 0.439, 1 = pure noise)
+hour of day 6                keys     24: split-half corr of residual z-scores -0.1420  (var of z 0.382, 1 = pure noise)
+item x 6h block              keys      3: split-half corr of residual z-scores +0.9953  (var of z 0.807, 1 = pure noise)
+item day-6 residual z vs day-5-vs-earlier trend (items 228): corr -0.0801
+item residual split-half (seed 0, >= 5 rows each half, 13432 items): corr z -0.0013
+item residual split-half (seed 0, >= 10 rows each half, 3078 items): corr z +0.0021
+item residual split-half (seed 1, >= 5 rows each half, 13458 items): corr z -0.0013
+item residual split-half (seed 1, >= 10 rows each half, 3091 items): corr z +0.0106
+item residual split-half (seed 2, >= 5 rows each half, 13547 items): corr z -0.0049
+item residual split-half (seed 2, >= 10 rows each half, 3109 items): corr z -0.0029
+8-dim projected: seed 0: users 7419, stat +78.84 null +0.70±22.80 (z +3.43) | seed 1: users 7394, stat +55.29 null -2.58±25.74 (z +2.25) | seed 2: users 7491, stat +108.74 null -0.39±22.83 (z +4.78)
+32-dim: seed 0: users 7419, stat +68.96 null +1.15±17.95 (z +3.78) | seed 1: users 7394, stat +55.75 null -2.50±19.61 (z +2.97) | seed 2: users 7491, stat +91.82 null -0.52±17.69 (z +5.22)
+residual 24 dims: seed 0: users 7419, stat +27.38 null +1.71±20.57 (z +1.25) | seed 1: users 7394, stat +49.90 null -1.54±20.36 (z +2.53) | seed 2: users 7491, stat +43.57 null -0.46±19.90 (z +2.21)

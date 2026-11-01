@@ -1,0 +1,7 @@
+base features: 13_base_c7_9c47a117c762.npz
+    seed 0: seq, 3000 steps on 588,873 events + 950,177 logged clicks (1246s)
+=== pure                         1 seed(s): days 0-5 -> day 6 AUC 0.79092
+    seed 0: seq, 3000 steps on 588,873 events + 950,177 logged clicks (2391s)
+=== pure+seqlen:100              1 seed(s): days 0-5 -> day 6 AUC 0.78669   corr with pure 0.8295   rank average: 0.79891
+    seed 0: seq, 3000 steps on 588,873 events + 950,177 logged clicks (580s)
+=== pure+layers:1                1 seed(s): days 0-5 -> day 6 AUC 0.79492   corr with pure 0.8776   rank average: 0.80011

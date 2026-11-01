@@ -1,0 +1,36 @@
+  seed 0 epoch 0: half-A AUC 0.83380 (5s)
+  seed 0 epoch 1: half-A AUC 0.83404 (11s)
+  seed 0 epoch 2: half-A AUC 0.83456 (17s)
+  seed 0 epoch 3: half-A AUC 0.83466 (23s)
+  seed 0 epoch 4: half-A AUC 0.83450 (28s)
+  seed 0 epoch 5: half-A AUC 0.83480 (34s)
+  seed 0 epoch 6: half-A AUC 0.83490 (40s)
+  seed 0 epoch 7: half-A AUC 0.83443 (45s)
+  seed 0 epoch 8: half-A AUC 0.83482 (50s)
+  seed 1 epoch 0: half-A AUC 0.83338 (5s)
+  seed 1 epoch 1: half-A AUC 0.83419 (10s)
+  seed 1 epoch 2: half-A AUC 0.83467 (16s)
+  seed 1 epoch 3: half-A AUC 0.83459 (21s)
+  seed 1 epoch 4: half-A AUC 0.83465 (27s)
+  seed 2 epoch 0: half-A AUC 0.83374 (6s)
+  seed 2 epoch 1: half-A AUC 0.83376 (11s)
+  seed 2 epoch 2: half-A AUC 0.83456 (17s)
+  seed 2 epoch 3: half-A AUC 0.83478 (23s)
+  seed 2 epoch 4: half-A AUC 0.83452 (29s)
+  seed 2 epoch 5: half-A AUC 0.83454 (34s)
+
+LightGBM (13)            A 0.83492  B 0.83571
+MLP (3 seeds)            A 0.83507  B 0.83579
+correlation of ranks on B: 0.9947
+  w_mlp 0.0  A 0.83492  B 0.83571
+  w_mlp 0.1  A 0.83504  B 0.83582
+  w_mlp 0.2  A 0.83513  B 0.83591
+  w_mlp 0.3  A 0.83520  B 0.83597
+  w_mlp 0.4  A 0.83525  B 0.83601
+  w_mlp 0.5  A 0.83528  B 0.83603
+  w_mlp 0.6  A 0.83528  B 0.83603
+  w_mlp 0.7  A 0.83526  B 0.83600
+  w_mlp 0.8  A 0.83522  B 0.83595
+  w_mlp 0.9  A 0.83516  B 0.83588
+  w_mlp 1.0  A 0.83507  B 0.83579
+chosen on A: w_mlp 0.6 -> B 0.83603  gain +0.00032

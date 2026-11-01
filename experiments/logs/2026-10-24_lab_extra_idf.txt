@@ -1,0 +1,7 @@
+sequence (4 cache(s)): day-6 AUC 0.80704, rank corr with MF30 0.9313
+idf (1 cache(s)): day-6 AUC 0.81529, rank corr with MF30 0.9581, with sequence 0.9178
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  MF30 + pop + seq (= the best member)         half-B 0.83672  (835 trees)
+  + idf                                        half-B 0.83748  (980 trees)
+    best-ranked idf features by gain: idf_dot #4, idf_logit #7, idf_share #9

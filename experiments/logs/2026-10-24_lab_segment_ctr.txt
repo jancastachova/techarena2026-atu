@@ -1,0 +1,12 @@
+day 2: taste groups fitted on 196,091 earlier events
+day 3: taste groups fitted on 293,833 earlier events
+day 4: taste groups fitted on 391,274 earlier events
+day 5: taste groups fitted on 488,601 earlier events
+day 6: taste groups fitted on 586,838 earlier events
+
+day-6 AUC of the group click rate alone (k=10): 0.63491; lift alone 0.64658
+
+LightGBM (lr 0.02):
+  current best feature set                 half-B 0.83842  (1769 trees)
+  + item click rate within taste group     half-B 0.83827  (937 trees)
+  group features by gain rank: seg10_lift #45, seg30_ctr_logit #47, seg30_lift #50, seg30_log_impr #54, seg10_log_impr #58, seg10_ctr_logit #61

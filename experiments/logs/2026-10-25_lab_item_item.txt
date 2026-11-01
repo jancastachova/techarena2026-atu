@@ -1,0 +1,12 @@
+ii1 (1 cache(s)): day-6 AUC 0.61820, rank corr with MF30 0.3199, with sequence 0.2945
+ii2 (1 cache(s)): day-6 AUC 0.61838, rank corr with MF30 0.3174, with sequence 0.2939
+ii3 (1 cache(s)): day-6 AUC 0.55936, rank corr with MF30 0.0561, with sequence 0.0268
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.84080  (1494 trees)
+  + ii1                                        half-B 0.84078  (1943 trees)
+    best-ranked ii1 features by gain: ii1_share #61, ii1_lse #68, ii1_minus_max #74
+  + ii2                                        half-B 0.84083  (1435 trees)
+    best-ranked ii2 features by gain: ii2_share #58, ii2_lse #69, ii2_logit #75
+  + ii3                                        half-B 0.84087  (1501 trees)
+    best-ranked ii3 features by gain: ii3_logit #39, ii3_lse #51, ii3_share #53

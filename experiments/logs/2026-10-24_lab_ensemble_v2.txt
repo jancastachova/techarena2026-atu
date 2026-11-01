@@ -1,0 +1,18 @@
+members (fit days 2-5, early stopping on half A):
+  LGB on MF13                      half-A 0.83492  half-B 0.83571
+  LGB on MF15                      half-A 0.83519  half-B 0.83585
+  CURRENT BEST (avg MF13, MF15)    half-A 0.83539  half-B 0.83612
+  LGB on MF30                      half-A 0.83532  half-B 0.83603
+  LGB on MF30 + poptaste lr.02     half-A 0.83537  half-B 0.83625
+  XGB on MF30 + poptaste           half-A 0.83545  half-B 0.83611
+  LGB on MF20 (alpha 0.9)          half-A 0.83473  half-B 0.83550
+  MLP seed 0: half-A 0.83541
+  MLP seed 1: half-A 0.83533
+  MLP seed 2: half-A 0.83525
+  MLP on MF30 + poptaste           half-A 0.83564  half-B 0.83629
+
+against the current best (half B 0.83612):
+  LGB on MF30 alone                            half-A 0.83532  half-B 0.83603  vs current -0.00009
+  MF13 + MF15 + MF30                           half-A 0.83542  half-B 0.83614  vs current +0.00003
+  5 members on MF30, equal weights             half-A 0.83568  half-B 0.83642  vs current +0.00030
+  5 members + MF13 + MF15, equal weights       half-A 0.83564  half-B 0.83638  vs current +0.00026

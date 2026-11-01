@@ -1,0 +1,5 @@
+base features: 13_base_c7_9c47a117c762.npz
+  segments: all 100.0%, 1-5 4.0%, 6-20 24.2%, 21+ 71.6%, first of day 35.9%
+=== alpha:0.85           3 seed(s): days 0-5 -> day 6 MF AUC all 0.81858  1-5 0.75166  6-20 0.79837  21+ 0.82873  first of day 0.80591
+=== alpha:0.95           3 seed(s): days 0-5 -> day 6 MF AUC all 0.81850  1-5 0.75274  6-20 0.79977  21+ 0.82899  first of day 0.80588
+=== alpha:1.05           3 seed(s): days 0-5 -> day 6 MF AUC all 0.81580  1-5 0.75188  6-20 0.79932  21+ 0.82682  first of day 0.80338

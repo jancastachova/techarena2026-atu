@@ -1,0 +1,5 @@
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+  current best                     half-B 0.84080  eval-weighted 0.82374  1-20 known clicks 0.81485  (1494 trees)
+  + activity (all)                 half-B 0.84090  eval-weighted 0.82393  1-20 known clicks 0.81488  (1811 trees)
+  + activity (events)              half-B 0.84086  eval-weighted 0.82386  1-20 known clicks 0.81490  (1338 trees)
+  + activity (rate)                half-B 0.84086  eval-weighted 0.82387  1-20 known clicks 0.81493  (1425 trees)

@@ -1,0 +1,33 @@
+== real: 97742 day-6 events, row CTR 0.0630
+   alone (half B): logpop 0.5284  logimp 0.5202  ctr 0.5253  nhist 0.5148  rep 0.5523  prop 0.5520  prop_n 0.4991  cos8 0.8215  max8 0.7565  top3 0.7719  meansim 0.8180  coh 0.4825  rec5 0.7813  old5 0.7762  resid 0.5751  resnorm 0.5081  znorm 0.5209  evsim 0.4880  evrank 0.1836
+   base 0.82345   all groups 0.83336 (+0.00991)
+   + propensity       0.82669 (+0.00324)
+   + max/top3 sim     0.82348 (+0.00003)
+   + meansim+coh      0.82384 (+0.00039)
+   + recent 5         0.82332 (-0.00012)
+   + oldest 5         0.82336 (-0.00008)
+   + residual dims    0.82560 (+0.00215)
+   + norm             0.82336 (-0.00008)
+   + event context    0.82821 (+0.00477)
+== replica: 97785 day-6 events, row CTR 0.0619
+   alone (half B): logpop 0.5393  logimp 0.5139  ctr 0.5699  nhist 0.5107  rep 0.5339  prop 0.5452  prop_n 0.4995  cos8 0.8150  max8 0.7458  top3 0.7625  meansim 0.8118  coh 0.4907  rec5 0.7699  old5 0.7747  resid 0.5299  resnorm 0.4755  znorm 0.5680  evsim 0.4888  evrank 0.1896
+   base 0.81929   all groups 0.82664 (+0.00735)
+   + propensity       0.82172 (+0.00244)
+   + max/top3 sim     0.81925 (-0.00004)
+   + meansim+coh      0.81944 (+0.00015)
+   + recent 5         0.81916 (-0.00013)
+   + oldest 5         0.81927 (-0.00001)
+   + residual dims    0.81940 (+0.00011)
+   + norm             0.81975 (+0.00046)
+   + event context    0.82418 (+0.00489)
+
+lift real minus lift replica (positive = signal the replica does not contain):
+   all              real +0.00991  replica +0.00735  gap +0.00256
+   propensity       real +0.00324  replica +0.00244  gap +0.00081
+   max/top3 sim     real +0.00003  replica -0.00004  gap +0.00007
+   meansim+coh      real +0.00039  replica +0.00015  gap +0.00025
+   recent 5         real -0.00012  replica -0.00013  gap +0.00000
+   oldest 5         real -0.00008  replica -0.00001  gap -0.00007
+   residual dims    real +0.00215  replica +0.00011  gap +0.00204
+   norm             real -0.00008  replica +0.00046  gap -0.00055
+   event context    real +0.00477  replica +0.00489  gap -0.00012

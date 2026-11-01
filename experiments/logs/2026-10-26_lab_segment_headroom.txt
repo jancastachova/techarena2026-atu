@@ -1,0 +1,8 @@
+best model, half B, evaluation-weighted AUC: 0.82498
+segment                             share of eval events   perfect     gain   30% of the way
+users with 0 known clicks                          1.3%   0.82560 +0.00062         +0.00019   (108 half-B events)
+users with 1-5 known clicks                       16.4%   0.84738 +0.02240         +0.00726   (1,974 half-B events)
+users with 6-20 known clicks                      45.0%   0.88286 +0.05788         +0.01879   (11,711 half-B events)
+users with 21+ known clicks                       37.4%   0.87183 +0.04685         +0.01536   (35,183 half-B events)
+new users (no earlier train events)                 2.7%   0.82852 +0.00355         +0.00116   (366 half-B events)
+candidates with <= 10 clicks                   16.2% rows   0.87614 +0.05117         +0.02649

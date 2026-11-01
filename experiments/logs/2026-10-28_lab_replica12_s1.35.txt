@@ -1,0 +1,15 @@
+scale 1.35: row CTR 0.0615 (real 0.0629)  event click share 0.615 (real 0.629)
+  repeat candidates 0.0187 (real 0.026), clicked 0.336 (real 0.293), others 0.0563 (real 0.057)
+  ORACLE day 6: global AUC 0.89048  event level 0.74094  within event 0.8814
+  true items, taste = pooled true vectors of known clicks: 0.86322   true taste (no propensity/repeat): 0.87697
+    known clicks 1-5: oracle 0.91002  pooled-true-vectors 0.84729
+    known clicks 6-20: oracle 0.89380  pooled-true-vectors 0.86230
+    known clicks 21-100: oracle 0.88814  pooled-true-vectors 0.86633
+  wrote data/cache/replica12_s1.35_truth.npz
+  wrote data/cache/replica12_s1.35.npz
+  fit events: last 20 logged clicks == event history for 100.0000% of events
+  test events: last 20 logged clicks == event history for 100.0000% of events
+    seed 0: 3000 steps on 588,873 events + 941,947 logged clicks (83s)
+    seed 1: 3000 steps on 588,873 events + 941,947 logged clicks (85s)
+    seed 2: 3000 steps on 588,873 events + 941,947 logged clicks (83s)
+=== base                         3 seed(s): days 0-5 -> day 6 MF AUC 0.82405

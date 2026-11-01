@@ -1,0 +1,6 @@
+m= 3:  87786 events  warm-up clicks 0.74897 (mean age 11.2 d)  train-period clicks 0.75779 (age 3.3 d)  all 0.81912
+      control  73568 events  oldest 3 train-period clicks 0.76117  newest 3 0.74946
+m= 6:  72990 events  warm-up clicks 0.78466 (mean age 10.7 d)  train-period clicks 0.78904 (age 3.3 d)  all 0.82321
+      control  49591 events  oldest 6 train-period clicks 0.78898  newest 6 0.78443
+m=10:  56212 events  warm-up clicks 0.80281 (mean age 10.0 d)  train-period clicks 0.80482 (age 3.3 d)  all 0.82583
+      control  30591 events  oldest 10 train-period clicks 0.80382  newest 10 0.80139

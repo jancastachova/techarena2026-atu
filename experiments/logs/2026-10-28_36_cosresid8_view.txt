@@ -1,0 +1,6 @@
+day 2: cosine AUC 0.58095  item-normalised dot 0.57971
+day 3: cosine AUC 0.58413  item-normalised dot 0.58193
+day 4: cosine AUC 0.58026  item-normalised dot 0.57832
+day 5: cosine AUC 0.58050  item-normalised dot 0.57760
+day 6: cosine AUC 0.57716  item-normalised dot 0.57448
+wrote data/cache/36_cosresid8_c7.npz

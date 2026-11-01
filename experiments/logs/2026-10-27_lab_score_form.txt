@@ -1,0 +1,6 @@
+dot  u.v                     global 0.81278  within-event 0.8191  1-5 0.7463  6-20 0.7956  21+ 0.8236
+item-normalised u.v/|v|      global 0.81347  within-event 0.8201  1-5 0.7461  6-20 0.7960  21+ 0.8246
+user-normalised u.v/|u|      global 0.81677  within-event 0.8191  1-5 0.7489  6-20 0.7985  21+ 0.8262
+cosine                       global 0.81777  within-event 0.8201  1-5 0.7490  6-20 0.7992  21+ 0.8274
+unit-vector mean . unit v    global 0.81420  within-event 0.8207  1-5 0.7460  6-20 0.7970  21+ 0.8255
+-distance^2                  global 0.74617  within-event 0.7483  1-5 0.7077  6-20 0.7359  21+ 0.7528

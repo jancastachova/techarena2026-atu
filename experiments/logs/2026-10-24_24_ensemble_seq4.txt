@@ -1,0 +1,16 @@
+mlp_popseq: training in a separate process ...
+  sequence features from 4 cache(s): 18_mf_c7_3a4b8237d50b.npz, 18_mf_c7_19cd2f7e5252.npz, 18_mf_c7_cd85c39e1c55.npz, 18_mf_c7_352a14674518.npz
+  mlp seed 0: 7 epochs by early stopping on day 6 (day-6 AUC 0.83613), refit on days 2-6
+  mlp seed 1: 3 epochs by early stopping on day 6 (day-6 AUC 0.83586), refit on days 2-6
+  mlp seed 2: 7 epochs by early stopping on day 6 (day-6 AUC 0.83614), refit on days 2-6
+  sequence features from 4 cache(s): 18_mf_c7_3a4b8237d50b.npz, 18_mf_c7_19cd2f7e5252.npz, 18_mf_c7_cd85c39e1c55.npz, 18_mf_c7_352a14674518.npz
+  lgb_popseq: 1190 trees (day-6 AUC 0.83633, 278s)
+  xgb_popseq: 561 trees (day-6 AUC 0.83629, 182s)
+  rank correlations between members on the evaluation rows:
+    lgb_popseq: xgb_popseq 0.9980, mlp_popseq 0.9928
+    xgb_popseq: mlp_popseq 0.9922
+    mlp_popseq: 
+done. wrote submissions/24_ensemble_seq4.csv (3 members: lgb_popseq, xgb_popseq, mlp_popseq)
+OK: 529,390 rows, all 529,390 evaluation rowids present once, values in [1.70007e-05, 0.999998], 455,681 distinct
+rank correlation with submissions/24_ensemble_seq1.csv: 0.99862
+rank correlation with submissions/15_avg_13_15.csv: 0.99652

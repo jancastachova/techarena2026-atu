@@ -1,0 +1,9 @@
+MF30 day-6 AUC by known clicks x popularity of the user's clicked items (terciles within the group):
+  1-5 known clicks: rare 0.7431, mid 0.7533, popular 0.7641
+  6-20 known clicks: rare 0.7910, mid 0.8052, popular 0.8088
+  21-100 known clicks: rare 0.8244, mid 0.8319, popular 0.8338
+MF30 AUC by candidate clicks before day 6 (all users):
+  candidate with 0-3 clicks: 1.2% of rows, AUC 0.6829, CTR 0.0457
+  candidate with 4-10 clicks: 12.7% of rows, AUC 0.7784, CTR 0.0532
+  candidate with 11-30 clicks: 47.7% of rows, AUC 0.8186, CTR 0.0619
+  candidate with 31-1000000000 clicks: 33.9% of rows, AUC 0.8416, CTR 0.0701

@@ -1,0 +1,4 @@
+  base                     half-B 0.84080  eval-weighted 0.82374  1-20 known clicks 0.81485  (1494 trees)
+  day weights p=1          half-B 0.84069  eval-weighted 0.82361  1-20 known clicks 0.81474  (1195 trees)
+  day weights p=2          half-B 0.84046  eval-weighted 0.82324  1-20 known clicks 0.81423  (1154 trees)
+  day feature              half-B 0.84081  eval-weighted 0.82388  1-20 known clicks 0.81496  (1211 trees)

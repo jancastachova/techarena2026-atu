@@ -1,0 +1,4 @@
+    gates |a| |b| |c| mean: 1.321 0.395 0.701
+=== graph:both                   1 seed(s): days 0-5 -> day 6 MF AUC 0.80076
+    gates |a| |b| |c| mean: 1.313 0.402 0.642
+=== graph:both+detach            1 seed(s): days 0-5 -> day 6 MF AUC 0.80079

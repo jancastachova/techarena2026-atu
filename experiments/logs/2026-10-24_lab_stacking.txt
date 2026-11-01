@@ -1,0 +1,24 @@
+LGB 13 (baseline)            half-B 0.83571
+LGB + poptaste, lr 0.02      half-B 0.83595
+LGB on MF alpha 0.9          half-B 0.83550
+XGB + poptaste               half-B 0.83599
+MLP (3 seeds)                half-B 0.83579
+
+rank correlations with LGB 13 on half B: LGB + poptaste, lr 0.02 0.9989, LGB on MF alpha 0.9 0.9966, XGB + poptaste 0.9981, MLP (3 seeds) 0.9947
+log-odds stacking (l2=1): half-A 0.83540  half-B 0.83619  gain +0.00048
+    weights: LGB 13 -0.102, LGB + poptaste, lr 0.02 +0.106, LGB on MF alpha 0.9 +0.357, XGB + poptaste +0.551, MLP (3 seeds) +0.685
+log-odds stacking (l2=100): half-A 0.83538  half-B 0.83618  gain +0.00046
+    weights: LGB 13 +0.171, LGB + poptaste, lr 0.02 +0.236, LGB on MF alpha 0.9 +0.300, XGB + poptaste +0.363, MLP (3 seeds) +0.521
+rank     stacking (l2=1): half-A 0.83540  half-B 0.83619  gain +0.00048
+    weights: LGB 13 -0.076, LGB + poptaste, lr 0.02 +0.119, LGB on MF alpha 0.9 +0.356, XGB + poptaste +0.561, MLP (3 seeds) +0.710
+rank     stacking (l2=100): half-A 0.83537  half-B 0.83617  gain +0.00046
+    weights: LGB 13 +0.225, LGB + poptaste, lr 0.02 +0.269, LGB on MF alpha 0.9 +0.295, XGB + poptaste +0.351, MLP (3 seeds) +0.527
+
+equal-weight average of 2 (LGB 13, LGB + poptaste, lr 0.02):
+    half-A 0.83507  half-B 0.83591  gain +0.00019
+equal-weight average of 3 (LGB 13, LGB + poptaste, lr 0.02, LGB on MF alpha 0.9):
+    half-A 0.83513  half-B 0.83595  gain +0.00023
+equal-weight average of 4 (LGB 13, LGB + poptaste, lr 0.02, LGB on MF alpha 0.9, XGB + poptaste):
+    half-A 0.83520  half-B 0.83603  gain +0.00032
+equal-weight average of 5 (LGB 13, LGB + poptaste, lr 0.02, LGB on MF alpha 0.9, XGB + poptaste, MLP (3 seeds)):
+    half-A 0.83533  half-B 0.83613  gain +0.00042

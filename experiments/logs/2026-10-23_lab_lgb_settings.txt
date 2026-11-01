@@ -1,0 +1,18 @@
+  13 as is                     A 0.83492  B 0.83571  (190 trees)
+  extra_trees                  A 0.83497  B 0.83565  (540 trees)
+  15 leaves, min_data 1000     A 0.83494  B 0.83582  (683 trees)
+  255 leaves, min_data 500     A 0.83479  B 0.83565  (111 trees)
+  lambda_l2 30, min_gain 1     A 0.83508  B 0.83583  (239 trees)
+  lr 0.02                      A 0.83505  B 0.83592  (811 trees)
+[LightGBM] [Fatal] Cannot change max_bin after constructed Dataset handle.
+[LightGBM] [Fatal] Cannot change max_bin after constructed Dataset handle.
+Traceback (most recent call last):
+  File "/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/lab/lgb_settings.py", line 35, in <module>
+    m = lgb.train(p, dtr, 6000, valid_sets=[dA], callbacks=[lgb.early_stopping(150, verbose=False)])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ivanbibat/Documents/GitHub/techarena2026-atu/.venv/lib/python3.12/site-packages/lightgbm/engine.py", line 261, in train
+    reduced_valid_sets.append(valid_data._update_params(params).set_reference(train_set))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ivanbibat/Documents/GitHub/techarena2026-atu/.venv/lib/python3.12/site-packages/lightgbm/basic.py", line 2766, in _update_params
+    raise LightGBMError(_LIB.LGBM_GetLastError().decode("utf-8"))
+lightgbm.basic.LightGBMError: Cannot change max_bin after constructed Dataset handle.

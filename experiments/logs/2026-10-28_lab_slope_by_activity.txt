@@ -1,0 +1,9 @@
+logistic recalibration of the model logit per known-clicks group (slope 1 = right spread):
+  0-0: slope 0.854 intercept -0.248 rows 1080
+  1-2: slope 0.906 intercept -0.255 rows 4860
+  3-5: slope 1.027 intercept +0.043 rows 14880
+  6-10: slope 0.969 intercept -0.039 rows 37020
+  11-20: slope 0.987 intercept -0.015 rows 80090
+  21-50: slope 0.998 intercept +0.000 rows 265240
+  51-100: slope 1.011 intercept +0.009 rows 86590
+AUC 0.84422 -> per-group recalibrated (in-sample upper bound) 0.84425

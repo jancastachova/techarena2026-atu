@@ -1,0 +1,8 @@
+scale 2.0: row CTR 0.0612 (real 0.0629)  event click share 0.612 (real 0.629)
+  repeat candidates 0.0196 (real 0.026), clicked 0.480 (real 0.293), others 0.0528 (real 0.057)
+  ORACLE day 6: global AUC 0.94027  event level 0.79502  within event 0.9301
+    known clicks 1-5: oracle 0.95808
+    known clicks 6-20: oracle 0.94349
+    known clicks 21-100: oracle 0.93800
+  wrote data/cache/replica_s2.0_r0.4.npz
+=== base                         3 seed(s): days 0-5 -> day 6 MF AUC 0.87779

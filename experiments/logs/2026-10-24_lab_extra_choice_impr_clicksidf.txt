@@ -1,0 +1,14 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+choice (1 cache(s)): day-6 AUC 0.81034, rank corr with MF30 0.9492, with sequence 0.9427
+impronly (1 cache(s)): day-6 AUC 0.78643, rank corr with MF30 0.9061, with sequence 0.9134
+clicksidf (1 cache(s)): day-6 AUC 0.78968, rank corr with MF30 0.8643, with sequence 0.8126
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+  base (= the best member)                     half-B 0.83827  (1363 trees)
+  + choice                                     half-B 0.83831  (1080 trees)
+    best-ranked choice features by gain: choice_user_bias #20, choice_dot #30, choice_logit #31
+  + impronly                                   half-B 0.83842  (1769 trees)
+    best-ranked impronly features by gain: impronly_item_bias #24, impronly_dot #25, impronly_logit #39
+  + clicksidf                                  half-B 0.83835  (1489 trees)
+    best-ranked clicksidf features by gain: clicksidf_dot #37, clicksidf_item_bias #38, clicksidf_share #42

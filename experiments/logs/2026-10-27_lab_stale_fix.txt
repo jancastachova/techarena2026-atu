@@ -1,0 +1,10 @@
+  trees: 156 by early stopping on day 4 -> 234 for days 2-4 (best day-4 AUC 0.82097)
+test events 43964; rows by test day: day 5: 0.801, day 6: 0.199
+pop_decay median: fit day 4 0.674, test 0.495, test frozen 0.827
+original               AUC 0.81358  (day 5 0.81745  day 6 0.79727)  repeats pred/actual 0.910
+pop frozen at cutoff   AUC 0.81357  (day 5 0.81744  day 6 0.79726)  repeats pred/actual 0.916
+                       vs original -0.00001  95% [-0.00006, +0.00006]
+rep_recency frozen     AUC 0.81359  (day 5 0.81746  day 6 0.79730)  repeats pred/actual 0.927
+                       vs original +0.00001  95% [-0.00002, +0.00005]
+both                   AUC 0.81359  (day 5 0.81745  day 6 0.79730)  repeats pred/actual 0.934
+                       vs original +0.00001  95% [-0.00005, +0.00008]

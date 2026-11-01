@@ -1,0 +1,11 @@
+row model half-B 0.84080
+event features: 209 (33 event-constant)
+event-level AUC half B: event model 0.69397, row model sum 0.69183
+  event model top features: f16_mf_event_lse, f18_seq_lse, f134_mean_mf_logit, f4_user_rate_logit, f5_user_log_events, f20_idf_lse, f0_hist_len, f131_mean_item_log_impr, f15_mf_user_bias, f31_hop2c_lse, f32_hop3_lse, f195_mean_hop2c_logit
+
+combinations (row score -> half-B global AUC):
+  row model                                    half-B 0.84080
+  P(event) x share                             half-B 0.84098
+  event level = row^0.75 * model^0.25, x share half-B 0.84093
+  event level = row^0.50 * model^0.50, x share half-B 0.84101
+  event level = row^0.25 * model^0.75, x share half-B 0.84102

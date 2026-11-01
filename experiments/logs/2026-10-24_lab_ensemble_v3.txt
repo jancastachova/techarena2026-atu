@@ -1,0 +1,12 @@
+current best (LGB MF13 + LGB MF15): half-B 0.83612
+
+new members with the sequence features:
+  LGB MF30 + seq                       half-B 0.83635  vs current +0.00023
+  LGB MF30 + pop + seq lr.02           half-B 0.83664  vs current +0.00052
+  XGB MF30 + pop + seq                 half-B 0.83665  vs current +0.00054
+
+equal-weight rank averages:
+  LGB+pop+seq, XGB+pop+seq                             half-A 0.83595  half-B 0.83674  vs current +0.00063
+  LGB+seq, LGB+pop+seq, XGB+pop+seq                    half-A 0.83595  half-B 0.83671  vs current +0.00060
+  LGB+pop+seq, XGB+pop+seq, MLP                        half-A 0.83609  half-B 0.83684  vs current +0.00073
+  all seq members + MLP + LGB MF13 + LGB MF15          half-A 0.83595  half-B 0.83668  vs current +0.00056

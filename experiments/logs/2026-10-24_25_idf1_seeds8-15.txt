@@ -1,0 +1,66 @@
+base features: 13_base_c7_9c47a117c762.npz
+  fit events: last 20 logged clicks == event history for 99.9371% of events
+  test events: last 20 logged clicks == event history for 99.9641% of events
+  MF: history up to 100 clicks, 8 seeds, pretraining none
+  MF trained on days 0-1 -> scoring fit day 2
+    seed 8: pool idf (gamma 1.0), 3000 steps on 197,017 events + 703,211 logged clicks (78s)
+    seed 9: pool idf (gamma 1.0), 3000 steps on 197,017 events + 703,211 logged clicks (74s)
+    seed 10: pool idf (gamma 1.0), 3000 steps on 197,017 events + 703,211 logged clicks (81s)
+    seed 11: pool idf (gamma 1.0), 3000 steps on 197,017 events + 703,211 logged clicks (84s)
+    seed 12: pool idf (gamma 1.0), 3000 steps on 197,017 events + 703,211 logged clicks (70s)
+    seed 13: pool idf (gamma 1.0), 3000 steps on 197,017 events + 703,211 logged clicks (58s)
+    seed 14: pool idf (gamma 1.0), 3000 steps on 197,017 events + 703,211 logged clicks (58s)
+    seed 15: pool idf (gamma 1.0), 3000 steps on 197,017 events + 703,211 logged clicks (63s)
+    AUC on day 2: 0.76549
+  MF trained on days 0-2 -> scoring fit day 3
+    seed 8: pool idf (gamma 1.0), 3000 steps on 295,114 events + 765,401 logged clicks (70s)
+    seed 9: pool idf (gamma 1.0), 3000 steps on 295,114 events + 765,401 logged clicks (60s)
+    seed 10: pool idf (gamma 1.0), 3000 steps on 295,114 events + 765,401 logged clicks (58s)
+    seed 11: pool idf (gamma 1.0), 3000 steps on 295,114 events + 765,401 logged clicks (60s)
+    seed 12: pool idf (gamma 1.0), 3000 steps on 295,114 events + 765,401 logged clicks (58s)
+    seed 13: pool idf (gamma 1.0), 3000 steps on 295,114 events + 765,401 logged clicks (58s)
+    seed 14: pool idf (gamma 1.0), 3000 steps on 295,114 events + 765,401 logged clicks (57s)
+    seed 15: pool idf (gamma 1.0), 3000 steps on 295,114 events + 765,401 logged clicks (57s)
+    AUC on day 3: 0.78664
+  MF trained on days 0-3 -> scoring fit day 4
+    seed 8: pool idf (gamma 1.0), 3000 steps on 392,831 events + 826,783 logged clicks (79s)
+    seed 9: pool idf (gamma 1.0), 3000 steps on 392,831 events + 826,783 logged clicks (96s)
+    seed 10: pool idf (gamma 1.0), 3000 steps on 392,831 events + 826,783 logged clicks (82s)
+    seed 11: pool idf (gamma 1.0), 3000 steps on 392,831 events + 826,783 logged clicks (78s)
+    seed 12: pool idf (gamma 1.0), 3000 steps on 392,831 events + 826,783 logged clicks (94s)
+    seed 13: pool idf (gamma 1.0), 3000 steps on 392,831 events + 826,783 logged clicks (74s)
+    seed 14: pool idf (gamma 1.0), 3000 steps on 392,831 events + 826,783 logged clicks (72s)
+    seed 15: pool idf (gamma 1.0), 3000 steps on 392,831 events + 826,783 logged clicks (73s)
+    AUC on day 4: 0.79861
+  MF trained on days 0-4 -> scoring fit day 5
+    seed 8: pool idf (gamma 1.0), 3000 steps on 490,420 events + 888,225 logged clicks (74s)
+    seed 9: pool idf (gamma 1.0), 3000 steps on 490,420 events + 888,225 logged clicks (74s)
+    seed 10: pool idf (gamma 1.0), 3000 steps on 490,420 events + 888,225 logged clicks (75s)
+    seed 11: pool idf (gamma 1.0), 3000 steps on 490,420 events + 888,225 logged clicks (73s)
+    seed 12: pool idf (gamma 1.0), 3000 steps on 490,420 events + 888,225 logged clicks (80s)
+    seed 13: pool idf (gamma 1.0), 3000 steps on 490,420 events + 888,225 logged clicks (77s)
+    seed 14: pool idf (gamma 1.0), 3000 steps on 490,420 events + 888,225 logged clicks (79s)
+    seed 15: pool idf (gamma 1.0), 3000 steps on 490,420 events + 888,225 logged clicks (78s)
+    AUC on day 5: 0.81027
+  MF trained on days 0-5 -> scoring fit day 6
+    seed 8: pool idf (gamma 1.0), 3000 steps on 588,873 events + 950,177 logged clicks (78s)
+    seed 9: pool idf (gamma 1.0), 3000 steps on 588,873 events + 950,177 logged clicks (65s)
+    seed 10: pool idf (gamma 1.0), 3000 steps on 588,873 events + 950,177 logged clicks (93s)
+    seed 11: pool idf (gamma 1.0), 3000 steps on 588,873 events + 950,177 logged clicks (81s)
+    seed 12: pool idf (gamma 1.0), 3000 steps on 588,873 events + 950,177 logged clicks (78s)
+    seed 13: pool idf (gamma 1.0), 3000 steps on 588,873 events + 950,177 logged clicks (68s)
+    seed 14: pool idf (gamma 1.0), 3000 steps on 588,873 events + 950,177 logged clicks (67s)
+    seed 15: pool idf (gamma 1.0), 3000 steps on 588,873 events + 950,177 logged clicks (90s)
+    AUC on day 6: 0.81524
+  MF trained on days 0-6 -> scoring the test events
+    seed 8: pool idf (gamma 1.0), 3000 steps on 686,824 events + 1,011,994 logged clicks (98s)
+    seed 9: pool idf (gamma 1.0), 3000 steps on 686,824 events + 1,011,994 logged clicks (154s)
+    seed 10: pool idf (gamma 1.0), 3000 steps on 686,824 events + 1,011,994 logged clicks (105s)
+    seed 11: pool idf (gamma 1.0), 3000 steps on 686,824 events + 1,011,994 logged clicks (103s)
+    seed 12: pool idf (gamma 1.0), 3000 steps on 686,824 events + 1,011,994 logged clicks (112s)
+    seed 13: pool idf (gamma 1.0), 3000 steps on 686,824 events + 1,011,994 logged clicks (113s)
+    seed 14: pool idf (gamma 1.0), 3000 steps on 686,824 events + 1,011,994 logged clicks (62s)
+    seed 15: pool idf (gamma 1.0), 3000 steps on 686,824 events + 1,011,994 logged clicks (62s)
+MF scores: 25_mf_c7_f7999fa81611.npz
+  trees: 290 by early stopping on day 6 -> 362 for days 2-6 (best day-6 AUC 0.83182)
+no --out given: submission not written

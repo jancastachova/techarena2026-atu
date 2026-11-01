@@ -1,0 +1,5 @@
+177185 first-events-of-day (days 3-6); click share 0.631
+by delay quintile: Q1 (3.1 h) 0.625  Q2 (8.7 h) 0.633  Q3 (14.1 h) 0.635  Q4 (20.5 h) 0.629  Q5 (46.4 h) 0.634
+Traceback (most recent call last):
+  File "<stdin>", line 22, in <module>
+ModuleNotFoundError: No module named 'sklearn'

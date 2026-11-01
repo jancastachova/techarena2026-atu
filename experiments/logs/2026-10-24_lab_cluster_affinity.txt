@@ -1,0 +1,17 @@
+day 2: clusters fitted on 43,856 items
+day 3: clusters fitted on 45,058 items
+day 4: clusters fitted on 46,001 items
+day 5: clusters fitted on 46,804 items
+day 6: clusters fitted on 47,418 items
+
+click rate by cluster lift on day 6 (k=20):
+  lift [-9.0,-0.5):  53.6% of rows, click rate 0.0329
+  lift [-0.5,+0.0):  10.7% of rows, click rate 0.0583
+  lift [+0.0,+0.5):  11.7% of rows, click rate 0.0772
+  lift [+0.5,+1.0):  10.4% of rows, click rate 0.1063
+  lift [+1.0,+9.0):  11.2% of rows, click rate 0.1597
+
+LightGBM (lr 0.02):
+  current best feature set                 half-B 0.83842  (1769 trees)
+  + cluster affinity                       half-B 0.83832  (1471 trees)
+  cluster features by gain rank: clu20_share #28, clu50_share #29, clu20_lift #32, clu200_share #36, clu50_lift #37, clu200_lift #38

@@ -1,0 +1,5 @@
+first-of-day events: 35.9% of day-6 rows, 35.8% of training rows
+  current                              half-B 0.84118  eval-weighted 0.82445  first-of-day only 0.83046 (eval-weighted 0.81278)  (1387 trees)
+  + position in day, hours since prev event half-B 0.84109  eval-weighted 0.82433  first-of-day only 0.83028 (eval-weighted 0.81253)  (1146 trees)
+  first-of-day weighted x2             half-B 0.84107  eval-weighted 0.82433  first-of-day only 0.83028 (eval-weighted 0.81257)  (1743 trees)
+  first-of-day weighted x4             half-B 0.84081  eval-weighted 0.82423  first-of-day only 0.83011 (eval-weighted 0.81242)  (809 trees)

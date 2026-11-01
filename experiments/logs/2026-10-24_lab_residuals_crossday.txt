@@ -1,0 +1,4 @@
+day-5 AUC (trained on days 2-4): 0.83356
+day-6 AUC (trained on days 2-4): 0.83766
+
+per-user mean event residual, day 5 vs day 6: 26,404 users, corr +0.0152 (+-0.0123)

@@ -1,0 +1,5 @@
+=== steps:12000      3 seed(s): days 0-5 -> day 6 MF AUC 0.81063  non-repeat rows 0.80040  repeat rows 0.67072
+=== steps:20000      3 seed(s): days 0-5 -> day 6 MF AUC 0.81079  non-repeat rows 0.80066  repeat rows 0.67027   rank corr with the first 0.9874
+=== steps:12000+l2:0.01 3 seed(s): days 0-5 -> day 6 MF AUC 0.81153  non-repeat rows 0.80107  repeat rows 0.67384   rank corr with the first 0.9885
+### lr 0.01
+=== base             3 seed(s): days 0-5 -> day 6 MF AUC 0.80474  non-repeat rows 0.79408  repeat rows 0.66516

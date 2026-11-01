@@ -1,0 +1,8 @@
+day 2: A nnz 10.4M, ii1 AUC 0.59366, ii2 AUC 0.59348, ii3 AUC 0.54277 (21s)
+day 3: A nnz 12.7M, ii1 AUC 0.60046, ii2 AUC 0.60031, ii3 AUC 0.54775 (26s)
+day 4: A nnz 15.2M, ii1 AUC 0.60648, ii2 AUC 0.60653, ii3 AUC 0.54923 (33s)
+day 5: A nnz 18.0M, ii1 AUC 0.61291, ii2 AUC 0.61267, ii3 AUC 0.55373 (39s)
+day 6: A nnz 21.1M, ii1 AUC 0.61820, ii2 AUC 0.61838, ii3 AUC 0.55936 (48s)
+ii1: wrote data/cache/26ii_ii1_c7.npz (test mean 0.424 sd 3.737, fit mean 0.329 sd 3.000)
+ii2: wrote data/cache/26ii_ii2_c7.npz (test mean 0.295 sd 3.545, fit mean 0.215 sd 3.000)
+ii3: wrote data/cache/26ii_ii3_c7.npz (test mean -4.386 sd 3.298, fit mean -4.163 sd 3.000)

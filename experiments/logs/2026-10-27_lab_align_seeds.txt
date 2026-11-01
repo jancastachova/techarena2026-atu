@@ -1,0 +1,5 @@
+relative residual after alignment 0.360
+ 1 seeds: score-average (proj8) 0.81950   aligned vector average (proj8) 0.81950   aligned average, no projection 0.81777
+ 3 seeds: score-average (proj8) 0.82274   aligned vector average (proj8) 0.82252   aligned average, no projection 0.82145
+ 5 seeds: score-average (proj8) 0.82345   aligned vector average (proj8) 0.82318   aligned average, no projection 0.82214
+10 seeds: score-average (proj8) 0.82383   aligned vector average (proj8) 0.82351   aligned average, no projection 0.82257

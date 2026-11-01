@@ -1,0 +1,45 @@
+### 36 change (set35 binary -> set36 lambdarank G1000) 
+48,976 half-B events, 200 bootstrap resamples of events
+  plain          A 0.84422  B 0.84458  B-A +0.00036  95% interval [+0.00019, +0.00057]  P(B > A) 1.00
+  eval-weighted  A 0.82718  B 0.82777  B-A +0.00059  95% interval [+0.00030, +0.00092]  P(B > A) 1.00
+### views only (set35 -> set36, binary) 
+48,976 half-B events, 200 bootstrap resamples of events
+  plain          A 0.84422  B 0.84429  B-A +0.00007  95% interval [-0.00008, +0.00022]  P(B > A) 0.76
+  eval-weighted  A 0.82718  B 0.82754  B-A +0.00035  95% interval [+0.00003, +0.00070]  P(B > A) 0.99
+### ranking only (set36 binary -> G1000) 
+48,976 half-B events, 200 bootstrap resamples of events
+  plain          A 0.84429  B 0.84458  B-A +0.00029  95% interval [+0.00016, +0.00045]  P(B > A) 1.00
+  eval-weighted  A 0.82754  B 0.82777  B-A +0.00024  95% interval [-0.00004, +0.00051]  P(B > A) 0.95
+### 34's cos view (transferred) 
+48,976 half-B events, 200 bootstrap resamples of events
+  plain          A 0.84157  B 0.84201  B-A +0.00044  95% interval [+0.00027, +0.00059]  P(B > A) 1.00
+  eval-weighted  A 0.82477  B 0.82520  B-A +0.00043  95% interval [+0.00015, +0.00067]  P(B > A) 1.00
+### 35's cosproj8 view (transferred) 
+48,976 half-B events, 200 bootstrap resamples of events
+  plain          A 0.84278  B 0.84388  B-A +0.00110  95% interval [+0.00085, +0.00134]  P(B > A) 1.00
+  eval-weighted  A 0.82569  B 0.82687  B-A +0.00118  95% interval [+0.00086, +0.00152]  P(B > A) 1.00
+### 36 change (set35 binary -> set36 lambdarank G1000) --first
+--first: 17,597 of 48,976 half-B events are users' first day-6 events
+17,597 half-B events, 200 bootstrap resamples of events
+  plain          A 0.83356  B 0.83413  B-A +0.00057  95% interval [+0.00021, +0.00093]  P(B > A) 1.00
+  eval-weighted  A 0.82633  B 0.82698  B-A +0.00064  95% interval [+0.00019, +0.00107]  P(B > A) 0.99
+### views only (set35 -> set36, binary) --first
+--first: 17,597 of 48,976 half-B events are users' first day-6 events
+17,597 half-B events, 200 bootstrap resamples of events
+  plain          A 0.83356  B 0.83377  B-A +0.00021  95% interval [-0.00007, +0.00056]  P(B > A) 0.86
+  eval-weighted  A 0.82633  B 0.82665  B-A +0.00032  95% interval [-0.00005, +0.00075]  P(B > A) 0.94
+### ranking only (set36 binary -> G1000) --first
+--first: 17,597 of 48,976 half-B events are users' first day-6 events
+17,597 half-B events, 200 bootstrap resamples of events
+  plain          A 0.83377  B 0.83413  B-A +0.00036  95% interval [+0.00008, +0.00063]  P(B > A) 0.99
+  eval-weighted  A 0.82665  B 0.82698  B-A +0.00032  95% interval [-0.00001, +0.00063]  P(B > A) 0.97
+### 34's cos view (transferred) --first
+--first: 17,597 of 48,976 half-B events are users' first day-6 events
+17,597 half-B events, 200 bootstrap resamples of events
+  plain          A 0.83065  B 0.83120  B-A +0.00055  95% interval [+0.00023, +0.00087]  P(B > A) 1.00
+  eval-weighted  A 0.82354  B 0.82408  B-A +0.00055  95% interval [+0.00019, +0.00093]  P(B > A) 1.00
+### 35's cosproj8 view (transferred) --first
+--first: 17,597 of 48,976 half-B events are users' first day-6 events
+17,597 half-B events, 200 bootstrap resamples of events
+  plain          A 0.83187  B 0.83317  B-A +0.00130  95% interval [+0.00090, +0.00171]  P(B > A) 1.00
+  eval-weighted  A 0.82462  B 0.82597  B-A +0.00135  95% interval [+0.00092, +0.00189]  P(B > A) 1.00

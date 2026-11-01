@@ -1,0 +1,6 @@
+rows: days 0-6 6,868,240; days 2-6 4,898,070 (+40% more)
+MF features missing on 28.7% of rows (days 0-1)
+
+  days 2-5 (= 13)                    rows 3,918,560  half-A 0.83492  half-B 0.83571  (190 trees)
+  days 0-5, MF missing on 0-1        rows 5,888,730  half-A 0.83504  half-B 0.83565  (343 trees)
+  days 1-5, MF missing on 1          rows 4,903,590  half-A 0.83488  half-B 0.83568  (240 trees)

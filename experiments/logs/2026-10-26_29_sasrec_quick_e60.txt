@@ -1,0 +1,3 @@
+    day 6 seed 0: 53,651 windows, 60 epochs, 12600 steps, last loss 3.229 (1642s)
+day 6 (trained on clicks before day 6): SASRec AUC 0.69617 (MF alone 0.8175 with 3 seeds)
+60 epochs: blend z(MF30) + w z(SASRec): [(0, 0.81921), (0.05, 0.81918), (0.1, 0.81873), (0.2, 0.81687)]

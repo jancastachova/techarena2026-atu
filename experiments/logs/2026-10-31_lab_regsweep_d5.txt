@@ -1,0 +1,20 @@
+### R1 {"num_leaves": 7, "min_data_in_leaf": 2000, "feature_fraction": 0.3}
+  base (= the best member)                     half-B 0.84045  eval-weighted 0.82172  first 0.82019  gap-weighted 0.81846  1-20 known clicks 0.81061  (4869 trees)
+  plain          A 0.84020  B 0.84045  B-A +0.00025  95% interval [+0.00012, +0.00040]  P(B > A) 1.00
+  eval-weighted  A 0.82149  B 0.82172  B-A +0.00024  95% interval [-0.00000, +0.00049]  P(B > A) 0.97
+  gap-weighted   A 0.81802  B 0.81809  B-A +0.00007  95% interval [-0.00032, +0.00043]  P(B > A) 0.64
+### R2 {"num_leaves": 15, "min_data_in_leaf": 5000, "feature_fraction": 0.3}
+  base (= the best member)                     half-B 0.84042  eval-weighted 0.82164  first 0.82011  gap-weighted 0.81846  1-20 known clicks 0.81049  (1992 trees)
+  plain          A 0.84020  B 0.84042  B-A +0.00022  95% interval [+0.00007, +0.00035]  P(B > A) 1.00
+  eval-weighted  A 0.82149  B 0.82164  B-A +0.00016  95% interval [-0.00009, +0.00037]  P(B > A) 0.93
+  gap-weighted   A 0.81802  B 0.81810  B-A +0.00008  95% interval [-0.00024, +0.00041]  P(B > A) 0.68
+### R3 {"num_leaves": 31, "min_data_in_leaf": 2000, "feature_fraction": 0.3}
+  base (= the best member)                     half-B 0.84044  eval-weighted 0.82168  first 0.82022  gap-weighted 0.81853  1-20 known clicks 0.81051  (1627 trees)
+  plain          A 0.84020  B 0.84044  B-A +0.00024  95% interval [+0.00011, +0.00037]  P(B > A) 1.00
+  eval-weighted  A 0.82149  B 0.82168  B-A +0.00019  95% interval [-0.00007, +0.00042]  P(B > A) 0.92
+  gap-weighted   A 0.81802  B 0.81817  B-A +0.00015  95% interval [-0.00019, +0.00045]  P(B > A) 0.79
+### R4 {"num_leaves": 15, "min_data_in_leaf": 2000, "feature_fraction": 0.15}
+  base (= the best member)                     half-B 0.84034  eval-weighted 0.82156  first 0.82012  gap-weighted 0.81848  1-20 known clicks 0.81037  (3292 trees)
+  plain          A 0.84020  B 0.84034  B-A +0.00014  95% interval [+0.00000, +0.00026]  P(B > A) 0.98
+  eval-weighted  A 0.82149  B 0.82156  B-A +0.00008  95% interval [-0.00017, +0.00033]  P(B > A) 0.71
+  gap-weighted   A 0.81802  B 0.81812  B-A +0.00010  95% interval [-0.00036, +0.00046]  P(B > A) 0.66
