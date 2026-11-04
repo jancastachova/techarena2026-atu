@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/49_bayes_choice/viewcheck3.py", line 13, in <module>
+    tw, cw = lab("tw"), lab("chw")
+             ^^^^^^^^^
+  File "/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/49_bayes_choice/viewcheck3.py", line 10, in lab
+    a = D._lab(f"data/cache/49/{pre}_d{d}.npz"); m = D.DAY == d; c[m] = a[m]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ivanbibat/Documents/GitHub/techarena2026-atu/experiments/49_bayes_choice/data.py", line 18, in _lab
+    Z = np.load(f); k = [x for x in Z.files if x != "rows_B"][0]
+        ^^^^^^^^^^
+  File "/Users/ivanbibat/Documents/GitHub/techarena2026-atu/.venv/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 454, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/cache/49/tw_d3.npz'

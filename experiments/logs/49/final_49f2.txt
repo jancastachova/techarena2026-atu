@@ -1,0 +1,6 @@
+header rowid,predicted_probability | rows 529390 unique 529390 order ok True
+finite True range 3.515338689181207e-05 0.8870352277394827
+event sum max 0.9915289484555039 over 1: 0
+roundtrip diff 0.0
+Spearman vs submissions/49f_view2.csv 0.99998
+sha256 3d31339f714fc17307dbb08faa37c30f08fa72cf9cf0b59eea0fed3d3757d5e4

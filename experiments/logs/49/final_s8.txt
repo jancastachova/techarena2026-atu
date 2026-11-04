@@ -1,0 +1,9 @@
+stacker: True 37 gmax 0.685 CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH
+beta [-0.105  0.614  0.014  0.564  0.082  0.248  0.035  0.125] intercept -2.505
+wrote submissions/49_bayes_stack_s8.csv mean event sum 0.6502 max 0.9933 Spearman vs 47s6 0.9936
+header rowid,predicted_probability | rows 529390 unique 529390 order ok True
+finite True range 4.5215232417282746e-05 0.9202373802429156
+event sum max 0.9933216809417627 over 1: 0
+roundtrip diff 0.0
+Spearman vs s4 0.99968
+sha256 98f8d7a8bdc601be24506f59170773da0c52b631f88d00ae28f75361a04ddacb

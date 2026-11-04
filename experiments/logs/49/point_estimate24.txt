@@ -1,0 +1,4 @@
+alone M1 0.80903 M2 0.80419
++ point estimates on top of 49c inputs: 0.82310 -> 0.82336 +0.00025 pos 4/5 True
+point estimates INSTEAD of Bayes F1 F2: 0.82284 vs no family 0.82107
+Bayes F1 F2 8 seeds: 0.82310

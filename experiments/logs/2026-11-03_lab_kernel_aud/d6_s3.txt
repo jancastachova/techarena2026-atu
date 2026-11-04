@@ -1,0 +1,12 @@
+seed 0 done
+seed 1 done
+seed 2 done
+day 6, 3 seeds; single-score AUC plain / eval-weighted; within-event AUC (rank inside the event)
+  own cos        0.82473  0.80679   within 0.83301
+  aud cos        0.82600  0.80790   within 0.83430
+  kernel k2      0.70989  0.69742   within 0.71471
+  kernel k5      0.72820  0.71460   within 0.73346
+  kernel k10     0.65748  0.64725   within 0.66163
+  kernel k20     0.57914  0.57339   within 0.58229
+  item ctr       0.52807  0.52687   within 0.52825
+wrote /private/tmp/claude-501/-Users-ivanbibat-Documents-GitHub-techarena2026-atu/bab4a5eb-6bb2-4aad-9f1d-bf2bfb4aa874/scratchpad/kaud_d6.npz

@@ -1,0 +1,4 @@
+### day 6 xgb rank member:   base (= the best member)                     half-B 0.84513  eval-weighted 0.82822  first 0.82710  gap-weighted 0.82591  1-20 known clicks 0.81992  (699 trees)
+## day 6: 47 (A) vs 47 + xgb rank at 1/8 (B)
+  eval-weighted  A 0.82928  B 0.82929  B-A +0.00001  95% interval [-0.00004, +0.00005]  P(B > A) 0.66
+  gap-weighted   A 0.82722  B 0.82721  B-A -0.00001  95% interval [-0.00007, +0.00005]  P(B > A) 0.45

@@ -1,0 +1,3 @@
+## day 6: 47 (A) vs L3 (B)
+  eval-weighted  A 0.82928  B 0.82921  B-A -0.00007  95% interval [-0.00014, +0.00001]  P(B > A) 0.03
+  gap-weighted   A 0.82722  B 0.82715  B-A -0.00007  95% interval [-0.00015, +0.00004]  P(B > A) 0.08

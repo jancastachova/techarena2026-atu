@@ -1,0 +1,15 @@
+[    0.2s] cutoff 3: 295,114 fit events, 34,912 targets (349,120 rows)
+[    4.8s] labelled clicks 186,038; history-only warm-up clicks 567,251
+[   10.4s] partition k=8 rank=7: singular [1.    0.351 0.348 0.339 0.331 0.325 0.317 0.311], cos 0.7849, sizes [4464 5273 6288 5854 7527 7451 4966 8177]
+Traceback (most recent call last):
+  File "/workspace/t/experiments/49_bayes_choice/bayes.py", line 161, in <module>
+    slate, rep, ev_u, choice, w_ev, outside = T(slate[o]), T(rep[o]), T(ev_u[o]), T(choice[o]), T(w_ev[o], DT), T(outside[o])
+                                              ^^^^^^^^^^^
+  File "/workspace/t/experiments/49_bayes_choice/bayes.py", line 160, in <lambda>
+    T = lambda x, d=None: torch.as_tensor(x, device=dev, dtype=d)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+

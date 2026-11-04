@@ -1,0 +1,10 @@
+stacker on 52,696 events: ok True iters 87 gmax 0.638 CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH
+beta [-0.065  0.299 -0.086  0.176  0.037 -0.031  0.04   0.071  0.084  0.185
+  0.028  0.438  0.006  0.223 -0.02   0.191] intercept -2.508
+wrote submissions/49d_stack.csv mean event sum 0.6434 max 0.9881 Spearman vs 47s6 0.9869
+header rowid,predicted_probability | rows 529390 unique 529390 order ok True
+finite True range 4.351214395104096e-05 0.9129933163911824
+event sum max 0.9881221517048892 over 1: 0
+roundtrip diff 0.0
+Spearman vs 49c 0.99656
+sha256 8877931e724011ed3468dc0002b0e1d51dbef77634d61603246ac6b6afa6b534

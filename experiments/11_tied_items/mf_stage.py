@@ -46,5 +46,5 @@ def use_tied_model():
 
 
 if __name__ == "__main__":
-    use_tied_model()
+    use_tied_model()    
     m10.main()

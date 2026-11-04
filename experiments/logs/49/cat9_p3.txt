@@ -1,0 +1,11 @@
+partition: 48,506 items >= 20 impressions, mean cosine to centre 0.7883; sizes [5573 3583 4366 6767 5088 6872 4365 6138 7248]
+item confidence quantiles by impressions: [(1, 0.668), (10, 0.643), (30, 0.843), (100, 0.974), (300, 0.992)]
+global exposure share [0.156 0.086 0.081 0.099 0.108 0.141 0.112 0.104 0.112]
+global click share    [0.182 0.087 0.075 0.088 0.109 0.146 0.11  0.095 0.109]
+category CTR          [0.0752 0.0651 0.0605 0.0579 0.0651 0.0668 0.0636 0.0587 0.0627]
+  day-6 AUC alone cat_expo_lift    0.57443
+  day-6 AUC alone cat_click_lift   0.57700
+  day-6 AUC alone cat_ctr          0.57200
+  day-6 AUC alone cat_prof_cos     0.57601
+  day-6 AUC alone cat_expo_cos     0.57391
+wrote data/cache/49/cat9_p3.npz (4898070, 14) (529390, 14)

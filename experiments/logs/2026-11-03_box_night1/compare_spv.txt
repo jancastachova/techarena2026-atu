@@ -1,0 +1,16 @@
+### day 3 choice SPV:   choice model                 half-B 0.82764  eval-weighted 0.81349  first 0.81181  (SP: eval-weighted 0.81350)
+## day 3: H3 (A) vs H3 with SP -> SPV (B)
+  eval-weighted  A 0.81434  B 0.81432  B-A -0.00002  95% interval [-0.00006, +0.00002]  P(B > A) 0.16
+  gap-weighted   A 0.80656  B 0.80652  B-A -0.00004  95% interval [-0.00010, +0.00002]  P(B > A) 0.11
+### day 4 choice SPV:   choice model                 half-B 0.83456  eval-weighted 0.81771  first 0.81391  (SP: eval-weighted 0.81770)
+## day 4: H3 (A) vs H3 with SP -> SPV (B)
+  eval-weighted  A 0.81803  B 0.81804  B-A +0.00002  95% interval [-0.00002, +0.00005]  P(B > A) 0.84
+  gap-weighted   A 0.81409  B 0.81412  B-A +0.00003  95% interval [-0.00002, +0.00007]  P(B > A) 0.89
+### day 5 choice SPV:   choice model                 half-B 0.84093  eval-weighted 0.82205  first 0.82063  (SP: eval-weighted 0.82203)
+## day 5: H3 (A) vs H3 with SP -> SPV (B)
+  eval-weighted  A 0.82240  B 0.82242  B-A +0.00002  95% interval [-0.00002, +0.00006]  P(B > A) 0.83
+  gap-weighted   A 0.81885  B 0.81886  B-A +0.00000  95% interval [-0.00005, +0.00006]  P(B > A) 0.49
+### day 6 choice SPV:   choice model                 half-B 0.84576  eval-weighted 0.82901  first 0.82809  (SP: eval-weighted 0.82912)
+## day 6: H3 (A) vs H3 with SP -> SPV (B)
+  eval-weighted  A 0.82921  B 0.82921  B-A -0.00000  95% interval [-0.00005, +0.00003]  P(B > A) 0.49
+  gap-weighted   A 0.82715  B 0.82715  B-A +0.00001  95% interval [-0.00004, +0.00005]  P(B > A) 0.61

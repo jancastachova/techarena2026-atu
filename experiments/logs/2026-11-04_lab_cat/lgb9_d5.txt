@@ -1,0 +1,3 @@
+  + 14 extra columns from data/cache/lab_cat9.npz: ['cat', 'cat_conf', 'cat_expo_lift', 'cat_click_lift', 'cat_ctr', 'cat_slate_n', 'cat_click_mass', 'cat_prof_cos', 'cat_expo_cos', 'cat_expo_lift_rel', 'cat_click_lift_rel', 'cat_ctr_rel', 'cat_prof_cos_rel', 'cat_expo_cos_rel']
+  lgb_choice lab_export_lean_d5.npz obj=binary lr=0.05: half-B 0.84160  eval-weighted 0.82313  first 0.82184  (312 trees, 77s)
+wrote data/cache/lab_preds_cat9_d5.npz

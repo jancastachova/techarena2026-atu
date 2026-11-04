@@ -1,0 +1,2 @@
+  lgb_export exp45_d5.npz +0 caches: half-B 0.84053  eval-weighted 0.82181  first 0.82056  (2200 trees)
+wrote data/cache/n1/d5_rankX.npz

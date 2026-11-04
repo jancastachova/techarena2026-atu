@@ -13,7 +13,7 @@
 | 12 → 13 | Reduced MF training from 5,000 to 3,000 steps | 0.816 → 0.818 |
 
 ### ❌ Approaches that didn't help
-
+    
 We've tested several ideas that produced no meaningful improvement:
 
 - **Click timing and order:** Recent clicks, time of day and click sequences added little or no value.

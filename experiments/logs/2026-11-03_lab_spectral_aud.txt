@@ -1,0 +1,6 @@
+day 2: AUC sum 0.80003  top8 0.79775
+day 3: AUC sum 0.80892  top8 0.80637
+day 4: AUC sum 0.81485  top8 0.81226
+day 5: AUC sum 0.82280  top8 0.82004
+day 6: AUC sum 0.82728  top8 0.82454
+wrote data/cache/47_specaud_c7.npz

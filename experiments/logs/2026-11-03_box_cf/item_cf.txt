@@ -1,0 +1,8 @@
+day 2: cos AUC 0.59399, coss AUC 0.59400, bm25 AUC 0.59391 (219s)
+day 3: cos AUC 0.60113, coss AUC 0.60094, bm25 AUC 0.60073 (240s)
+day 4: cos AUC 0.60757, coss AUC 0.60724, bm25 AUC 0.60688 (269s)
+day 5: cos AUC 0.61392, coss AUC 0.61335, bm25 AUC 0.61284 (296s)
+day 6: cos AUC 0.61949, coss AUC 0.61853, bm25 AUC 0.61797 (354s)
+cos: wrote data/cache/48cf_cos_c7.npz
+coss: wrote data/cache/48cf_coss_c7.npz
+bm25: wrote data/cache/48cf_bm25_c7.npz

@@ -1,0 +1,21 @@
+### day 6 half B: 48,976 events, 25,164 users; binary row AUC eval-weighted 0.82737
+1a. event click share actual / predicted (ratio), by hours since last click x user-rate tercile:
+  <.5h   0.490/0.515 (0.952) n  923  0.634/0.645 (0.984) n 1209  0.743/0.742 (1.002) n 1306
+  .5-2h  0.527/0.513 (1.028) n 2000  0.626/0.641 (0.977) n 2381  0.763/0.747 (1.022) n 2615
+  2-6h   0.517/0.513 (1.007) n 3239  0.634/0.638 (0.993) n 3298  0.743/0.729 (1.018) n 3780
+  6-24h  0.514/0.503 (1.022) n 5340  0.630/0.619 (1.018) n 5392  0.721/0.709 (1.018) n 5738
+  1-3d   0.496/0.496 (0.999) n 3184  0.635/0.608 (1.044) n 2760  0.701/0.689 (1.018) n 2537
+  3-7d   0.500/0.504 (0.991) n 1163  0.630/0.632 (0.997) n  993  0.690/0.678 (1.018) n  351
+  7d+    0.485/0.518 (0.935) n  415  0.614/0.630 (0.974) n  244                        
+  none                                                                         
+1b. by slate candidates already in the user's history (event share actual / predicted; row CTR of those candidates):
+  0  history items: events  37460  0.577 / 0.571
+  1  history items: events  10335  0.706 / 0.690  repeat rows CTR 0.305 vs pred 0.299
+  2  history items: events   1109  0.726 / 0.756  repeat rows CTR 0.231 vs pred 0.239
+  3+ history items: events     72  0.831 / 0.820  repeat rows CTR 0.199 vs pred 0.209
+2. fold 0: 45 trees of event-level correction
+2. fold 1: 114 trees of event-level correction
+2. event-level AUC (eval-weighted): model implied 0.68419  explicit event model 0.68392
+   global eval-weighted: base 0.82737  re-levelled 0.82739  half-way 0.82742
+3. gch vs binary        +0.00037  events [-0.00002, +0.00072]  users [-0.00001, +0.00071]
+3. re-levelled vs base  +0.00002  events [-0.00006, +0.00012]  users [-0.00007, +0.00012]

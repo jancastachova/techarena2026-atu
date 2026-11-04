@@ -37,7 +37,7 @@ def main():
         w = csv.writer(f)
         w.writerow(["rowid", "predicted_probability"])
         for rid in order:
-            w.writerow([rid, f"{sum(t[rid] for t in tables) / len(tables):.6g}"])
+            w.writerow([rid, f"{sum(t[rid] for t in tables) / len(tables):.10g}"])
     print(f"wrote {a.out}: mean of {len(tables)} submissions, {len(order):,} rows")
 
 

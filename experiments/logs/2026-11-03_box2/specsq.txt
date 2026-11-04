@@ -1,0 +1,6 @@
+day 2: loadings written
+day 3: loadings written
+day 4: loadings written
+day 5: loadings written
+day 6: loadings written
+wrote data/cache/48_specsq_c7.npz

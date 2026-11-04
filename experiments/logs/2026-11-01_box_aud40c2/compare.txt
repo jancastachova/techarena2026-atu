@@ -1,0 +1,12 @@
+### day 6: (c) vs 45 set
+  plain          A 0.84516  B 0.84505  B-A -0.00011  95% interval [-0.00021, -0.00003]  P(B > A) 0.00
+  eval-weighted  A 0.82847  B 0.82822  B-A -0.00025  95% interval [-0.00042, -0.00007]  P(B > A) 0.00
+  gap-weighted   A 0.82640  B 0.82617  B-A -0.00023  95% interval [-0.00045, -0.00001]  P(B > A) 0.02
+### day 5: (c) vs 45 set
+  plain          A 0.84052  B 0.84047  B-A -0.00005  95% interval [-0.00013, +0.00005]  P(B > A) 0.14
+  eval-weighted  A 0.82186  B 0.82185  B-A -0.00001  95% interval [-0.00019, +0.00017]  P(B > A) 0.46
+  gap-weighted   A 0.81846  B 0.81842  B-A -0.00004  95% interval [-0.00030, +0.00021]  P(B > A) 0.35
+### day 4: (c) vs 45 set
+  plain          A 0.83401  B 0.83394  B-A -0.00007  95% interval [-0.00018, +0.00004]  P(B > A) 0.11
+  eval-weighted  A 0.81733  B 0.81728  B-A -0.00005  95% interval [-0.00025, +0.00013]  P(B > A) 0.28
+  gap-weighted   A 0.81335  B 0.81331  B-A -0.00004  95% interval [-0.00029, +0.00020]  P(B > A) 0.36

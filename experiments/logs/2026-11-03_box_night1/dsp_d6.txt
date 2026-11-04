@@ -1,0 +1,4 @@
+### day 6 choice DSP:   choice model                 half-B 0.84577  eval-weighted 0.82920  first 0.82811  (SP: eval-weighted 0.82912)
+## day 6: H3 (A) vs H3 with D -> DSP (B)
+  eval-weighted  A 0.82921  B 0.82926  B-A +0.00005  95% interval [+0.00000, +0.00009]  P(B > A) 0.98
+  gap-weighted   A 0.82715  B 0.82722  B-A +0.00007  95% interval [+0.00002, +0.00013]  P(B > A) 1.00

@@ -1,0 +1,42 @@
+choice_full: training in a separate process ...
+  sequence features from 12 cache(s): 18_mf_c7_3a4b8237d50b.npz, 18_mf_c7_19cd2f7e5252.npz, 18_mf_c7_cd85c39e1c55.npz, 18_mf_c7_352a14674518.npz, 18_mf_c7_d0b5a6545b44.npz, 18_mf_c7_b1d4761aa9f8.npz, 18_mf_c7_9cf491798aa3.npz, 18_mf_c7_b70ecf371aee.npz, 18_mf_c7_6ba8ab937a14.npz, 18_mf_c7_61e6684ca79a.npz, 18_mf_c7_1a50e53a9712.npz, 18_mf_c7_e9863b0f4de3.npz
+  extra group clicks from 2 cache(s): 25_mf_c7_ee7001a259a8.npz, 25_mf_c7_3e0d10f600d1.npz
+  extra group uoff10 from 1 cache(s): 25_mf_c7_9226150de4c2.npz
+  extra group choice from 1 cache(s): 25_mf_c7_3b91a877c2b2.npz
+  extra group clicks_unif from 1 cache(s): 25_mf_c7_3ddfb006ec71.npz
+  extra group uvec09 from 1 cache(s): 20_mf_c7_c6b710c438b5.npz
+  extra group deep from 1 cache(s): 21_mf_c7_c101aad57f12.npz
+  extra group sqrtview from 1 cache(s): 33_sqrtpool_c7.npz
+  extra group cosproj8 from 1 cache(s): 38_cosproj8_c7.npz
+  extra group cos_audc05 from 1 cache(s): 34b_audc05_c7.npz
+  extra group cos_hop2c from 1 cache(s): 34b_hop2c_c7.npz
+  extra group cos_hop4 from 1 cache(s): 34b_hop4_c7.npz
+  extra group cosresid8 from 1 cache(s): 36_cosresid8_c7.npz
+  extra group soft_aud from 1 cache(s): 34c_aud_c7.npz
+  extra group act_b from 1 cache(s): 38_act_b_c7.npz
+  extra group act_c from 1 cache(s): 38_act_c_c7.npz
+  extra group cat9 from 1 cache(s): cat9_p7.npz
+  extra group cat16 from 1 cache(s): cat16_p7.npz
+  choice: 199 inputs, 61 event-constant; 489,807 events
+  choice seed 0: 3 epochs by early stopping on day 6 (day-6 AUC 0.84670), refit on days 2-6
+  choice seed 1: 5 epochs by early stopping on day 6 (day-6 AUC 0.84677), refit on days 2-6
+  choice seed 2: 7 epochs by early stopping on day 6 (day-6 AUC 0.84700), refit on days 2-6
+  sequence features from 12 cache(s): 18_mf_c7_3a4b8237d50b.npz, 18_mf_c7_19cd2f7e5252.npz, 18_mf_c7_cd85c39e1c55.npz, 18_mf_c7_352a14674518.npz, 18_mf_c7_d0b5a6545b44.npz, 18_mf_c7_b1d4761aa9f8.npz, 18_mf_c7_9cf491798aa3.npz, 18_mf_c7_b70ecf371aee.npz, 18_mf_c7_6ba8ab937a14.npz, 18_mf_c7_61e6684ca79a.npz, 18_mf_c7_1a50e53a9712.npz, 18_mf_c7_e9863b0f4de3.npz
+  extra group clicks from 2 cache(s): 25_mf_c7_ee7001a259a8.npz, 25_mf_c7_3e0d10f600d1.npz
+  extra group uoff10 from 1 cache(s): 25_mf_c7_9226150de4c2.npz
+  extra group choice from 1 cache(s): 25_mf_c7_3b91a877c2b2.npz
+  extra group clicks_unif from 1 cache(s): 25_mf_c7_3ddfb006ec71.npz
+  extra group uvec09 from 1 cache(s): 20_mf_c7_c6b710c438b5.npz
+  extra group deep from 1 cache(s): 21_mf_c7_c101aad57f12.npz
+  extra group sqrtview from 1 cache(s): 33_sqrtpool_c7.npz
+  extra group cosproj8 from 1 cache(s): 38_cosproj8_c7.npz
+  extra group cos_audc05 from 1 cache(s): 34b_audc05_c7.npz
+  extra group cos_hop2c from 1 cache(s): 34b_hop2c_c7.npz
+  extra group cos_hop4 from 1 cache(s): 34b_hop4_c7.npz
+  extra group cosresid8 from 1 cache(s): 36_cosresid8_c7.npz
+  extra group soft_aud from 1 cache(s): 34c_aud_c7.npz
+  extra group act_b from 1 cache(s): 38_act_b_c7.npz
+  extra group act_c from 1 cache(s): 38_act_c_c7.npz
+  extra group cat9 from 1 cache(s): cat9_p7.npz
+  extra group cat16 from 1 cache(s): cat16_p7.npz
+done. wrote /tmp/chcat_eval.csv (1 members: choice_full)

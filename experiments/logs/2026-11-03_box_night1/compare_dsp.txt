@@ -1,0 +1,16 @@
+### day 3 choice DSP:   choice model                 half-B 0.82769  eval-weighted 0.81365  first 0.81199  (SP: eval-weighted 0.81350)
+## day 3: H3 (A) vs H3 with D -> DSP (B)
+  eval-weighted  A 0.81434  B 0.81432  B-A -0.00002  95% interval [-0.00006, +0.00001]  P(B > A) 0.09
+  gap-weighted   A 0.80656  B 0.80657  B-A +0.00001  95% interval [-0.00004, +0.00005]  P(B > A) 0.67
+### day 4 choice DSP:   choice model                 half-B 0.83458  eval-weighted 0.81775  first 0.81398  (SP: eval-weighted 0.81770)
+## day 4: H3 (A) vs H3 with D -> DSP (B)
+  eval-weighted  A 0.81803  B 0.81805  B-A +0.00002  95% interval [-0.00001, +0.00005]  P(B > A) 0.94
+  gap-weighted   A 0.81409  B 0.81411  B-A +0.00001  95% interval [-0.00003, +0.00006]  P(B > A) 0.78
+### day 5 choice DSP:   choice model                 half-B 0.84108  eval-weighted 0.82230  first 0.82106  (SP: eval-weighted 0.82203)
+## day 5: H3 (A) vs H3 with D -> DSP (B)
+  eval-weighted  A 0.82240  B 0.82249  B-A +0.00009  95% interval [+0.00005, +0.00013]  P(B > A) 1.00
+  gap-weighted   A 0.81885  B 0.81897  B-A +0.00012  95% interval [+0.00007, +0.00018]  P(B > A) 1.00
+### day 6 choice DSP:   choice model                 half-B 0.84577  eval-weighted 0.82920  first 0.82811  (SP: eval-weighted 0.82912)
+## day 6: H3 (A) vs H3 with D -> DSP (B)
+  eval-weighted  A 0.82921  B 0.82926  B-A +0.00005  95% interval [+0.00000, +0.00009]  P(B > A) 0.98
+  gap-weighted   A 0.82715  B 0.82722  B-A +0.00007  95% interval [+0.00002, +0.00013]  P(B > A) 1.00

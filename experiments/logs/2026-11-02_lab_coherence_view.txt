@@ -1,0 +1,6 @@
+day 2: typicality AUC 0.78428  cos x coherence 0.79842
+day 3: typicality AUC 0.79242  cos x coherence 0.80517
+day 4: typicality AUC 0.79832  cos x coherence 0.81066
+day 5: typicality AUC 0.80708  cos x coherence 0.81777
+day 6: typicality AUC 0.81213  cos x coherence 0.82164
+wrote data/cache/46_coh_c7.npz

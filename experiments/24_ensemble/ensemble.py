@@ -67,7 +67,7 @@ MF = {"mf13": CACHE / "13_mf_c7_bb1fcb0a9c89.npz", "mf15": CACHE / "15_mf_c7_46f
       "mf20": CACHE / "20_mf_c7_c6b710c438b5.npz"}
 ALL_MEMBERS = ["lgb_mf13", "lgb_mf15", "lgb_mf30", "lgb_pop", "xgb_pop", "lgb_mf20", "mlp_pop",
                "lgb_seq", "lgb_popseq", "xgb_popseq", "mlp_popseq", "lgb_full", "xgb_full", "mlp_full", "lgbrank_full",
-               "choice_full", "lgbshallow_full"]
+               "choice_full", "lgbshallow_full", "lgbchoice_full"]
 SEQ_NAMES = ["seq_logit", "seq_item_bias", "seq_user_bias", "seq_dot",
              "seq_minus_max", "seq_rank", "seq_share", "seq_lse"]
 RANK_GROUP = int(os.environ.get("RANK_GROUP", 1000))
@@ -75,7 +75,8 @@ RANK_TREES = int(os.environ.get("RANK_TREES", 0))     # > 0: fixed lambdarank tr
 FIRST_DAY, ES_DAY = 2, 6                  # LightGBM rows: fit days 2-6; early stopping on day 6
 XGB_PARAMS = dict(objective="binary:logistic", eval_metric="auc", tree_method="hist", eta=0.05,
                   max_depth=6, min_child_weight=50, subsample=0.8, colsample_bytree=0.8,
-                  reg_lambda=1.0, seed=0, nthread=0)
+                  reg_lambda=1.0, seed=0, nthread=int(os.environ.get("NTHREADS", 0)),
+                  device=os.environ.get("XGB_DEVICE", "cpu"))     # XGB_DEVICE=cuda (2026-11-01): GPU on the vast.ai box
 
 spec = importlib.util.spec_from_file_location("e13", ROOT / "experiments/13_retune_7days/retune.py")
 e13 = importlib.util.module_from_spec(spec)
@@ -105,6 +106,8 @@ def score_group(fit_rows, caches, prefix):
     St = np.mean([z["mf_test"] for z in zs], 0)
     if np.isnan(Sf).any() or np.isnan(St).any():
         raise ValueError(f"{prefix}: scores missing for some rows")
+    if Sf.shape[1] != 4:      # 2026-11-03: raw multi-column view (lab/spectral_view.py), no event-relative columns
+        return Sf.astype(np.float32), St.astype(np.float32), [f"{prefix}_{k}" for k in range(Sf.shape[1])]
     names = [f"{prefix}_{k}" for k in ("logit", "item_bias", "user_bias", "dot",
                                        "minus_max", "rank", "share", "lse")]
     return (np.concatenate([Sf, e13.relative_mf(Sf)], 1).astype(np.float32),
@@ -252,7 +255,7 @@ def mlp_stage(out_path, feat, seq_caches, extras):
     np.save(out_path, np.mean(preds, 0))
 
 
-CHOICE_SEEDS = 3
+CHOICE_SEEDS = int(os.environ.get("CHOICE_SEEDS", 3))     # env override (2026-11-01: GPU builds)
 
 
 def choice_stage(out_path, seq_caches, extras):
@@ -263,6 +266,7 @@ def choice_stage(out_path, seq_caches, extras):
     import torch
     import torch.nn.functional as F
     torch.set_num_threads(8)
+    dev = torch.device(os.environ.get("CHOICE_DEVICE", "cpu"))   # CHOICE_DEVICE=cuda (2026-11-01): GPU on the vast.ai box
     _, _, _, Xf, Xt, _, y, d = load_all(seq_caches, extras)
     Ztr, Zte = gauss_rank(Xf["full"], Xt["full"])
     del Xf, Xt
@@ -272,6 +276,7 @@ def choice_stage(out_path, seq_caches, extras):
     const = torch.from_numpy(np.all(np.ptp(Ztr.reshape(-1, E, Ztr.shape[1])[smp], axis=1) < 1e-6, axis=0))
     lab = y.reshape(-1, E)
     target = torch.from_numpy(np.where(lab.sum(1) > 0, lab.argmax(1), E).astype(np.int64))
+    Ef, Ee, const, target = Ef.to(dev), Ee.to(dev), const.to(dev), target.to(dev)
     d_ev = d.reshape(-1, E)[:, 0]
     es_tr, es_va, full_tr = np.flatnonzero(d_ev < ES_DAY), np.flatnonzero(d_ev == ES_DAY), np.arange(len(d_ev))
     log(f"  choice: {Ztr.shape[1]} inputs, {int(const.sum())} event-constant; {len(full_tr):,} events")
@@ -279,20 +284,20 @@ def choice_stage(out_path, seq_caches, extras):
     def mlp(i, hs):
         layers = []
         for k in hs:
-            layers += [torch.nn.Linear(i, k), torch.nn.ReLU(), torch.nn.Dropout(0.1)]; i = k
+            layers += [torch.nn.Linear(i, k), torch.nn.ReLU(), torch.nn.Dropout(float(os.environ.get("CHOICE_DROP", 0.1)))]; i = k
         return torch.nn.Sequential(*layers, torch.nn.Linear(i, 1))
 
     class Choice(torch.nn.Module):
         def __init__(self):
             super().__init__()
-            self.cand = mlp(Ztr.shape[1], [256, 128]); self.none = mlp(int(const.sum()), [64])
+            self.cand = mlp(Ztr.shape[1], [int(v) for v in os.environ.get("CHOICE_HIDDEN", "256,128").split(",")]); self.none = mlp(int(const.sum()), [64])
         def forward(self, X3):
             return torch.cat([self.cand(X3).squeeze(2), self.none(X3[:, 0][:, const])], 1)
 
     def predict(m, X3, evs):
         m.eval()
         with torch.no_grad():
-            out = [torch.softmax(m(X3[torch.from_numpy(evs[s:s + 8192])]), 1)[:, :E].numpy()
+            out = [torch.softmax(m(X3[torch.from_numpy(evs[s:s + 8192]).to(dev)]), 1)[:, :E].cpu().numpy()
                    for s in range(0, len(evs), 8192)]
         m.train()
         return np.concatenate(out).ravel()
@@ -302,7 +307,7 @@ def choice_stage(out_path, seq_caches, extras):
         for epoch in range(epochs):
             perm = r.permutation(idx)
             for s in range(0, len(perm), 512):
-                b = torch.from_numpy(perm[s:s + 512])
+                b = torch.from_numpy(perm[s:s + 512]).to(dev)
                 loss = F.cross_entropy(m(Ef[b]), target[b])
                 opt.zero_grad(); loss.backward(); opt.step()
             if val is not None:
@@ -318,10 +323,10 @@ def choice_stage(out_path, seq_caches, extras):
     preds = []
     for seed in range(1000 * MODEL_SEED, 1000 * MODEL_SEED + CHOICE_SEEDS):
         torch.manual_seed(seed); r = np.random.default_rng(seed)
-        m = Choice(); opt = torch.optim.Adam(m.parameters(), lr=1e-3)
-        best, n_ep = fit_epochs(m, opt, es_tr, 12, r, val=es_va)
+        m = Choice().to(dev); opt = torch.optim.Adam(m.parameters(), lr=float(os.environ.get("CHOICE_LR", 1e-3)))
+        best, n_ep = fit_epochs(m, opt, es_tr, int(os.environ.get("CHOICE_EPOCHS", 12)), r, val=es_va)
         torch.manual_seed(seed); r = np.random.default_rng(seed)
-        m = Choice(); opt = torch.optim.Adam(m.parameters(), lr=1e-3)
+        m = Choice().to(dev); opt = torch.optim.Adam(m.parameters(), lr=float(os.environ.get("CHOICE_LR", 1e-3)))
         fit_epochs(m, opt, full_tr, n_ep, r)
         preds.append(predict(m, Ee, np.arange(len(Ee))))
         log(f"  choice seed {seed}: {n_ep} epochs by early stopping on day {ES_DAY} (day-{ES_DAY} AUC {best:.5f}), "
@@ -336,6 +341,8 @@ def tree_member(kind, X, Xt, names, y, d, lr=0.05):
     if kind in ("lgb", "lgbshallow"):
         import lightgbm as lgb
         p = {**e13.LGB_PARAMS, "learning_rate": lr, "seed": MODEL_SEED}
+        if os.environ.get("NTHREADS"):    # NTHREADS=n (environment, 2026-11-01): cap threads for side-by-side jobs
+            p["num_threads"] = int(os.environ["NTHREADS"])
         if kind == "lgbshallow":    # 2026-10-31 diversity member (lab/diversity_screen.sh W2): shallow, regularised trees
             p.update(num_leaves=15, min_data_in_leaf=2000, feature_fraction=0.3)
         m = lgb.train(p, lgb.Dataset(X[es_tr], y[es_tr], feature_name=names), 8000,
@@ -373,6 +380,36 @@ def tree_member(kind, X, Xt, names, y, d, lr=0.05):
         best, n = m.best_score["valid_0"]["auc"], max(1, round(m.best_iteration * scale))
         m = lgb.train(p, lgb.Dataset(X[i_all], y[i_all], group=g_all, feature_name=names), n)
         return m.predict(Xt), best, n
+    if kind == "lgbchoice":
+        # 2026-11-03 boosted choice model (lab/lgb_choice.py): conditional logit over the event's 10 candidates with the
+        # no-click option at score 0; output p_i = exp(f_i) / (1 + sum_j exp(f_j)), comparable across events.
+        import lightgbm as lgb
+        from scipy.stats import rankdata
+        assert len(y) % e13.EV_SIZE == 0 and len(Xt) % e13.EV_SIZE == 0
+        def choice_p(f):
+            e_ = f.reshape(-1, e13.EV_SIZE); m_ = np.maximum(e_.max(1, keepdims=True), 0); ex = np.exp(e_ - m_)
+            return (ex / (np.exp(-m_) + ex.sum(1, keepdims=True))).reshape(-1)
+        def auc(s, y_):
+            r = rankdata(s); n1 = y_.sum()
+            return float((r[y_ == 1].sum() - n1 * (n1 + 1) / 2) / (n1 * (len(y_) - n1)))
+        s_ = y.sum() / (len(y) / e13.EV_SIZE); f0 = float(np.log(s_ / e13.EV_SIZE / (1 - s_)))
+        def fobj_for(yy):
+            return lambda preds, data: (choice_p(preds) - yy, np.maximum(choice_p(preds) * (1 - choice_p(preds)), 1e-9))
+        p = {**e13.LGB_PARAMS, "learning_rate": lr, "seed": MODEL_SEED, "metric": "None"}
+        p.pop("objective", None)
+        if os.environ.get("NTHREADS"):
+            p["num_threads"] = int(os.environ["NTHREADS"])
+        y_tr, y_va = y[es_tr].astype(np.float64), y[es_va].astype(np.float64)
+        m = lgb.train({**p, "objective": fobj_for(y_tr)},
+                      lgb.Dataset(X[es_tr], y_tr, init_score=np.full(len(y_tr), f0), feature_name=names), 8000,
+                      valid_sets=[lgb.Dataset(X[es_va], y_va, init_score=np.full(len(y_va), f0))],
+                      feval=lambda preds, data: ("auc_p", auc(choice_p(preds), y_va), True),
+                      callbacks=[lgb.early_stopping(150, verbose=False)])
+        best, n = m.best_score["valid_0"]["auc_p"], max(1, round(m.best_iteration * scale))
+        y_all_ = y.astype(np.float64)
+        m = lgb.train({**p, "objective": fobj_for(y_all_)},
+                      lgb.Dataset(X, y_all_, init_score=np.full(len(y_all_), f0), feature_name=names), n)
+        return choice_p(m.predict(Xt, raw_score=True) + f0), best, n
     import xgboost as xgb
     dva = xgb.DMatrix(X[es_va], y[es_va])
     m = xgb.train({**XGB_PARAMS, "seed": MODEL_SEED}, xgb.DMatrix(X[es_tr], y[es_tr]), 4000, evals=[(dva, "v")],
@@ -440,7 +477,7 @@ def main():
             subprocess.run(cmd, check=True)
             preds[mname] = np.load(mlp_file)
     if "choice_full" in members:          # torch, own process (lab/choice_model.py)
-        ch_file = CACHE / f"24_choice_full_s{a.model_seed}_test.npy"
+        ch_file = CACHE / f"24_choice_full{os.environ.get('CHOICE_TAG', '')}_s{a.model_seed}_test.npy"   # CHOICE_TAG: variant
         log("choice_full: training in a separate process ...")
         cmd = [sys.executable, __file__, "--stage", "choice", "--mlp-out", str(ch_file), "--seq-caches", a.seq_caches,
                "--out", a.out, "--model-seed", str(a.model_seed), "--mf-core-extra", a.mf_core_extra]
@@ -455,7 +492,8 @@ def main():
                "lgb_seq": ("lgb", "seq", "seq", 0.05), "lgb_popseq": ("lgb", "popseq", "popseq", 0.02),
                "xgb_popseq": ("xgb", "popseq", "popseq", 0.05),
                "lgb_full": ("lgb", "full", "full", 0.02), "xgb_full": ("xgb", "full", "full", 0.05),
-               "lgbrank_full": ("lgbrank", "full", "full", 0.02), "lgbshallow_full": ("lgbshallow", "full", "full", 0.02)}
+               "lgbrank_full": ("lgbrank", "full", "full", 0.02), "lgbshallow_full": ("lgbshallow", "full", "full", 0.02),
+               "lgbchoice_full": ("lgbchoice", "full", "full", 0.02)}
     for mname in members:
         if mname.startswith("mlp_") or mname == "choice_full":
             continue
@@ -470,6 +508,8 @@ def main():
     for m in members:
         if len(preds[m]) != n or not np.all(np.isfinite(preds[m])):
             raise ValueError(f"{m}: wrong length or non-finite predictions")
+    if os.environ.get("SAVE_RAW"):         # 2026-11-04: keep the members' raw probabilities for the conditional-logit stacker
+        np.savez(os.environ["SAVE_RAW"], **{m: preds[m] for m in members})
     rk = {m: rankdata(preds[m]) for m in members}
     score = sum(wi * rk[m] / n for wi, m in zip(w, members)) / w.sum()
     if len(members) > 1:

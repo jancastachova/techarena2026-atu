@@ -1,0 +1,4 @@
+### day 3 choice SPA:   choice model                 half-B 0.82759  eval-weighted 0.81342  first 0.81187  (SP: eval-weighted 0.81350)
+## day 3: H3 (A) vs H3 with SPA (B)
+  eval-weighted  A 0.81434  B 0.81435  B-A +0.00001  95% interval [-0.00005, +0.00006]  P(B > A) 0.68
+  gap-weighted   A 0.80656  B 0.80657  B-A +0.00002  95% interval [-0.00006, +0.00008]  P(B > A) 0.67

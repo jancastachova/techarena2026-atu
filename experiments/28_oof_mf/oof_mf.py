@@ -62,6 +62,10 @@ def main():
     ap.add_argument("--cutoff", type=int, choices=[6, 7], required=True)
     ap.add_argument("--folds", type=int, default=5)
     ap.add_argument("--seeds", type=int, default=3)
+    ap.add_argument("--by-user", action="store_true",
+                    help="(2026-11-02) folds by USER: a fold's users are dropped from its MF entirely (events and every click "
+                         "of theirs in the click log), so no MF has seen the scored user's later behaviour -- the cause "
+                         "found for the by-event version's loss. --cutoff 6 copies tf / day6 from the by-event file.")
     a = ap.parse_args()
 
     import torch
@@ -168,13 +172,22 @@ def main():
     y = fit["label"]
     fit_ev = np.flatnonzero(ev_day < C)
     fold = np.random.default_rng(12345).integers(0, a.folds, size=len(ev_day))
+    if a.by_user:
+        fold = np.random.default_rng(12345).integers(0, a.folds, size=n_users)[fit["user"]]
     t0 = time.time()
 
     oof = np.full((n_rows, 4), np.nan, np.float32)
     for k in range(a.folds):
         held = fit_ev[fold[fit_ev] == k]
         rest = fit_ev[fold[fit_ev] != k]
-        fit_k, n_drop = without_clicks_of(fit, held)
+        if a.by_user:
+            fu = np.zeros(n_users, bool); fu[np.unique(fit["user"][held])] = True
+            keep = ~fu[fit["clk_user"]]
+            fit_k = dict(fit); n_drop = int((~keep).sum())
+            for c in ("clk_user", "clk_item", "clk_ts"):
+                fit_k[c] = fit[c][keep]
+        else:
+            fit_k, n_drop = without_clicks_of(fit, held)
         oof[rows_of(held)] = averaged(fit_k, fit_l, rest, held, C)
         r = rows_of(held)
         e13.log(f"fold {k}: {len(held):,} held-out events, {n_drop:,} of their label clicks removed from the "
@@ -183,7 +196,11 @@ def main():
         r = rows_of(np.flatnonzero(ev_day == d))
         e13.log(f"  day {d}: out-of-fold MF AUC {e13.roc_auc(oof[r, 0], y[r]):.5f}")
 
-    if C == 6:
+    if C == 6 and a.by_user:
+        old = np.load(ROOT / f"data/cache/28_oofval_k5_s{a.seeds}.npz")
+        path = ROOT / f"data/cache/28_oofvalu_k{a.folds}_s{a.seeds}.npz"
+        np.savez(path, oof=oof, tf=old["tf"], day6=old["day6"])
+    elif C == 6:
         tf = np.full((n_rows, 4), np.nan, np.float32)
         for d in range(e13.FIRST_MODEL_DAY, C):
             tgt = np.flatnonzero(ev_day == d)
@@ -199,7 +216,7 @@ def main():
         np.savez(path, oof=oof, tf=tf, day6=day6)
     else:
         mf_test = averaged(fit, test_l, fit_ev, np.arange(len(test["user"])), C)
-        path = ROOT / f"data/cache/28_oof_c7_k{a.folds}_s{a.seeds}.npz"
+        path = ROOT / f"data/cache/28_oof{'u' if a.by_user else ''}_c7_k{a.folds}_s{a.seeds}.npz"
         np.savez(path, mf_fit=oof, mf_test=mf_test)
     e13.log(f"wrote {path} ({time.time() - t0:.0f}s)")
 

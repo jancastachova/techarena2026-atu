@@ -1,0 +1,14 @@
+562,665 consecutive event pairs with >= 5 events on other days; event click share 0.629
+residual correlation of consecutive events (level = click share on other days, its estimation error removed), same UTC day vs across midnight:
+  gap                        same day            across midnight
+  <0.5h        +0.0039±0.0042 n 68686     -0.0332±0.0652 n   302
+  0.5-1h       +0.0021±0.0048 n 52090     -0.0387±0.0396 n   807
+  1-2h         +0.0055±0.0041 n 75257     +0.0009±0.0214 n  2677
+  2-4h         -0.0007±0.0038 n 90683     +0.0022±0.0136 n  7049
+  4-8h         +0.0076±0.0040 n 83327     +0.0040±0.0086 n 18188
+  8-16h        +0.0210±0.0056 n 45823     +0.0086±0.0057 n 43874
+  16-24h       +0.0365±0.0166 n  5610     +0.0156±0.0067 n 35253
+  1-2d                        -           +0.0209±0.0077 n 28991
+  2-4d                        -           -0.0088±0.0215 n  4026
+  4d+                         -                          -      
+same, split by the earlier event's outcome (mean residual of the LATER event, same day / across midnight):

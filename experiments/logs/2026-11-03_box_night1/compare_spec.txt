@@ -1,0 +1,24 @@
+### day 6 choice S:   choice model                 half-B 0.84566  eval-weighted 0.82882  first 0.82784
+    choice SP:   choice model                 half-B 0.84587  eval-weighted 0.82912  first 0.82814
+## day 6 ensemble: choice S (A) vs choice + spectral (B)
+  plain          A 0.84571  B 0.84585  B-A +0.00014  95% interval [+0.00008, +0.00019]  P(B > A) 1.00
+  eval-weighted  A 0.82902  B 0.82920  B-A +0.00018  95% interval [+0.00010, +0.00026]  P(B > A) 1.00
+  gap-weighted   A 0.82697  B 0.82716  B-A +0.00019  95% interval [+0.00009, +0.00030]  P(B > A) 1.00
+### day 5 choice S:   choice model                 half-B 0.84078  eval-weighted 0.82185  first 0.82048
+    choice SP:   choice model                 half-B 0.84105  eval-weighted 0.82203  first 0.82067
+## day 5 ensemble: choice S (A) vs choice + spectral (B)
+  plain          A 0.84099  B 0.84113  B-A +0.00014  95% interval [+0.00009, +0.00019]  P(B > A) 1.00
+  eval-weighted  A 0.82227  B 0.82237  B-A +0.00010  95% interval [+0.00002, +0.00018]  P(B > A) 0.99
+  gap-weighted   A 0.81874  B 0.81886  B-A +0.00012  95% interval [+0.00001, +0.00023]  P(B > A) 0.99
+### day 4 choice S:   choice model                 half-B 0.83458  eval-weighted 0.81781  first 0.81398
+    choice SP:   choice model                 half-B 0.83460  eval-weighted 0.81770  first 0.81392
+## day 4 ensemble: choice S (A) vs choice + spectral (B)
+  plain          A 0.83470  B 0.83474  B-A +0.00004  95% interval [-0.00002, +0.00009]  P(B > A) 0.91
+  eval-weighted  A 0.81800  B 0.81799  B-A -0.00001  95% interval [-0.00009, +0.00006]  P(B > A) 0.37
+  gap-weighted   A 0.81407  B 0.81404  B-A -0.00002  95% interval [-0.00014, +0.00010]  P(B > A) 0.34
+### day 3 choice S:   choice model                 half-B 0.82784  eval-weighted 0.81384  first 0.81209
+    choice SP:   choice model                 half-B 0.82759  eval-weighted 0.81350  first 0.81190
+## day 3 ensemble: choice S (A) vs choice + spectral (B)
+  plain          A 0.82813  B 0.82813  B-A -0.00000  95% interval [-0.00007, +0.00006]  P(B > A) 0.42
+  eval-weighted  A 0.81429  B 0.81426  B-A -0.00003  95% interval [-0.00014, +0.00006]  P(B > A) 0.23
+  gap-weighted   A 0.80646  B 0.80652  B-A +0.00005  95% interval [-0.00009, +0.00020]  P(B > A) 0.73

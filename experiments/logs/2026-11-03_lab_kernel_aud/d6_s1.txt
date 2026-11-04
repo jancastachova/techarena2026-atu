@@ -1,0 +1,10 @@
+seed 0 done
+day 6, 1 seeds; single-score AUC plain / eval-weighted; within-event AUC (rank inside the event)
+  own cos        0.82025  0.80250   within 0.82830
+  aud cos        0.82457  0.80628   within 0.83269
+  kernel k2      0.70940  0.69685   within 0.71403
+  kernel k5      0.72712  0.71324   within 0.73234
+  kernel k10     0.65613  0.64574   within 0.66056
+  kernel k20     0.57839  0.57255   within 0.58156
+  item ctr       0.52807  0.52687   within 0.52825
+.venv/bin/python experiments/lab/kernel_aud.py --day 6 --seeds 1  8.90s user 0.67s system 94% cpu 10.105 total

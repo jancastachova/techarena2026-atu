@@ -1,0 +1,3 @@
+  + 12 extra columns from data/cache/lab_kernel_view.npz: ['kern_self_k2', 'kern_self_k5', 'kern_self_k10', 'kern_noself_k2', 'kern_noself_k5', 'kern_noself_k10', 'kern_self_k2_rel', 'kern_self_k5_rel', 'kern_self_k10_rel', 'kern_noself_k2_rel', 'kern_noself_k5_rel', 'kern_noself_k10_rel']
+  lgb_choice lab_export_lean_d6.npz obj=binary lr=0.05: half-B 0.84418  eval-weighted 0.82748  first 0.82622  (228 trees, 83s)
+wrote data/cache/lab_preds_kern_all_d6.npz

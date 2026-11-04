@@ -1,0 +1,8 @@
+alone Jan24: chcat 0.82167 catm 0.82056
+STEP1 Jan24 + chcat: 0.82318 -> 0.82342 +0.00024 folds [2.6e-04 1.0e-05 4.6e-04 2.2e-04 2.1e-04] pos 5/5 valid True
+Jan23 alone: {'M1': np.float64(0.8049), 'M2': np.float64(0.7999), 'K16': np.float64(0.7561), 'K32': np.float64(0.7187), 'K12': np.float64(0.7782), 'pr3': np.float64(0.7975), 'k12p': np.float64(0.7612), 'pw05': np.float64(0.7998), 'pw2': np.float64(0.7948), 'c16': np.float64(0.8043), 'c0': np.float64(0.7992), 'gau': np.float64(0.8051), 'y1': np.float64(0.8046)}
+step 0: {'c16': (np.float64(0.00053), 5), 'M1': (np.float64(0.00049), 5), 'M2': (np.float64(0.00046), 5), 'pr3': (np.float64(0.00045), 5), 'gau': (np.float64(0.0004), 5)}
+step 1: {'gau': (np.float64(0.00022), 4), 'pr3': (np.float64(0.00021), 4), 'M1': (np.float64(0.0002), 4), 'M2': (np.float64(0.0002), 4), 'K12': (np.float64(0.00016), 4)}
+step 2: {'c0': (np.float64(5e-05), 3), 'K12': (np.float64(5e-05), 4), 'M2': (np.float64(3e-05), 3), 'pr3': (np.float64(2e-05), 3), 'M1': (np.float64(1e-05), 3)}
+chosen on Jan23: ['c16', 'gau']
+Jan24 once: 0.82342 -> 0.82393 +0.00051 folds [0.00043 0.00069 0.00076 0.      0.00067] pos 5/5 valid True

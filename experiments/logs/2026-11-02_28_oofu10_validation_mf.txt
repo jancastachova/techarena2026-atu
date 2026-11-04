@@ -1,0 +1,3 @@
+fold 0: 58,560 held-out events, 101,227 of their label clicks removed from the click log; out-of-fold MF AUC 0.79615 (103s)
+fold 1: 59,377 held-out events, 102,632 of their label clicks removed from the click log; out-of-fold MF AUC 0.79577 (200s)
+fold 2: 59,710 held-out events, 102,936 of their label clicks removed from the click log; out-of-fold MF AUC 0.79461 (303s)

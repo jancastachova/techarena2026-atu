@@ -1,0 +1,20 @@
+partition: 48,376 items >= 50 impressions, mean cosine to centre 0.7103; sizes [2944 1418 1454 2778 1612 4626 1192 3307  985 1066 3117 2236 1131 3305
+ 1538 2192 3742 1067 1506 1939 1887 1253 2538 1167]
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/Users/ivanbibat/Documents/GitHub/techarena2026-atu/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+item confidence quantiles by impressions: [(1, nan), (10, 0.389), (30, 0.557), (100, 0.836), (300, 0.967)]
+global exposure share [0.057 0.026 0.045 0.071 0.071 0.06  0.031 0.05  0.038 0.026 0.066 0.028
+ 0.023 0.045 0.042 0.031 0.066 0.027 0.022 0.045 0.039 0.02  0.039 0.033]
+global click share    [0.058 0.024 0.049 0.082 0.087 0.055 0.031 0.05  0.041 0.027 0.064 0.024
+ 0.022 0.039 0.041 0.027 0.059 0.026 0.02  0.047 0.04  0.019 0.036 0.033]
+category CTR          [0.0661 0.0586 0.0708 0.0746 0.0792 0.0599 0.0658 0.0645 0.0693 0.065
+ 0.0622 0.0551 0.063  0.0557 0.0626 0.0572 0.0577 0.0626 0.0582 0.0679
+ 0.0673 0.0591 0.0591 0.0654]
+  day-6 AUC alone cat_expo_lift    0.57784
+  day-6 AUC alone cat_click_lift   0.58374
+  day-6 AUC alone cat_ctr          0.57190
+  day-6 AUC alone cat_prof_cos     0.58372
+  day-6 AUC alone cat_expo_cos     0.57732
+wrote data/cache/lab_cat24.npz (4898070, 14) (529390, 14)

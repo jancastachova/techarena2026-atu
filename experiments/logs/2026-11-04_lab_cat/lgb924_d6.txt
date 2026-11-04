@@ -1,0 +1,4 @@
+  + 14 extra columns from data/cache/lab_cat9.npz
+  + 14 extra columns from data/cache/lab_cat24.npz
+  lgb_choice lab_export_lean_d6.npz obj=binary lr=0.05: half-B 0.84669  eval-weighted 0.83036  first 0.82901  (301 trees, 110s)
+wrote data/cache/lab_preds_cat924_d6.npz

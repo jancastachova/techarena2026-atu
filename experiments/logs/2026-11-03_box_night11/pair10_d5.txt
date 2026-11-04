@@ -1,0 +1,8 @@
+### day 5 pair 10: SP   choice model                 half-B 0.84109  eval-weighted 0.82211  first 0.82074
+   D   choice model                 half-B 0.84094  eval-weighted 0.82210  first 0.82071
+## day 5: 47 (A) vs 47 with pair-10 members (B)
+  eval-weighted  A 0.82242  B 0.82247  B-A +0.00005  95% interval [-0.00002, +0.00013]  P(B > A) 0.92
+  gap-weighted   A 0.81885  B 0.81890  B-A +0.00005  95% interval [-0.00004, +0.00017]  P(B > A) 0.85
+## day 5: 47 (A) vs 47 with pair-10 members ADDED, choice 4 x 0.125 (B)
+  eval-weighted  A 0.82242  B 0.82246  B-A +0.00004  95% interval [+0.00000, +0.00008]  P(B > A) 0.98
+  gap-weighted   A 0.81885  B 0.81889  B-A +0.00004  95% interval [-0.00001, +0.00010]  P(B > A) 0.95

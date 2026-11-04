@@ -1,0 +1,2 @@
+  lgb_choice lab_export_lean_d5.npz obj=binary lr=0.05: half-B 0.83948  eval-weighted 0.82058  first 0.81933  (259 trees, 113s)
+wrote data/cache/lab_preds_lgbc_binary_d5.npz

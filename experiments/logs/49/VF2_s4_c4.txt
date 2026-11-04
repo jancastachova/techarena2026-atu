@@ -1,0 +1,14 @@
+[    0.3s] cutoff 4: 392,831 fit events, 97,589 targets (975,890 rows)
+[    9.8s] labelled clicks 247,219; history-only warm-up clicks 572,847
+[   17.1s] partition k=8 rank=7: singular [1.    0.339 0.335 0.327 0.317 0.31  0.302 0.295], cos 0.7998, sizes [6072 4786 5280 7462 4349 5671 8849 7531]
+[   18.9s] N 965,678 events (572,847 pseudo), D 17, xprec 1.00, device cuda, dtype float64
+[   20.2s] sweep 0: acc u 0.590 i 0.998 r 1.609 |y|sd 0.122 |x| 0.676 sd_b 0.281 mu_o -0.617 sd_o 1.015 sd_a 0.316 1.08s/sweep  AUC state 0.61943
+[   84.2s] sweep 100: acc u 0.169 i 0.299 r 0.117 |y|sd 1.893 |x| 0.965 sd_b 0.281 mu_o -0.617 sd_o 1.015 sd_a 0.316 0.70s/sweep  AUC state 0.76476 avg(41) 0.80417
+[  149.8s] sweep 200: acc u 0.149 i 0.286 r 0.207 |y|sd 1.829 |x| 0.958 sd_b 0.281 mu_o -0.617 sd_o 1.015 sd_a 0.316 0.70s/sweep  AUC state 0.75808 avg(141) 0.81122
+[  215.4s] sweep 300: acc u 0.146 i 0.284 r 0.248 |y|sd 1.810 |x| 0.956 sd_b 0.281 mu_o -0.617 sd_o 1.015 sd_a 0.316 0.70s/sweep  AUC state 0.75558 avg(241) 0.81451
+[  281.1s] sweep 400: acc u 0.145 i 0.283 r 0.247 |y|sd 1.804 |x| 0.955 sd_b 0.281 mu_o -0.617 sd_o 1.015 sd_a 0.316 0.71s/sweep  AUC state 0.75515 avg(341) 0.81663
+[  346.7s] sweep 500: acc u 0.142 i 0.284 r 0.264 |y|sd 1.802 |x| 0.954 sd_b 0.281 mu_o -0.617 sd_o 1.015 sd_a 0.316 0.68s/sweep  AUC state 0.75469 avg(441) 0.81831
+[  411.5s] sweep 600: acc u 0.144 i 0.285 r 0.244 |y|sd 1.797 |x| 0.954 sd_b 0.281 mu_o -0.617 sd_o 1.015 sd_a 0.316 0.20s/sweep  AUC state 0.75550 avg(541) 0.81953
+[  419.5s] sweep 639: acc u 0.142 i 0.282 r 0.275 |y|sd 1.797 |x| 0.954 sd_b 0.281 mu_o -0.617 sd_o 1.015 sd_a 0.316 0.19s/sweep  AUC state 0.75443 avg(580) 0.81998
+[  420.2s] final AUC 0.81998
+[  420.2s] wrote data/cache/49/VF2_s4_c4.npz

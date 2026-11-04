@@ -1,0 +1,7 @@
+day 2 (20 seed(s)): aud AUC 0.80754, audc AUC 0.80063
+day 3 (20 seed(s)): aud AUC 0.81362, audc AUC 0.80923
+day 4 (20 seed(s)): aud AUC 0.81817, audc AUC 0.81516
+day 5 (20 seed(s)): aud AUC 0.82515, audc AUC 0.82299
+day 6 (20 seed(s)): aud AUC 0.82872, audc AUC 0.82743
+aud: wrote data/cache/4041c_aud_c7.npz (test score mean 0.379 sd 3.029, fit days 2-6 mean 0.354 sd 3.000)
+audc: wrote data/cache/4041c_audc_c7.npz (test score mean 0.222 sd 3.036, fit days 2-6 mean 0.209 sd 3.000)

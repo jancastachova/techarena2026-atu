@@ -53,6 +53,8 @@ def group(caches, prefix):
     S = np.mean([np.load(str(c))["mf_fit"] for c in caches.split(",")], 0)[rows]
     if np.isnan(S).any():
         raise SystemExit(f"{prefix}: scores missing for some rows")
+    if S.shape[1] != 4:                        # 2026-11-03: a raw multi-column view (lab/spectral_view.py), no relative columns
+        return S.astype(np.float32), [f"{prefix}_{k}" for k in range(S.shape[1])], S.sum(1)
     nm = [f"{prefix}_{k}" for k in ("logit", "item_bias", "user_bias", "dot",
                                     "minus_max", "rank", "share", "lse")]
     R = e13.relative_mf(S)
@@ -174,9 +176,33 @@ import lightgbm as lgb
 SAVED = {"rows_B": np.flatnonzero(B)}
 def run(label, Xm, nm):
     p = {**e13.LGB_PARAMS, "learning_rate": 0.02}
+    if os.environ.get("NTHREADS"):              # NTHREADS=n (environment, 2026-11-01): cap threads so jobs can run side by side
+        p["num_threads"] = int(os.environ["NTHREADS"])
     if os.environ.get("LGBP"):                  # LGBP='{"num_leaves": 255}' (environment): LightGBM setting overrides
         import json; p.update(json.loads(os.environ["LGBP"]))
-    if os.environ.get("MODEL") == "cat":         # MODEL=cat (environment, 2026-10-31): CatBoost (oblivious trees) instead of
+    if os.environ.get("MODEL") == "xgb":         # MODEL=xgb (environment, 2026-11-01): the build's XGBoost member
+        import xgboost as xgb                     # (24_ensemble XGB_PARAMS, eta 0.05); XGB_DEVICE=cuda for the GPU
+        xp = dict(objective="binary:logistic", eval_metric="auc", tree_method="hist", eta=0.05, max_depth=6,
+                  min_child_weight=50, subsample=0.8, colsample_bytree=0.8, reg_lambda=1.0, seed=0,
+                  nthread=int(os.environ.get("NTHREADS", 0)), device=os.environ.get("XGB_DEVICE", "cpu"))
+        dva = xgb.DMatrix(Xm[A], y[A])
+        if os.environ.get("XGB_RANK"):          # XGB_RANK=G (2026-11-03): pairwise ranking over random groups of G events,
+            G = int(os.environ["XGB_RANK"])        # cross-event pairs as in lab/global_rank2.py (a GPU twin of lgbrank)
+            ti = np.flatnonzero(tr); ue = np.unique(ev[ti]); np.random.default_rng(0).shuffle(ue)
+            ro = np.empty(ue.max() + 1, np.int64); ro[ue] = np.arange(len(ue))
+            key = ro[ev[ti]]; o = np.argsort(key, kind="stable"); ti = ti[o]
+            xp.update(objective="rank:pairwise", lambdarank_pair_method="mean", lambdarank_num_pair_per_sample=8)
+            dtr = xgb.DMatrix(Xm[ti], y[ti], qid=key[o] // G)
+            ea = ev[A]; dva = xgb.DMatrix(Xm[A], y[A], qid=np.unique(ea, return_inverse=True)[1] // G)  # one group overflows on the GPU
+        else:
+            dtr = xgb.DMatrix(Xm[tr], y[tr])
+        if os.environ.get("XGB_RANK"):          # GPU ranking AUC overflows int32 on our sizes: fixed rounds (binary picks ~635)
+            m = xgb.train(xp, dtr, 700); m.best_iteration = 699
+        else:
+            m = xgb.train(xp, dtr, 4000, evals=[(dva, "v")], early_stopping_rounds=150, verbose_eval=False)
+        m.feature_importance = lambda *_: np.zeros(len(nm))
+        pb = m.predict(xgb.DMatrix(Xm[B]), iteration_range=(0, m.best_iteration + 1))
+    elif os.environ.get("MODEL") == "cat":         # MODEL=cat (environment, 2026-10-31): CatBoost (oblivious trees) instead of
         from catboost import CatBoost, Pool       # LightGBM, a different tree family for ensemble diversity; CATP = overrides
         import json
         cp = dict(loss_function="Logloss", eval_metric="AUC", iterations=6000, learning_rate=0.08, depth=8,

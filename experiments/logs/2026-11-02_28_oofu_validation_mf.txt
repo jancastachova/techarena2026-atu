@@ -1,0 +1,12 @@
+fold 0: 117,937 held-out events, 203,859 of their label clicks removed from the click log; out-of-fold MF AUC 0.79022 (67s)
+fold 1: 118,888 held-out events, 202,436 of their label clicks removed from the click log; out-of-fold MF AUC 0.79030 (130s)
+fold 2: 121,270 held-out events, 205,107 of their label clicks removed from the click log; out-of-fold MF AUC 0.79101 (193s)
+fold 3: 115,609 held-out events, 197,459 of their label clicks removed from the click log; out-of-fold MF AUC 0.79268 (256s)
+fold 4: 115,169 held-out events, 198,615 of their label clicks removed from the click log; out-of-fold MF AUC 0.79252 (320s)
+  day 0: out-of-fold MF AUC 0.78527
+  day 1: out-of-fold MF AUC 0.78848
+  day 2: out-of-fold MF AUC 0.79279
+  day 3: out-of-fold MF AUC 0.79188
+  day 4: out-of-fold MF AUC 0.79276
+  day 5: out-of-fold MF AUC 0.79703
+wrote /Users/ivanbibat/Documents/GitHub/techarena2026-atu/data/cache/28_oofvalu_k5_s3.npz (320s)

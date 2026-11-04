@@ -1,0 +1,4 @@
+seeds (0, 1, 2, 3): F1 0.81357 F2 0.81390 existing 0.81923 candidate 0.82204 gain +0.00281 pos 5/5 valid True
+seeds (4, 5, 6, 7): F1 0.81399 F2 0.81417 existing 0.81923 candidate 0.82220 gain +0.00297 pos 5/5 valid True
+seeds (0, 1, 2, 3, 4, 5, 6, 7): F1 0.81501 F2 0.81637 existing 0.81923 candidate 0.82224 gain +0.00301 pos 5/5 valid True
+8 vs 4 seeds: 0.0002 folds [0.00016 0.00026 0.00025 0.00011 0.00022] positive 5 /5

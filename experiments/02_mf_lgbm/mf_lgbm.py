@@ -31,7 +31,7 @@ Usage:
 """
 import argparse
 import csv
-import hashlib
+import hashlib  
 import inspect
 import os
 import subprocess
@@ -44,6 +44,7 @@ from pathlib import Path
 import lightgbm as lgb
 import numpy as np
 from scipy.stats import rankdata
+import pandas as pd
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
@@ -96,7 +97,7 @@ class Split:
         self.label = array("b")      # per row (train only)
         self.day = array("b")        # per event (train only)
         self.rowid = []              # per row (eval only)
-
+    
     def add(self, cand, ev, user, items, h_items, enc_u, enc_i):
         if len(items) != EV_SIZE:
             raise ValueError(f"event with {len(items)} candidates, expected {EV_SIZE}")
@@ -258,7 +259,6 @@ def validate(tr, mf_tr, use_mf):
     del Xa, Xb
     Xc, yc, _ = mat(row_day == 6)
     return roc_auc(m.predict(Xc), yc), n_trees, m, names
-
 
 # --------------------------------------------------------------------------- main
 

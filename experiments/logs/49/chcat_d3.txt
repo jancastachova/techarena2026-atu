@@ -1,0 +1,19 @@
+4,898,070 rows, 197 features; train rows 980,970
+event-constant columns: 59
+  seed 0 epoch 1: half-A AUC 0.83003
+  seed 0 epoch 2: half-A AUC 0.83061
+  seed 0 epoch 3: half-A AUC 0.83058
+  seed 0 epoch 4: half-A AUC 0.83067
+  seed 0 epoch 5: half-A AUC 0.83061
+  seed 0 epoch 6: half-A AUC 0.83042
+  seed 0: best half-A 0.83067; half-B of this seed 0.82881
+  seed 1 epoch 1: half-A AUC 0.82942
+  seed 1 epoch 2: half-A AUC 0.83029
+  seed 1 epoch 3: half-A AUC 0.83040
+  seed 1 epoch 4: half-A AUC 0.83060
+  seed 1 epoch 5: half-A AUC 0.83082
+  seed 1 epoch 6: half-A AUC 0.83078
+  seed 1 epoch 7: half-A AUC 0.83048
+  seed 1: best half-A 0.83082; half-B of this seed 0.82888
+  choice model                 half-B 0.82903  eval-weighted 0.81209  first nan
+wrote data/cache/49/chcat_d3.npz

@@ -1,0 +1,5 @@
+### day 6: binary   lgb_export exp45_d6.npz +0 caches: half-B 0.84516  eval-weighted 0.82847  first 0.82731  (829 trees)
+    rank   lgb_export exp45_d6.npz +0 caches: half-B 0.84529  eval-weighted 0.82855  first 0.82750  (2200 trees)
+## day 6: binary .5 + SP .5 (A) vs binary .375 + lambdarank .125 + SP .5 (B)
+  eval-weighted  A 0.82912  B 0.82916  B-A +0.00004  95% interval [+0.00001, +0.00007]  P(B > A) 0.99
+  gap-weighted   A 0.82708  B 0.82711  B-A +0.00003  95% interval [-0.00001, +0.00007]  P(B > A) 0.89

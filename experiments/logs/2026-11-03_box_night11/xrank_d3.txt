@@ -1,0 +1,39 @@
+base: MF30 + popularity + sequence + ['clicks', 'uoff10', 'choice', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cosproj8', 'cos_audc05', 'cos_hop2c', 'cos_hop4', 'cosresid8', 'soft_aud', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+TEST_DAY 3: fit days 2-2, halves of day 3
+evaluation-weighted AUC: bucket weights 0-0 4.45, 1-5 3.06, 6-20 1.59, 21-50 0.57, 51-100 0.56
+
+LightGBM (lr 0.02) on MF30 + popularity taste + sequence, and with each extra model:
+Traceback (most recent call last):
+  File "/workspace/t/experiments/lab/extra_member.py", line 225, in <module>
+    mb = run("base (= the best member)", base_X, base_names)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/t/experiments/lab/extra_member.py", line 199, in run
+    m = xgb.train(xp, dtr, 4000, evals=[(dva, "v")], early_stopping_rounds=150, verbose_eval=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/t/.venv/lib/python3.12/site-packages/xgboost/core.py", line 569, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "/workspace/t/.venv/lib/python3.12/site-packages/xgboost/training.py", line 201, in train
+    if cb_container.after_iteration(bst, i, dtrain, evals):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/t/.venv/lib/python3.12/site-packages/xgboost/callback.py", line 265, in after_iteration
+    score: str = model.eval_set(evals, epoch, self.metric, self._output_margin)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/t/.venv/lib/python3.12/site-packages/xgboost/core.py", line 2373, in eval_set
+    _check_call(
+  File "/workspace/t/.venv/lib/python3.12/site-packages/xgboost/_c_api.py", line 190, in _check_call
+    raise XGBoostError(py_str(_LIB.XGBGetLastError()))
+xgboost._c_api.XGBoostError: [08:43:36] /__w/xgboost/xgboost/src/metric/auc.cu:520: Check failed: n_threads < std::numeric_limits<int32_t>::max() (2436563910 vs. 2147483647) : 
+Stack trace:
+  [bt] (0) /workspace/t/.venv/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x21ec5c) [0x7f80a801ec5c]
+  [bt] (1) /workspace/t/.venv/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0xdb8093) [0x7f80a8bb8093]
+  [bt] (2) /workspace/t/.venv/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x6b1f72) [0x7f80a84b1f72]
+  [bt] (3) /workspace/t/.venv/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x6876d0) [0x7f80a84876d0]
+  [bt] (4) /workspace/t/.venv/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(XGBoosterEvalOneIter+0x1d6) [0x7f80a7f31fa6]
+  [bt] (5) .venv/bin/python() [0xd74052]
+  [bt] (6) .venv/bin/python() [0xb175da]
+  [bt] (7) .venv/bin/python() [0xb171a7]
+  [bt] (8) .venv/bin/python() [0xb1570d]
+
+

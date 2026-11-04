@@ -1,0 +1,10 @@
+stacker on 52,696 events: ok True iters 49 gmax 0.240 CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH
+beta [ 0.005  0.614 -0.261  0.262  0.036  0.197  0.052  0.154  0.197  0.33 ] intercept -2.496
+data/cache/49/catm_eval.npz lgb_full event mean sum 0.6174
+wrote submissions/49c_bayes_cat_s8.csv mean event sum 0.6415 max 0.9938 Spearman vs 47s6 0.9922
+header rowid,predicted_probability | rows 529390 unique 529390 order ok True
+finite True range 6.26119599309636e-05 0.9097583387640892
+event sum max 0.9937813863039989 over 1: 0
+roundtrip diff 0.0
+Spearman vs s8 0.9986
+sha256 43c03646bde07afd831e2137bd4865024add39c8b3d860a1b307af78f9b723dd

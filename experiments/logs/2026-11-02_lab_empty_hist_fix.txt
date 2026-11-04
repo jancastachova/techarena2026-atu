@@ -1,0 +1,3 @@
+day 6: 108 empty-history events; eval-weighted 0.82847 -> 0.82848  B-A +0.00000  95% [-0.00008, +0.00007]
+day 5: 111 empty-history events; eval-weighted 0.82186 -> 0.82190  B-A +0.00004  95% [-0.00003, +0.00014]
+day 4: 136 empty-history events; eval-weighted 0.81733 -> 0.81743  B-A +0.00010  95% [+0.00000, +0.00022]

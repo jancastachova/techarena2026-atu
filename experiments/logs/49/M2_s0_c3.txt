@@ -1,0 +1,8 @@
+[    0.3s] cutoff 3: 295,114 fit events, 34,912 targets (349,120 rows)
+[    7.6s] labelled clicks 186,038; history-only warm-up clicks 567,251
+[   16.6s] partition k=8 rank=7: singular [1.    0.351 0.348 0.339 0.331 0.325 0.317 0.311], cos 0.7849, sizes [4464 5273 6288 5854 7527 7451 4966 8177]
+[   18.5s] N 862,365 events (567,251 pseudo), D 17, xprec 1.00, device cuda, dtype float64
+[   19.5s] sweep 0: acc u 0.609 i 0.998 r 1.604 |y|sd 0.128 |x| 0.664 sd_b 0.298 mu_o -0.607 sd_o 1.016 sd_a 0.316 0.91s/sweep  AUC state 0.60853
+[   48.2s] sweep 59: acc u 0.981 i 1.000 r -0.376 |y|sd 1.740 |x| 0.949 sd_b 0.298 mu_o -0.607 sd_o 1.016 sd_a 0.316 0.51s/sweep  AUC state 0.80016 avg(1) 0.80016
+[   48.6s] final AUC 0.80016
+[   48.6s] wrote data/cache/49/M2_s0_c3.npz

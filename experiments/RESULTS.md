@@ -67,7 +67,22 @@ user at/after the cutoff, nothing tuned on the test events.
 | 40 | lean set (15 groups) with the projected view from 9000-step vectors (`40_long_mf/build.sh 0`): binary LightGBM (1558 trees, day-6 0.84464), XGBoost (635 trees, 0.84457), choice model (3 seeds); rank-averaged, no lambdarank. Lab vs lean set +0.0006 eval-weighted on days 6 and 5. Public +0.00041 over 38 s0 (0.82525) -- exactly the clean day-4 prediction for SET38 -> SET40 (+0.00041): the best single build so far and the first lab gain since 35 to transfer in full | not run ‡ | 0.82566 | `40_long_mf_s0.csv` |
 | 40b | equal mean of 40 and 39b, weights fixed in advance. +0.00021 over 39b at half weight: the 40 change transfers (day 4 predicted ~+0.0004 for 40 alone over 38) | not run ‡ | **0.82575** | `40b_avg_40_39b.csv` |
 | 42 | 40 + a shallow regularised LightGBM member (15 leaves, min_data_in_leaf 2000, feature_fraction 0.3; `42_shallow/build.sh 0`, 3401 trees, day-6 0.84474, 10 min) as a 4th equal rank member (40 x3 + member x1). Lab 50/50 with the SET40 LightGBM, gap-weighted: day 6 +0.00010, day 5 +0.00016, day 4 (unselected) +0.00031. Spearman member vs 40 0.9981 | not run ‡ | not uploaded | `42_shallow_s0.csv` |
-| 42b | equal mean of 42 and 39b (as 40b). Spearman vs 40b 0.99997 | not run ‡ | not uploaded | `42b_avg_42_39b.csv` |
+| 42b | equal mean of 42 and 39b (as 40b). Spearman vs 40b 0.99997. Public +0.00001 over 40b: as expected for a 12.5%-weight member, within noise; kept as the final pick on its 3-day lab evidence | not run ‡ | **0.82576** | `42b_avg_42_39b.csv` |
+| 43s3 | 42's four members with the CHOICE member at 0.40 (others 0.20; `43_choice_weight/mix_choice.py`: 0.8 x the equal 4-member file + 0.2 x rank(choice member)), averaged over model seeds 0-2 (seeds 1-2 built on the vast.ai box). Lab choice 0.35-0.45 beats 0.25 on days 6, 5, 4; whole ensembles on the never-used day 3: 42 config -> this +0.00013 eval / +0.00018 gap-weighted, intervals above 0 | not run ‡ | not uploaded | `43s3_choice04_3seeds.csv` |
+| 43s3b | equal mean of 43s3 and 39b (the 40b / 42b recipe). Public +0.000009 over 42b: in the right direction, within noise (the choice-weight change moves ~8% of the final weight; Spearman vs 42b ~0.9999) | not run ‡ | **0.82577** | `43s3b_avg_43s3_39b.csv` |
+| 45s3 | 43s3 with the soft-projected AUDIENCE view rebuilt from the 40 vectors (soft_aud <- 40c_aud; `45_aud40/build.sh`, 3 model seeds on the box, choice member on the GPU, mixed to choice 0.40). Representation change: lab paired vs SET40 day 6 / 5 / 4 eval-weighted +0.00004 / +0.00023 / +0.00033, gap-weighted +0.00021 / +0.00028 / +0.00023. Spearman vs 43s3 0.99909. Public +0.00030 over 43s3b: the representation gain transferred ~1:1 | not run ‡ | **0.82607** | `45s3_aud40_choice04.csv` |
+| 45s6 | 45s3 with 3 more build seeds (3-5, box, `45_aud40/build.sh "3 4 5"`): each seed mixed to choice 0.40, equal mean of 6. Variance reduction for the private split, no new information. Spearman vs 45s3 0.99996 (a single seed vs 45s3: 0.99968). Public -0.000006 vs 45s3: same model, as expected | not run ‡ | 0.82606 | `45s6_aud40_choice04.csv` |
+| 45s3b | equal mean of 45s3 and 39b (the recipe of 40b / 42b / 43s3b; halves the new view's weight). Spearman vs 43s3b 0.99977 | not run ‡ | not uploaded | `45s3b_avg_45s3_39b.csv` |
+| 47s6 | 45's trees with TWO choice members replacing the 45 choice: SET45 + SPECTRAL taste view (`lab/spectral_view.py`, learned per-direction metric) and D45 (337 features), 0.25 each, trees 1/6 each (`47_spec_choice/build.sh`, choice members on the box, model seeds 0-5). Lab vs the 45 composition, eval- / gap-weighted: day 6 +0.00019 / +0.00017, day 5 +0.00013 / +0.00011, day 4 +0.00002 / +0.00003, day 3 (never used) +0.00005 / +0.00009 (choice 0.4; 0.5 adds +2..+7 x1e-5 on every day). Spearman vs 45s6 0.99972 | not run ‡ | **0.826168** (+0.000099 vs 45s3) | `47s6_spec_choice.csv` |
+| 48 | 47s6 with a LightGBM LAMBDARANK member (random 500-event groups, 2200 fixed trees, SET45, seed 0; fourth box `tools/box2_rank.sh`): trees 0.125 each, lambdarank 0.125, choice SP + D 0.25 each (`experiments/48_rank_member/build.py`; rebuild without the member reproduces 47s6 to 1e-10). Day-6 check on SET36 members (`lab/combine_check.py`): +0.00004 [+0.00001, +0.00006]. On SET45 (`tools/box2_check48.sh`): day 6 +0.00004 [+0.00001, +0.00007], day 5 +0.00005 [+0.00001, +0.00009]. Spearman vs 47s6 0.99998 | not run | 0.826164 (-0.000004 vs 47s6: the lambdarank member does not carry to the leaderboard) | `48_rank_member.csv` |
+| 49 | BAYESIAN CHOICE families F1 + F2 (`49_bayes_choice/bayes.py`, K=8, ALS start, fixed priors, 4 seeds) with existing choice + ensemble in a conditional-logit stacker with an outside option (`stack.py`, `final.py`). Jan24 +0.00281, Jan25 purged confirmation day-5 rows +0.00341, all rows +0.00309, 5/5 user folds | not run ‡ | **0.82904** | `49_bayes_stack_s4.csv` |
+| 49s8 | 49 with 8 seeds of F1 and F2 (Jan24 +0.00020 over 4 seeds, 5/5 folds; public +0.00020) | not run ‡ | **0.82924** | `49_bayes_stack_s8.csv` |
+| 49c | 49s8 + a category tree member as a fifth stacker input (`final2.py`; Jan24 +0.00086, 5/5 folds; public +0.00054, about 60% of the lab gain: the evaluation members are stronger than the lab ones, so more overlaps) | not run ‡ | **0.82978** | `49c_bayes_cat_s8.csv` |
+| 49d | 49c with 16 seeds + choice member with category columns + two point-estimate families (c16, gau; picked on Jan23, tested once on Jan24), `final3.py`. Jan24 +0.00083 in total; public +0.00122 | not run ‡ | **0.83100** | `49d_stack.csv` |
+| 49e | 49d + tree and choice members trained WITH the point-estimate view as features (`build_view.py`, `final4.py`; each fit day from a model of earlier days). Alone each beats the 49d stack on Jan24; together +0.00104, 5/5; public +0.00069 | not run ‡ | **0.83169** | `49e_view.csv` |
+| 49f | 49e + tree and choice members with the Bayes chains (F1, F2, 4 seeds) as a second view (`build_view2.py`, `final5.py`). Jan24 +0.00039, 5/5; public +0.00016. All-views choice member +0.00009 on Jan24: rejected | not run ‡ | **0.83185** | `49f_view2.csv` |
+| 49f2 | 49f with the view tree averaged over two model seeds; best public, leaderboard 24th of 76 | not run ‡ | **0.83187** | `49f2_tree2.csv` |
+| 49g | 49f2 + a choice member with the Bayes view at 6 seeds (Jan24 +0.00012, 4/5 folds); public below 49f2, the Jan24 gain did not transfer | not run ‡ | below 0.83187 | `49g_final.csv` |
 
 † The 01 upload (0.60732) was an earlier version of 01 (plain logistic regression, validation
 0.618 *); the file was replaced by the two-stage version afterwards, which was never uploaded.
@@ -139,6 +154,18 @@ Limit: 10 uploads per day per team. Add a line for every upload.
 | 2026-10-30 10:33 | 39b_avg_39_38b.csv | 0.825545 |
 | 2026-10-30 15:15 | 40b_avg_40_39b.csv | 0.825754 |
 | 2026-10-30 19:04 | 40_long_mf_s0.csv | 0.825664 |
+| 2026-11-02 01:00 | 45s3_aud40_choice04.csv | **0.826069** |
+| 2026-11-02 02:10 | 45s6_aud40_choice04.csv | 0.826063 |
+| 2026-11-03 07:29 | 47s6_spec_choice.csv | **0.826168** |
+| 2026-11-03 14:34 | 48_rank_member.csv | 0.826164 |
+| 2026-11-04 19:53 | 49_bayes_stack_s4.csv | 0.829038 |
+| 2026-11-04 20:12 | 49_bayes_stack_s8.csv | 0.829240 |
+| 2026-11-04 20:35 | 49c_bayes_cat_s8.csv | 0.829782 |
+| 2026-11-04 21:32 | 49d_stack.csv | 0.830999 |
+| 2026-11-04 22:21 | 49e_view.csv | 0.831691 |
+| 2026-11-04 23:16 | 49f_view2.csv | 0.831854 |
+| 2026-11-04 | 49f2_tree2.csv | **0.831865** |
+| 2026-11-04 | 49g_final.csv | below 49f2 (exact score not recorded) |
 
 ## What we learned
 - **Which items a user clicked matters far more than when.** Weighting history clicks by
@@ -1586,3 +1613,255 @@ Limit: 10 uploads per day per team. Add a line for every upload.
   day 6: log gap 0.503, events 24 h 0.497, 7 d 0.499, no-click streak 0.453 (inverted 0.547). SET40 + act_d vs SET40, eval- /
   gap-weighted: day 6 -0.00011 / -0.00024, day 5 +0.00015 / +0.00019 -- the days disagree. Closed; user propensity already
   covers it.
+- **vast.ai box (2026-11-01; Threadripper 7995WX, 192 threads, RTX 3090).** One LightGBM job on all 184 threads is NOT
+  faster than the M4 (thread overhead); capped at 24-32 threads (`NTHREADS`, new in `lab/extra_member.py` and
+  `24_ensemble/ensemble.py`) a SET40 lab run takes 242 s vs 15-20 min on the Mac, ~7 jobs side by side. Box reproduces the
+  Mac (`tools/box_verify.sh`): half B 0.84511 vs 0.84505, paired +0.00006 [-0.00003, +0.00015] (thread-count noise, 1278 vs
+  1078 trees); all box comparisons below are box vs box (`lab_preds_boxbase_d*`).
+- **Learning rate 0.01: no for the main LightGBM, W2 holds again** (`tools/box_batch1.sh`, `tools/box_batch2.sh`, logs
+  `2026-11-01_box_batch1/`, `_box_batch2/`; vs box SET40, eval- / gap-weighted, day 6 | 5 | 4): SET40 lr 0.01 -0.00001 /
+  +0.00006 | -0.00014 / -0.00012 | +0.00021 / +0.00015 (days disagree); W2 at lr 0.01 alone +0.00002 / +0.00011 | +0.00009 /
+  +0.00013 | +0.00031 / +0.00019; their average +0.00008 / +0.00016 | +0.00006 / +0.00010 | +0.00035 / +0.00028 -- no better
+  than 42's SET40 + W2 at lr 0.02. Tree settings are exhausted. Seeds 1-2 of the 42 ensemble built on the box for a
+  seed-averaged final (`tools/box_build42seeds.sh`).
+- **Choice member weight 0.40 instead of 0.25** (`lab/choice_weight.py`, log `2026-11-01_lab_choice_weight.txt`; box lab
+  predictions of SET40 LightGBM, W2 and the SET40 choice model (default setting), LightGBM : W2 : choice = 2(1-w)/3 : (1-w)/3 :
+  w, paired vs w = 0.25, eval- / gap-weighted, day 6 | 5 | 4): 0.35 +0.00007 / +0.00007 | +0.00004 / +0.00002 | +0.00008 /
+  +0.00010; 0.45 +0.00010 / +0.00011 | +0.00005 / +0.00002 | +0.00012 / +0.00016; 0.60 +0.00011 / +0.00012 | +0.00002 /
+  -0.00004 | +0.00013 / +0.00019. Fixed at 0.40 for the next build (+~0.0001). Alone the SET40 choice model beats the SET40
+  LightGBM on days 6 and 4 (box batch 3).
+- **Core MF with 60 / 90 seeds: no** (`tools/box_batch4.sh`, `_batch4b.sh`: 26 vectors_pool.py --mf-only, 13's settings, seeds
+  30-89 in 12 parallel blocks; `tools/box_mfscreen.sh`, logs `2026-11-01_box_mf_mf60.txt` / `_mf90.txt`; SET40 with the core
+  MF averaged over all seeds, paired vs box SET40 = MF30). Day 6 eval- / gap-weighted: MF60 -0.00016 / -0.00016, MF90 -0.00014 /
+  -0.00022; day 5 about equal (0.82154 / 0.82157 vs 0.82163). The core MF is at its seed plateau at 30. Closed.
+- **42 seed-averaged** (2026-11-01): seeds 1 and 2 of the 4-member 42 ensemble built on the box (`tools/box_build42seeds.sh`,
+  `submissions/42_shallow4_s{1,2}.csv`; Spearman between seeds 0.9995); `42s3_avg3seeds.csv` = mean of seeds 0-2,
+  `42s3b_avg_42s3_39b.csv` = its equal mean with 39b (the 42b recipe). `15_more_seeds/average.py` now writes 10 significant
+  digits (6 left 413k distinct values of 529k: ties).
+- **Day 3, the never-used split, for the frozen shortlist** (2026-11-01, `tools/box_day3.sh`, `lab/ens_compose.py`, log
+  `2026-11-01_box_day3/`; members on SET40 fit on day 2 only, whole ensembles composed with their build weights; plain / eval- /
+  gap-weighted): A (40: lgb, xgb, choice) -> B (42: + shallow) -0.00003 / +0.00001 / -0.00003 (nothing, as on public); B -> C
+  (choice 0.40) +0.00014 / +0.00013 / +0.00018, all intervals above 0; A -> C +0.00011 / +0.00013 / +0.00015. Members alone,
+  eval-weighted: lgb 0.81294, W2 0.81345, xgb 0.81306, choice 0.81356 (the choice model is again the best single member).
+  Built as 43 (table).
+- **Choice member C3 x10 seeds on the GPU: flat in the ensemble** (`tools/box_choice10.sh`, `lab/choice_model.py --device cuda`
+  new: 67 s per seed vs ~20 min on the CPU; log `2026-11-01_box_choicegpu/`). Alone eval-weighted day 6 / 5 / 4: 0.82872 /
+  0.82176 / 0.81773 (C0 x2: 0.82863 / 0.82160 / 0.81732). In LightGBM 0.4 : W2 0.2 : choice 0.4, vs C0 x2, eval- /
+  gap-weighted: day 6 -0.00003 / -0.00001, day 5 +0.00003 / +0.00006, day 4 +0.00011 / +0.00003. Not adopted. Choice settings
+  C1-C3 (batch 3) also flat. Ensemble-level changes are exhausted (lab and public: 42b +0.00001, 43s3b +0.00001).
+- **Choice member on the full 36-group set (D38, 337 features): small consistent edge** (`tools/box_choiced38.sh`, log
+  `2026-11-01_box_choiced38/`; C3 x10 on the GPU; ensemble LightGBM 0.4 : W2 0.2 : choice 0.4, D38 vs SET40 choice, eval- /
+  gap-weighted): day 6 +0.00007 / +0.00006, day 5 +0.00005 / +0.00005, day 4 +0.00002 / +0.00007. Ensemble-level (~+0.00005);
+  folded into the next build only alongside a representation change.
+- **Representation screens on the box, 21 MF variants: none clears +0.0005** (`tools/box_reptune*.sh`, log
+  `2026-11-01_box_reptune/`; aux 0.3 / 13000 steps / cosine lr decay base, projected cosine on day 6, 3 seeds; base 0.82581):
+  18000 steps + l2 0.08 0.82600, user offset 0.82597, linear decay 0.82587, dim 48 + l2 0.08 0.82586, l2 0.08 0.82584, aux 0.5
+  0.82570, hdrop 0.2 0.82566, impr 0.5 0.82558, aux 0.2 0.82555, std 0.05 0.82548, logq 0.82541, impr 2 0.82512, uw 0.5
+  0.82473, boot 0.82191, choice loss 0.81801, lowrank 0.05 0.80694; --neg uniform / clicks and --pool idf / sqrtset gave exactly
+  the base (the CLI options are not passed to the tune stage, so untested). The MF family is at its ceiling.
+- **The audience view from the 40 vectors passes days 6, 5 and 4** (`tools/box_aud40.sh`, log `2026-11-01_box_aud40/`; the lead
+  left unfinished on 2026-10-30). (a) soft_aud <- 40c_aud, paired vs box SET40, plain / eval- / gap-weighted: day 6 +0.00005 /
+  +0.00004 / +0.00021, day 5 +0.00022 / +0.00023 / +0.00028, day 4 +0.00029 / +0.00033 / +0.00023. (b) + hop4 / hop2c from the
+  40 vectors: day 6 -0.00004 / -0.00009 / +0.00011, day 5 +0.00022 / +0.00036 / +0.00031, day 4 +0.00017 / +0.00010 / +0.00014
+  (weaker, not kept). A representation change: built as experiment 45 (`45_aud40/build.sh`).
+- **40d (audience from all 10 40-vector seeds) vs 40c (5 seeds): noise** (`tools/box_aud40d.sh`, log `2026-11-01_box_aud40d/`;
+  alone day 6 0.82873 vs 0.82855; in SET40 eval- / gap-weighted day 6 -0.00001 / -0.00003, day 5 +0.00009 / +0.00009, day 4
+  -0.00002 / +0.00013). 41c (decayed vectors) 0.82865 and 4041c (20 seeds) 0.82872 alone: no better. 45 keeps 40c.
+- **More audience views on top of 45: both worse** (paired vs the 45 set, plain / eval- / gap-weighted). (c) + cos_audc05 <-
+  40c_audc (`tools/box_aud40c2.sh`, log `2026-11-01_box_aud40c2/`): day 6 -0.00011 / -0.00025 / -0.00023, day 5 -0.00005 /
+  -0.00001 / -0.00004, day 4 -0.00007 / -0.00005 / -0.00004. (d) + a second audience group from the 41c vectors
+  (`tools/box_aud41x.sh`, log `2026-11-01_box_aud41x/`): day 6 -0.00005 / -0.00012 / -0.00014, day 5 -0.00013 / -0.00013 /
+  -0.00017, day 4 -0.00008 / -0.00008 / +0.00003. One audience view is enough; 45 stays the candidate.
+- **cossoft20 rebuilt from the 40 vectors, added to 45: noise** (`tools/box_soft40.sh`, log `2026-11-02_box_soft40/`; view
+  `34_cosine/cos_view.py --proj 8 --soft 20` on the 10 40 vectors, day 6 alone 0.82728). Paired vs the 45 set, plain / eval- /
+  gap-weighted: day 6 -0.00004 / -0.00004 / +0.00004, day 5 +0.00001 / +0.00003 / +0.00004, day 4 +0.00001 / +0.00001 /
+  -0.00005. Not kept.
+- **cos_hop4 alone rebuilt from the 40 vectors, in 45: worse** (`tools/box_hop40.sh`, log `2026-11-02_box_hop40/`). Paired vs
+  the 45 set, day 6 plain / eval- / gap-weighted -0.00004 / -0.00013 / -0.00015; eval-weighted day 5 0.82191 vs 0.82186, day 4
+  0.81722 vs 0.81733. Every view rebuilt from the 40 vectors except soft_aud is now closed (cosresid8, cossoft20, cos_audc05,
+  hop4, hop2c, a second audience view).
+- **Out-of-fold MF by USER: worse than by event** (`28_oof_mf/oof_mf.py --by-user`, `NOBU=1 lab/oof_check.py`; logs
+  `2026-11-02_28_oofu_validation_mf.txt`, `2026-11-02_lab_oofu_check.txt`). A fold's users are dropped from its MF entirely, so
+  no MF saw the scored user's later behaviour (the cause found for the by-event loss). MF alone only 0.785-0.797 per day
+  (the user's own clicks no longer shape the item vectors, and the user bias is untrained). LightGBM, half B / eval-weighted,
+  with the MF user bias removed in every variant: time-forward 0.83398 / 0.81755 (with the bias 0.83441 / 0.81785);
+  out-of-fold days 2-5 0.83303 / 0.81644; days 0-5 0.83304 / 0.81651. Closed: the time-forward rule stays.
+- **45s6 (6 build seeds) public 0.826063 vs 45s3 0.826069**: same model; kept as the final (lower variance on private).
+- **Gap map: where the remaining AUC is** (`lab/gap_map.py`, log `2026-11-02_lab_gap_map_d6.txt`; 45 set, day 6 half B,
+  eval-weighted 0.82847). Oracle bounds: perfect within-event ranking +0.125, perfect "does the event get a click" +0.071.
+  Now: within-event AUC 0.8351, event level (mean logit vs any click) 0.580. A uniform lift of the clicked candidate's logit
+  by +0.03 (within-event 0.8351 -> 0.8386) is worth +0.0041 global, i.e. **0.83 on public needs ~+0.0035 within-event AUC**
+  (about six experiment-40-sized representation wins). The leverage sits with 6-20 known clicks (eval share 45%, within
+  0.818; +0.1 logit there = +0.0060) and 21-50 (34%, 0.842; +0.0042), then 1-5 (16%, 0.770; +0.0025). Empty-history events
+  (1.3%) rank below random inside the event on days 6 / 5 / 4 (within 0.453 / 0.464 / 0.481), but there are only ~210-260
+  such events per day (~100 clicked in half B), so this is within noise; item popularity alone gives 0.49-0.56 on them.
+  Lifting them to 0.53 is worth ~+0.0001. Not a lead.
+- **Pair-level error decomposition (external review's "experiment 46")** (`lab/pair_errors.py`, log
+  `2026-11-02_lab_pair_errors_d6.txt`; 45 set, day 6 half B, eval-weighted 0.82847).
+  - Global AUC is 99.997% CROSS-event pairs: within-event pairs are 0.0034% of all positive/negative pairs. The within-event
+    oracle in `lab/gap_map.py` helps only because the clicked candidate then also outranks other events' rows. Positives vs
+    negatives of clicked events AUC 0.8316 (58% of negatives), vs no-click events 0.8241 (42%); no-click events all at the
+    bottom would give 0.902. Event level (sum of probabilities) 0.698, max 0.649, logsumexp 0.690, mean logit 0.580 -- vs
+    0.668 with the TRUE propensity alone and 0.733 for the replica oracle (true propensity and taste): at its ceiling.
+  - Within-event AUC by known clicks: 0 0.453, 1-5 0.770, 6-10 0.799, 11-20 0.826, 21-35 0.838, 36-50 0.848, 51-100 0.852
+    (eval shares 1.3 / 16.4 / 19.4 / 25.6 / 24.3 / 9.4 / 3.6%): a smooth rise with information, no segment out of line.
+  - Misranked (clicked, unclicked) pairs: 66% are pairs where the unclicked candidate's projected taste cosine is far above
+    the clicked one's (> 1.0 on the std-3 scale; misrank rate 0.95), 11% where the clicked one has the higher cosine. 7.4%
+    are an unclicked REPEAT outranking the click (rate 0.77; repeats are near-calibrated, see repeat-position notes).
+    Popularity: misrank rate falls from 0.24 (clicked item 0-3 clicks) to 0.14 (31-100). Median misrank margin 0.90 logits,
+    near misses (< 0.1) 6.7%: errors are confident, not borderline. The model follows the estimated taste; the misses are
+    clicks that our taste estimate says are unlikely -- consistent with the item-vector information limit, no new category.
+- **Empty-history fix: tiny, consistent sign** (`lab/empty_hist_fix.py`, log `2026-11-02_lab_empty_hist_fix.txt`; fixed rule:
+  inside events with no known clicks the candidates are re-ordered by log item clicks, event mean logit kept). Eval-weighted,
+  45 set: day 6 +0.00000 [-0.00008, +0.00007], day 5 +0.00004 [-0.00003, +0.00014], day 4 +0.00010 [+0.00000, +0.00022].
+  Worth ~+0.00005 at most; a post-processing option for a final file, not a lead.
+- **Third vast.ai box (2026-11-03; EPYC 7532 64 cores, RTX 4090, 503 GB, $0.57/h).** LightGBM needs `libgomp1` on the
+  pytorch image. The 45 build's members re-run as lab members on days 6/5/4/3 (`tools/box_night1.sh`, logs
+  `2026-11-03_box_night1/`): lgb / W2 / xgb / choice (SET45, 3 seeds) eval-weighted day 6 0.82847 / 0.82861 / 0.82841 /
+  0.82882; the 45 composition (0.2 / 0.2 / 0.2 / 0.4, `lab/ens_mix.py`) day 6 / 5 / 4 / 3 0.82902 / 0.82227 / 0.81800 /
+  0.81429. All comparisons below are paired vs that composition, eval- / gap-weighted.
+- **SPECTRAL taste view: helps the choice member, not the trees** (`lab/spectral_view.py` -> `47_spec_c7.npz`: for the 16
+  strongest principal directions e_k of 40's item vectors, f_k = (u.e_k)(v.e_k), u = unit mean taste of the known clicks, v =
+  the candidate's unit vector, 10 seeds; sign-invariant per direction, so comparable across days and seeds). Directions 1-8
+  alone AUC 0.67-0.75 on every day, 9-16 all 0.54: the taste space is 8-dimensional. The projected cosine fixes the metric
+  (top 8, equal weights); here the network learns it (`lab/choice_model.py --add`). Choice member alone, SET45 vs + spectral:
+  day 6 0.82882 -> 0.82912, day 5 0.82185 -> 0.82203, day 4 0.81781 -> 0.81770, day 3 0.81384 -> 0.81350 (the gain grows with
+  the training days). In the ensemble: +0.00018 / +0.00019, +0.00010 / +0.00012, -0.00001 / -0.00002, -0.00003 / +0.00005.
+  As 16 raw LightGBM columns (`tools/box_night3.sh`, `extra_member.py` now takes multi-column caches): day 6 +0.00035, day 5
+  +0.00003, day 4 **-0.00037 [-0.00063, -0.00011]**, day 3 -0.00001: no. Raw (unnormalised) variant `--raw`: weaker (choice
+  day 6 0.82897, day 5 0.82197).
+- **Choice member on D45 (SET38 + 40's projected and audience views, 337 features)**: alone day 6 / 5 / 4 / 3 0.82899 /
+  0.82195 / 0.81767 / 0.81383 (SET45 0.82882 / 0.82185 / 0.81781 / 0.81384); 1024-512 / drop 0.3 / 5 seeds no better.
+- **Two choice members, SP + D (H3, 0.2 each): positive on all four days** (`tools/box_hedge.sh`): day 6 +0.00019 /
+  +0.00017, day 5 +0.00013 / +0.00011, day 4 +0.00002 / +0.00003, day 3 (never used) +0.00005 / +0.00009. S + SP +0.00010 /
+  +0.00007 / +0.00001 / +0.00001; S + D +0.00009 / +0.00007 / +0.00003 / +0.00005; S + SP + D +0.00014 / +0.00009 /
+  +0.00003 / +0.00005. The two choice members differ most (Spearman of the full builds: SP vs 45 choice 0.9974, D vs 45
+  0.9963, SP vs D 0.9950). Choice total weight for H3 (`tools/box_hedge2.sh`), vs 0.4, eval-weighted days 3 / 4 / 5 / 6:
+  0.5 +4 / +5 / +2 / +7, 0.6 +4 / +7 / +2 / +12 (x1e-5). Built as experiment 47 with the even split 0.5.
+- **Variants around 47's choice pair, all within noise** (paired vs H3 = choice SP + D, eval-weighted, days 3 / 4 / 5 / 6, x1e-5):
+  SP -> SP + SPECTRAL AUDIENCE view (`lab/spectral_aud.py` -> `47_specaud`: per-direction products of the user's taste with
+  unit(A - B) of 45's soft audience; `tools/box_night5.sh`) +1 / +6 / +5 / +1; D -> D + spectral (`tools/box_night6.sh`)
+  -2 / +2 / +9 / +5; a third choice member SP with slate attention (`--attn`, choice 0.4/3 each; `tools/box_night7.sh`)
+  -4 / +1 / +3 / +1. Not kept: two choice members carry the gain, the rest is lean-rule noise.
+- **Per-direction taste SPREAD for the choice member: noise** (`spectral_view.py --var` -> `47_specvar`, sd of the user's
+  unit click vectors along each direction; `tools/box_night8.sh`). SP -> SP + spread in H3, eval-weighted days 3 / 4 / 5 / 6:
+  -2 / +2 / +2 / 0 (x1e-5).
+- **LEARNED SPECTRAL SCORE: strong alone, harmful in LightGBM** (`lab/spectral_score.py` -> `47_specw`: logistic weights on
+  the 16 spectral products and their within-event contrasts, fitted time-forward on days 2..d-1; day 2 = projected cosine).
+  Learned weights are stable: the 8 taste directions ~2.35 each, directions 9-16 0.99 -> 0.25 (a learned soft projection).
+  Alone: day 3 0.81611 (top 8 0.80771), day 4 0.82151, day 5 0.82864, day 6 0.83230 (top 8 0.82353; soft_aud 0.82855). As
+  one LightGBM group (`tools/box_night9.sh`), paired vs SET45, eval-weighted: day 3 **-0.00111**, day 4 **-0.00038**, day 5
+  -0.00002, day 6 -0.00001. The time-forward weights change the column's meaning from training day to training day (day 2
+  fixed, day 3 fitted on one day, ...), and the trees already have the information. Closed.
+- **A second spectral view from the 41 vectors (decayed-lr MF) in the spectral choice member: noise** (`spectral_view.py
+  --family 41` -> `47_spec41`, `tools/box_night10.sh`). SP -> SP + spec41 in H3, eval-weighted days 3 / 4 / 5 / 6: -4 / +2 /
+  0 / -2 (x1e-5). One spectral view is enough.
+- **47 needs all three trees** (`tools/box_lean.sh`; choice pair 0.25 each, eval-weighted days 3 / 4 / 5 / 6, x1e-5): 47 vs
+  the 45 composition +9 / +7 / +15 / +26; dropping xgb -4 / +1 / -2 / -2, dropping W2 -2 / -4 / -2 / -2, lgb alone at 0.5
+  -13 / -4 / -6 / -7.
+- **A cross-event pairwise loss for the choice members changes nothing** (`lab/choice_model.py --pair 1`, `tools/box_night11.sh`,
+  logs `2026-11-03_box_night11/`). Global AUC is 99.997% cross-event pairs and the softmax is trained per event, so the
+  loss adds w x softplus(log p_neg - log p_pos) over every clicked vs unclicked row of a 512-event batch. Day 6: SP / D alone
+  eval-weighted 0.82912 / 0.82899, identical to the no-pair members (predictions differ: rank corr 0.999, max diff 0.1);
+  47 with both replaced -0.00000 [-0.00007, +0.00005], gap-weighted +0.00000. The per-event softmax with its no-click
+  level already ranks across events as well as the features allow. Stopped after day 6 (w 0.3 not run).
+  At w = 10 (pair loss dominant; `tools/box_night12.sh`): members alone day 6 SP / D 0.82906 / 0.82897 (no pair 0.82912 /
+  0.82899), day 5 0.82211 / 0.82210; 47 with both replaced, eval-weighted x1e-5: day 6 -4 [-12, +3], day 5 +5 [-2, +13];
+  added as two more choice members (4 x 0.125): day 6 0 [-5, +3], day 5 +4 [0, +8]. Noise both ways. Closed.
+- **XGBoost pairwise ranking member (GPU twin of lgbrank): noise** (`lab/extra_member.py MODEL=xgb XGB_RANK=1000`, random
+  1000-event groups, fixed 700 rounds because XGBoost's GPU ranking AUC overflows int32 on our sizes; `tools/box_night13.sh`).
+  Alone day 6 eval-weighted 0.82822, day 5 0.82126; 47 + it at 1/8 (trees 1/8 each): day 6 +0.00001 [-0.00004, +0.00005].
+  Stopped. The LightGBM lambdarank member (lab/global_rank2.py, lr 0.02, 4 days in parallel at 16 threads) had not finished
+  after 3.3 h on the EPYC 7532 box when credit forced the box down: no verdict.
+- **Item-item CF with cosine / shrunk cosine / BM25 normalisation: weak alone, nothing in the choice member** (external review;
+  `lab/item_cf.py`, caches `48cf_{cos,coss,bm25}_c7.npz`, logs `2026-11-03_box_cf/`). Alone, days 2-6: cos 0.594 / 0.601 /
+  0.608 / 0.614 / 0.619, coss and bm25 within 0.002; rank corr with MF30 0.32. Added to the spectral choice member (SPCF) in
+  47: day 6 -0.00002 [-0.00007, +0.00002]. The LightGBM test did not finish. Same verdict as 26's raw / lift / log-lift
+  item-item views: co-click overlap carries nothing the MF space does not.
+- **47 with 8 build seeds is the same file as 47s6** (fourth box, EPYC 9654 / RTX 6000 Ada, $0.70/h: 45 trees seeds 6-8 in
+  ~30 min at 16 threads each, SP / D45 choice seeds 6-7; `experiments/47_spec_choice/build.sh "0 1 2 3 4 5 6 7"` ->
+  `submissions/47s8_spec_choice.csv`): Spearman vs 47s6 0.99999. Not uploaded; more seeds are done.
+- **Combination and cross-event calibration of the final score: no headroom; lambdarank is worth ~+0.00005 next to a choice
+  member** (review; `lab/combine_check.py`, log `2026-11-03_lab_combine_check.txt`; day 6 half B, SET36 binary LightGBM,
+  lambdarank G500 / G1000, choice model 3 seeds, all on the same rows; eval-weighted, paired event bootstrap vs the rank
+  average of binary + choice = 0.82844). Alone: binary 0.82754, lambdarank G500 0.82776, choice 0.82837. Adding lambdarank:
+  bin .375 / r500 .125 / ch .5 +0.00004 [+0.00001, +0.00006]; bin .25 / r500 .25 / ch .5 +0.00006 [0, +0.00011]; r500 + ch
+  (no binary) +0.00006 [-0.00005, +0.00016]; equal thirds -0.00009. The +0.0004-0.0006 of 36/37 was against a trees-only
+  ensemble; the choice member already holds the cross-event ranking gain. Calibration: logit average -0.00000, probability
+  average +0.00000, geometric event x share +0.00000 [-0.00009, +0.00010]; choice event level x binary within-event share
+  -0.00063, the reverse -0.00036. The rank average loses nothing to calibration; the event and within-event parts cannot be
+  taken from different members.
+- **Spectral LOADINGS in the choice member: worse** (`lab/spectral_view.py --sq --k 8`: (v.e_k)^2 of the candidate and
+  (u.e_k)^2 of the user's unit taste for the 8 strong directions, sign-free, 10 vector seeds; cache `48_specsq_c7.npz`;
+  `tools/box2_sq.sh`, logs `2026-11-03_box2/`). SP + loadings vs SP alone, 3 seeds, eval-weighted: day 6 -0.00019 [-0.00034,
+  +0.00002], day 5 -0.00016 [-0.00035, +0.00001]. Direction-specific prominence and taste concentration only add noise.
+- **48's composition holds on SET45, days 6 and 5** (`tools/box2_check48.sh`, members via the new fast path
+  `lab/lgb_export.py` on the exports -- its binary member reproduces the extra_member.py one, day 6 eval-weighted 0.82847;
+  lambdarank `--rank 500 --trees 2200`). Binary .5 + choice SP .5 vs binary .375 + lambdarank .125 + SP .5, eval- /
+  gap-weighted: day 6 +0.00004 [+0.00001, +0.00007] / +0.00003, day 5 +0.00005 [+0.00001, +0.00009] / +0.00004. Lambdarank
+  alone matches binary (day 6 0.82855 vs 0.82847, day 5 0.82181 vs 0.82186). Small, consistent, built as 48.
+- **No per-segment calibration headroom** (`lab/segment_blend.py`, log `2026-11-03_lab_segment_blend.txt`). SET40 trees and
+  the 10-seed choice model (box lab preds), rank average .5/.5 as base; per known-clicks group or per hours-since-last-click
+  group, a choice weight or an additive score offset chosen on day 6 (coordinate ascent, gap-weighted), scored on days 5 and
+  4 only, eval- / gap-weighted vs base: hist weights day 5 +0.00002 / -0.00000, day 4 +0.00006 / +0.00004; hist offsets
+  (day 6 +0.00013 gap-weighted) day 5 -0.00011 [-0.00023, -0.00002] / -0.00012, day 4 -0.00011 [-0.00020, -0.00000] /
+  -0.00012; gap weights day 5 -0.00003 / -0.00001, day 4 -0.00000 / -0.00003; gap offsets chosen all zero. The global
+  rank average is already calibrated across segments; per-segment tuning only fits day 6. Closed. (Also checked: the
+  evaluation-period exposure / staleness question is already closed above, 2026-10-31, and evaluation histories already
+  feed the click log.)
+- **BOOSTED CHOICE MODEL: no gain** (`lab/lgb_choice.py`, `lab/lgbc_compare.py`, logs `2026-11-03_lab_lgb_choice/`). LightGBM with
+  a custom conditional-logit objective (softmax over the event's 10 candidates + a no-click option at score 0; gradient
+  p - y, hessian p(1 - p); output p_i comparable across events), vs binary LightGBM on the same lean features (169 columns,
+  fit days 2..T-1, matched settings). Eval-weighted alone: day 6 lr .05 +0.00037 [+0.00005, +0.00074] (0.82774 vs 0.82737);
+  day 5 lr .05 -0.00024 [-0.00058, +0.00016], lr .02 -0.00025 (first events -0.00042). Next to the 10-seed neural choice
+  member (bin .25 / gch .25 / nn .5 vs bin .5 / nn .5): day 6 +0.00016 [+0.00008, +0.00026], day 5 +0.00001 [-0.00007,
+  +0.00011] (gap-weighted -0.00008). Pooled ~0: the neural choice member already supplies the choice structure, and the
+  binary trees' per-row fit is as good as the listwise one. `ensemble.py` keeps an `lgbchoice_full` member (off unless named).
+- **Forensic audit of mechanisms, event level and clustering: the model already fits them** (`lab/forensic_audit.py`, logs
+  `2026-11-03_lab_forensic/audit_sum_d6.txt`, `_d5.txt`; matched binary LightGBM on the lean set, half B; an earlier run used
+  1 - prod(1 - p) as the event probability, wrong for exclusive clicks -- ignore `audit_d*.txt`). (1) Event click share
+  actual / predicted (sum of p) by hours since last click x user-rate tercile: 0.94-1.06 in every cell on both days (the
+  within-user rise of click share with time since the last click in `docs/dataset/numbers.json` is reproduced by the
+  model); by slate candidates already in the history 0.97-1.07, repeat rows CTR 0.305 vs 0.299 predicted. (2) A separate
+  event-level LightGBM on event aggregates (mean / max / min of all 169 features + the model's event logit, 2-fold by user):
+  event-level AUC day 6 0.68392 vs 0.68419 implied, day 5 0.68514 vs 0.68485; re-levelled global +0.00002 / -0.00008
+  (as `lab/two_stage.py` on 2026-10-26). (3) Paired intervals resampling users instead of events are the same width
+  (gch vs binary day 6 [-0.00001, +0.00071] vs [-0.00002, +0.00072]; ~1.95 day-T events per user). No hidden mechanism
+  found; the evidence pack for the review is `experiments/FORENSIC_2026-11-03.md`.
+- **No short-term "mood" in click outcomes; the same-day user residual was an estimation artifact** (`lab/mood_decay.py`, log
+  `2026-11-03_lab_mood_decay.txt`; question: does the per-user residual that `lab/residuals.py` found within a day (+0.052,
+  across days +0.015) reset at UTC midnight, or decay with time, so that an evaluation event a few hours after the user's last
+  training event could use it?). Consecutive events of a user, residual = "event has a click" minus the user's click share on
+  OTHER calendar days. Raw correlation rises with the gap (0.035 at < 0.5 h to 0.11 at 1-2 days) with no step at midnight
+  (same day vs across midnight at equal gaps: 4-8 h 0.0615 / 0.0605, 8-16 h 0.083 / 0.077). Removing the part both residuals
+  share through the error of the estimated level (variance r(1 - r) / n): < 0.5 h +0.004, 1-2 h +0.006, 2-4 h -0.001,
+  4-8 h +0.008 (se ~0.004); 8 h-2 d +0.016 to +0.036, too small to matter. The previous event's outcome moves the next
+  event's residual by < 0.005 at every gap. No mood to carry across the cutoff. Closed.
+- **No `README.txt` came with the data** (user, 2026-11-03), although the task text lists one: there is no organiser material
+  on the generator beyond `docs/phase_1_instructions.md`.
+- **KERNEL AUDIENCE: noise in LightGBM** (`lab/kernel_aud.py`, `lab/kernel_blend.py`, `lab/kernel_view.py`, `lab/kern_compare.py`,
+  `lab/lgb_choice.py --extra`; logs `2026-11-03_lab_kernel_aud/`). The local version of the audience view: a row's score is
+  the item's click rate among the users it was shown to before day d, each weighted by exp(kappa (cos(t_u, t_v) - 1)) (8-dim
+  projected unit tastes, the shown user's own clicks on the item removed, shrunk to the item's rate with weight 3; MF of days
+  < d, 3 seeds of 38_vectors). Alone on day 6 (plain AUC): kappa 2 / 5 / 10 / 20 0.710 / 0.728 / 0.657 / 0.579 vs aud cos
+  0.826, own cos 0.825, item rate 0.528 -- nonparametric in 8 dims with ~140 impressions per item is mostly noise. In a
+  logistic blend with the two cosines and the item rate (half A -> half B): +0.0008 with the user's own past impressions,
+  +0.0004 without them. As 6 LightGBM columns (log-odds and event-relative, kappa 2 / 5 / 10, own impressions excluded) on the
+  lean set, binary lr 0.05, eval-weighted vs the matched baseline: day 6 +0.00017 [-0.00012, +0.00043] (next to the choice NN
+  +0.00009 [-0.00006, +0.00022]); day 5 -0.00016 [-0.00043, +0.00012] (with the NN -0.00010, gap-weighted -0.00024
+  [-0.00044, -0.00005]). With the own impressions too, day 6 +0.00011. The linear audience already has what the item's
+  impressions say. Closed.
+- **BAYESIAN CHOICE MODEL: the largest step since 35** (`49_bayes_choice/`, logs `experiments/logs/49/`). Multinomial choice with a per-user
+  outside option, x_u . y_i + b_i + a_u[cat_i] + r [repeat], exposure counts informing a_u; exact user softmax and Gamma-augmented item
+  updates, both Newton proposals with MH. What mattered: (1) the start. Click-only SVD start: 0.76 after 800 states; alternating
+  Newton with FIXED priors reaches 0.8058 as a point estimate in about 20 sweeps. (2) Fixed hyperparameters: sampling them 0.7968 vs
+  0.802 (and MAP with free ones collapses to x = y = 0). (3) More chains: F2 alone on Jan24 0.8087 (2 seeds), 0.8139 (4), 0.8164 (8).
+  Stacker on Jan24, rows before Jan25: F1 + F2 +0.00258 (2 seeds), +0.00281 (4), +0.00301 (8); F3 (Gaussian prior), F4 (16 categories) and
+  the exposure profile failed the +0.0001 / 4-of-5 rule. A rank score alone in the stacker loses 0.003: members need P and log(P / P0).
+  Public 0.829038 for 4 seeds, in line with the lab gain.
+- **Category tree member adds to the Bayes stack** (`49_bayes_choice/cat_member.py`, `catcheck.py`; lean LightGBM + k=9 and k=16 category columns,
+  each built from the test day's own prefix). Jan24 alone 0.82056 vs old ensemble 0.81926; on top of the 8-seed candidate +0.00086, 5/5 folds.
+- **Point estimates carry most of the Bayes family gain** (Jan24 stack with existing + category tree: no family 0.82107, two 1-seed point estimates
+  0.82284, F1 + F2 8 seeds 0.82310, both 0.82336). The model (joint per-user fit, exact softmax likelihood, outside option) matters more than the
+  averaging. Rank above 8 fails (K12 0.778, K16 0.756, K32 0.719 alone on Jan23). Seeds saturate: 16 vs 8 +0.00008.
+- **The Bayes-style signal works far better as member features than as stacker inputs.** Jan24 alone: category tree 0.82056 -> with the view 0.82424, category choice 0.82167 -> 0.82430, vs 0.82393 for the whole 49d stack. A second point-estimate grid (24 variants) gave nothing through the linear stacker (best pick +0.00002 on Jan24).

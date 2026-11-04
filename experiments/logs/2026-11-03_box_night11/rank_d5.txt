@@ -1,0 +1,4 @@
+base: MF30 + popularity + sequence + ['clicks', 'uoff10', 'choice', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cosproj8', 'cos_audc05', 'cos_hop2c', 'cos_hop4', 'cosresid8', 'soft_aud', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+TEST_DAY 5: fit days 2-4, halves of day 5
+evaluation-weighted AUC: bucket weights 0-0 5.73, 1-5 3.60, 6-20 1.78, 21-50 0.60, 51-100 0.27

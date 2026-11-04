@@ -1,0 +1,24 @@
+## day 3: H3 (A) vs H3 with choice 0.5 (B)
+  eval-weighted  A 0.81434  B 0.81438  B-A +0.00004  95% interval [-0.00000, +0.00008]  P(B > A) 0.97
+  gap-weighted   A 0.80656  B 0.80663  B-A +0.00007  95% interval [+0.00001, +0.00013]  P(B > A) 0.98
+## day 3: H3 (A) vs H3 with choice 0.6 (B)
+  eval-weighted  A 0.81434  B 0.81437  B-A +0.00004  95% interval [-0.00005, +0.00012]  P(B > A) 0.75
+  gap-weighted   A 0.80656  B 0.80666  B-A +0.00010  95% interval [-0.00003, +0.00021]  P(B > A) 0.94
+## day 4: H3 (A) vs H3 with choice 0.5 (B)
+  eval-weighted  A 0.81803  B 0.81808  B-A +0.00005  95% interval [+0.00002, +0.00008]  P(B > A) 0.99
+  gap-weighted   A 0.81409  B 0.81416  B-A +0.00007  95% interval [+0.00002, +0.00012]  P(B > A) 0.99
+## day 4: H3 (A) vs H3 with choice 0.6 (B)
+  eval-weighted  A 0.81803  B 0.81809  B-A +0.00007  95% interval [+0.00000, +0.00014]  P(B > A) 0.98
+  gap-weighted   A 0.81409  B 0.81419  B-A +0.00010  95% interval [+0.00000, +0.00020]  P(B > A) 0.98
+## day 5: H3 (A) vs H3 with choice 0.5 (B)
+  eval-weighted  A 0.82240  B 0.82242  B-A +0.00002  95% interval [-0.00001, +0.00005]  P(B > A) 0.90
+  gap-weighted   A 0.81885  B 0.81885  B-A -0.00001  95% interval [-0.00005, +0.00004]  P(B > A) 0.40
+## day 5: H3 (A) vs H3 with choice 0.6 (B)
+  eval-weighted  A 0.82240  B 0.82242  B-A +0.00002  95% interval [-0.00006, +0.00009]  P(B > A) 0.74
+  gap-weighted   A 0.81885  B 0.81882  B-A -0.00003  95% interval [-0.00013, +0.00005]  P(B > A) 0.22
+## day 6: H3 (A) vs H3 with choice 0.5 (B)
+  eval-weighted  A 0.82921  B 0.82928  B-A +0.00007  95% interval [+0.00004, +0.00011]  P(B > A) 1.00
+  gap-weighted   A 0.82715  B 0.82722  B-A +0.00007  95% interval [+0.00003, +0.00011]  P(B > A) 1.00
+## day 6: H3 (A) vs H3 with choice 0.6 (B)
+  eval-weighted  A 0.82921  B 0.82933  B-A +0.00012  95% interval [+0.00005, +0.00019]  P(B > A) 1.00
+  gap-weighted   A 0.82715  B 0.82727  B-A +0.00012  95% interval [+0.00004, +0.00021]  P(B > A) 0.99

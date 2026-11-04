@@ -1,0 +1,9 @@
+[    0.2s] cutoff 5: 490,420 fit events, 43,964 targets (439,640 rows)
+[    8.3s] labelled clicks 308,499; history-only warm-up clicks 577,679
+[   17.8s] partition k=16 rank=15: singular [1.    0.332 0.327 0.318 0.309 0.301 0.292 0.284 0.272 0.251 0.238 0.237
+ 0.233 0.232 0.231 0.229], cos 0.7328, sizes [1568 5260 6034 4657 1787 3041 2017 2045 1753 5102 2170 3276 1650 2587
+ 3812 3241]
+[   19.1s] N 1,068,099 events (577,679 pseudo), D 25, xprec 1.00, device cuda, dtype float64
+[   19.7s] sweep 0: acc u 0.859 i 0.996 r 1.504 |y|sd 0.267 |x| 0.969 sd_b 0.265 mu_o -0.621 sd_o 1.013 sd_a 0.316 0.58s/sweep
+[   33.8s] sweep 59: acc u 0.990 i 0.999 r -0.189 |y|sd 1.390 |x| 1.055 sd_b 0.265 mu_o -0.621 sd_o 1.013 sd_a 0.316 0.25s/sweep
+[   34.0s] wrote data/cache/49/Gc16_c5.npz

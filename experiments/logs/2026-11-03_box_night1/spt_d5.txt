@@ -1,0 +1,4 @@
+### day 5 choice SPT:   choice model                 half-B 0.84113  eval-weighted 0.82216  first 0.82081
+## day 5: H3 (A) vs H3 + SPT (B)
+  eval-weighted  A 0.82240  B 0.82243  B-A +0.00003  95% interval [+0.00000, +0.00006]  P(B > A) 0.99
+  gap-weighted   A 0.81885  B 0.81891  B-A +0.00006  95% interval [+0.00002, +0.00010]  P(B > A) 1.00

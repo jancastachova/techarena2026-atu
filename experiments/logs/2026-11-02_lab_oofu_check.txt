@@ -1,0 +1,5 @@
+MF alone on day 6: 0.81750
+  A time-forward, days 2-5 (current)           half-B 0.83441  eval-weighted 0.81785  (391,856 training events, 1145 trees)
+  A0 time-forward without b_user               half-B 0.83398  eval-weighted 0.81755  (391,856 training events, 693 trees)
+  B out-of-fold, days 2-5                      half-B 0.83303  eval-weighted 0.81644  (391,856 training events, 778 trees)
+  C out-of-fold, days 0-5                      half-B 0.83304  eval-weighted 0.81651  (588,873 training events, 618 trees)

@@ -1,0 +1,3 @@
+## day 6: 45 composition (A) vs 47 (B)
+  eval-weighted  A 0.82902  B 0.82928  B-A +0.00026  95% interval [+0.00018, +0.00035]  P(B > A) 1.00
+  gap-weighted   A 0.82697  B 0.82722  B-A +0.00025  95% interval [+0.00015, +0.00036]  P(B > A) 1.00

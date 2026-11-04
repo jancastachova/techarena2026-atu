@@ -1,0 +1,2 @@
+  lgb_choice lab_export_lean_d5.npz obj=choice lr=0.02: half-B 0.83973  eval-weighted 0.82062  first 0.81915  (635 trees, 275s)
+wrote data/cache/lab_preds_lgbc02_choice_d5.npz

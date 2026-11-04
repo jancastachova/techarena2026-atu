@@ -23,6 +23,10 @@ d6 = row_day == 6
 def with_day6(m):
     m = m.copy(); m[d6] = z["day6"][d6]; return m
 TF, OOF = with_day6(z["tf"]), with_day6(z["oof"])
+import os
+NOBU = os.environ.get("NOBU") == "1"     # (2026-11-02) by-user folds leave the scored user's MF bias untrained (0), so
+def nobu(m):                             # every variant drops it: logit - b_user, b_user column 0 (base features keep
+    m = m.copy(); m[:, 0] -= m[:, 2]; m[:, 2] = 0; return m   # the user click rates)
 
 _, hlen = e13.long_history(fit, fit, e13.HIST_LONG)
 _, hl_eval = e13.long_history(test, fit, e13.HIST_LONG)
@@ -65,10 +69,13 @@ def run(label, mf, first_day):
 r6 = d6
 print(f"MF alone on day 6: {auc(z['day6'][r6, 0], fit['label'][r6]):.5f}")
 run("A time-forward, days 2-5 (current)", TF, 2)
+if NOBU:
+    run("A0 time-forward without b_user", nobu(TF), 2)
+    OOF = nobu(OOF)
 run("B out-of-fold, days 2-5", OOF, 2)
 run("C out-of-fold, days 0-5", OOF, 0)
 ra = saved["A time-forward, days 2-5 (current)"][0]
 assert all(np.array_equal(v[0], ra) for v in saved.values())
 rows2 = np.flatnonzero(row_day >= 2)                  # lab/paired_ci.py indexes the rows of days >= 2
-np.savez(str(ROOT / "data/cache/lab_preds_oof_check.npz"), rows_B=np.searchsorted(rows2, ra),
+np.savez(str(ROOT / os.environ.get("OUT", "data/cache/lab_preds_oof_check.npz")), rows_B=np.searchsorted(rows2, ra),
          **{f"{k}|B": v[1] for k, v in saved.items()})

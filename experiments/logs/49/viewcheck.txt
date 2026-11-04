@@ -1,0 +1,5 @@
+alone Jan24: cat tree 0.82056 tree+view 0.82424 | cat choice 0.82167 choice+view 0.82430
+49d + tree+view: 0.82393 -> 0.82465 +0.00072 folds [0.0009  0.00083 0.0009  0.00047 0.00055] pos 5/5 valid True
+49d + choice+view: 0.82393 -> 0.82470 +0.00077 folds [0.00086 0.00079 0.00109 0.0005  0.00064] pos 5/5 valid True
+49d + both: 0.82393 -> 0.82497 +0.00104 folds [0.00124 0.00114 0.0014  0.00068 0.00083] pos 5/5 valid True
+both replacing the old cat members: 0.82393 -> 0.82497 +0.00104 folds [0.00123 0.00122 0.00136 0.00064 0.00083] pos 5/5 valid True

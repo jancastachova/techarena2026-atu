@@ -1,0 +1,3 @@
+## day 3 LightGBM: SET45 (A) vs + specw (B)
+  eval-weighted  A 0.81331  B 0.81220  B-A -0.00111  95% interval [-0.00151, -0.00073]  P(B > A) 0.00
+  gap-weighted   A 0.80553  B 0.80429  B-A -0.00123  95% interval [-0.00184, -0.00064]  P(B > A) 0.00

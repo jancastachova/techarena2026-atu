@@ -1,0 +1,7 @@
+singular values: 1.000 0.326 0.322 0.312 0.302 0.294 0.285 0.276 0.265 0.242 0.229 0.228 0.224 0.223 0.222 0.219 0.217 0.210 0.209 0.202
+rank  4: user exposure . candidate AUC 0.55580   clicked profile . candidate AUC 0.56001
+rank  8: user exposure . candidate AUC 0.57560   clicked profile . candidate AUC 0.57954
+rank 12: user exposure . candidate AUC 0.57776   clicked profile . candidate AUC 0.58428
+rank 16: user exposure . candidate AUC 0.57544   clicked profile . candidate AUC 0.58409
+rank 24: user exposure . candidate AUC 0.57318   clicked profile . candidate AUC 0.58588
+rank 31: user exposure . candidate AUC 0.57101   clicked profile . candidate AUC 0.58701
