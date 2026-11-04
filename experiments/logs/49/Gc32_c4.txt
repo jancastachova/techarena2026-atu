@@ -1,0 +1,19 @@
+[    0.2s] cutoff 4: 392,831 fit events, 47,928 targets (479,280 rows)
+[    6.8s] labelled clicks 247,219; history-only warm-up clicks 577,679
+[   29.5s] partition k=32 rank=31: singular [1.    0.339 0.335 0.327 0.317 0.31  0.302 0.295 0.284 0.264 0.252 0.25
+ 0.248 0.246 0.245 0.244 0.242 0.237 0.236 0.233 0.233 0.232 0.231 0.231
+ 0.231 0.23  0.23  0.23  0.23  0.23  0.23  0.23 ], cos 0.5991, sizes [1192 1756 1346  850 1345 1003 1689 1514 1243 2008 1025 2173 1084 2275
+ 1281 1097 1585 1827 1792 2020 1399 1262 2298 1819 1654 2773 2142 1041
+ 2344 1119 1000 1044]
+[   30.9s] N 970,510 events (577,679 pseudo), D 41, xprec 8.00, device cuda, dtype float64
+Traceback (most recent call last):
+  File "/workspace/t/experiments/49_bayes_choice/bayes.py", line 428, in <module>
+    au = update_users()
+         ^^^^^^^^^^^^^^
+  File "/workspace/t/experiments/49_bayes_choice/bayes.py", line 309, in update_users
+    lp, g, H = user_eval(X, A, O)
+               ^^^^^^^^^^^^^^^^^^
+  File "/workspace/t/experiments/49_bayes_choice/bayes.py", line 240, in user_eval
+    Hh = torch.bmm((F * p[:, :, None]).transpose(1, 2), F) - m[:, :, None] * m[:, None, :]
+                                                             ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 5.01 GiB. GPU 0 has a total capacity of 39.52 GiB of which 2.15 GiB is free. Process 5997 has 20.40 GiB memory in use. Including non-PyTorch memory, this process has 16.96 GiB memory in use. Of the allocated memory 12.86 GiB is allocated by PyTorch, and 3.62 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

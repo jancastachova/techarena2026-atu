@@ -1,0 +1,8 @@
+[    0.2s] cutoff 4: 392,831 fit events, 47,928 targets (479,280 rows)
+[   10.5s] labelled clicks 247,219; history-only warm-up clicks 577,679
+[   19.9s] partition k=8 rank=7: singular [1.    0.339 0.335 0.327 0.317 0.31  0.302 0.295], cos 0.7998, sizes [6072 4786 5280 7462 4349 5671 8849 7531]
+[   21.9s] N 970,510 events (577,679 pseudo), D 21, xprec 1.00, device cuda, dtype float64
+[   22.7s] sweep 0: acc u 0.828 i 0.999 r 1.550 |y|sd 0.088 |x| 0.921 sd_b 0.281 mu_o -0.617 sd_o 1.015 sd_a 0.316 0.70s/sweep  AUC state 0.61731
+[   38.5s] sweep 59: acc u 0.981 i 0.998 r -0.511 |y|sd 1.309 |x| 1.081 sd_b 0.281 mu_o -0.617 sd_o 1.015 sd_a 0.316 0.27s/sweep  AUC state 0.77192 avg(1) 0.77192
+[   38.9s] final AUC 0.77192
+[   38.9s] wrote data/cache/49/GK12_c4.npz

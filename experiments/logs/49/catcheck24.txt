@@ -1,0 +1,2 @@
+Jan24 events 17,583; alone: ch 0.81909 old ens 0.81926 cat tree 0.82056
+candidate 0.82224 + cat tree 0.82310 gain +0.00086 folds [0.00091 0.00046 0.00126 0.00082 0.00085] positive 5/5 valid True

@@ -1,0 +1,10 @@
+[    0.3s] cutoff 3: 295,114 fit events, 34,912 targets (349,120 rows)
+[    7.6s] labelled clicks 186,038; history-only warm-up clicks 567,251
+[   35.9s] partition k=24 rank=23: singular [1.    0.351 0.348 0.339 0.331 0.325 0.317 0.311 0.301 0.284 0.273 0.271
+ 0.27  0.269 0.269 0.268 0.267 0.266 0.264 0.264 0.263 0.263 0.263 0.262], cos 0.6205, sizes [1543 2444 2577 3291 2866 1300 1643 2913 2219 2452 1260 1700 2084 1449
+ 1449 3671 1980 1542 2507 1052 1552 1077 1478 3951]
+[   37.8s] N 862,365 events (567,251 pseudo), D 33, xprec 8.00, device cuda, dtype float64
+[   38.5s] sweep 0: acc u 1.000 i 0.997 r 1.542 |y|sd 0.028 |x| 0.000 sd_b 0.298 mu_o -0.607 sd_o 1.016 sd_a 0.316 0.67s/sweep  AUC state 0.62177
+[   74.3s] sweep 59: acc u 0.997 i 1.000 r -0.095 |y|sd 1.417 |x| 0.738 sd_b 0.298 mu_o -0.607 sd_o 1.016 sd_a 0.316 0.72s/sweep  AUC state 0.80527 avg(1) 0.80527
+[   74.5s] final AUC 0.80527
+[   74.5s] wrote data/cache/49/Gc24_c3.npz

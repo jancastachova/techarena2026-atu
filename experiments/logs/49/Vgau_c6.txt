@@ -1,0 +1,7 @@
+[    0.2s] cutoff 6: 588,873 fit events, 97,951 targets (979,510 rows)
+[   11.0s] labelled clicks 370,313; history-only warm-up clicks 577,679
+[   17.4s] partition k=8 rank=7: singular [1.    0.326 0.322 0.312 0.302 0.294 0.285 0.276], cos 0.8170, sizes [7608 4583 4180 9694 7428 5860 5481 5166]
+[   18.9s] N 1,166,552 events (577,679 pseudo), D 17, xprec 8.00, device cuda, dtype float64
+[   19.4s] sweep 0: acc u 1.000 i 1.000 r 1.571 |y|sd 0.000 |x| 0.000 sd_b 0.251 mu_o -0.626 sd_o 1.005 sd_a 0.316 0.54s/sweep
+[   48.2s] sweep 59: acc u 0.998 i 0.997 r -0.061 |y|sd 1.478 |x| 0.794 sd_b 0.251 mu_o -0.626 sd_o 1.005 sd_a 0.316 0.53s/sweep
+[   48.6s] wrote data/cache/49/Vgau_c6.npz

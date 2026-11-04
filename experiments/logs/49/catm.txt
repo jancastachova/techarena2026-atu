@@ -1,0 +1,3 @@
+T=4: 1,958,140 train rows, 712 trees, half-A AUC 0.83426, 122s
+T=3: 980,970 train rows, 547 trees, half-A AUC 0.83057, 62s
+T=5: 2,934,030 train rows, 902 trees, half-A AUC 0.84328, 187s

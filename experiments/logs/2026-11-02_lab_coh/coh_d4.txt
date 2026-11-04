@@ -1,0 +1,1 @@
+  base (= the best member)                     half-B 0.83397  eval-weighted 0.81737  first 0.81369  gap-weighted 0.81333  1-20 known clicks 0.80638  (691 trees)

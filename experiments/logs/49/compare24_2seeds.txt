@@ -1,0 +1,8 @@
+Jan23 half-B events 17,481; Jan24 half-B events before Jan25 17,583
+alone on Jan24: ch 0.81909 ens 0.81926 F1 0.81092 F2 0.80869 F3 0.81326 F4 0.79507
+existing stack 0.81921  full stack 0.82204  gain +0.00283  folds [0.00328 0.0025  0.00363 0.00214 0.00266] positive 5/5  valid True
+  F1 on top of the others: +0.00019  folds [3.9e-04 2.7e-04 1.1e-04 7.0e-05 1.6e-04] positive 5/5  valid True
+  F2 on top of the others: +0.00016  folds [7.0e-05 1.1e-04 2.0e-04 3.7e-04 5.0e-05] positive 5/5  valid True
+  F3 on top of the others: +0.00004  folds [ 4.e-05  8.e-05  1.e-04  1.e-05 -0.e+00] positive 4/5  valid True
+  F4 on top of the others: -0.00000  folds [ 3.e-05  2.e-05 -3.e-05 -5.e-05  1.e-05] positive 3/5  valid True
+  prof on top of the rest: +0.00022  folds [ 1.0e-04 -1.0e-05  6.2e-04 -7.0e-05  4.6e-04] positive 3/5  valid True

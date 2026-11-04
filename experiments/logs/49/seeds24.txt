@@ -1,0 +1,6 @@
+(0, 1) alone F1 0.81092 F2 0.80869
+  l2 100.0: existing 0.81921 candidate 0.82178 gain +0.00258 pos 5/5 valid True
+  l2 50.0: existing 0.81923 candidate 0.82176 gain +0.00253 pos 5/5 valid True
+(0, 1, 2, 3) alone F1 0.81357 F2 0.8139
+  l2 100.0: existing 0.81921 candidate 0.82207 gain +0.00287 pos 5/5 valid True
+  l2 50.0: existing 0.81923 candidate 0.82204 gain +0.00281 pos 5/5 valid True

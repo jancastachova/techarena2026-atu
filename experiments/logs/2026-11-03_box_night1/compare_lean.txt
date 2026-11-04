@@ -1,0 +1,48 @@
+## day 3: 45 composition (A) vs 47 (B)
+  eval-weighted  A 0.81429  B 0.81438  B-A +0.00009  95% interval [-0.00002, +0.00019]  P(B > A) 0.93
+  gap-weighted   A 0.80646  B 0.80663  B-A +0.00017  95% interval [+0.00001, +0.00030]  P(B > A) 0.98
+## day 3: 47 (A) vs L1 (B)
+  eval-weighted  A 0.81438  B 0.81433  B-A -0.00004  95% interval [-0.00008, -0.00000]  P(B > A) 0.01
+  gap-weighted   A 0.80663  B 0.80662  B-A -0.00001  95% interval [-0.00007, +0.00005]  P(B > A) 0.34
+## day 3: 47 (A) vs L2 (B)
+  eval-weighted  A 0.81438  B 0.81435  B-A -0.00002  95% interval [-0.00006, +0.00002]  P(B > A) 0.11
+  gap-weighted   A 0.80663  B 0.80661  B-A -0.00002  95% interval [-0.00007, +0.00004]  P(B > A) 0.24
+## day 3: 47 (A) vs L3 (B)
+  eval-weighted  A 0.81438  B 0.81424  B-A -0.00013  95% interval [-0.00021, -0.00005]  P(B > A) 0.00
+  gap-weighted   A 0.80663  B 0.80656  B-A -0.00007  95% interval [-0.00017, +0.00005]  P(B > A) 0.19
+## day 4: 45 composition (A) vs 47 (B)
+  eval-weighted  A 0.81800  B 0.81808  B-A +0.00007  95% interval [-0.00001, +0.00016]  P(B > A) 0.95
+  gap-weighted   A 0.81407  B 0.81416  B-A +0.00009  95% interval [-0.00003, +0.00023]  P(B > A) 0.92
+## day 4: 47 (A) vs L1 (B)
+  eval-weighted  A 0.81808  B 0.81809  B-A +0.00001  95% interval [-0.00003, +0.00005]  P(B > A) 0.72
+  gap-weighted   A 0.81416  B 0.81419  B-A +0.00003  95% interval [-0.00004, +0.00009]  P(B > A) 0.83
+## day 4: 47 (A) vs L2 (B)
+  eval-weighted  A 0.81808  B 0.81804  B-A -0.00004  95% interval [-0.00007, -0.00000]  P(B > A) 0.02
+  gap-weighted   A 0.81416  B 0.81411  B-A -0.00005  95% interval [-0.00009, +0.00000]  P(B > A) 0.03
+## day 4: 47 (A) vs L3 (B)
+  eval-weighted  A 0.81808  B 0.81803  B-A -0.00004  95% interval [-0.00012, +0.00003]  P(B > A) 0.11
+  gap-weighted   A 0.81416  B 0.81413  B-A -0.00003  95% interval [-0.00015, +0.00008]  P(B > A) 0.34
+## day 5: 45 composition (A) vs 47 (B)
+  eval-weighted  A 0.82227  B 0.82242  B-A +0.00015  95% interval [+0.00006, +0.00024]  P(B > A) 1.00
+  gap-weighted   A 0.81874  B 0.81885  B-A +0.00011  95% interval [-0.00001, +0.00023]  P(B > A) 0.96
+## day 5: 47 (A) vs L1 (B)
+  eval-weighted  A 0.82242  B 0.82241  B-A -0.00002  95% interval [-0.00005, +0.00002]  P(B > A) 0.18
+  gap-weighted   A 0.81885  B 0.81881  B-A -0.00004  95% interval [-0.00009, +0.00001]  P(B > A) 0.05
+## day 5: 47 (A) vs L2 (B)
+  eval-weighted  A 0.82242  B 0.82241  B-A -0.00002  95% interval [-0.00005, +0.00002]  P(B > A) 0.16
+  gap-weighted   A 0.81885  B 0.81887  B-A +0.00002  95% interval [-0.00002, +0.00007]  P(B > A) 0.84
+## day 5: 47 (A) vs L3 (B)
+  eval-weighted  A 0.82242  B 0.82236  B-A -0.00006  95% interval [-0.00013, +0.00001]  P(B > A) 0.03
+  gap-weighted   A 0.81885  B 0.81881  B-A -0.00004  95% interval [-0.00013, +0.00005]  P(B > A) 0.20
+## day 6: 45 composition (A) vs 47 (B)
+  eval-weighted  A 0.82902  B 0.82928  B-A +0.00026  95% interval [+0.00018, +0.00035]  P(B > A) 1.00
+  gap-weighted   A 0.82697  B 0.82722  B-A +0.00025  95% interval [+0.00015, +0.00036]  P(B > A) 1.00
+## day 6: 47 (A) vs L1 (B)
+  eval-weighted  A 0.82928  B 0.82926  B-A -0.00002  95% interval [-0.00006, +0.00002]  P(B > A) 0.24
+  gap-weighted   A 0.82722  B 0.82721  B-A -0.00001  95% interval [-0.00005, +0.00004]  P(B > A) 0.38
+## day 6: 47 (A) vs L2 (B)
+  eval-weighted  A 0.82928  B 0.82926  B-A -0.00002  95% interval [-0.00005, +0.00001]  P(B > A) 0.14
+  gap-weighted   A 0.82722  B 0.82719  B-A -0.00003  95% interval [-0.00006, +0.00002]  P(B > A) 0.14
+## day 6: 47 (A) vs L3 (B)
+  eval-weighted  A 0.82928  B 0.82921  B-A -0.00007  95% interval [-0.00014, +0.00001]  P(B > A) 0.03
+  gap-weighted   A 0.82722  B 0.82715  B-A -0.00007  95% interval [-0.00015, +0.00004]  P(B > A) 0.08

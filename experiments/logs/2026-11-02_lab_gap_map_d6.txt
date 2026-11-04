@@ -1,0 +1,25 @@
+day 6, 48,976 half-B events, eval-weighted AUC 0.82847 (plain 0.84516)
+  within-event oracle, all events : 0.95314  (+0.1247)
+  event-level oracle, all events  : 0.89961  (+0.0711)
+  now: event-level AUC (mean logit vs any click) 0.5803; within-event AUC 0.8351
+
+per known-clicks group (eval share; event click rate; within AUC; event AUC; AUC if this group's within part / event part / both were perfect)
+    0-0   share 0.013  click 0.491  within 0.4528  event 0.6395   within +0.0006  event +0.0001  both +0.0002
+    1-5   share 0.164  click 0.563  within 0.7698  event 0.5793   within +0.0215  event +-0.0090  both +-0.0056
+    6-20  share 0.450  click 0.598  within 0.8179  event 0.5790   within +0.0567  event +-0.0038  both +0.0125
+   21-50  share 0.337  click 0.638  within 0.8420  event 0.5972   within +0.0416  event +-0.0130  both +-0.0033
+   51-100 share 0.036  click 0.672  within 0.8515  event 0.5850   within +0.0043  event +-0.0041  both +-0.0037
+
+sensitivity: clicked candidate's logit +0.1 in one group (a modestly better model there)
+    0-0   +0.00029
+    1-5   +0.00249
+    6-20  +0.00599
+   21-50  +0.00416
+   51-100 +0.00043
+  all     +0.01336
+
+target: uniform lift of the clicked candidate -> within-event AUC / global eval-weighted AUC
+  +0.02: within 0.8374 (now 0.8351)  global +0.00273
+  +0.03: within 0.8386 (now 0.8351)  global +0.00408
+  +0.05: within 0.8408 (now 0.8351)  global +0.00677
+empty-history events: mean ties with the clicked candidate 0.00 of 9

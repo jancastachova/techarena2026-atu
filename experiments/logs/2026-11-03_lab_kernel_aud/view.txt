@@ -1,0 +1,7 @@
+day 2 done
+day 3 done
+day 4 done
+day 5 done
+day 6 done
+wrote data/cache/lab_kernel_view.npz (4898070, 12)
+.venv/bin/python experiments/lab/kernel_view.py --out   61.44s user 1.82s system 98% cpu 1:04.04 total

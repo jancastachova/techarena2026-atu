@@ -1,0 +1,32 @@
+4,898,070 rows, 185 features; train rows 3,918,560
+event-constant columns: 57
+  seed 0 epoch 1: half-A AUC 0.84444
+  seed 0 epoch 2: half-A AUC 0.84447
+  seed 0 epoch 3: half-A AUC 0.84475
+  seed 0 epoch 4: half-A AUC 0.84485
+  seed 0 epoch 5: half-A AUC 0.84459
+  seed 0 epoch 6: half-A AUC 0.84488
+  seed 0 epoch 7: half-A AUC 0.84493
+  seed 0 epoch 8: half-A AUC 0.84461
+  seed 0 epoch 9: half-A AUC 0.84482
+  seed 0: best half-A 0.84493; half-B of this seed 0.84556
+  seed 1 epoch 1: half-A AUC 0.84414
+  seed 1 epoch 2: half-A AUC 0.84449
+  seed 1 epoch 3: half-A AUC 0.84461
+  seed 1 epoch 4: half-A AUC 0.84464
+  seed 1 epoch 5: half-A AUC 0.84485
+  seed 1 epoch 6: half-A AUC 0.84495
+  seed 1 epoch 7: half-A AUC 0.84492
+  seed 1 epoch 8: half-A AUC 0.84494
+  seed 1: best half-A 0.84495; half-B of this seed 0.84569
+  seed 2 epoch 1: half-A AUC 0.84434
+  seed 2 epoch 2: half-A AUC 0.84459
+  seed 2 epoch 3: half-A AUC 0.84465
+  seed 2 epoch 4: half-A AUC 0.84479
+  seed 2 epoch 5: half-A AUC 0.84481
+  seed 2 epoch 6: half-A AUC 0.84512
+  seed 2 epoch 7: half-A AUC 0.84490
+  seed 2 epoch 8: half-A AUC 0.84486
+  seed 2: best half-A 0.84512; half-B of this seed 0.84559
+  choice model                 half-B 0.84589  eval-weighted 0.82912  first 0.82815
+wrote data/cache/n1/d6_chSPp1.npz

@@ -1,0 +1,12 @@
+## day 3 LightGBM: SET45 (A) vs + specw (B)
+  eval-weighted  A 0.81331  B 0.81220  B-A -0.00111  95% interval [-0.00151, -0.00073]  P(B > A) 0.00
+  gap-weighted   A 0.80553  B 0.80429  B-A -0.00123  95% interval [-0.00184, -0.00064]  P(B > A) 0.00
+## day 4 LightGBM: SET45 (A) vs + specw (B)
+  eval-weighted  A 0.81733  B 0.81695  B-A -0.00038  95% interval [-0.00063, -0.00014]  P(B > A) 0.00
+  gap-weighted   A 0.81335  B 0.81295  B-A -0.00041  95% interval [-0.00073, -0.00007]  P(B > A) 0.01
+## day 5 LightGBM: SET45 (A) vs + specw (B)
+  eval-weighted  A 0.82186  B 0.82183  B-A -0.00002  95% interval [-0.00029, +0.00023]  P(B > A) 0.41
+  gap-weighted   A 0.81846  B 0.81835  B-A -0.00011  95% interval [-0.00046, +0.00020]  P(B > A) 0.26
+## day 6 LightGBM: SET45 (A) vs + specw (B)
+  eval-weighted  A 0.82847  B 0.82846  B-A -0.00001  95% interval [-0.00021, +0.00024]  P(B > A) 0.45
+  gap-weighted   A 0.82640  B 0.82627  B-A -0.00013  95% interval [-0.00045, +0.00018]  P(B > A) 0.19

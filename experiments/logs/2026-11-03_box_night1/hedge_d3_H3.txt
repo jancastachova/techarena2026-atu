@@ -1,0 +1,3 @@
+## day 3 ensemble: choice S (A) vs H3 (B)
+  eval-weighted  A 0.81429  B 0.81434  B-A +0.00005  95% interval [-0.00004, +0.00013]  P(B > A) 0.81
+  gap-weighted   A 0.80646  B 0.80656  B-A +0.00009  95% interval [-0.00003, +0.00020]  P(B > A) 0.91

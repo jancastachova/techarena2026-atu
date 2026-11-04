@@ -20,9 +20,12 @@ def show(label, pb):
     fb = FIRST[B]
     print(f"  {label:30s} half-B {auc(pb, y[B]):.5f}  eval-weighted {wauc(pb, y[B], W_EVAL[B]):.5f}  "
           f"first {wauc(pb[fb], y[B][fb], W_FIRST[B][fb]):.5f}", flush=True)
-m = lgb.train(P, lgb.Dataset(base_X[tr], y[tr], feature_name=base_names), 8000,
-              valid_sets=[lgb.Dataset(base_X[A], y[A])], callbacks=[lgb.early_stopping(150, verbose=False)])
-show("binary", m.predict(base_X[B], num_iteration=m.best_iteration))
+import os
+NO_BINARY = os.environ.get("GR_NO_BINARY") == "1"   # 2026-11-03: ranking member only (the binary one is cached elsewhere)
+if not NO_BINARY:
+    m = lgb.train(P, lgb.Dataset(base_X[tr], y[tr], feature_name=base_names), 8000,
+                  valid_sets=[lgb.Dataset(base_X[A], y[A])], callbacks=[lgb.early_stopping(150, verbose=False)])
+    show("binary", m.predict(base_X[B], num_iteration=m.best_iteration))
 tr_idx = np.flatnonzero(tr); ev_tr = ev[tr_idx]
 uev = np.unique(ev_tr); np.random.default_rng(0).shuffle(uev)
 rank_of = np.empty(uev.max() + 1, np.int64); rank_of[uev] = np.arange(len(uev))
@@ -39,6 +42,6 @@ for G in GROUPS:                          # LightGBM caps a query at 10,000 rows
     show(f"lambdarank G{G}", mm.predict(base_X[B], num_iteration=mm.best_iteration))
     np.savez(OUT, **saved)
 r = lambda q: rankdata(q) / len(q)
-for G in GROUPS:
+for G in ([] if NO_BINARY else GROUPS):
     show(f"binary + lambdarank G{G} (rank avg)", r(saved["binary|B"]) + r(saved[f"lambdarank G{G}|B"]))
 np.savez(OUT, **saved)

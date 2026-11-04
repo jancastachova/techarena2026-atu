@@ -1,0 +1,18 @@
+[    0.3s] cutoff 3: 295,114 fit events, 34,912 targets (349,120 rows)
+[    6.1s] labelled clicks 186,038; history-only warm-up clicks 567,251
+[   12.6s] partition k=8 rank=7: singular [1.    0.351 0.348 0.339 0.331 0.325 0.317 0.311], cos 0.7849, sizes [4464 5273 6288 5854 7527 7451 4966 8177]
+[   14.0s] N 862,365 events (567,251 pseudo), D 17, xprec 8.00, device cuda, dtype float64
+[   14.6s] sweep 0: acc u 0.490 i 0.675 r 1.595 |y|sd 0.658 |x| 0.797 sd_b 0.292 mu_o -0.555 sd_o 1.013 sd_a 0.170 0.57s/sweep  AUC state 0.58418
+[   32.6s] sweep 100: acc u 0.477 i 0.452 r 1.403 |y|sd 1.024 |x| 1.033 sd_b 0.189 mu_o -0.117 sd_o 0.973 sd_a 0.181 0.18s/sweep  AUC state 0.63647
+[   50.6s] sweep 200: acc u 0.433 i 0.389 r 1.213 |y|sd 1.315 |x| 1.032 sd_b 0.173 mu_o 0.048 sd_o 0.980 sd_a 0.184 0.18s/sweep  AUC state 0.66485
+[   68.7s] sweep 300: acc u 0.426 i 0.372 r 1.146 |y|sd 1.418 |x| 1.024 sd_b 0.177 mu_o 0.140 sd_o 0.999 sd_a 0.187 0.18s/sweep  AUC state 0.67339
+[   86.7s] sweep 400: acc u 0.423 i 0.365 r 1.086 |y|sd 1.459 |x| 1.023 sd_b 0.183 mu_o 0.188 sd_o 0.994 sd_a 0.188 0.18s/sweep  AUC state 0.67627
+[  104.6s] sweep 500: acc u 0.418 i 0.363 r 1.064 |y|sd 1.476 |x| 1.020 sd_b 0.187 mu_o 0.239 sd_o 0.984 sd_a 0.190 0.18s/sweep  AUC state 0.68032
+[  122.7s] sweep 600: acc u 0.420 i 0.361 r 1.023 |y|sd 1.495 |x| 1.020 sd_b 0.191 mu_o 0.262 sd_o 0.983 sd_a 0.190 0.18s/sweep  AUC state 0.68128 avg(1) 0.68128
+[  140.8s] sweep 700: acc u 0.415 i 0.357 r 1.038 |y|sd 1.499 |x| 1.020 sd_b 0.196 mu_o 0.313 sd_o 0.985 sd_a 0.191 0.18s/sweep  AUC state 0.68440 avg(101) 0.74498
+[  158.9s] sweep 800: acc u 0.418 i 0.357 r 1.028 |y|sd 1.503 |x| 1.019 sd_b 0.198 mu_o 0.342 sd_o 1.004 sd_a 0.191 0.18s/sweep  AUC state 0.68425 avg(201) 0.75375
+[  176.9s] sweep 900: acc u 0.414 i 0.356 r 1.001 |y|sd 1.513 |x| 1.018 sd_b 0.197 mu_o 0.375 sd_o 0.998 sd_a 0.192 0.18s/sweep  AUC state 0.68405 avg(301) 0.75760
+[  195.0s] sweep 1000: acc u 0.419 i 0.355 r 1.007 |y|sd 1.517 |x| 1.016 sd_b 0.204 mu_o 0.401 sd_o 0.992 sd_a 0.192 0.18s/sweep  AUC state 0.68366 avg(401) 0.76048
+[  213.1s] sweep 1100: acc u 0.416 i 0.353 r 0.993 |y|sd 1.518 |x| 1.017 sd_b 0.205 mu_o 0.418 sd_o 0.999 sd_a 0.192 0.18s/sweep  AUC state 0.68758 avg(501) 0.76224
+[  231.2s] sweep 1200: acc u 0.419 i 0.354 r 0.985 |y|sd 1.515 |x| 1.016 sd_b 0.207 mu_o 0.453 sd_o 1.001 sd_a 0.193 0.18s/sweep  AUC state 0.69016 avg(601) 0.76395
+[  249.3s] sweep 1300: acc u 0.418 i 0.353 r 0.970 |y|sd 1.519 |x| 1.017 sd_b 0.210 mu_o 0.453 sd_o 0.998 sd_a 0.194 0.18s/sweep  AUC state 0.68667 avg(701) 0.76539

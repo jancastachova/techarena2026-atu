@@ -1,0 +1,6 @@
+### day 6 pair 1: SP   choice model                 half-B 0.84589  eval-weighted 0.82912  first 0.82815
+   D   choice model                 half-B 0.84564  eval-weighted 0.82899  first 0.82799
+   (no pair: SP eval-weighted 0.82912, D eval-weighted 0.82899)
+## day 6: 47 (A) vs 47 with pair-1 choice members (B)
+  eval-weighted  A 0.82928  B 0.82927  B-A -0.00000  95% interval [-0.00007, +0.00005]  P(B > A) 0.42
+  gap-weighted   A 0.82722  B 0.82722  B-A +0.00000  95% interval [-0.00008, +0.00007]  P(B > A) 0.52

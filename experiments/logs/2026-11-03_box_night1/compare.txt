@@ -1,0 +1,56 @@
+### day 6 members: lgb   base (= the best member)                     half-B 0.84516  eval-weighted 0.82847  first 0.82731  gap-weighted 0.82635  1-20 known clicks 0.82010  (829 trees)
+  w2   base (= the best member)                     half-B 0.84527  eval-weighted 0.82861  first 0.82755  gap-weighted 0.82651  1-20 known clicks 0.82028  (3123 trees)
+  xgb   base (= the best member)                     half-B 0.84522  eval-weighted 0.82841  first 0.82729  gap-weighted 0.82623  1-20 known clicks 0.82007  (541 trees)
+  choice S:   choice model                 half-B 0.84566  eval-weighted 0.82882  first 0.82784
+  choice D:   choice model                 half-B 0.84569  eval-weighted 0.82899  first 0.82795
+  choice D3:   choice model                 half-B 0.84571  eval-weighted 0.82895  first 0.82794
+## day 6 ensemble: choice S (A) vs choice D (B)
+  plain          A 0.84571  B 0.84578  B-A +0.00007  95% interval [+0.00001, +0.00012]  P(B > A) 0.99
+  eval-weighted  A 0.82902  B 0.82915  B-A +0.00013  95% interval [+0.00003, +0.00023]  P(B > A) 1.00
+  gap-weighted   A 0.82697  B 0.82706  B-A +0.00009  95% interval [-0.00004, +0.00020]  P(B > A) 0.91
+## day 6 ensemble: choice S (A) vs choice D3 (B)
+  plain          A 0.84571  B 0.84577  B-A +0.00005  95% interval [+0.00001, +0.00010]  P(B > A) 0.99
+  eval-weighted  A 0.82902  B 0.82911  B-A +0.00009  95% interval [-0.00000, +0.00018]  P(B > A) 0.97
+  gap-weighted   A 0.82697  B 0.82704  B-A +0.00007  95% interval [-0.00004, +0.00019]  P(B > A) 0.89
+### day 5 members: lgb   base (= the best member)                     half-B 0.84052  eval-weighted 0.82186  first 0.82051  gap-weighted 0.81881  1-20 known clicks 0.81080  (733 trees)
+  w2   base (= the best member)                     half-B 0.84064  eval-weighted 0.82199  first 0.82050  gap-weighted 0.81876  1-20 known clicks 0.81099  (2003 trees)
+  xgb   base (= the best member)                     half-B 0.84047  eval-weighted 0.82183  first 0.82045  gap-weighted 0.81884  1-20 known clicks 0.81084  (331 trees)
+  choice S:   choice model                 half-B 0.84078  eval-weighted 0.82185  first 0.82048
+  choice D:   choice model                 half-B 0.84081  eval-weighted 0.82195  first 0.82054
+  choice D3:   choice model                 half-B 0.84088  eval-weighted 0.82201  first 0.82064
+## day 5 ensemble: choice S (A) vs choice D (B)
+  plain          A 0.84099  B 0.84106  B-A +0.00006  95% interval [+0.00001, +0.00012]  P(B > A) 0.98
+  eval-weighted  A 0.82227  B 0.82237  B-A +0.00010  95% interval [-0.00001, +0.00020]  P(B > A) 0.97
+  gap-weighted   A 0.81874  B 0.81879  B-A +0.00005  95% interval [-0.00011, +0.00019]  P(B > A) 0.74
+## day 5 ensemble: choice S (A) vs choice D3 (B)
+  plain          A 0.84099  B 0.84106  B-A +0.00007  95% interval [+0.00002, +0.00012]  P(B > A) 1.00
+  eval-weighted  A 0.82227  B 0.82237  B-A +0.00009  95% interval [-0.00000, +0.00019]  P(B > A) 0.97
+  gap-weighted   A 0.81874  B 0.81883  B-A +0.00008  95% interval [-0.00005, +0.00019]  P(B > A) 0.91
+### day 4 members: lgb   base (= the best member)                     half-B 0.83401  eval-weighted 0.81733  first 0.81379  gap-weighted 0.81331  1-20 known clicks 0.80648  (657 trees)
+  w2   base (= the best member)                     half-B 0.83426  eval-weighted 0.81748  first 0.81394  gap-weighted 0.81345  1-20 known clicks 0.80653  (2077 trees)
+  xgb   base (= the best member)                     half-B 0.83389  eval-weighted 0.81705  first 0.81338  gap-weighted 0.81286  1-20 known clicks 0.80599  (401 trees)
+  choice S:   choice model                 half-B 0.83458  eval-weighted 0.81781  first 0.81398
+  choice D:   choice model                 half-B 0.83447  eval-weighted 0.81767  first 0.81386
+  choice D3:   choice model                 half-B 0.83446  eval-weighted 0.81767  first 0.81389
+## day 4 ensemble: choice S (A) vs choice D (B)
+  plain          A 0.83470  B 0.83471  B-A +0.00002  95% interval [-0.00004, +0.00009]  P(B > A) 0.76
+  eval-weighted  A 0.81800  B 0.81801  B-A +0.00000  95% interval [-0.00008, +0.00010]  P(B > A) 0.55
+  gap-weighted   A 0.81407  B 0.81409  B-A +0.00002  95% interval [-0.00011, +0.00016]  P(B > A) 0.69
+## day 4 ensemble: choice S (A) vs choice D3 (B)
+  plain          A 0.83470  B 0.83469  B-A -0.00001  95% interval [-0.00007, +0.00006]  P(B > A) 0.46
+  eval-weighted  A 0.81800  B 0.81798  B-A -0.00003  95% interval [-0.00012, +0.00008]  P(B > A) 0.35
+  gap-weighted   A 0.81407  B 0.81402  B-A -0.00004  95% interval [-0.00018, +0.00011]  P(B > A) 0.33
+### day 3 members: lgb   base (= the best member)                     half-B 0.82717  eval-weighted 0.81331  first 0.81166  gap-weighted 0.80523  1-20 known clicks 0.80456  (382 trees)
+  w2   base (= the best member)                     half-B 0.82754  eval-weighted 0.81369  first 0.81199  gap-weighted 0.80545  1-20 known clicks 0.80491  (1144 trees)
+  xgb   base (= the best member)                     half-B 0.82728  eval-weighted 0.81352  first 0.81169  gap-weighted 0.80515  1-20 known clicks 0.80483  (210 trees)
+  choice S:   choice model                 half-B 0.82784  eval-weighted 0.81384  first 0.81209
+  choice D:   choice model                 half-B 0.82779  eval-weighted 0.81383  first 0.81212
+  choice D3:   choice model                 half-B 0.82779  eval-weighted 0.81376  first 0.81217
+## day 3 ensemble: choice S (A) vs choice D (B)
+  plain          A 0.82813  B 0.82815  B-A +0.00001  95% interval [-0.00007, +0.00009]  P(B > A) 0.58
+  eval-weighted  A 0.81429  B 0.81433  B-A +0.00004  95% interval [-0.00008, +0.00014]  P(B > A) 0.73
+  gap-weighted   A 0.80646  B 0.80650  B-A +0.00004  95% interval [-0.00013, +0.00018]  P(B > A) 0.66
+## day 3 ensemble: choice S (A) vs choice D3 (B)
+  plain          A 0.82813  B 0.82813  B-A -0.00000  95% interval [-0.00008, +0.00007]  P(B > A) 0.44
+  eval-weighted  A 0.81429  B 0.81429  B-A -0.00000  95% interval [-0.00012, +0.00010]  P(B > A) 0.40
+  gap-weighted   A 0.80646  B 0.80649  B-A +0.00003  95% interval [-0.00013, +0.00017]  P(B > A) 0.58

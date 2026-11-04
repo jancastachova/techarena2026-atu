@@ -1,0 +1,48 @@
+## day 3 ensemble: choice S (A) vs H1 (B)
+  eval-weighted  A 0.81429  B 0.81430  B-A +0.00001  95% interval [-0.00005, +0.00005]  P(B > A) 0.64
+  gap-weighted   A 0.80646  B 0.80652  B-A +0.00005  95% interval [-0.00002, +0.00012]  P(B > A) 0.91
+## day 3 ensemble: choice S (A) vs H2 (B)
+  eval-weighted  A 0.81429  B 0.81434  B-A +0.00005  95% interval [-0.00001, +0.00011]  P(B > A) 0.95
+  gap-weighted   A 0.80646  B 0.80652  B-A +0.00006  95% interval [-0.00002, +0.00013]  P(B > A) 0.90
+## day 3 ensemble: choice S (A) vs H3 (B)
+  eval-weighted  A 0.81429  B 0.81434  B-A +0.00005  95% interval [-0.00004, +0.00013]  P(B > A) 0.81
+  gap-weighted   A 0.80646  B 0.80656  B-A +0.00009  95% interval [-0.00003, +0.00020]  P(B > A) 0.91
+## day 3 ensemble: choice S (A) vs H4 (B)
+  eval-weighted  A 0.81429  B 0.81434  B-A +0.00005  95% interval [-0.00001, +0.00010]  P(B > A) 0.94
+  gap-weighted   A 0.80646  B 0.80654  B-A +0.00008  95% interval [-0.00000, +0.00015]  P(B > A) 0.97
+## day 4 ensemble: choice S (A) vs H1 (B)
+  eval-weighted  A 0.81800  B 0.81801  B-A +0.00001  95% interval [-0.00003, +0.00005]  P(B > A) 0.66
+  gap-weighted   A 0.81407  B 0.81407  B-A +0.00000  95% interval [-0.00005, +0.00006]  P(B > A) 0.55
+## day 4 ensemble: choice S (A) vs H2 (B)
+  eval-weighted  A 0.81800  B 0.81803  B-A +0.00003  95% interval [-0.00002, +0.00007]  P(B > A) 0.86
+  gap-weighted   A 0.81407  B 0.81410  B-A +0.00004  95% interval [-0.00003, +0.00011]  P(B > A) 0.88
+## day 4 ensemble: choice S (A) vs H3 (B)
+  eval-weighted  A 0.81800  B 0.81803  B-A +0.00002  95% interval [-0.00004, +0.00010]  P(B > A) 0.72
+  gap-weighted   A 0.81407  B 0.81409  B-A +0.00003  95% interval [-0.00007, +0.00014]  P(B > A) 0.74
+## day 4 ensemble: choice S (A) vs H4 (B)
+  eval-weighted  A 0.81800  B 0.81803  B-A +0.00003  95% interval [-0.00002, +0.00008]  P(B > A) 0.86
+  gap-weighted   A 0.81407  B 0.81410  B-A +0.00003  95% interval [-0.00004, +0.00010]  P(B > A) 0.81
+## day 5 ensemble: choice S (A) vs H1 (B)
+  eval-weighted  A 0.82227  B 0.82234  B-A +0.00007  95% interval [+0.00002, +0.00010]  P(B > A) 1.00
+  gap-weighted   A 0.81874  B 0.81882  B-A +0.00008  95% interval [+0.00002, +0.00013]  P(B > A) 1.00
+## day 5 ensemble: choice S (A) vs H2 (B)
+  eval-weighted  A 0.82227  B 0.82234  B-A +0.00007  95% interval [+0.00002, +0.00012]  P(B > A) 0.99
+  gap-weighted   A 0.81874  B 0.81879  B-A +0.00005  95% interval [-0.00003, +0.00012]  P(B > A) 0.93
+## day 5 ensemble: choice S (A) vs H3 (B)
+  eval-weighted  A 0.82227  B 0.82240  B-A +0.00013  95% interval [+0.00006, +0.00020]  P(B > A) 1.00
+  gap-weighted   A 0.81874  B 0.81885  B-A +0.00011  95% interval [+0.00001, +0.00021]  P(B > A) 0.98
+## day 5 ensemble: choice S (A) vs H4 (B)
+  eval-weighted  A 0.82227  B 0.82237  B-A +0.00009  95% interval [+0.00005, +0.00014]  P(B > A) 1.00
+  gap-weighted   A 0.81874  B 0.81883  B-A +0.00009  95% interval [+0.00002, +0.00015]  P(B > A) 0.99
+## day 6 ensemble: choice S (A) vs H1 (B)
+  eval-weighted  A 0.82902  B 0.82912  B-A +0.00010  95% interval [+0.00006, +0.00015]  P(B > A) 1.00
+  gap-weighted   A 0.82697  B 0.82708  B-A +0.00011  95% interval [+0.00006, +0.00017]  P(B > A) 1.00
+## day 6 ensemble: choice S (A) vs H2 (B)
+  eval-weighted  A 0.82902  B 0.82911  B-A +0.00009  95% interval [+0.00004, +0.00014]  P(B > A) 1.00
+  gap-weighted   A 0.82697  B 0.82704  B-A +0.00007  95% interval [+0.00001, +0.00013]  P(B > A) 0.99
+## day 6 ensemble: choice S (A) vs H3 (B)
+  eval-weighted  A 0.82902  B 0.82921  B-A +0.00019  95% interval [+0.00012, +0.00026]  P(B > A) 1.00
+  gap-weighted   A 0.82697  B 0.82715  B-A +0.00017  95% interval [+0.00010, +0.00026]  P(B > A) 1.00
+## day 6 ensemble: choice S (A) vs H4 (B)
+  eval-weighted  A 0.82902  B 0.82916  B-A +0.00014  95% interval [+0.00009, +0.00018]  P(B > A) 1.00
+  gap-weighted   A 0.82697  B 0.82710  B-A +0.00013  95% interval [+0.00008, +0.00019]  P(B > A) 1.00

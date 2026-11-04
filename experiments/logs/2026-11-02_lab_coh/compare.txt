@@ -1,0 +1,12 @@
+### day 6: (h) coherence vs 45 set (box baseline)
+  plain          A 0.84516  B 0.84523  B-A +0.00007  95% interval [-0.00005, +0.00017]  P(B > A) 0.85
+  eval-weighted  A 0.82847  B 0.82854  B-A +0.00007  95% interval [-0.00014, +0.00027]  P(B > A) 0.74
+  gap-weighted   A 0.82640  B 0.82651  B-A +0.00011  95% interval [-0.00018, +0.00039]  P(B > A) 0.79
+### day 5: (h) coherence vs 45 set (box baseline)
+  plain          A 0.84052  B 0.84048  B-A -0.00004  95% interval [-0.00015, +0.00007]  P(B > A) 0.22
+  eval-weighted  A 0.82186  B 0.82180  B-A -0.00005  95% interval [-0.00029, +0.00016]  P(B > A) 0.34
+  gap-weighted   A 0.81846  B 0.81831  B-A -0.00015  95% interval [-0.00048, +0.00013]  P(B > A) 0.18
+### day 4: (h) coherence vs 45 set (box baseline)
+  plain          A 0.83401  B 0.83397  B-A -0.00005  95% interval [-0.00019, +0.00008]  P(B > A) 0.23
+  eval-weighted  A 0.81733  B 0.81737  B-A +0.00004  95% interval [-0.00020, +0.00027]  P(B > A) 0.65
+  gap-weighted   A 0.81335  B 0.81337  B-A +0.00002  95% interval [-0.00032, +0.00040]  P(B > A) 0.58

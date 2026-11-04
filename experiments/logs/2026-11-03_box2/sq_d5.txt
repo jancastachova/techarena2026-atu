@@ -1,0 +1,4 @@
+### day 5: SP   choice model                 half-B 0.84106  eval-weighted 0.82205  first 0.82067
+    SQ   choice model                 half-B 0.84087  eval-weighted 0.82189  first 0.82035
+  eval-weighted  A 0.82205  B 0.82189  B-A -0.00016  95% interval [-0.00035, +0.00001]  P(B > A) 0.03
+  gap-weighted   A 0.81847  B 0.81822  B-A -0.00025  95% interval [-0.00050, +0.00000]  P(B > A) 0.03

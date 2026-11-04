@@ -1,0 +1,7 @@
+2 seeds F1F2       0.82178 gain +0.00258 pos 5/5 True
+2 seeds F1F2F3     0.82182 gain +0.00261 pos 5/5 True
+2 seeds F3         0.82106 gain +0.00185 pos 5/5 True
+2 seeds F1F2F3F4   0.82182 gain +0.00261 pos 5/5 True
+2 seeds all+prof   0.82204 gain +0.00283 pos 5/5 True
+seed (0,) F1F2F3 0.82157 gain +0.00236
+seed (1,) F1F2F3 0.82161 gain +0.00241

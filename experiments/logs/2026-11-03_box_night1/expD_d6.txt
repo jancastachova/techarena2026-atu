@@ -1,0 +1,4 @@
+base: MF30 + popularity + sequence + ['idf', 'idf15', 'idf2', 'clicks', 'impronly', 'aud', 'audc', 'hop2c', 'hop3', 'hop2', 'idf_hop2', 'uoff10', 'dim64', 'choice', 'clicks_idf', 'clicks_unif', 'uvec09', 'deep', 'sqrtview', 'cos', 'cosproj8', 'cos_aud', 'cos_audc', 'cos_audc05', 'cos_wb', 'cos_hop2', 'cos_hop2c', 'cos_hop3', 'cos_hop4', 'temp06', 'cosresid8', 'cossoft20', 'soft_aud', 'act_a', 'act_b', 'act_c']
+sequence (12 cache(s)): day-6 AUC 0.81256, rank corr with MF30 0.9535
+evaluation-weighted AUC: bucket weights 0-0 5.89, 1-5 4.09, 6-20 1.86, 21-50 0.62, 51-100 0.21
+exported (4898070, 337) to data/cache/n1/expD_d6.npz

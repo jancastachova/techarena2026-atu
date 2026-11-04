@@ -1,0 +1,7 @@
+[    0.3s] cutoff 4: 392,831 fit events, 47,928 targets (479,280 rows)
+[   10.6s] labelled clicks 247,219; history-only warm-up clicks 577,679
+[   12.5s] N 970,510 events (577,679 pseudo), D 9, xprec 1.00, device cuda, dtype float64
+[   13.2s] sweep 0: acc u 0.694 i 0.997 r 1.664 |y|sd 0.119 |x| 0.755 sd_b 0.281 mu_o -0.617 sd_o 1.015 sd_a 0.316 0.55s/sweep  AUC state 0.59482
+[   21.6s] sweep 59: acc u 0.993 i 1.000 r -0.129 |y|sd 1.431 |x| 1.058 sd_b 0.281 mu_o -0.617 sd_o 1.015 sd_a 0.316 0.14s/sweep  AUC state 0.79715 avg(1) 0.79715
+[   21.8s] final AUC 0.79715
+[   21.8s] wrote data/cache/49/Gc0_c4.npz

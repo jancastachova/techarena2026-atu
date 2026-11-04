@@ -1,0 +1,52 @@
+day 6: eval-weighted global AUC 0.82847; within-event pairs are 0.0034% of all pos/neg pairs (within AUC 0.7908); cross-event pairs 99.9966% (AUC 0.82848)
+  positives vs negatives of clicked events: AUC 0.83160 (58.2% of negatives); vs no-click events: 0.82413 (41.8%)
+  if every no-click event sat below all others: global 0.90207
+
+within-event AUC by known clicks (eval share; clicked events in half B; within AUC; mean |margin| of misranks)
+    0-0   eval 0.013  n     53  within 0.4528
+    1-5   eval 0.164  n  1,112  within 0.7698
+    6-10  eval 0.194  n  2,208  within 0.7994
+   11-20  eval 0.256  n  4,792  within 0.8264
+   21-35  eval 0.243  n  9,980  within 0.8379
+   36-50  eval 0.094  n  6,937  within 0.8480
+   51-100 eval 0.036  n  5,815  within 0.8515
+
+repeat status (clicked / unclicked candidate in the user's known clicks): share of pairs / misrank rate / share of all misranks
+  neither                             85.8%  0.1944   91.0%
+  only the unclicked is a repeat       1.8%  0.7743    7.4%
+  only the clicked is a repeat        12.2%  0.0185    1.2%
+  both repeats                         0.2%  0.3301    0.4%
+
+popularity of the CLICKED candidate (clicks before the day): share of pairs / misrank rate / share of all misranks
+  0-3                                 14.3%  0.2399   18.8%
+  4-10                                42.0%  0.1943   44.5%
+  11-30                               35.3%  0.1576   30.3%
+  31-100                               8.3%  0.1411    6.4%
+  101+                                 0.1%  0.1180    0.1%
+
+popularity of the UNCLICKED candidate: share of pairs / misrank rate / share of all misranks
+  0-3                                 17.1%  0.1685   15.7%
+  4-10                                43.4%  0.1798   42.6%
+  11-30                               32.3%  0.1930   34.0%
+  31-100                               7.2%  0.1972    7.7%
+  101+                                 0.1%  0.1877    0.1%
+
+unclicked vs clicked popularity: share of pairs / misrank rate / share of all misranks
+  unclicked less popular              50.7%  0.1588   43.9%
+  equal                                4.5%  0.1951    4.7%
+  unclicked MORE popular              44.9%  0.2100   51.4%
+
+taste match: unclicked cos minus clicked cos (projected cosine): share of pairs / misrank rate / share of all misranks
+  < -1.0                              73.0%  0.0067    2.7%
+  -1.0..-0.3                           5.4%  0.1648    4.8%
+  -0.3..0                              2.1%  0.3382    3.8%
+  0..0.3                               2.9%  0.5136    8.2%
+  0.3..1.0                             4.0%  0.6826   14.8%
+  > 1.0                               12.7%  0.9526   65.7%
+
+misranks where the clicked candidate HAS the higher taste cosine: 11.3% of all misranks (rate 0.0257)
+misranked pairs' logit margin: median 0.895, 25% 0.399, 75% 1.611; near misses (< 0.1) 6.7%
+event-level AUC, mean logit             0.5803
+event-level AUC, sum of probabilities   0.6980
+event-level AUC, max logit              0.6489
+event-level AUC, logsumexp              0.6904

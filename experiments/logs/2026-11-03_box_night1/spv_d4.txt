@@ -1,0 +1,4 @@
+### day 4 choice SPV:   choice model                 half-B 0.83456  eval-weighted 0.81771  first 0.81391  (SP: eval-weighted 0.81770)
+## day 4: H3 (A) vs H3 with SP -> SPV (B)
+  eval-weighted  A 0.81803  B 0.81804  B-A +0.00002  95% interval [-0.00002, +0.00005]  P(B > A) 0.84
+  gap-weighted   A 0.81409  B 0.81412  B-A +0.00003  95% interval [-0.00002, +0.00007]  P(B > A) 0.89

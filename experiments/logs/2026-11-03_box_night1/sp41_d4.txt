@@ -1,0 +1,4 @@
+### day 4 choice SP41:   choice model                 half-B 0.83461  eval-weighted 0.81769  first 0.81398  (SP: eval-weighted 0.81770)
+## day 4: H3 (A) vs H3 with SP -> SP41 (B)
+  eval-weighted  A 0.81803  B 0.81804  B-A +0.00002  95% interval [-0.00001, +0.00005]  P(B > A) 0.87
+  gap-weighted   A 0.81409  B 0.81412  B-A +0.00003  95% interval [-0.00001, +0.00007]  P(B > A) 0.93

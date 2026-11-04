@@ -1,0 +1,2 @@
+  lgb_export exp45_d6.npz +0 caches: half-B 0.84516  eval-weighted 0.82847  first 0.82731  (829 trees)
+wrote data/cache/n1/d6_lgbX.npz

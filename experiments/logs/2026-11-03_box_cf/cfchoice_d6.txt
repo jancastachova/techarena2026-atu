@@ -1,0 +1,4 @@
+### day 6 SPCF   choice model                 half-B 0.84584  eval-weighted 0.82901  first 0.82802 (SP: eval-weighted 0.82912)
+## day 6: 47 (A) vs 47 with SP -> SPCF (B)
+  eval-weighted  A 0.82928  B 0.82926  B-A -0.00002  95% interval [-0.00007, +0.00002]  P(B > A) 0.19
+  gap-weighted   A 0.82722  B 0.82719  B-A -0.00002  95% interval [-0.00007, +0.00003]  P(B > A) 0.19

@@ -1,0 +1,2 @@
+alone Jan24: tree+bayes 0.82479 choice+bayes 0.82515 | tree+all views 0.82500 choice+all views 0.82500
+49f + choice+all views: 0.82536 -> 0.82544 +0.00009 folds [ 0.00011  0.0002   0.0001   0.00013 -0.0001 ] pos 4/5 valid True

@@ -1,0 +1,4 @@
+NEW = data/cache/lab_preds_kern_noself_d5.npz (shown as gch)
+day 5 half B, 49,227 events; eval- / gap-weighted AUC: bin alone 0.82058 / 0.81741, nn alone 0.82176 / 0.81818
+  gch alone                    vs bin: eval 0.82042 (-0.00016 [-0.00043, +0.00012])  gap 0.81700 (-0.00042 [-0.00083, -0.00004])
+  gch + nn                     vs bin + nn: eval 0.82155 (-0.00010 [-0.00024, +0.00003])  gap 0.81806 (-0.00024 [-0.00044, -0.00005])

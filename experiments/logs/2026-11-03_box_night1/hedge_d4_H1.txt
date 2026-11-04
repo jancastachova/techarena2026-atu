@@ -1,0 +1,3 @@
+## day 4 ensemble: choice S (A) vs H1 (B)
+  eval-weighted  A 0.81800  B 0.81801  B-A +0.00001  95% interval [-0.00003, +0.00005]  P(B > A) 0.66
+  gap-weighted   A 0.81407  B 0.81407  B-A +0.00000  95% interval [-0.00005, +0.00006]  P(B > A) 0.55

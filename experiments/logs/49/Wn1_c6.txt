@@ -1,0 +1,7 @@
+[    0.2s] cutoff 6: 588,873 fit events, 97,951 targets (979,510 rows)
+[   11.1s] labelled clicks 370,313; history-only warm-up clicks 577,679
+[   17.5s] partition k=8 rank=7: singular [1.    0.326 0.322 0.312 0.302 0.294 0.285 0.276], cos 0.8170, sizes [7608 4583 4180 9694 7428 5860 5481 5166]
+[   19.0s] N 1,166,552 events (577,679 pseudo), D 17, xprec 1.00, device cuda, dtype float64
+[   19.7s] sweep 0: acc u 0.853 i 0.994 r 1.525 |y|sd 0.360 |x| 0.969 sd_b 0.251 mu_o -0.626 sd_o 1.005 sd_a 0.316 0.61s/sweep
+[   40.4s] sweep 59: acc u 0.991 i 0.999 r -0.164 |y|sd 1.414 |x| 1.057 sd_b 0.251 mu_o -0.626 sd_o 1.005 sd_a 0.316 0.51s/sweep
+[   40.8s] wrote data/cache/49/Wn1_c6.npz
